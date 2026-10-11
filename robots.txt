@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sojourn.cloudalgo.com/sitemap.xml

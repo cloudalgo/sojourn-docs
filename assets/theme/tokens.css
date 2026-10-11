@@ -1,0 +1,43 @@
+/* Sojourn brand tokens. The only file in the site allowed to contain brand hex values.
+   Source: docs/brand/2026-10-10-sojourn-brand-kit.md. Light theme only. */
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/instrument-serif-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/instrument-serif-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/figtree-variable.woff2") format("woff2");
+}
+:root {
+  --harbor: #152238;
+  --tide: #1b7a72;
+  --lantern: #f0a232;
+  --coral: #c73e4a;
+  --fog: #f4f6f8;
+  --slate: #4b5563;
+  --mist: #c9d2dc;
+  --line: #dce3ea;
+  --tide-light: #4fb3a9;
+  --white: #ffffff;
+  --muted: #6b7280;
+  --track: color-mix(in srgb, var(--fog) 9%, var(--harbor));
+  --harbor-line: color-mix(in srgb, var(--fog) 16%, var(--harbor));
+  --display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --text: "Figtree", "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  color-scheme: light;
+}

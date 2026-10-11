@@ -1,0 +1,862 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How to install, configure, and report with Sojourn, the lifecycle tracker for Salesforce by CloudAlgo.">
+      
+      
+      
+        <link rel="canonical" href="https://sojourn.cloudalgo.com/docs/reference/objects/Tracking_Error__c/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+  
+    <title>Tracking Error - Sojourn documentation</title>
+  
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <link rel="icon" href="/assets/theme/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/theme/fonts/figtree-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/theme/tokens.css">
+  <link rel="stylesheet" href="/assets/theme/base.css">
+  <link rel="stylesheet" href="/assets/theme/docs.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Sojourn">
+  <meta property="og:title" content="Tracking Error · Sojourn documentation">
+  <meta property="og:description" content="The Tracking Error object records a change Sojourn could not turn into an interval, with the Parent Id, Tracked Field, From and To Values, Occurred At, Error Type, and Message. Admins resolve, ignore, or repair it with one click, and the nightly reconcile retries transient ones. Commonly used as the repair queue in the Sojourn Setup app.">
+  <meta property="og:image" content="https://sojourn.cloudalgo.com/assets/theme/images/card-docs.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  <div class="sj-docs"><header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Sojourn home">
+      <img src="/assets/theme/images/mark.svg" width="34" height="34" alt="" />
+      <span
+        ><span class="word">Sojourn</span
+        ><span class="by" style="display: block">by CloudAlgo</span></span
+      >
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/" data-nav="home">Product</a>
+      <a href="/compare/" data-nav="compare">Compare</a>
+      <a href="/security/" data-nav="security">Security</a>
+      <a href="/pricing/" data-nav="pricing">Pricing</a>
+      <a href="/docs/" data-nav="docs">Docs</a>
+    </nav>
+    <a
+      class="btn primary sm cta"
+      href="https://cloudalgo.com/contact/"
+      target="_blank"
+      rel="noopener"
+      >Request early access</a
+    >
+  </div>
+</header></div>
+  <header class="md-header sj-dtabs" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="Header">
+      <label class="md-header__button md-icon" for="__drawer">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      </label>
+      <div class="md-header__title" data-md-component="header-title" hidden>
+        <div class="md-header__ellipsis">
+          <div class="md-header__topic"><span class="md-ellipsis">Sojourn documentation</span></div>
+          <div class="md-header__topic" data-md-component="header-topic"><span class="md-ellipsis">Tracking Error</span></div>
+        </div>
+      </div>
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cookbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Report cookbook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    </nav>
+  </header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sojourn documentation" class="md-nav__button md-logo" aria-label="Sojourn documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sojourn documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Sojourn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/permission-sets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assign permission sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cookbook/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report cookbook
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report cookbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../permission-sets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permission sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+  <h1>Tracking Error</h1>
+  <p class="sj-summary">The Tracking Error object records a change Sojourn could not turn into an interval, with the Parent Id, Tracked Field, From and To Values, Occurred At, Error Type, and Message. Admins resolve, ignore, or repair it with one click, and the nightly reconcile retries transient ones. Commonly used as the repair queue in the Sojourn Setup app.</p>
+  
+  <!-- Generated by docs-site/scripts/generate_reference.py from package metadata. Do not edit. -->
+
+<p>API name: <code>Tracking_Error__c</code></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>API name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Changed By</td>
+<td><code>Changed_By__c</code></td>
+<td>Lookup (User)</td>
+<td>Who made the change that failed to record.<br><em>Help text:</em> Who made the change.</td>
+</tr>
+<tr>
+<td>Error Type</td>
+<td><code>Error_Type__c</code></td>
+<td>Picklist: DML, Limit, Config, BusinessHours, Unknown</td>
+<td>Category of failure, which decides whether reconcile retries it automatically.<br><em>Help text:</em> DML and Limit errors are retried by reconcile. Config and BusinessHours errors need an admin.</td>
+</tr>
+<tr>
+<td>From Value</td>
+<td><code>From_Value__c</code></td>
+<td>Text (255)</td>
+<td>Value before the failed change.<br><em>Help text:</em> Value before the change.</td>
+</tr>
+<tr>
+<td>Message</td>
+<td><code>Message__c</code></td>
+<td>LongTextArea (32768)</td>
+<td>Error message as captured.</td>
+</tr>
+<tr>
+<td>Occurred At</td>
+<td><code>Occurred_At__c</code></td>
+<td>DateTime</td>
+<td>When the change happened, used as the interval boundary on repair.<br><em>Help text:</em> When the change happened.</td>
+</tr>
+<tr>
+<td>Owner Id</td>
+<td><code>Owner_Id__c</code></td>
+<td>Text (18)</td>
+<td>Owner of the record when the change happened.</td>
+</tr>
+<tr>
+<td>Parent Id</td>
+<td><code>Parent_Id__c</code></td>
+<td>Text (18)</td>
+<td>Id of the tracked record the failed change belongs to.<br><em>Help text:</em> Id of the tracked record.</td>
+</tr>
+<tr>
+<td>Parent Object</td>
+<td><code>Parent_Object__c</code></td>
+<td>Text (255)</td>
+<td>API name of the tracked object.</td>
+</tr>
+<tr>
+<td>Repaired Interval</td>
+<td><code>Repaired_Interval__c</code></td>
+<td>Lookup (Interval__c)</td>
+<td>Interval created when the error was repaired.</td>
+</tr>
+<tr>
+<td>Retry Count</td>
+<td><code>Retry_Count__c</code></td>
+<td>Number (3, 0)</td>
+<td>Times reconcile retried this error; retries stop at the configured maximum.<br><em>Help text:</em> Times the nightly reconcile retried this error.</td>
+</tr>
+<tr>
+<td>Source</td>
+<td><code>Source__c</code></td>
+<td>Picklist: Trigger, Flow, Backfill-History, Backfill-Seed, Manual-Repair, Reconcile</td>
+<td>Which capture path produced the error.</td>
+</tr>
+<tr>
+<td>Stack</td>
+<td><code>Stack__c</code></td>
+<td>LongTextArea (32768)</td>
+<td>Stack trace, truncated.<br><em>Help text:</em> Stack trace for support.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td><code>Status__c</code></td>
+<td>Picklist: New, Resolved, Ignored</td>
+<td>Workflow state of the error in the repair queue.<br><em>Help text:</em> New errors wait for repair or retry. Resolved and Ignored errors are kept for audit.</td>
+</tr>
+<tr>
+<td>To Value Id</td>
+<td><code>To_Value_Id__c</code></td>
+<td>Text (18)</td>
+<td>Id behind the new value for lookup and owner changes, needed to replay the change.<br><em>Help text:</em> Id of the user, queue, or related record for lookup and owner changes.</td>
+</tr>
+<tr>
+<td>To Value</td>
+<td><code>To_Value__c</code></td>
+<td>Text (255)</td>
+<td>Value after the failed change.<br><em>Help text:</em> Value after the change.</td>
+</tr>
+<tr>
+<td>Tracked Field</td>
+<td><code>Tracked_Field__c</code></td>
+<td>Text (255)</td>
+<td>API name of the tracked field whose change failed.<br><em>Help text:</em> API name of the tracked field.</td>
+</tr>
+</tbody>
+</table>
+  
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      <footer class="site">
+  <div class="wrap">
+    <div class="help">
+      <div>
+        <h3>Need a hand with setup?</h3>
+        <p>
+          CloudAlgo can install and configure Sojourn and build the reports your
+          leadership asks for.
+        </p>
+      </div>
+      <a
+        class="btn primary"
+        href="https://cloudalgo.com/contact/"
+        target="_blank"
+        rel="noopener"
+        >Contact us
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4z"
+          /></svg
+      ></a>
+    </div>
+    <div class="fcols">
+      <div>
+        <span class="wm">Sojourn</span>
+        <div class="fby">A product by CloudAlgo</div>
+        <p>Where the time went.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <a href="/">Overview</a><a href="/compare/">Compare</a
+        ><a href="/security/">Security</a><a href="/pricing/">Pricing</a>
+      </div>
+      <div>
+        <h5>Docs</h5>
+        <a href="/docs/">Guide</a><a href="/docs/cookbook/">Report cookbook</a
+        ><a href="/docs/reference/">Reference</a
+        ><a href="/docs/changelog/">Changelog</a>
+      </div>
+      <div>
+        <h5>CloudAlgo</h5>
+        <a href="https://cloudalgo.com/" target="_blank" rel="noopener"
+          >cloudalgo.com</a
+        ><a href="https://cloudalgo.com/contact/" target="_blank" rel="noopener"
+          >Contact</a
+        >
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 CloudAlgo</span
+      ><span
+        >Salesforce, AppExchange, and Experience Cloud are trademarks of
+        Salesforce, Inc.</span
+      >
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

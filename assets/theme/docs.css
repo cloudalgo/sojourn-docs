@@ -1,0 +1,259 @@
+/* MkDocs Material mapped onto the Sojourn tokens. Loaded only by documentation pages. */
+body[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--harbor);
+  --md-primary-fg-color--light: var(--tide);
+  --md-primary-fg-color--dark: var(--harbor);
+  --md-primary-bg-color: var(--fog);
+  --md-primary-bg-color--light: var(--mist);
+  --md-accent-fg-color: var(--tide);
+  --md-default-bg-color: var(--fog);
+  --md-default-fg-color: var(--harbor);
+  --md-default-fg-color--light: var(--slate);
+  --md-default-fg-color--lighter: var(--muted);
+  --md-default-fg-color--lightest: var(--line);
+  --md-typeset-color: var(--slate);
+  --md-typeset-a-color: var(--tide);
+  --md-text-font-family: var(--text);
+  --md-code-font-family: var(--mono);
+  --md-code-bg-color: var(--harbor);
+  --md-code-fg-color: var(--fog);
+  --md-code-hl-string-color: var(--tide-light);
+  --md-code-hl-keyword-color: var(--lantern);
+  --md-code-hl-number-color: var(--lantern);
+  --md-code-hl-constant-color: var(--lantern);
+  --md-code-hl-function-color: var(--tide-light);
+  --md-code-hl-comment-color: var(--mist);
+  --md-code-hl-name-color: var(--fog);
+  --md-code-hl-operator-color: var(--mist);
+  --md-code-hl-punctuation-color: var(--mist);
+  --md-code-hl-variable-color: var(--fog);
+  --md-code-hl-generic-color: var(--mist);
+  font-family: var(--text);
+}
+
+/* The shared header scrolls away; the docs row below it stays. */
+.sj-docs .top {
+  position: relative;
+}
+.md-header.sj-dtabs {
+  position: sticky;
+  top: 0;
+  height: auto;
+  background: var(--white);
+  color: var(--harbor);
+  box-shadow: none;
+  border-bottom: 1px solid var(--line);
+}
+.sj-dtabs .md-header__inner {
+  height: 2.6rem;
+  align-items: center;
+}
+.sj-dtabs .md-tabs {
+  background: transparent;
+  color: var(--harbor);
+  flex: 1;
+  overflow: visible;
+}
+/* Material hides the tabs when they scroll away; here they sit below the shared header, so keep them visible. */
+.sj-dtabs .md-tabs[hidden] {
+  pointer-events: auto;
+}
+.sj-dtabs .md-tabs[hidden] .md-tabs__link {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+.sj-dtabs .md-tabs__list {
+  margin: 0;
+  align-items: center;
+}
+/* Material pins the label to the top of a 2.4rem item; centre it in the row, level with the search box. */
+.sj-dtabs .md-tabs__item {
+  display: flex;
+  align-items: center;
+  height: 2.6rem;
+}
+.sj-dtabs .md-tabs__link {
+  font-family: var(--text);
+  font-weight: 600;
+  font-size: 0.7rem;
+  opacity: 1;
+  margin-top: 0;
+  color: var(--slate);
+  position: relative;
+}
+.sj-dtabs .md-tabs__item--active .md-tabs__link {
+  color: var(--harbor);
+}
+.sj-dtabs .md-tabs__item--active .md-tabs__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.8rem;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--tide);
+}
+.sj-dtabs .md-search__form {
+  background: var(--fog);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.sj-dtabs .md-search__input {
+  color: var(--harbor);
+}
+.sj-dtabs .md-search__input::placeholder,
+.sj-dtabs .md-search__icon {
+  color: var(--muted);
+}
+.md-sidebar {
+  top: 2.6rem;
+}
+
+/* Navigation */
+.md-nav__title,
+.md-nav--primary .md-nav__item--section > .md-nav__link {
+  font-size: 0.575rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  color: var(--tide);
+  font-weight: 600;
+}
+.md-nav--secondary .md-nav__link--active {
+  color: var(--harbor);
+}
+
+/* Page anatomy */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  color: var(--harbor);
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+.md-typeset h1 {
+  font-size: 2.6rem;
+  line-height: 1.04;
+  margin: 0.3rem 0 0.6rem;
+}
+.md-typeset h2 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+.md-typeset .sj-crumb {
+  font-size: 0.65rem;
+  color: var(--muted);
+}
+.md-typeset .sj-summary {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--harbor);
+  margin: 0;
+}
+.md-typeset .sj-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.8rem 0 0.4rem;
+}
+.md-typeset ol > li::marker {
+  font-family: var(--display);
+  color: var(--tide);
+}
+.md-typeset :not(pre) > code {
+  background: color-mix(in srgb, var(--harbor) 6%, transparent);
+  color: var(--harbor);
+}
+.md-typeset pre > code {
+  border-radius: 10px;
+}
+.md-typeset table:not([class]) {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 0.7rem;
+}
+.md-typeset table:not([class]) th {
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--white);
+}
+.md-typeset .sj-callout {
+  border-left: 3px solid var(--lantern);
+  background: color-mix(in srgb, var(--lantern) 10%, var(--white));
+  padding: 0.7rem 0.9rem;
+  border-radius: 0 8px 8px 0;
+  color: var(--harbor);
+  margin: 1.1rem 0;
+}
+.md-typeset .sj-verify {
+  border: 1px solid color-mix(in srgb, var(--tide) 35%, var(--line));
+  border-radius: 12px;
+  background: var(--white);
+  padding: 0.7rem 0.9rem;
+  margin: 1.4rem 0;
+  color: var(--harbor);
+}
+.md-typeset .sj-verify > p:first-child strong {
+  color: var(--tide);
+}
+.md-typeset .sj-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.8rem;
+}
+.md-typeset .sj-cards > p {
+  margin: 0;
+  padding: 0.8rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.sj-pn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-top: 2.2rem;
+}
+.sj-pn a {
+  display: block;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+}
+.sj-pn small {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sj-pn span {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  color: var(--harbor);
+}
+.sj-pn__next {
+  text-align: right;
+}
+.md-typeset .sj-upd {
+  margin-top: 1rem;
+  font-size: 0.64rem;
+  color: var(--muted);
+}
+@media (max-width: 560px) {
+  .sj-pn {
+    grid-template-columns: 1fr;
+  }
+}

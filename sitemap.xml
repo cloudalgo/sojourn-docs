@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://sojourn.cloudalgo.com/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/compare/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/changelog/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/cookbook/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/install/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/permission-sets/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Case/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Goal__c/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Interval_Archive__b/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Interval_Summary__c/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Interval__c/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Lead/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Opportunity/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Purge_Run__c/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Queue_Business_Hours__c/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Sojourn_Settings__c/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Tracked_Field__c/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Tracked_Object__c/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Tracking_Error__c/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/permission-sets/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/pricing/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/security/</loc></url>
+</urlset>
