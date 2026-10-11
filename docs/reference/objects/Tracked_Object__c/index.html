@@ -304,6 +304,8 @@
       
         
       
+        
+      
     
     
     
@@ -401,6 +403,34 @@
     
   
     Assign permission sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/track-an-object/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Track an object
   
 
     
@@ -753,6 +783,18 @@
 <td><code>Object_API_Name__c</code></td>
 <td>Text (255)</td>
 <td>API name of the tracked object, the key the capture engine matches on.<br><em>Help text:</em> API name of the tracked object, for example Case or Work_Order__c.</td>
+</tr>
+<tr>
+<td>Pause Capture</td>
+<td><code>Pause_Capture__c</code></td>
+<td>Checkbox</td>
+<td>Pauses live capture for this object during a bulk import; catch-up replays the changes afterwards.<br><em>Help text:</em> Turn on before a bulk import. Live capture skips this object until you turn it off; then run Catch up.</td>
+</tr>
+<tr>
+<td>Paused Since</td>
+<td><code>Paused_Since__c</code></td>
+<td>DateTime</td>
+<td>Start of the pause window that catch-up replays.<br><em>Help text:</em> Set when capture is paused. Catch up replays records changed since this time, then clears it.</td>
 </tr>
 <tr>
 <td>Record Type Filter</td>
