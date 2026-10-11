@@ -233,17 +233,74 @@ body[data-md-color-scheme="default"] {
 .md-typeset .sj-verify > p:first-child strong {
   color: var(--tide);
 }
-.md-typeset .sj-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: 0.8rem;
+/* Docs start page: the three guide steps, the ruled bar, and the other sections. */
+.md-typeset .sj-steps ol {
+  margin-left: 1.4em;
 }
-.md-typeset .sj-cards > p {
-  margin: 0;
-  padding: 0.8rem;
+.md-typeset .sj-steps li {
+  margin-bottom: 0.7rem;
+  color: var(--slate);
+}
+.md-typeset .sj-steps li > a {
+  font-weight: 600;
+}
+.md-typeset .sj-steps .pill {
+  margin-left: 0.35rem;
+  vertical-align: 0.08em;
+}
+.md-typeset .sj-new {
+  padding: 0.9rem 1rem 1rem;
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 12px;
+}
+.md-typeset .sj-new > p:first-child {
+  margin-top: 0;
+  color: var(--harbor);
+}
+.md-typeset .sj-bar {
+  margin: 0.8rem 0;
+}
+/* Below about 560px the picture keeps a readable size and scrolls inside its frame. */
+.md-typeset .sj-bar__scroll {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+.md-typeset .sj-bar img {
+  display: block;
+  width: 100%;
+  min-width: 540px;
+  max-width: 720px;
+  height: auto;
+}
+.md-typeset .sj-bar figcaption {
+  max-width: none;
+  margin: 0.4rem 0 0;
+  font-size: 0.64rem;
+  font-style: normal;
+  text-align: left;
+  color: var(--muted);
+}
+.md-typeset .sj-new__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+.md-typeset .sj-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0.6rem;
+  font-size: 0.68rem;
+}
+.md-typeset .sj-cards > p {
+  margin: 0;
+  padding: 0.6rem 0.7rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--slate);
 }
 .sj-pn {
   display: grid;

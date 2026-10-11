@@ -80,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#start-here" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -731,6 +736,47 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#start-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start here: three steps, about 25 minutes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New here?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Also in these docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
           <aside class="sj-ea" aria-label="Early access">
             <div class="lbl">Evaluating Sojourn?</div>
@@ -754,8 +800,27 @@
   <p class="sj-summary">Install Sojourn, give people access, and report on where the time went.</p>
   
   <p>Sojourn is in development. These pages cover what is in the package today and grow with every sprint.</p>
+<!-- The minutes and the step lines come from each guide page's front matter (scripts/start_page.py). -->
+
+<h2 id="start-here">Start here: three steps, about 25 minutes<a class="headerlink" href="#start-here" title="Permanent link">#</a></h2>
+<div class="sj-steps">
+<ol>
+<li><a href="guide/install/">Install Sojourn</a> <span class="pill closed">About 10 minutes</span><br>Install the package in a sandbox or production org and open the Sojourn app.</li>
+<li><a href="guide/permission-sets/">Assign permission sets</a> <span class="pill closed">About 5 minutes</span><br>Give admins, managers, and everyone else the access Sojourn needs.</li>
+<li><a href="guide/track-an-object/">Track an object</a> <span class="pill closed">About 10 minutes</span><br>Choose an object and its fields so Sojourn records how long each record spends in each value and with each owner.</li>
+</ol>
+</div>
+<h2 id="new-here">New here?<a class="headerlink" href="#new-here" title="Permanent link">#</a></h2>
+<div class="sj-new">
+<p>Sojourn records how long every record spends in each status and with each owner, in business hours, as plain rows you can report on. Each Tracked field gets its own lane.</p>
+<figure class="sj-bar">
+<div aria-label="Ruled bar picture" class="sj-bar__scroll" role="region" tabindex="0"><img src="/assets/ruled-bar.svg" width="720" height="190" alt="Sample Case 00012345 in business hours, one lane per Tracked field, one tick per business hour. Status: New 2.0 h; Working 6.0 h; Waiting on customer 34.0 h, past its 16.0 h goal for the last 18.0 h; Working 5.5 h, open now. Owner: Tier 1 queue 2.0 h; Priya N. 6.0 h; Tier 2 queue 34.0 h; Anita R. 5.5 h, open now. Priority: Medium 40.0 h; High 7.5 h, open now."></div>
+<figcaption>Sample data. The Coral part of the Status lane is time past the Goal.</figcaption>
+</figure>
+<p class="sj-new__links"><a href="/">See what Sojourn does</a><a href="/pricing/">Pricing</a></p>
+</div>
+<h2 id="also">Also in these docs<a class="headerlink" href="#also" title="Permanent link">#</a></h2>
 <div class="sj-cards">
-<p><a href="guide/install/"><strong>Guide</strong></a><br>Install the package and give people access.</p>
 <p><a href="cookbook/"><strong>Report cookbook</strong></a><br>Group and filter intervals so the numbers mean what you think.</p>
 <p><a href="reference/"><strong>Reference</strong></a><br>Every object, field, and permission set, generated from the package.</p>
 <p><a href="changelog/"><strong>Changelog</strong></a><br>What changed in each sprint and package version.</p>
@@ -832,7 +897,8 @@
       <div>
         <h5>Product</h5>
         <a href="/">Overview</a><a href="/compare/">Compare</a
-        ><a href="/security/">Security</a><a href="/pricing/">Pricing</a>
+        ><a href="/security/">Security</a><a href="/pricing/">Pricing</a
+        ><a href="/guides/time-in-status/">Time in status guide</a>
       </div>
       <div>
         <h5>Docs</h5>
