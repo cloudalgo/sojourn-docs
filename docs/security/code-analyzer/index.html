@@ -1,0 +1,1224 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How to install, configure, and report with Sojourn, the lifecycle tracker for Salesforce by CloudAlgo.">
+      
+      
+      
+        <link rel="canonical" href="https://sojourn.cloudalgo.com/docs/security/code-analyzer/">
+      
+      
+        <link rel="prev" href="../../reference/permission-sets/">
+      
+      
+        <link rel="next" href="../../changelog/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+  
+    <title>Code Analyzer results - Sojourn documentation</title>
+  
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <link rel="icon" href="/assets/theme/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/theme/fonts/figtree-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/theme/tokens.css">
+  <link rel="stylesheet" href="/assets/theme/base.css">
+  <link rel="stylesheet" href="/assets/theme/docs.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Sojourn">
+  <meta property="og:title" content="Code Analyzer results · Sojourn documentation">
+  <meta property="og:description" content="What Salesforce Code Analyzer reports on the Sojourn package, and every finding accepted with its reason.">
+  <meta property="og:image" content="https://sojourn.cloudalgo.com/assets/theme/images/card-docs.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rule-based-findings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  <div class="sj-docs">
+    <header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Sojourn home">
+      <img src="/assets/theme/images/mark.svg" width="34" height="34" alt="" />
+      <span
+        ><span class="word">Sojourn</span
+        ><span class="by">by CloudAlgo</span></span
+      >
+    </a>
+    <a
+      class="btn primary sm cta cta-m"
+      href="https://cloudalgo.com/contact/"
+      target="_blank"
+      rel="noopener"
+      ><span class="cta-long">Request early access</span
+      ><span class="cta-short">Early access</span></a
+    >
+    <nav class="nav" aria-label="Main">
+      <a href="/" data-nav="home">Product</a>
+      <a href="/compare/" data-nav="compare">Compare</a>
+      <a href="/security/" data-nav="security">Security</a>
+      <a href="/pricing/" data-nav="pricing">Pricing</a>
+      <a href="/docs/" data-nav="docs">Docs</a>
+    </nav>
+    <a
+      class="btn primary sm cta cta-d"
+      href="https://cloudalgo.com/contact/"
+      target="_blank"
+      rel="noopener"
+      >Request early access</a
+    >
+  </div>
+</header>
+    
+      
+      <div class="status" role="status">
+        <div class="wrap">
+          <span class="lane3" aria-hidden="true" style="--sprints:9"><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="st-long">Release 1 in development, 3 of 9 sprints done. Early access is open.</span>
+          <span class="st-short">3 of 9 sprints done · Early access open</span>
+          <a href="https://cloudalgo.com/contact/" target="_blank" rel="noopener">Join early access</a>
+        </div>
+      </div>
+    
+  </div>
+  <header class="md-header sj-dtabs" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="Header">
+      <label class="md-header__button md-icon" for="__drawer">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      </label>
+      <div class="md-header__title" data-md-component="header-title" hidden>
+        <div class="md-header__ellipsis">
+          <div class="md-header__topic"><span class="md-ellipsis">Sojourn documentation</span></div>
+          <div class="md-header__topic" data-md-component="header-topic"><span class="md-ellipsis">Code Analyzer results</span></div>
+        </div>
+      </div>
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cookbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Report cookbook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    </nav>
+  </header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sojourn documentation" class="md-nav__button md-logo" aria-label="Sojourn documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sojourn documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Sojourn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/permission-sets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assign permission sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/track-an-object/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Track an object
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cookbook/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report cookbook
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report cookbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/permission-sets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permission sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Analyzer results
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Analyzer results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rule-based-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule-based findings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-engine-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph Engine findings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accepted-with-a-reason" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accepted with a reason
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accepted with a reason">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-turned-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules turned off
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suppressed-in-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suppressed in code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+        </div>
+      </div>
+    </div>
+  
+  
+    
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rule-based-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule-based findings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-engine-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph Engine findings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accepted-with-a-reason" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accepted with a reason
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accepted with a reason">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-turned-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules turned off
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suppressed-in-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suppressed in code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+          <aside class="sj-ea" aria-label="Early access">
+            <div class="lbl">Evaluating Sojourn?</div>
+            <p>Early access is open for Salesforce teams.</p>
+            <a class="btn primary sm" href="https://cloudalgo.com/contact/" target="_blank" rel="noopener">Request early access</a>
+          </aside>
+        </div>
+      </div>
+    </div>
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  <div class="sj-crumb">Reference</div>
+  <h1>Code Analyzer results</h1>
+  <p class="sj-summary">What Salesforce Code Analyzer reports on the Sojourn package, and every finding accepted with its reason.</p>
+  
+  <p>The Code Analyzer workflow scans the package directories <code>sojourn/</code> and <code>sojourn-omni/</code> on every pull request, every push to <code>main</code>, and every week. It runs the AppExchange and Recommended rule selectors, which include every rule in the command the AppExchange security review prescribes, and Salesforce Graph Engine, which follows data from each entry point through the Apex classes to find missing access checks. This page is generated from those scans, and the workflow fails when the page and the scans disagree.</p>
+<p>Engines: code-analyzer 0.53.0, cpd 0.46.0, pmd 0.46.0, regex 0.40.0, sfge 0.25.0.</p>
+<h2 id="rule-based-findings">Rule-based findings<a class="headerlink" href="#rule-based-findings" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Findings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Critical</td>
+<td>0</td>
+</tr>
+<tr>
+<td>High</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Moderate</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Info</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Total: 0.</p>
+<p>No findings at any severity.</p>
+<h2 id="graph-engine-findings">Graph Engine findings<a class="headerlink" href="#graph-engine-findings" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Findings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Critical</td>
+<td>0</td>
+</tr>
+<tr>
+<td>High</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Moderate</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Info</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Total: 0.</p>
+<p>No findings at any severity.</p>
+<h2 id="accepted-with-a-reason">Accepted with a reason<a class="headerlink" href="#accepted-with-a-reason" title="Permanent link">#</a></h2>
+<h3 id="rules-turned-off">Rules turned off<a class="headerlink" href="#rules-turned-off" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Engine</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApexDoc</td>
+<td>pmd</td>
+<td>Accepted (D-308): the documentation standard is a one-line purpose comment on every class and on every non-obvious member; full ApexDoc blocks with @param and @return on every member only restate signatures.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="suppressed-in-code">Suppressed in code<a class="headerlink" href="#suppressed-in-code" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Classes</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
+<td><code>ApplicationFactoriesTest</code>, <code>BusinessHoursCalcTest</code>, <code>CaptureEngineBulkTest</code>, <code>CaptureEngineSecurityTest</code>, <code>ChangeCaptureTest</code>, <code>ChangeDetectorTest</code>, <code>ConfigCacheTest</code>, <code>ErrorLoggerTest</code>, <code>GoalStamperTest</code>, <code>IntervalsTest</code>, <code>LimitGuardTest</code>, <code>LookupResolverTest</code>, <code>PermissionModelTest</code>, <code>RecordNamesSelectorTest</code>, <code>SObjectSelectorTest</code>, <code>SchemaTest</code>, <code>SelectorsTest</code>, <code>SnapshotCopierTest</code>, <code>SojournSettingsTest</code>, <code>SupportUtilitiesTest</code>, <code>TestDataFactoryTest</code>, <code>TrackedFieldsTest</code>, <code>TrackedRecordsTest</code>, <code>TriggerHandlerTest</code>, <code>UnitOfWorkTest</code></td>
+<td>Methods without System.runAs test behaviour as the test user; access denial is proven with System.runAs in the security tests.</td>
+</tr>
+<tr>
+<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
+<td><code>ChangeCaptureServiceTest</code></td>
+<td>Total complexity is the sum of independent one-scenario tests; no method exceeds 2. Methods without System.runAs test behaviour as the test user; access denial is proven with System.runAs in the security tests. Queries the second save in changeEveryReference spent.</td>
+</tr>
+<tr>
+<td>PMD.AvoidDebugStatements</td>
+<td><code>ErrorLogger</code></td>
+<td>The debug log is the only channel left when an error row itself cannot be written.</td>
+</tr>
+<tr>
+<td>PMD.AvoidGlobalModifier</td>
+<td><code>ChangeCapture</code></td>
+<td>The invocable must be global so subscriber Flows can call it; CLAUDE.md rule 10 names it as one of two global types.</td>
+</tr>
+<tr>
+<td>PMD.CognitiveComplexity</td>
+<td><code>UnitOfWork</code></td>
+<td>three small DML strategy classes and per-type accessors live here on purpose so callers write UnitOfWork.UserModeDml</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>ChangeCaptureServiceTest</code></td>
+<td>Total complexity is the sum of independent one-scenario tests; no method exceeds 2. Methods without System.runAs test behaviour as the test user; access denial is proven with System.runAs in the security tests. Queries the second save in changeEveryReference spent.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>UnitOfWork</code></td>
+<td>three small DML strategy classes and per-type accessors live here on purpose so callers write UnitOfWork.UserModeDml</td>
+</tr>
+<tr>
+<td>PMD.EmptyStatementBlock</td>
+<td><code>SObjectDomain</code></td>
+<td>The trigger-event hooks are empty virtual methods on purpose; each domain overrides only the events it handles.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
+<td><code>Intervals</code></td>
+<td>Each argument is a distinct fact of the new interval; a holder type would only rename them.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
+<td><code>BusinessHoursCalc</code></td>
+<td>The four inputs are the four independent sources in the documented resolution order.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
+<td><code>TriggerHandler</code></td>
+<td>mirrors the five Trigger context values on purpose</td>
+</tr>
+<tr>
+<td>PMD.FieldNamingConventions</td>
+<td><code>Application</code></td>
+<td>The registry fields are nouns by design (Application.Service, Application.Selector); see the architecture standard.</td>
+</tr>
+<tr>
+<td>PMD.OperationWithLimitsInLoop</td>
+<td><code>RecordNamesSelector</code></td>
+<td>One query per referenced object type (in practice User and Group), never per record.</td>
+</tr>
+<tr>
+<td>PMD.OperationWithLimitsInLoop</td>
+<td><code>TestDataFactory</code></td>
+<td>The loop exists to spend DML statements; tests use it to prove the limit guards.</td>
+</tr>
+<tr>
+<td>PMD.OperationWithLimitsInLoop</td>
+<td><code>TestDataFactory</code></td>
+<td>The loop exists to spend queries; tests use it to prove the limit guards.</td>
+</tr>
+</tbody>
+</table>
+  
+    <nav class="sj-pn" aria-label="Previous and next">
+      <a href="../../reference/permission-sets/"><small>Previous</small><span>Permission sets</span></a>
+      <a class="sj-pn__next" href="../../changelog/"><small>Next</small><span>Changelog</span></a>
+    </nav>
+  
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      <footer class="site">
+  <div class="wrap">
+    <div class="help help-mkt">
+      <div>
+        <h3>Need a hand with setup?</h3>
+        <p>
+          CloudAlgo can install and configure Sojourn and build the reports your
+          leadership asks for.
+        </p>
+      </div>
+      <a
+        class="btn primary"
+        href="https://cloudalgo.com/contact/"
+        target="_blank"
+        rel="noopener"
+        >Contact us
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4z"
+          /></svg
+      ></a>
+    </div>
+    <div class="help help-docs">
+      <div>
+        <h3>Stuck on a step?</h3>
+        <p>Ask the people building Sojourn. We read every message.</p>
+      </div>
+      <a
+        class="btn primary"
+        href="https://cloudalgo.com/contact/"
+        target="_blank"
+        rel="noopener"
+        >Ask a question
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4z"
+          /></svg
+      ></a>
+    </div>
+    <div class="fcols">
+      <div>
+        <span class="wm">Sojourn</span>
+        <div class="fby">A product by CloudAlgo</div>
+        <p>Where the time went.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <a href="/">Overview</a><a href="/compare/">Compare</a
+        ><a href="/security/">Security</a><a href="/pricing/">Pricing</a>
+      </div>
+      <div>
+        <h5>Docs</h5>
+        <a href="/docs/">Guide</a><a href="/docs/cookbook/">Report cookbook</a
+        ><a href="/docs/reference/">Reference</a
+        ><a href="/docs/changelog/">Changelog</a>
+      </div>
+      <div>
+        <h5>CloudAlgo</h5>
+        <a href="https://cloudalgo.com/" target="_blank" rel="noopener"
+          >cloudalgo.com</a
+        ><a href="https://cloudalgo.com/contact/" target="_blank" rel="noopener"
+          >Contact</a
+        >
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 CloudAlgo</span
+      ><span
+        >Salesforce, AppExchange, and Experience Cloud are trademarks of
+        Salesforce, Inc.</span
+      >
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
