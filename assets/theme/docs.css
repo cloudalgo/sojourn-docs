@@ -133,6 +133,10 @@ body[data-md-color-scheme="default"] {
 .sj-ea .btn.primary:hover {
   color: var(--fog);
 }
+.sj-ea p.sj-reply {
+  margin: 10px 0 0;
+  font-size: 12.8px;
+}
 
 /* Navigation */
 .md-nav__title,
