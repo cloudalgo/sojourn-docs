@@ -111,6 +111,29 @@ body[data-md-color-scheme="default"] {
   top: 2.6rem;
 }
 
+/* Early access card in the right rail, after the table of contents. */
+.sj-ea {
+  margin: 1.2rem 0.6rem 0.6rem;
+  padding: 14px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-family: var(--text);
+}
+.sj-ea .lbl {
+  font-size: 11px;
+}
+.sj-ea p {
+  margin: 6px 0 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--slate);
+}
+.sj-ea .btn.primary,
+.sj-ea .btn.primary:hover {
+  color: var(--fog);
+}
+
 /* Navigation */
 .md-nav__title,
 .md-nav--primary .md-nav__item--section > .md-nav__link {

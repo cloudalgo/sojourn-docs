@@ -53,6 +53,7 @@ em.lan {
   line-height: 1;
 }
 .brand .by {
+  display: block;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -90,6 +91,12 @@ em.lan {
 .top .cta {
   margin-left: auto;
   flex: none;
+}
+/* The header has two copies of the call to action so tab order follows the visual order:
+   after the nav on desktop, before the nav (on the brand row) on phones. */
+.top .cta-m,
+.top .cta .cta-short {
+  display: none;
 }
 
 /* Buttons */
@@ -219,6 +226,13 @@ em.lan {
 }
 .status a {
   font-weight: 600;
+  color: var(--tide);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.status .st-short {
+  display: none;
 }
 
 /* Footer */
@@ -241,6 +255,15 @@ footer.site {
 .help p {
   font-size: 15px;
   margin-top: 6px;
+}
+/* Two help variants: marketing pages set body[data-section]; MkDocs pages do not. */
+.help.help-docs,
+body:not([data-section]) .help.help-mkt,
+body[data-section="home"] footer.site .help {
+  display: none;
+}
+body:not([data-section]) .help.help-docs {
+  display: flex;
 }
 .fcols {
   display: grid;
@@ -427,15 +450,49 @@ body[data-section="pricing"] .nav [data-nav="pricing"]::after,
   .fcols {
     grid-template-columns: 1fr 1fr;
   }
-  .top .cta {
+  /* Two rows: brand and call to action, then the nav, full width and scrollable. */
+  .top .wrap {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 0 16px;
+  }
+  .top .cta-d {
     display: none;
+  }
+  .top .cta-m {
+    display: inline-flex;
+  }
+  .brand {
+    height: 56px;
+  }
+  /* The scroll container clips vertically, so its padding leaves room for the focus ring
+     (3px outline, 2px offset); the negative top margin keeps the row height. */
+  .top .nav {
+    flex: 1 0 100%;
+    margin: -6px calc(-1 * clamp(16px, 4vw, 40px)) 0;
+    padding: 6px clamp(16px, 4vw, 40px) 8px;
+  }
+  .top .nav a {
+    padding: 6px 10px;
+  }
+  .top .wrap .nav a[data-nav]::after {
+    left: 10px;
+    bottom: -5px;
   }
 }
 @media (max-width: 560px) {
   .top .wrap {
-    gap: 12px;
+    column-gap: 12px;
   }
   .brand .by {
     display: none;
+  }
+  .top .cta .cta-long,
+  .status .st-long {
+    display: none;
+  }
+  .top .cta .cta-short,
+  .status .st-short {
+    display: inline;
   }
 }

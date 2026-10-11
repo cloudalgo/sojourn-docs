@@ -93,15 +93,24 @@
     </div>
     
     
-  <div class="sj-docs"><header class="top">
+  <div class="sj-docs">
+    <header class="top">
   <div class="wrap">
     <a class="brand" href="/" aria-label="Sojourn home">
       <img src="/assets/theme/images/mark.svg" width="34" height="34" alt="" />
       <span
         ><span class="word">Sojourn</span
-        ><span class="by" style="display: block">by CloudAlgo</span></span
+        ><span class="by">by CloudAlgo</span></span
       >
     </a>
+    <a
+      class="btn primary sm cta cta-m"
+      href="https://cloudalgo.com/contact/"
+      target="_blank"
+      rel="noopener"
+      ><span class="cta-long">Request early access</span
+      ><span class="cta-short">Early access</span></a
+    >
     <nav class="nav" aria-label="Main">
       <a href="/" data-nav="home">Product</a>
       <a href="/compare/" data-nav="compare">Compare</a>
@@ -110,14 +119,26 @@
       <a href="/docs/" data-nav="docs">Docs</a>
     </nav>
     <a
-      class="btn primary sm cta"
+      class="btn primary sm cta cta-d"
       href="https://cloudalgo.com/contact/"
       target="_blank"
       rel="noopener"
       >Request early access</a
     >
   </div>
-</header></div>
+</header>
+    
+      
+      <div class="status" role="status">
+        <div class="wrap">
+          <span class="lane3" aria-hidden="true" style="--sprints:9"><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="st-long">Release 1 in development, 3 of 9 sprints done. Early access is open.</span>
+          <span class="st-short">3 of 9 sprints done · Early access open</span>
+          <a href="https://cloudalgo.com/contact/" target="_blank" rel="noopener">Join early access</a>
+        </div>
+      </div>
+    
+  </div>
   <header class="md-header sj-dtabs" data-md-component="header">
     <nav class="md-header__inner md-grid" aria-label="Header">
       <label class="md-header__button md-icon" for="__drawer">
@@ -274,12 +295,12 @@
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
+  
+    
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          
 
 
   
@@ -769,16 +790,16 @@
     
   </ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
+        </div>
+      </div>
+    </div>
+  
+  
+    
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          
 
   
 
@@ -851,11 +872,16 @@
     </ul>
   
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
+          <aside class="sj-ea" aria-label="Early access">
+            <div class="lbl">Evaluating Sojourn?</div>
+            <p>Early access is open for Salesforce teams.</p>
+            <a class="btn primary sm" href="https://cloudalgo.com/contact/" target="_blank" rel="noopener">Request early access</a>
+          </aside>
+        </div>
+      </div>
+    </div>
+  
+
           
             <div class="md-content" data-md-component="content">
               
@@ -869,20 +895,20 @@
     <div class="sj-meta">
       <span class="pill closed">Salesforce admin</span>
       <span class="pill closed">About 10 minutes</span>
-      <span class="pill open">Since 1.0</span>
+      <span class="pill open">Since release 1</span>
     </div>
   
-  <p>The setup screens arrive in sprint 3. Until then, you set up tracking from the Tracked Objects tab in the Sojourn app.</p>
+  <p>The setup screens arrive later in release 1. Until then, you set up tracking from the Tracked Objects tab in the Sojourn app.</p>
 <h2 id="choose-the-object-and-fields">Choose the object and fields<a class="headerlink" href="#choose-the-object-and-fields" title="Permanent link">#</a></h2>
 <ol>
 <li>Create a Tracked object. Set Object API Name (for example <code>Case</code>) and select Active.</li>
 <li>Add a Tracked field for each field whose time in each value you want: Field API Name (for example <code>Status</code>) and Field Type (<code>Picklist</code>, <code>Lookup</code>, <code>Text</code>, <code>Checkbox</code>, or <code>Date</code>).</li>
-<li>To measure time with each owner, add a Tracked field with Field API Name <code>OwnerId</code> and Field Type <code>Owner</code>. From sprint 3, saving a Tracked object with Track Owner selected adds this row for you.</li>
+<li>To measure time with each owner, add a Tracked field with Field API Name <code>OwnerId</code> and Field Type <code>Owner</code>. Later in release 1, saving a Tracked object with Track Owner selected adds this row for you.</li>
 </ol>
 <h2 id="how-changes-are-captured">How changes are captured<a class="headerlink" href="#how-changes-are-captured" title="Permanent link">#</a></h2>
 <ul>
 <li><strong>Case, Lead, and Opportunity</strong> are captured by triggers that ship in the package. Once their Tracked object is active, every save that changes a Tracked field closes the open Interval and opens the next.</li>
-<li><strong>Any other object, standard or custom</strong>, is captured from a record-triggered Flow that you own. Add the action <strong>Sojourn: Capture Change</strong> to an after-save Flow on the object, run it on create and update, and pass <code>{!$Record}</code> as Record and <code>{!$Record__Prior}</code> as Prior record. If an update Flow leaves Prior record empty, Sojourn compares the record with its open Intervals and times the change now. A ready-made Flow template ships in sprint 3.</li>
+<li><strong>Any other object, standard or custom</strong>, is captured from a record-triggered Flow that you own. Add the action <strong>Sojourn: Capture Change</strong> to an after-save Flow on the object, run it on create and update, and pass <code>{!$Record}</code> as Record and <code>{!$Record__Prior}</code> as Prior record. If an update Flow leaves Prior record empty, Sojourn compares the record with its open Intervals and times the change now. A ready-made Flow template arrives later in release 1.</li>
 <li>If both a trigger and a Flow capture the same change in one save, Sojourn records it once.</li>
 <li>Each Interval records how the change arrived in its Source field: Trigger, Flow, or Catch-Up.</li>
 </ul>
@@ -901,7 +927,7 @@
 </ol>
 <p>If none applies, or the chosen business hours no longer exist, the Interval gets calendar minutes as business minutes, and a Tracking error of type BusinessHours tells you which setting to fix.</p>
 <h2 id="pause-capture-during-a-bulk-import">Pause capture during a bulk import<a class="headerlink" href="#pause-capture-during-a-bulk-import" title="Permanent link">#</a></h2>
-<p>Select Pause Capture on the Tracked object before a large import or update, and clear it afterwards. Set Paused Since to the time the pause started; the setup screen's toggle in sprint 3 fills it for you. While paused, triggers and Flows skip the object, so the import runs without Sojourn's work. The catch-up job that replays the records changed during the pause arrives in sprint 4.</p>
+<p>Select Pause Capture on the Tracked object before a large import or update, and clear it afterwards. Set Paused Since to the time the pause started; the setup screen's toggle, later in release 1, fills it for you. While paused, triggers and Flows skip the object, so the import runs without Sojourn's work. The catch-up job that replays the records changed during the pause arrives later in release 1.</p>
 <h2 id="tracking-errors">Tracking errors<a class="headerlink" href="#tracking-errors" title="Permanent link">#</a></h2>
 <p>Sojourn never fails your users' saves. If it cannot record a change, it writes a Tracking error instead, visible to Sojourn admins on the Tracking Errors tab. Error Type tells you what happened:</p>
 <ul>
@@ -911,7 +937,7 @@
 <li><strong>BusinessHours</strong>: no usable business hours applied, so calendar minutes were recorded.</li>
 <li><strong>Unknown</strong>: anything else; the stack trace is kept for support.</li>
 </ul>
-<p>Each row keeps the record, field, and values, so the repair action in sprint 4 can replay it. To stop all capture at once, clear Tracking Enabled in Sojourn Settings (Setup, Custom Settings).</p>
+<p>Each row keeps the record, field, and values, so the repair action, later in release 1, can replay it. To stop all capture at once, clear Tracking Enabled in Sojourn Settings (Setup, Custom Settings).</p>
 <div class="sj-verify">
 <p><strong>You are done when</strong> you change a Tracked field on a record and a new open Interval appears for it, with the previous one closed.</p>
 </div>
@@ -922,7 +948,7 @@
     </nav>
   
   
-    <p class="sj-upd"><span class="pill closed">Updated in 1.0</span> This page changes in the same pull request as the feature it describes.</p>
+    <p class="sj-upd"><span class="pill closed">Updated in release 1</span> This page changes in the same pull request as the feature it describes.</p>
   
 
               </article>
@@ -941,7 +967,7 @@
       </main>
       <footer class="site">
   <div class="wrap">
-    <div class="help">
+    <div class="help help-mkt">
       <div>
         <h3>Need a hand with setup?</h3>
         <p>
@@ -955,6 +981,24 @@
         target="_blank"
         rel="noopener"
         >Contact us
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4z"
+          /></svg
+      ></a>
+    </div>
+    <div class="help help-docs">
+      <div>
+        <h3>Stuck on a step?</h3>
+        <p>Ask the people building Sojourn. We read every message.</p>
+      </div>
+      <a
+        class="btn primary"
+        href="https://cloudalgo.com/contact/"
+        target="_blank"
+        rel="noopener"
+        >Ask a question
         <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
           <path
             fill="currentColor"
