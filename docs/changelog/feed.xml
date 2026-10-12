@@ -11,6 +11,23 @@
     <uri>https://sojourn.cloudalgo.com/</uri>
   </author>
   <entry>
+    <title>Sprint 4: jobs and the Health Monitor (12 October 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-4-jobs-and-the-health-monitor-12-october-2026</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-4-jobs-and-the-health-monitor-12-october-2026" />
+    <updated>2026-10-12T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Backfill&lt;/strong&gt; from an object's screen: History builds past Intervals from field history, Seed starts each record from its current values, and Fresh starts with the next change. The card shows Queued, Running, Complete, or Failed with what was done.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Catch up&lt;/strong&gt; after a pause: the records changed while capture was paused get their Intervals at the time they changed, and running it again is safe.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Live values&lt;/strong&gt;: minutes to date and breach flags on open Intervals, and the minute fields on each record, every 10, 15, 20, 30, or 60 minutes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reconcile&lt;/strong&gt; each night: flags Intervals of deleted or merged records, repairs drift from the record's current values, and retries Limit and DML errors.&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;Jobs&lt;/strong&gt; card on the Sojourn Settings overview to turn Live values and Reconcile on, change their schedule, and see the last and next run.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;Health Monitor&lt;/strong&gt; tab: overall health, capture checks, job runs, error counts, and an error list with &lt;strong&gt;Create Interval&lt;/strong&gt;, &lt;strong&gt;Ignore&lt;/strong&gt;, and &lt;strong&gt;Mark resolved&lt;/strong&gt;, each error with what happened, why, and how to fix it.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;Sojourn Health Monitor&lt;/strong&gt; permission set, so a support or operations group can fix errors without Sojourn Settings.&lt;/li&gt;
+&lt;li&gt;Tracking errors are now the &lt;strong&gt;Error Log&lt;/strong&gt;, with a &lt;strong&gt;Create Interval&lt;/strong&gt; action on each record.&lt;/li&gt;
+&lt;li&gt;The Sojourn Settings screens match the approved designs, and the Tracked objects list shows each object's Tracked fields, Track owner, and where its business hours come from.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
     <title>Sprint 3: Flow template and Sojourn Settings (12 October 2026)</title>
     <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-3-flow-template-and-sojourn-settings-12-october-2026</id>
     <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-3-flow-template-and-sojourn-settings-12-october-2026" />
