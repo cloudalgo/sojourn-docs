@@ -1,0 +1,1 @@
+function e(e,t=`early-access`,n=[]){if(!e)throw Error(`contactUrl needs a placement`);let r=n.filter(([,e])=>e!=null&&e!==``);return`https://cloudalgo.com/contact/?${[[`product`,`sojourn`],[`intent`,t],...r,[`utm_source`,`sojourn-site`],[`utm_medium`,`cta`],[`utm_content`,e]].map(([e,t])=>`${encodeURIComponent(e)}=${encodeURIComponent(t)}`).join(`&`)}`}export{e as t};

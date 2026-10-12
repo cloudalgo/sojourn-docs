@@ -341,3 +341,102 @@ body[data-md-color-scheme="default"] {
     grid-template-columns: 1fr;
   }
 }
+
+/* One header row below 900px (site audit G-U2). The shared header carries the menu
+   and search buttons and stays in view; Material's own row folds to zero height but
+   keeps its search panel, which opens from the fixed .md-search__inner over the page.
+   The site links move from the header into the drawer. Above 900px nothing changes. */
+.sj-tool,
+.sj-drawer-site {
+  display: none;
+}
+@media (max-width: 900px) {
+  /* The wrapper steps out of layout so the header can stick to the page, not to it. */
+  .sj-docs {
+    display: contents;
+  }
+  /* Level with Material's header, so its drawer, overlay, and search panel cover it. */
+  .sj-docs .top {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+  }
+  .sj-docs .top .wrap {
+    flex-wrap: nowrap;
+    column-gap: 4px;
+  }
+  .sj-docs .top .nav {
+    display: none;
+  }
+  .sj-docs .brand {
+    margin-left: 4px;
+  }
+  .sj-docs .sj-tool {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    color: var(--harbor);
+    cursor: pointer;
+  }
+  .sj-docs .sj-tool:first-child {
+    margin-left: -10px;
+  }
+  .sj-docs .sj-tool:hover {
+    background: color-mix(in srgb, var(--harbor) 6%, transparent);
+  }
+  .sj-docs .sj-tool--search {
+    margin-left: auto;
+  }
+  .sj-docs .top .cta-m {
+    margin-left: 4px;
+  }
+  .md-header.sj-dtabs {
+    height: 0;
+    border-bottom: 0;
+  }
+  .sj-dtabs .md-header__inner {
+    height: 0;
+    padding: 0;
+  }
+  .sj-dtabs .md-header__inner > .md-header__button {
+    display: none;
+  }
+  /* The drawer opens over the whole screen, header included, as in stock Material. */
+  .md-sidebar--primary {
+    top: 0;
+  }
+  .sj-drawer-site {
+    display: block;
+    padding: 0.6rem 0.8rem 1.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--text);
+  }
+  .sj-drawer-site .lbl {
+    margin-bottom: 0.2rem;
+    font-size: 0.575rem;
+    color: var(--muted);
+  }
+  .sj-drawer-site ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .sj-drawer-site a {
+    display: block;
+    padding: 0.45rem 0;
+    font-size: 0.7rem;
+    color: var(--slate);
+  }
+  .sj-drawer-site a:hover {
+    color: var(--tide);
+  }
+}
+@media (max-width: 374px) {
+  .sj-docs .brand .word {
+    font-size: 23px;
+  }
+}

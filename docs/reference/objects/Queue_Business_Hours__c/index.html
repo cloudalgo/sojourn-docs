@@ -84,10 +84,10 @@
       
     </div>
     
-    
-  <div class="sj-docs">
+    <div class="sj-docs">
     <header class="top">
   <div class="wrap">
+    <label class="sj-tool" for="__drawer" tabindex="0" role="button" aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></label>
     <a class="brand" href="/" aria-label="Sojourn home">
       <img src="/assets/theme/images/mark.svg" width="34" height="34" alt="" />
       <span
@@ -95,6 +95,7 @@
         ><span class="by">by CloudAlgo</span></span
       >
     </a>
+    <label class="sj-tool sj-tool--search" for="__search" tabindex="0" role="button" aria-label="Search" aria-expanded="false"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9.5 3a6.5 6.5 0 0 1 5.16 10.45l5.7 5.69-1.42 1.42-5.69-5.7A6.5 6.5 0 1 1 9.5 3m0 2a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9"/></svg></label>
     <a
       class="btn primary sm cta cta-m"
       href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=header-mobile"
@@ -290,7 +291,6 @@
     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
       <div class="md-sidebar__scrollwrap">
         <div class="md-sidebar__inner">
-          
 
 
   
@@ -704,7 +704,15 @@
 
     
   </ul>
-</nav>
+<div class="sj-drawer-site">
+              <div class="lbl" id="sj-drawer-site">Sojourn</div>
+              <ul aria-labelledby="sj-drawer-site">
+                <li><a href="/">Product</a></li>
+                <li><a href="/compare/">Compare</a></li>
+                <li><a href="/security/">Security</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+              </ul>
+            </div></nav>
         </div>
       </div>
     </div>
@@ -846,7 +854,8 @@
         <h5>Product</h5>
         <a href="/">Overview</a><a href="/compare/">Compare</a
         ><a href="/security/">Security</a><a href="/pricing/">Pricing</a
-        ><a href="/guides/time-in-status/">Time in status guide</a>
+        ><a href="/guides/time-in-status/">Time in status guide</a
+        ><a href="/guides/fit/">Fit checklist</a>
       </div>
       <div>
         <h5>Docs</h5>
@@ -887,8 +896,39 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
+  
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
+  <script>
+    (function () {
+      var tools = document.querySelectorAll(".sj-tool");
+      tools.forEach(function (tool) {
+        var toggle = document.getElementById(tool.htmlFor);
+        if (!toggle) return;
+        var sync = function () { tool.setAttribute("aria-expanded", toggle.checked ? "true" : "false"); };
+        toggle.addEventListener("change", sync);
+        sync();
+        tool.addEventListener("keydown", function (event) {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          tool.click();
+          if (toggle.id === "__drawer" && toggle.checked) {
+            var first = document.querySelector(".md-sidebar--primary a[href], .md-sidebar--primary [tabindex='0']");
+            if (first) first.focus();
+          }
+        });
+      });
+      document.addEventListener("keydown", function (event) {
+        var drawer = document.getElementById("__drawer");
+        if (event.key !== "Escape" || !drawer || !drawer.checked) return;
+        drawer.checked = false;
+        drawer.dispatchEvent(new Event("change"));
+        var menu = document.querySelector('.sj-tool[for="__drawer"]');
+        if (menu && menu.offsetParent !== null) menu.focus();
+      });
+    })();
+  </script>
+
   </body>
 </html>
