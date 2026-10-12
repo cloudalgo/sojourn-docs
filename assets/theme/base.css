@@ -1,3 +1,8 @@
+/* One body reset for both halves: Material already zeroes the body margin on docs pages,
+   and the Astro pages had none, so the browser's 8px margin framed every marketing page. */
+body {
+  margin: 0;
+}
 .wrap {
   max-width: 1200px;
   margin-inline: auto;
@@ -489,12 +494,55 @@ body[data-section="pricing"] .nav [data-nav="pricing"]::after,
   .brand .by {
     display: none;
   }
-  .top .cta .cta-long,
-  .status .st-long {
+  .top .cta .cta-long {
     display: none;
   }
-  .top .cta .cta-short,
+  .top .cta .cta-short {
+    display: inline;
+  }
+}
+/* Status band on phones (site audit G-U3): one 44px line, the sprint dots and the short
+   status, which is the early access link itself. The link is 44px tall, so its tap
+   target spans the band. Below 375px the dots give way so the text never truncates,
+   even beside a classic scrollbar. */
+@media (max-width: 599.98px) {
+  .status .wrap {
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: 43px;
+    padding-block: 0;
+  }
+  .status .lane3 {
+    flex: none;
+    grid-template-columns: repeat(var(--sprints, 9), 6px);
+    gap: 2px;
+  }
+  .status .st-long,
+  .status .st-join {
+    display: none;
+  }
+  .status a {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+    min-height: 44px;
+    white-space: nowrap;
+  }
   .status .st-short {
     display: inline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media (max-width: 374.98px) {
+  .status .lane3 {
+    display: none;
+  }
+}
+@media (max-width: 359.98px) {
+  /* A long button label wraps instead of widening the page. */
+  .btn {
+    white-space: normal;
+    line-height: 1.25;
   }
 }

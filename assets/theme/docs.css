@@ -110,6 +110,18 @@ body[data-md-color-scheme="default"] {
 .md-sidebar {
   top: 2.6rem;
 }
+/* Below Material's drawer breakpoint (1220px) the primary sidebar is the drawer. At every
+   drawer width it opens over the whole screen from the top, header chrome included, as in
+   stock Material: the 2.6rem offset above is for the sticky desktop sidebars only, and the
+   shared header sits at Material's header level (4), under the drawer and its overlay (5). */
+@media (max-width: 76.234375em) {
+  .md-sidebar--primary {
+    top: 0;
+  }
+  .sj-docs .top {
+    z-index: 4;
+  }
+}
 
 /* Early access card in the right rail, after the table of contents. */
 .sj-ea {
@@ -355,11 +367,11 @@ body[data-md-color-scheme="default"] {
   .sj-docs {
     display: contents;
   }
-  /* Level with Material's header, so its drawer, overlay, and search panel cover it. */
+  /* The header sticks here; its z-index (4, set with the drawer rules above) keeps it
+     under Material's drawer, overlay, and search panel. */
   .sj-docs .top {
     position: sticky;
     top: 0;
-    z-index: 4;
   }
   .sj-docs .top .wrap {
     flex-wrap: nowrap;
@@ -405,10 +417,6 @@ body[data-md-color-scheme="default"] {
   .sj-dtabs .md-header__inner > .md-header__button {
     display: none;
   }
-  /* The drawer opens over the whole screen, header included, as in stock Material. */
-  .md-sidebar--primary {
-    top: 0;
-  }
   .sj-drawer-site {
     display: block;
     padding: 0.6rem 0.8rem 1.2rem;
@@ -438,5 +446,23 @@ body[data-md-color-scheme="default"] {
 @media (max-width: 374px) {
   .sj-docs .brand .word {
     font-size: 23px;
+  }
+}
+/* Below 360px the docs header row (menu, brand, search, Early access) needs 24px more than
+   the screen has. The row gives up its 4px gaps and the brand tightens; the menu and search
+   keep their 44px targets. */
+@media (max-width: 359.98px) {
+  .sj-docs .top .wrap {
+    column-gap: 0;
+  }
+  .sj-docs .brand {
+    gap: 6px;
+    margin-left: 0;
+  }
+  .sj-docs .brand .word {
+    font-size: 21px;
+  }
+  .sj-docs .top .cta-m {
+    padding-inline: 12px;
   }
 }
