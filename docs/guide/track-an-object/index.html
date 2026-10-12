@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Choose an object and its fields so Sojourn records how long each record spends in each value and with each owner.">
+        <meta name="description" content="Choose an object and its fields in Sojourn Settings so Sojourn records how long each record spends in each value and with each owner.">
       
       
       
@@ -62,7 +62,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Sojourn">
   <meta property="og:title" content="Track an object · Sojourn documentation">
-  <meta property="og:description" content="Choose an object and its fields so Sojourn records how long each record spends in each value and with each owner.">
+  <meta property="og:description" content="Choose an object and its fields in Sojourn Settings so Sojourn records how long each record spends in each value and with each owner.">
   <meta property="og:url" content="https://sojourn.cloudalgo.com/docs/guide/track-an-object/">
   <meta property="og:image" content="https://sojourn.cloudalgo.com/assets/theme/images/card-docs.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#choose-the-object-and-fields" class="md-skip">
+        <a href="#add-an-object" class="md-skip">
           Skip to content
         </a>
       
@@ -132,9 +132,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:9"><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i></i><i></i><i></i><i></i><i></i></span>
-          <span class="st-long">Release 1 in development, 3 of 9 sprints done. Early access is open.</span>
-          <span class="st-short">3 of 9 sprints done · Early access open</span>
+          <span class="lane3" aria-hidden="true" style="--sprints:9"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i></i><i></i><i></i><i></i></span>
+          <span class="st-long">Release 1 in development, 4 of 9 sprints done. Early access is open.</span>
+          <span class="st-short">4 of 9 sprints done · Early access open</span>
           <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener">Join early access</a>
         </div>
       </div>
@@ -519,10 +519,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#choose-the-object-and-fields" class="md-nav__link">
+  <a href="#add-an-object" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Choose the object and fields
+        Add an object
       
     </span>
   </a>
@@ -530,10 +530,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-changes-are-captured" class="md-nav__link">
+  <a href="#settings-on-the-objects-screen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How changes are captured
+        Settings on the object's screen
       
     </span>
   </a>
@@ -541,10 +541,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#business-hours-for-each-interval" class="md-nav__link">
+  <a href="#check-that-capture-is-live" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Business hours for each Interval
+        Check that capture is live
       
     </span>
   </a>
@@ -556,6 +556,17 @@
     <span class="md-ellipsis">
       
         Pause capture during a bulk import
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-hours-for-each-interval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business hours for each Interval
       
     </span>
   </a>
@@ -846,10 +857,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#choose-the-object-and-fields" class="md-nav__link">
+  <a href="#add-an-object" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Choose the object and fields
+        Add an object
       
     </span>
   </a>
@@ -857,10 +868,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-changes-are-captured" class="md-nav__link">
+  <a href="#settings-on-the-objects-screen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How changes are captured
+        Settings on the object's screen
       
     </span>
   </a>
@@ -868,10 +879,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#business-hours-for-each-interval" class="md-nav__link">
+  <a href="#check-that-capture-is-live" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Business hours for each Interval
+        Check that capture is live
       
     </span>
   </a>
@@ -883,6 +894,17 @@
     <span class="md-ellipsis">
       
         Pause capture during a bulk import
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-hours-for-each-interval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business hours for each Interval
       
     </span>
   </a>
@@ -922,7 +944,7 @@
   
   <div class="sj-crumb">Guide</div>
   <h1>Track an object</h1>
-  <p class="sj-summary">Choose an object and its fields so Sojourn records how long each record spends in each value and with each owner.</p>
+  <p class="sj-summary">Choose an object and its fields in Sojourn Settings so Sojourn records how long each record spends in each value and with each owner.</p>
   
     <div class="sj-meta">
       <span class="pill closed">Salesforce admin</span>
@@ -930,38 +952,86 @@
       <span class="pill open">Since release 1</span>
     </div>
   
-  <p>The setup screens arrive later in release 1. Until then, you set up tracking from the Tracked Objects tab in the Sojourn app.</p>
-<h2 id="choose-the-object-and-fields">Choose the object and fields<a class="headerlink" href="#choose-the-object-and-fields" title="Permanent link">#</a></h2>
+  <p>You set up tracking in the <strong>Sojourn Settings</strong> tab of the Sojourn app. The page has a Sojourn menu on the left: <strong>Overview</strong> and <strong>Tracked objects</strong> today, with more screens joining it in later releases. Choose <strong>Collapse menu</strong> at its foot to fold it into icons; Sojourn remembers the choice in your browser. The tab needs the Sojourn Admin permission set; without it the page says so and shows nothing else. Changing the overview settings also needs the Customize Application permission, which system administrators have.</p>
+<h2 id="add-an-object">Add an object<a class="headerlink" href="#add-an-object" title="Permanent link">#</a></h2>
 <ol>
-<li>Create a Tracked object. Set Object API Name (for example <code>Case</code>) and select Active.</li>
-<li>Add a Tracked field for each field whose time in each value you want: Field API Name (for example <code>Status</code>) and Field Type (<code>Picklist</code>, <code>Lookup</code>, <code>Text</code>, <code>Checkbox</code>, or <code>Date</code>).</li>
-<li>To measure time with each owner, add a Tracked field with Field API Name <code>OwnerId</code> and Field Type <code>Owner</code>. Later in release 1, saving a Tracked object with Track Owner selected adds this row for you.</li>
+<li>Open the Sojourn app and the <strong>Sojourn Settings</strong> tab, then <strong>Tracked objects</strong> in the menu.</li>
+<li>Choose <strong>Add object</strong>, search for the object, pick it, and choose <strong>Add object</strong> again. The list shows only objects Sojourn can track, so you never type an API name; objects you already track are marked Already tracked.</li>
+<li>On the object's screen, check the <strong>Tracked fields</strong> whose time in each value you want; they appear in the list beside the checkboxes, where <strong>Remove</strong> takes one off. Picklists, lookups, checkboxes, dates, and short text fields are offered; formulas, auto-numbers, and long text are not.</li>
+<li>Leave <strong>Track owner</strong> on to measure time with each user and each queue.</li>
+<li>Choose <strong>Save</strong>.</li>
 </ol>
-<h2 id="how-changes-are-captured">How changes are captured<a class="headerlink" href="#how-changes-are-captured" title="Permanent link">#</a></h2>
+<h2 id="settings-on-the-objects-screen">Settings on the object's screen<a class="headerlink" href="#settings-on-the-objects-screen" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Case, Lead, and Opportunity</strong> are captured by triggers that ship in the package. Once their Tracked object is active, every save that changes a Tracked field closes the open Interval and opens the next.</li>
-<li><strong>Any other object, standard or custom</strong>, is captured from a record-triggered Flow that you own. Add the action <strong>Sojourn: Capture Change</strong> to an after-save Flow on the object, run it on create and update, and pass <code>{!$Record}</code> as Record and <code>{!$Record__Prior}</code> as Prior record. If an update Flow leaves Prior record empty, Sojourn compares the record with its open Intervals and times the change now. A ready-made Flow template arrives later in release 1.</li>
-<li>If both a trigger and a Flow capture the same change in one save, Sojourn records it once.</li>
-<li>Each Interval records how the change arrived in its Source field: Trigger, Flow, or Catch-Up.</li>
+<li><strong>Status field</strong> and <strong>Closed values</strong>: the main status field and the values that mean the record is closed.</li>
+<li><strong>Name field</strong>: the field shown as the record's name on each Interval.</li>
+<li><strong>Business hours</strong>, or <strong>Business hours from a record field</strong>: the hours used for this object's business minutes.</li>
+<li><strong>Snapshot fields</strong>: up to 5 fields copied onto each Interval, for grouping reports by values such as priority.</li>
+<li><strong>Record types</strong>: track only these record types; leave empty for all.</li>
+<li><strong>Live values</strong> and its two minute fields: number fields on the record for the minutes in the current status and with the current owner. You can set them now; the job that keeps them current arrives in sprint 4.</li>
 </ul>
+<h2 id="check-that-capture-is-live">Check that capture is live<a class="headerlink" href="#check-that-capture-is-live" title="Permanent link">#</a></h2>
+<p>Each Tracked object shows a pill:</p>
+<table>
+<thead>
+<tr>
+<th>Pill</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tracked by package</td>
+<td>Case, Lead, and Opportunity: Sojourn's own triggers capture every change.</td>
+</tr>
+<tr>
+<td>Flow active</td>
+<td>An active Sojourn capture Flow runs on this object.</td>
+</tr>
+<tr>
+<td>Flow missing</td>
+<td>No capture Flow runs yet. Follow the steps on the object's screen.</td>
+</tr>
+<tr>
+<td>Flow unknown</td>
+<td>Sojourn could not read your Flows, usually because you lack View Setup and Configuration.</td>
+</tr>
+<tr>
+<td>Paused</td>
+<td>Capture is paused for a bulk import.</td>
+</tr>
+<tr>
+<td>Inactive</td>
+<td>The object is configured but not tracked.</td>
+</tr>
+</tbody>
+</table>
+<p>While an object's pill reads Flow missing or Flow unknown, its screen leads with four steps, and its fields and settings show as a summary until you choose <strong>Edit</strong>. On the Tracked objects list, <strong>Set up Flow</strong> opens those steps and <strong>Re-check Flows</strong> checks every object at once:</p>
+<ol>
+<li>In Setup, open <strong>Flows</strong> and the <strong>Sojourn Capture Template</strong>, then choose <strong>Save As</strong>, a new Flow. Keep "Sojourn" in the label.</li>
+<li>On the Start element, choose your object.</li>
+<li>In <strong>Sojourn: Capture Change</strong>, set the object for Record and Prior record to the same object.</li>
+<li>Activate the Flow, then choose <strong>Re-check</strong> on the object's screen. The pill turns to Flow active.</li>
+</ol>
+<p>If both a trigger and a Flow capture the same change in one save, Sojourn records it once. Each Interval records how the change arrived in its Source field: Trigger, Flow, or Catch-Up.</p>
 <div class="sj-callout">
-<p><strong>Often missed.</strong> Setup objects such as User and Group cannot be tracked. Salesforce does not allow their changes and Sojourn's Intervals to be saved in one transaction.</p>
+<p><strong>Often missed.</strong> Setup objects such as User and Group cannot be tracked. Salesforce does not allow their changes and Sojourn's Intervals to be saved in one transaction, so Sojourn leaves them out of the list.</p>
 </div>
+<h2 id="pause-capture-during-a-bulk-import">Pause capture during a bulk import<a class="headerlink" href="#pause-capture-during-a-bulk-import" title="Permanent link">#</a></h2>
+<p>Choose <strong>Pause</strong> on the Tracked object, in the list or on its screen, before a large import or update, and <strong>Resume</strong> afterwards. The list shows when the pause started. To stop tracking an object, turn off <strong>Active</strong> on its screen and choose <strong>Save</strong>; <strong>Turn on</strong> in the list brings it back. While paused, triggers and Flows skip the object, so the import runs without Sojourn's work. The catch-up job that replays the records changed during the pause arrives in sprint 4.</p>
 <h2 id="business-hours-for-each-interval">Business hours for each Interval<a class="headerlink" href="#business-hours-for-each-interval" title="Permanent link">#</a></h2>
 <p>Sojourn uses the first of these that is set:</p>
 <ol>
-<li>The Tracked field's Business Hours Id.</li>
-<li>A business hours field on the record, named in the Tracked object's Business Hours Source Field.</li>
+<li>The Tracked field's business hours.</li>
+<li>A business hours field on the record, chosen in <strong>Business hours from a record field</strong>.</li>
 <li>The queue's entry in Queue Business Hours, while a queue owns the record.</li>
-<li>The Tracked object's Business Hours Id.</li>
-<li>The default in Sojourn Settings.</li>
+<li>The Tracked object's business hours.</li>
+<li>The default on the Sojourn Settings overview.</li>
 <li>The org default business hours.</li>
 </ol>
 <p>If none applies, or the chosen business hours no longer exist, the Interval gets calendar minutes as business minutes, and a Tracking error of type BusinessHours tells you which setting to fix.</p>
-<h2 id="pause-capture-during-a-bulk-import">Pause capture during a bulk import<a class="headerlink" href="#pause-capture-during-a-bulk-import" title="Permanent link">#</a></h2>
-<p>Select Pause Capture on the Tracked object before a large import or update, and clear it afterwards. Set Paused Since to the time the pause started; the setup screen's toggle, later in release 1, fills it for you. While paused, triggers and Flows skip the object, so the import runs without Sojourn's work. The catch-up job that replays the records changed during the pause arrives later in release 1.</p>
 <h2 id="tracking-errors">Tracking errors<a class="headerlink" href="#tracking-errors" title="Permanent link">#</a></h2>
-<p>Sojourn never fails your users' saves. If it cannot record a change, it writes a Tracking error instead, visible to Sojourn admins on the Tracking Errors tab. Error Type tells you what happened:</p>
+<p>Sojourn never fails your users' saves. If it cannot record a change, it writes a Tracking error instead; the overview shows how many are open and links to them. Error Type tells you what happened:</p>
 <ul>
 <li><strong>DML</strong>: the Interval could not be saved.</li>
 <li><strong>Limit</strong>: the transaction was too close to a governor limit, so Sojourn stepped aside.</li>
@@ -969,9 +1039,9 @@
 <li><strong>BusinessHours</strong>: no usable business hours applied, so calendar minutes were recorded.</li>
 <li><strong>Unknown</strong>: anything else; the stack trace is kept for support.</li>
 </ul>
-<p>Each row keeps the record, field, and values, so the repair action, later in release 1, can replay it. To stop all capture at once, clear Tracking Enabled in Sojourn Settings (Setup, Custom Settings).</p>
+<p>Each row keeps the record, field, and values, so the repair action in sprint 4 can replay it. To stop all capture at once, turn off <strong>Tracking enabled</strong> on the overview and choose <strong>Save settings</strong>.</p>
 <div class="sj-verify">
-<p><strong>You are done when</strong> you change a Tracked field on a record and a new open Interval appears for it, with the previous one closed.</p>
+<p><strong>You are done when</strong> the object's pill reads Tracked by package or Flow active, and changing a Tracked field on a record opens a new Interval for it and closes the previous one.</p>
 </div>
   
     <nav class="sj-pn" aria-label="Previous and next">

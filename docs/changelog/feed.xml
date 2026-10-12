@@ -5,11 +5,27 @@
   <id>tag:sojourn.cloudalgo.com,2026:changelog</id>
   <link rel="self" type="application/atom+xml" href="https://sojourn.cloudalgo.com/docs/changelog/feed.xml" />
   <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/" />
-  <updated>2026-10-11T00:00:00Z</updated>
+  <updated>2026-10-12T00:00:00Z</updated>
   <author>
     <name>CloudAlgo</name>
     <uri>https://sojourn.cloudalgo.com/</uri>
   </author>
+  <entry>
+    <title>Sprint 3: Flow template and Sojourn Settings (12 October 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-3-flow-template-and-sojourn-settings-12-october-2026</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-3-flow-template-and-sojourn-settings-12-october-2026" />
+    <updated>2026-10-12T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;Sojourn Settings&lt;/strong&gt; page, with a Sojourn menu that folds into icons and remembers the choice.&lt;/li&gt;
+&lt;li&gt;Add any object Sojourn can track from a searchable list, with no API names to type.&lt;/li&gt;
+&lt;li&gt;Choose Tracked fields, Track owner, status field and closed values, name field, business hours, up to five snapshot fields, record types, and Live values fields on one screen.&lt;/li&gt;
+&lt;li&gt;Pause and Resume capture per object, with the time the pause started.&lt;/li&gt;
+&lt;li&gt;A capture status for every Tracked object: Tracked by package, Flow active, Flow missing, or Flow unknown, with &lt;strong&gt;Re-check&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;Sojourn Capture Template&lt;/strong&gt; Flow and four steps on screen to turn on capture for any other object.&lt;/li&gt;
+&lt;li&gt;Org-wide &lt;strong&gt;Tracking enabled&lt;/strong&gt; and default business hours, saved with &lt;strong&gt;Save settings&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Shorter API names: the namespace already names the package, so components no longer repeat it.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Sprint 2: capture engine (11 October 2026)</title>
     <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-2-capture-engine-11-october-2026</id>
