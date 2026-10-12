@@ -256,10 +256,12 @@ footer.site {
   font-size: 15px;
   margin-top: 6px;
 }
-/* Two help variants: marketing pages set body[data-section]; MkDocs pages do not. */
+/* Two help variants: marketing pages set body[data-section]; MkDocs pages do not.
+   Home ends with its own call to action and the 404 offers its links, so neither shows one. */
 .help.help-docs,
 body:not([data-section]) .help.help-mkt,
-body[data-section="home"] footer.site .help {
+body[data-section="home"] footer.site .help,
+body[data-section="notfound"] footer.site .help {
   display: none;
 }
 body:not([data-section]) .help.help-docs {
