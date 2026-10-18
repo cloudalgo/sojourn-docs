@@ -5,11 +5,65 @@
   <id>tag:sojourn.cloudalgo.com,2026:changelog</id>
   <link rel="self" type="application/atom+xml" href="https://sojourn.cloudalgo.com/docs/changelog/feed.xml" />
   <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/" />
-  <updated>2026-10-12T00:00:00Z</updated>
+  <updated>2026-10-18T00:00:00Z</updated>
   <author>
     <name>CloudAlgo</name>
     <uri>https://sojourn.cloudalgo.com/</uri>
   </author>
+  <entry>
+    <title>Sprint 8: Free and Plus plans, hardening, and performance runs (18 October 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-8-free-and-plus-plans-hardening-and-performance-runs-18-october-2026</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-8-free-and-plus-plans-hardening-and-performance-runs-18-october-2026" />
+    <updated>2026-10-18T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Free and Plus plans.&lt;/strong&gt; Sojourn installs on the Free plan: tracking Case, Lead, and Opportunity, the record timeline, the reports and dashboards, goals and breach flags, business hours, pause and Catch up, summaries, the Health Monitor, and settings export and import. The &lt;strong&gt;Plus plan&lt;/strong&gt; adds tracking for any other object, Live values on the record, Backfill with History or Seed, purge and the archive, and Omni-Channel agent work. On Free, Plus features stay visible in Sojourn Settings with their controls off and an &lt;strong&gt;Upgrade to Plus&lt;/strong&gt; link. Moving an org from Plus to Free deletes nothing. See &lt;a href="../guide/plans/"&gt;Free and Plus plans&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;New guide pages: &lt;a href="../guide/prerequisites/"&gt;Check the prerequisites&lt;/a&gt;, &lt;a href="../guide/track-cases/"&gt;Track Cases and open your first report&lt;/a&gt;, &lt;a href="../guide/jobs/"&gt;Run the jobs&lt;/a&gt;, &lt;a href="../guide/troubleshooting/"&gt;Troubleshooting&lt;/a&gt;, and &lt;a href="../guide/uninstall/"&gt;Uninstall Sojourn&lt;/a&gt;. The install guide gains the upgrade steps, and &lt;a href="../guide/permission-sets/"&gt;Assign permission sets&lt;/a&gt; explains that Intervals are Public Read Only and how to make them Private.&lt;/li&gt;
+&lt;li&gt;Checks on every change: every Sojourn screen method checks a Sojourn permission before it reads or writes, production code has no test-only switches, no record Id is written into code or metadata, and only the &lt;code&gt;ChangeCapture&lt;/code&gt; entry point is global.&lt;/li&gt;
+&lt;li&gt;Performance: 2,000 Cases loaded through Bulk API 2.0 with Status and owner tracked cost Sojourn about 400 ms of CPU per 200-record chunk, and summaries, reconcile, and purge were timed on 72,003 Intervals. The results are in &lt;a href="../cookbook/large-data/"&gt;Reports at large volume&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Sprint 7: the record timeline, reports, and dashboards (14 October 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-7-the-record-timeline-reports-and-dashboards-14-october-2026</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-7-the-record-timeline-reports-and-dashboards-14-october-2026" />
+    <updated>2026-10-14T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;Sojourn Timeline&lt;/strong&gt; on record pages and Experience Cloud pages: a lane per Tracked field, each stay sized by its time, goal ticks and the time past a goal, details on focus or hover, and totals by value and by owner. History purged to the archive shows too, marked as archived.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;Sojourn Timeline&lt;/strong&gt; permission, in the Sojourn User, Manager, Health Monitor, and Admin permission sets, and a new &lt;strong&gt;Sojourn Site User&lt;/strong&gt; permission set for Experience Cloud users. The timeline shows the history of a record only to people who can open the record.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;20 reports&lt;/strong&gt; in the Sojourn Reports folder and &lt;strong&gt;4 dashboards&lt;/strong&gt; in Sojourn Dashboards: Desk Productivity, Process Bottlenecks, SLA Health, and Leaderboards. Trends and leaderboards read the daily summaries, so they stay fast at any volume.&lt;/li&gt;
+&lt;li&gt;The report cookbook gains worked examples, hours per Case, status groups, and reports at large volume, and the reference lists every report and dashboard with the filters it relies on.&lt;/li&gt;
+&lt;li&gt;Live values, goals, and capture use the same status field as the Case metrics when an object has none chosen.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Sprint 6: Case metrics, Omni-Channel, and breach alerts (13 October 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-6-case-metrics-omni-channel-and-breach-alerts-13-october-2026</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-6-case-metrics-omni-channel-and-breach-alerts-13-october-2026" />
+    <updated>2026-10-13T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Case metrics&lt;/strong&gt; on every Case: first closed at, business minutes to first close, reopens, owner and status changes, and business minutes held by queues, by agents, and in total. They are rebuilt from the Case's own Intervals whoever saves the Case, and by Backfill and repair.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;Sojourn Omni-Channel&lt;/strong&gt; package: one &lt;strong&gt;Agent work&lt;/strong&gt; Interval per agent assignment of routed work, closed with its minutes when the work ends. It installs only in orgs with Omni-Channel; the core package does not need it.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;Sojourn Breach Alert Template&lt;/strong&gt; Flow: save a copy, activate it, and the Interval owner and their manager get one email when an Interval breaches its goal.&lt;/li&gt;
+&lt;li&gt;The Case Status At Close field on Intervals is removed before the first release.&lt;/li&gt;
+&lt;li&gt;The purge runs list shows how many files each run saved, and a stopped run shows what it deleted before it stopped.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Sprint 5: summaries, retention, goals, and moving settings (12 October 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-5-summaries-retention-goals-and-moving-settings-12-october-2026</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-5-summaries-retention-goals-and-moving-settings-12-october-2026" />
+    <updated>2026-10-12T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Summaries&lt;/strong&gt; each night: closed Intervals counted into daily and monthly rows, kept when Intervals are purged, with the &lt;strong&gt;Sojourn Interval Summaries&lt;/strong&gt; report type and &lt;strong&gt;Rebuild summaries&lt;/strong&gt; for whole months.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Retention and purge&lt;/strong&gt;: choose Keep everything or Keep a number of days. A purge deletes only closed, summarised Intervals older than the window, saves each part to a CSV file on its purge run first, and can copy them to the archive. &lt;strong&gt;Purge now&lt;/strong&gt; runs one straight away; both ask you to type DELETE.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Goals&lt;/strong&gt; per value of a Tracked field, in business minutes, with a warn-at percent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Business hours&lt;/strong&gt; per queue, so time owned by a queue counts in that queue's hours.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Export settings&lt;/strong&gt; to a file and import it in another org, with a check of what will change before &lt;strong&gt;Apply&lt;/strong&gt;, and &lt;strong&gt;Replace what is here&lt;/strong&gt; to match the file.&lt;/li&gt;
+&lt;li&gt;At most 10 Tracked fields per object, &lt;strong&gt;Start timing at the first value&lt;/strong&gt; for fields that start blank, and an &lt;strong&gt;Estimate&lt;/strong&gt; of the Interval rows and storage your choice adds.&lt;/li&gt;
+&lt;li&gt;The Sojourn app has three tabs: Sojourn Settings, Health Monitor, and Intervals.&lt;/li&gt;
+&lt;li&gt;The Health Monitor shows a Flow you cannot see as information rather than a warning, and a catch up keeps its window when capture was paused during the run.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Sprint 4: jobs and the Health Monitor (12 October 2026)</title>
     <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-4-jobs-and-the-health-monitor-12-october-2026</id>

@@ -5,11 +5,28 @@
   <url><loc>https://sojourn.cloudalgo.com/docs/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/changelog/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/cookbook/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/cookbook/hours-per-case/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/cookbook/large-data/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/cookbook/status-groups/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/cookbook/worked-examples/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/guide/backfill/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/breach-alerts/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/case-metrics/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/goals-and-business-hours/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/guide/health-monitor/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/guide/install/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/jobs/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/move-settings/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/omni-channel/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/guide/permission-sets/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/plans/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/prerequisites/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/retention/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/timeline/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/guide/track-an-object/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/track-cases/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/troubleshooting/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/guide/uninstall/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Case/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Goal__c/</loc></url>
@@ -18,6 +35,7 @@
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Interval__c/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Lead/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Opportunity/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Plan__c/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Purge_Run__c/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Queue_Business_Hours__c/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Settings__c/</loc></url>
@@ -25,6 +43,7 @@
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Tracked_Object__c/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Tracking_Error__c/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/permission-sets/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/reports/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/security/code-analyzer/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/guides/fit/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/guides/time-in-status/</loc></url>
