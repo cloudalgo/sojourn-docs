@@ -1691,211 +1691,6 @@
 <td>assertRefusedAsLater holds the assertions both refusal tests share.</td>
 </tr>
 <tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>AgentWorksTest</code></td>
-<td>AgentWork cannot be inserted in a test: its agent must be online for the channel, and a test cannot put an agent online (D-540). Records are built in memory and handed to the domain; the trigger line is proven live in a scratch org. The engine runs as the test user; the core package's tests prove its boundary.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ClosedValuesTest</code></td>
-<td>Configuration reads as the test user; CaseStatusesSelectorTest covers who can read CaseStatus.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ArchiveWriterTest</code></td>
-<td>In-memory mapping and result reading: in a test the platform refuses insertImmediate on the archive object with an internal error, so the insert itself is checked in a scratch org by the integration script.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ConfigTransferServiceTest</code></td>
-<td>Methods run as the test user (an administrator): DataControllerTest proves the Admin check, and the writes run in user mode through the unit of work.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>CaseMetricsServiceTest</code></td>
-<td>Methods run as the test user unless they say otherwise; aUserWhoCannotEditTheFieldsStillGetsMetrics uses System.runAs to prove the system-context write (D-528).</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>TimelineServiceTest</code></td>
-<td>Methods run as the test user unless they say otherwise; the System.runAs tests prove the user-mode reads (D-556). Total complexity is the sum of independent one-scenario tests; no method exceeds 5.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>GoalServiceTest</code></td>
-<td>Methods without System.runAs run as the test user; GoalsSelectorTest and GoalsControllerTest prove access.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>HealthServiceTest</code></td>
-<td>Methods without System.runAs run as the test user; HealthControllerTest proves the permission rules.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>SummaryServiceTest</code></td>
-<td>Methods without System.runAs run as the test user; IntervalSummariesSelectorTest proves user mode. Total complexity is the sum of independent one-scenario tests.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>PurgeServiceTest</code></td>
-<td>Methods without System.runAs run as the test user; PurgeRunsSelectorTest proves user mode. Total complexity is the sum of independent one-scenario tests.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>QueueHoursServiceTest</code></td>
-<td>Methods without System.runAs run as the test user; QueuesSelectorTest and BusinessHoursControllerTest prove access.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ReconcileServiceTest</code></td>
-<td>Methods without System.runAs run as the test user; aRecordTheSchedulerCannotSeeIsNotAnOrphan uses System.runAs.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>LiveValuesServiceTest</code></td>
-<td>Methods without System.runAs run as the test user; aUserWhoCannotEditTheParentField proves the field-level rule with System.runAs. The Tracked object uses business hours open all day, so business minutes equal calendar minutes; ranges allow the run's own seconds.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ErrorLogServiceTest</code></td>
-<td>Methods without System.runAs run as the test user; the names test and HealthControllerTest prove access with System.runAs.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>JobsServiceTest</code></td>
-<td>Methods without System.runAs test behaviour as the test user (access denial is proven in the controller tests); total complexity is the sum of independent one-scenario tests, none above 4.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>LiveValuesBatchTest</code></td>
-<td>Methods without System.runAs test behaviour as the test user; access denial is proven in LiveValuesServiceTest.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>BackfillBatchTest</code></td>
-<td>Methods without System.runAs test behaviour as the test user; access denial is proven with System.runAs in the controller tests.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ApplicationFactoriesTest</code>, <code>BusinessHoursCalcTest</code>, <code>CaptureEngineBulkTest</code>, <code>CaptureEngineSecurityTest</code>, <code>CatchUpBatchTest</code>, <code>ChangeCaptureTest</code>, <code>ChangeDetectorTest</code>, <code>ConfigCacheTest</code>, <code>ErrorLoggerTest</code>, <code>FlowDetectionServiceTest</code>, <code>GoalStamperTest</code>, <code>HistorySelectorTest</code>, <code>IntervalsTest</code>, <code>LimitGuardTest</code>, <code>LookupResolverTest</code>, <code>ObjectDescribeServiceTest</code>, <code>PermissionModelTest</code>, <code>RecordNamesSelectorTest</code>, <code>SObjectSelectorTest</code>, <code>SchemaTest</code>, <code>SelectorsTest</code>, <code>SettingsTest</code>, <code>SetupServiceTest</code>, <code>SnapshotCopierTest</code>, <code>SupportUtilitiesTest</code>, <code>TestDataFactoryTest</code>, <code>TrackedFieldsTest</code>, <code>TrackedObjectsTest</code>, <code>TrackedRecordsTest</code>, <code>TriggerHandlerTest</code>, <code>UnitOfWorkTest</code></td>
-<td>Methods without System.runAs test behaviour as the test user; access denial is proven with System.runAs in the security tests.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>BackfillServiceTest</code></td>
-<td>Methods without System.runAs test behaviour as the test user; access denial is proven with System.runAs in the security tests. Tests cannot insert field history (T4.1), so the rows come from a fake HistorySelector.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>AuraGuardTest</code>, <code>CaptureContextTest</code>, <code>CaptureFieldsTest</code>, <code>IntervalWriterTest</code>, <code>ParentRecordsSelectorTest</code></td>
-<td>Methods without System.runAs test behaviour as the test user; access denial is proven with System.runAs in this class or the security tests.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>IntervalArchivesSelectorTest</code></td>
-<td>No test inserts archive rows: big object DML in a test is not rolled back (D-559). A query needs no rows. The first test reads as the test user; the other two prove user mode with System.runAs.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ContentDocumentLinksSelectorTest</code></td>
-<td>Only aUserWhoCannotSeeTheRunCountsNoFiles needs another user; the count runs as the run's owner.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>OrganizationSelectorTest</code></td>
-<td>Only aUserWithoutPermissionsStillReadsTheTimeZone needs another user; the read test runs as the test user.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ContentVersionsSelectorTest</code></td>
-<td>Only anotherUserCannotReadAPrivateFile needs another user; the other method reads as the owner of the file.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>QueuesSelectorTest</code></td>
-<td>Only everyUserReadsTheSameQueues needs another user; the other methods read as the test user.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>PurgeRunsSelectorTest</code></td>
-<td>Only runsAreReadInUserMode needs another user; the read test runs as the test user.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>IntervalSummariesSelectorTest</code></td>
-<td>Only selectByCodesRefusesAUserWithoutAccess needs another user; the read tests run as the test user.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>AccessFailuresTest</code></td>
-<td>Only the sharing refusal needs another user; the other methods classify exceptions built in the test.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>VolumeEstimateTest</code></td>
-<td>Pure arithmetic on counts the service reads; SetupServiceTest covers the reads.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>CaseMetricsTest</code></td>
-<td>Pure arithmetic over in-memory Intervals; CaseMetricsServiceTest covers the reads, the write, and access.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>CsvRowsTest</code></td>
-<td>Pure formatting of in-memory Intervals.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>SummaryKeysTest</code></td>
-<td>Pure logic on dates and strings; OrganizationSelectorTest reads the time zone through the selector.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>SummaryRowsTest</code></td>
-<td>Pure logic on in-memory Intervals and rows; SummaryServiceTest covers the reads and writes.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>HistoryRowTest</code></td>
-<td>Pure logic on in-memory rows; no data access to deny.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>RepairRulesTest</code></td>
-<td>Rules on in-memory Error Log rows; the configuration is the only data. ErrorLogServiceTest covers repair end to end.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ReconcileBatchTest</code></td>
-<td>Runs as the test user; access is proven in ReconcileServiceTest.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ChangeCaptureExternalTest</code></td>
-<td>The engine runs as the test user here; CaptureEngineSecurityTest proves the boundary with System.runAs.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ConfigFileTest</code></td>
-<td>The file shape needs no user: ConfigTransferServiceTest and DataControllerTest prove access.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>CaseStatusesSelectorTest</code></td>
-<td>The first test reads as the test user; the user-mode refusal is proven with System.runAs in the second.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>JobChecksTest</code></td>
-<td>The job statuses come from a fake jobs service; HealthServiceTest covers the real schedule.</td>
-</tr>
-<tr>
-<td>PMD.ApexUnitTestClassShouldHaveRunAs</td>
-<td><code>ChangeCaptureServiceTest</code></td>
-<td>Total complexity is the sum of independent one-scenario tests; no method exceeds 2. Methods without System.runAs test behaviour as the test user; access denial is proven with System.runAs in the security tests. Queries the second save in changeEveryReference spent.</td>
-</tr>
-<tr>
 <td>PMD.AvoidBooleanMethodParameters</td>
 <td><code>SetupService</code></td>
 <td>A facade of one-line methods (highest complexity 1); setActive, setPaused, and saveSettings take a switch's new state.</td>
@@ -1917,6 +1712,11 @@
 </tr>
 <tr>
 <td>PMD.AvoidBooleanMethodParameters</td>
+<td><code>GoalServiceImpl</code></td>
+<td>The total is the sum of small independent steps (no method above 11); the goal checks already live in GoalRules. saveBreachAlerts takes the new state of the Breach alerts switch (D-624).</td>
+</tr>
+<tr>
+<td>PMD.AvoidBooleanMethodParameters</td>
 <td><code>SetupController</code></td>
 <td>Thin methods, each check, call, wrap (highest complexity 3), one per action on the Settings screens it serves; setActive, setPaused, and saveSettings take a switch's new state.</td>
 </tr>
@@ -1934,6 +1734,11 @@
 <td>PMD.AvoidBooleanMethodParameters</td>
 <td><code>ConfigImport</code></td>
 <td>replace is the screen's Replace what is here switch.</td>
+</tr>
+<tr>
+<td>PMD.AvoidBooleanMethodParameters</td>
+<td><code>GoalService</code>, <code>GoalsController</code>, <code>IGoalService</code></td>
+<td>saveBreachAlerts takes the new state of the Breach alerts switch (D-624).</td>
 </tr>
 <tr>
 <td>PMD.AvoidBooleanMethodParameters</td>
@@ -1973,7 +1778,7 @@
 <tr>
 <td>PMD.CognitiveComplexity</td>
 <td><code>JobsServiceImpl</code></td>
-<td>One entry point per job, none above 5; the total is their sum.</td>
+<td>One entry point per job, none above 9; the total is their sum, and the plan check is one of them (D-585).</td>
 </tr>
 <tr>
 <td>PMD.CognitiveComplexity</td>
@@ -1983,7 +1788,7 @@
 <tr>
 <td>PMD.CognitiveComplexity</td>
 <td><code>GoalServiceImpl</code></td>
-<td>The total is the sum of small independent steps (no method above 11); the goal checks already live in GoalRules.</td>
+<td>The total is the sum of small independent steps (no method above 11); the goal checks already live in GoalRules. saveBreachAlerts takes the new state of the Breach alerts switch (D-624).</td>
 </tr>
 <tr>
 <td>PMD.CognitiveComplexity</td>
@@ -1994,6 +1799,16 @@
 <td>PMD.CognitiveComplexity</td>
 <td><code>TimelineServiceImpl</code></td>
 <td>The total is the sum of small independent steps (no method above 9): the reads, the limits, and the empty states.</td>
+</tr>
+<tr>
+<td>PMD.CognitiveComplexity</td>
+<td><code>ErrorRepair</code></td>
+<td>The total is the sum of small steps, none above 12: check, refuse, write, and pair each error with its Interval (R-25).</td>
+</tr>
+<tr>
+<td>PMD.CognitiveComplexity</td>
+<td><code>CaseMetricsServiceImpl</code></td>
+<td>The total is the sum of small steps, none above 6: read, compute, compare, and write as the engine or as the user (D-615).</td>
 </tr>
 <tr>
 <td>PMD.CognitiveComplexity</td>
@@ -2012,28 +1827,28 @@
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
+<td><code>JobsServiceTest</code></td>
+<td>Methods run as the Sojourn admin (D-619) (access denial is proven in the controller tests); total complexity is the sum of independent one-scenario tests, none above 4.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
 <td><code>TimelineServiceTest</code></td>
-<td>Methods run as the test user unless they say otherwise; the System.runAs tests prove the user-mode reads (D-556). Total complexity is the sum of independent one-scenario tests; no method exceeds 5.</td>
+<td>Methods run as the Sojourn admin (D-619) unless they say otherwise; the System.runAs tests prove the user-mode reads (D-556). Total complexity is the sum of independent one-scenario tests; no method exceeds 5.</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
 <td><code>SummaryServiceTest</code></td>
-<td>Methods without System.runAs run as the test user; IntervalSummariesSelectorTest proves user mode. Total complexity is the sum of independent one-scenario tests.</td>
-</tr>
-<tr>
-<td>PMD.CyclomaticComplexity</td>
-<td><code>PurgeServiceTest</code></td>
-<td>Methods without System.runAs run as the test user; PurgeRunsSelectorTest proves user mode. Total complexity is the sum of independent one-scenario tests.</td>
-</tr>
-<tr>
-<td>PMD.CyclomaticComplexity</td>
-<td><code>JobsServiceTest</code></td>
-<td>Methods without System.runAs test behaviour as the test user (access denial is proven in the controller tests); total complexity is the sum of independent one-scenario tests, none above 4.</td>
+<td>Methods run as the Sojourn admin (D-619); IntervalSummariesSelectorTest proves user mode. Total complexity is the sum of independent one-scenario tests.</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
 <td><code>HealthControllerTest</code></td>
 <td>One branch per @AuraEnabled method and no logic: the switch is long by design; a new method adds a branch and a list entry.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>JobsServiceImpl</code></td>
+<td>One entry point per job, none above 9; the total is their sum, and the plan check is one of them (D-585).</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
@@ -2048,7 +1863,7 @@
 <tr>
 <td>PMD.CyclomaticComplexity</td>
 <td><code>GoalServiceImpl</code></td>
-<td>The total is the sum of small independent steps (no method above 11); the goal checks already live in GoalRules.</td>
+<td>The total is the sum of small independent steps (no method above 11); the goal checks already live in GoalRules. saveBreachAlerts takes the new state of the Breach alerts switch (D-624).</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
@@ -2062,8 +1877,23 @@
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
+<td><code>CaseMetricsServiceImpl</code></td>
+<td>The total is the sum of small steps, none above 6: read, compute, compare, and write as the engine or as the user (D-615).</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
 <td><code>TrackedFieldChanges</code></td>
 <td>The total is the sum of small steps, none above 7; every Tracked field row change goes through here (D-315).</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>IntervalWriter</code></td>
+<td>The total is the sum of small steps, none above 9: open, close, heal a double open (D-626), and the owner set at creation (D-603).</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>PurgeServiceTest</code></td>
+<td>These tests exercise Plus features (D-583); the plan survives from here into each test.</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
@@ -2073,7 +1903,7 @@
 <tr>
 <td>PMD.CyclomaticComplexity</td>
 <td><code>ChangeCaptureServiceTest</code></td>
-<td>Total complexity is the sum of independent one-scenario tests; no method exceeds 2. Methods without System.runAs test behaviour as the test user; access denial is proven with System.runAs in the security tests. Queries the second save in changeEveryReference spent.</td>
+<td>Total complexity is the sum of independent one-scenario tests; no method exceeds 2. Methods run as the Sojourn admin (D-619); access denial is proven with System.runAs in the security tests. Queries the second save in changeEveryReference spent.</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
@@ -2187,6 +2017,11 @@
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
+<td><code>Intervals</code></td>
+<td>The four arguments are distinct facts: the Interval read, the row written, its business hours, and its minutes.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
 <td><code>BusinessHoursCalc</code></td>
 <td>The four inputs are the four independent sources in the documented resolution order.</td>
 </tr>
@@ -2219,6 +2054,11 @@
 <td>PMD.ExcessivePublicCount</td>
 <td><code>SetupModels</code></td>
 <td>A data transfer object for the UI: one field per fact the Health Monitor shows about an error.</td>
+</tr>
+<tr>
+<td>PMD.ExcessivePublicCount</td>
+<td><code>SetupModels</code></td>
+<td>A data transfer object for the UI: one public field per fact a Tracked objects list row shows, so the count grows with the screen, not with behaviour.</td>
 </tr>
 <tr>
 <td>PMD.ExcessivePublicCount</td>
@@ -2273,12 +2113,12 @@
 <tr>
 <td>PMD.TooManyFields</td>
 <td><code>SetupModels</code></td>
-<td>A data transfer object for the UI: one field per fact a Tracked objects list row shows.</td>
+<td>A data transfer object for the UI: one field per fact the Health Monitor shows about an error.</td>
 </tr>
 <tr>
 <td>PMD.TooManyFields</td>
 <td><code>SetupModels</code></td>
-<td>A data transfer object for the UI: one field per fact the Health Monitor shows about an error.</td>
+<td>A data transfer object for the UI: one public field per fact a Tracked objects list row shows, so the count grows with the screen, not with behaviour.</td>
 </tr>
 </tbody>
 </table>
