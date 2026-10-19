@@ -1670,7 +1670,7 @@
 <ol>
 <li>In Setup, open <strong>Flows</strong> and the <strong>Sojourn Capture Template</strong>, then choose <strong>Save As</strong>, a new Flow. Keep "Sojourn" in the label.</li>
 <li>On the Start element, choose your object.</li>
-<li>In <strong>Sojourn: Capture Change</strong>, set the object for Record and Prior record to the same object.</li>
+<li>In <strong>Sojourn: Capture Change</strong>, set the object for Record and Prior record to the same object. Pass the prior record on every save, as the template does: when some saves in one batch pass it and others do not, Sojourn records each correctly but in two passes, at twice the queries.</li>
 <li>Activate the Flow, then choose <strong>Re-check</strong> on the object's screen. The pill turns to Flow active.</li>
 </ol>
 <p>Keep your copy a record-triggered Flow that runs after the save, as the template is: it runs in system context, so it records every user's changes. If you call <strong>Sojourn: Capture Change</strong> from a screen Flow or another Flow that runs as the user, give those users access to the action's Apex class (<code>ChangeCapture</code>) through a permission set of your own; only Sojourn Admin includes it, and without it the Flow fails for everyone else.</p>

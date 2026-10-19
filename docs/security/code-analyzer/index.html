@@ -1802,6 +1802,11 @@
 </tr>
 <tr>
 <td>PMD.CognitiveComplexity</td>
+<td><code>JobSchedules</code></td>
+<td>The total is the sum of small steps, none above 11: one schedule, read, and abort per job, and the Live values label.</td>
+</tr>
+<tr>
+<td>PMD.CognitiveComplexity</td>
 <td><code>ErrorRepair</code></td>
 <td>The total is the sum of small steps, none above 12: check, refuse, write, and pair each error with its Interval (R-25).</td>
 </tr>
@@ -1817,13 +1822,18 @@
 </tr>
 <tr>
 <td>PMD.CognitiveComplexity</td>
+<td><code>IntervalWriter</code></td>
+<td>The totals are the sum of small steps, none above 12: open, close, heal a double open (D-626), and the owner set at creation (D-603).</td>
+</tr>
+<tr>
+<td>PMD.CognitiveComplexity</td>
 <td><code>SetupController</code></td>
 <td>Thin methods, each check, call, wrap (highest complexity 3), one per action on the Settings screens it serves; setActive, setPaused, and saveSettings take a switch's new state.</td>
 </tr>
 <tr>
 <td>PMD.CognitiveComplexity</td>
 <td><code>UnitOfWork</code></td>
-<td>three small DML strategy classes and per-type accessors live here on purpose so callers write UnitOfWork.UserModeDml</td>
+<td>four small DML strategy classes and per-type accessors live here on purpose so callers write UnitOfWork.UserModeDml</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
@@ -1834,11 +1844,6 @@
 <td>PMD.CyclomaticComplexity</td>
 <td><code>TimelineServiceTest</code></td>
 <td>Methods run as the Sojourn admin (D-619) unless they say otherwise; the System.runAs tests prove the user-mode reads (D-556). Total complexity is the sum of independent one-scenario tests; no method exceeds 5.</td>
-</tr>
-<tr>
-<td>PMD.CyclomaticComplexity</td>
-<td><code>SummaryServiceTest</code></td>
-<td>Methods run as the Sojourn admin (D-619); IntervalSummariesSelectorTest proves user mode. Total complexity is the sum of independent one-scenario tests.</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
@@ -1877,6 +1882,11 @@
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
+<td><code>JobSchedules</code></td>
+<td>The total is the sum of small steps, none above 11: one schedule, read, and abort per job, and the Live values label.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
 <td><code>CaseMetricsServiceImpl</code></td>
 <td>The total is the sum of small steps, none above 6: read, compute, compare, and write as the engine or as the user (D-615).</td>
 </tr>
@@ -1888,7 +1898,7 @@
 <tr>
 <td>PMD.CyclomaticComplexity</td>
 <td><code>IntervalWriter</code></td>
-<td>The total is the sum of small steps, none above 9: open, close, heal a double open (D-626), and the owner set at creation (D-603).</td>
+<td>The totals are the sum of small steps, none above 12: open, close, heal a double open (D-626), and the owner set at creation (D-603).</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
@@ -1902,18 +1912,28 @@
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
+<td><code>SummaryServiceTest</code></td>
+<td>Today in the org time zone, read once per test so a run across midnight keeps one day (R-51).</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
 <td><code>ChangeCaptureServiceTest</code></td>
 <td>Total complexity is the sum of independent one-scenario tests; no method exceeds 2. Methods run as the Sojourn admin (D-619); access denial is proven with System.runAs in the security tests. Queries the second save in changeEveryReference spent.</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
-<td><code>SetupServiceImpl</code></td>
-<td>setActive, setPaused, and saveSettings take the new state of a switch on the Settings page; one method per state would repeat the same write. The class total is the sum of one small method per Settings action, none above 7.</td>
+<td><code>UnitOfWorkTest</code></td>
+<td>Total complexity is the sum of independent one-scenario tests; no method exceeds 5. Methods run as the Sojourn admin (D-619); access denial is proven with System.runAs in the security tests.</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
 <td><code>UnitOfWork</code></td>
-<td>three small DML strategy classes and per-type accessors live here on purpose so callers write UnitOfWork.UserModeDml</td>
+<td>four small DML strategy classes and per-type accessors live here on purpose so callers write UnitOfWork.UserModeDml</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>SetupServiceImpl</code></td>
+<td>setActive, setPaused, and saveSettings take the new state of a switch on the Settings page; one method per state would repeat the same write. The class total is the sum of one small method per Settings action, none above 7.</td>
 </tr>
 <tr>
 <td>PMD.EmptyStatementBlock</td>
@@ -2062,8 +2082,18 @@
 </tr>
 <tr>
 <td>PMD.ExcessivePublicCount</td>
+<td><code>TestDataFactory</code></td>
+<td>One builder per record and user the tests need, composed into list builders (R-53): the public count is the catalogue.</td>
+</tr>
+<tr>
+<td>PMD.ExcessivePublicCount</td>
 <td><code>SetupController</code></td>
 <td>Thin methods, each check, call, wrap (highest complexity 3), one per action on the Settings screens it serves; setActive, setPaused, and saveSettings take a switch's new state.</td>
+</tr>
+<tr>
+<td>PMD.ExcessivePublicCount</td>
+<td><code>UnitOfWork</code></td>
+<td>four small DML strategy classes and per-type accessors live here on purpose so callers write UnitOfWork.UserModeDml</td>
 </tr>
 <tr>
 <td>PMD.FieldNamingConventions</td>
@@ -2082,11 +2112,6 @@
 </tr>
 <tr>
 <td>PMD.OperationWithLimitsInLoop</td>
-<td><code>JobSchedules</code></td>
-<td>At most six of Sojourn's own entries; System.abortJob has no bulk form.</td>
-</tr>
-<tr>
-<td>PMD.OperationWithLimitsInLoop</td>
 <td><code>HistorySelector</code></td>
 <td>One capped count per Tracked field, at most 10 (D-397, D-399); the inputs are the object, its history field names, the window, and the cap.</td>
 </tr>
@@ -2099,6 +2124,11 @@
 <td>PMD.OperationWithLimitsInLoop</td>
 <td><code>RecordNamesSelector</code></td>
 <td>One query per referenced object type (in practice User and Group), never per record.</td>
+</tr>
+<tr>
+<td>PMD.OperationWithLimitsInLoop</td>
+<td><code>JobSchedules</code></td>
+<td>Only Sojourn's own entries, by exact name, at most six; System.abortJob has no bulk form.</td>
 </tr>
 <tr>
 <td>PMD.OperationWithLimitsInLoop</td>
