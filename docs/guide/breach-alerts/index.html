@@ -1475,7 +1475,7 @@
       <span class="pill open">Since release 1</span>
     </div>
   
-  <p>When an Interval runs past its goal, the Live values job marks it as breached. The <strong>Sojourn Breach Alert Template</strong> Flow turns that moment into an email to the Interval's owner and, when they have one in Salesforce, their manager. It ships inactive, so nothing is sent until you choose to.</p>
+  <p>When an Interval runs past its goal, Sojourn marks it as breached: the Live values job marks an Interval that is still open, and a stay that closes past its goal before the job saw it is marked when it closes. The <strong>Sojourn Breach Alert Template</strong> Flow turns that moment into an email to the Interval's owner and, when they have one in Salesforce, their manager. It ships inactive, so nothing is sent until you choose to.</p>
 <h2 id="turn-it-on">Turn it on<a class="headerlink" href="#turn-it-on" title="Permanent link">#</a></h2>
 <ol>
 <li>In Setup, open <strong>Flows</strong>, then <strong>Sojourn Breach Alert Template</strong>, and choose <strong>Save As</strong>, a new Flow.</li>
@@ -1484,9 +1484,10 @@
 </ol>
 <h2 id="good-to-know">Good to know<a class="headerlink" href="#good-to-know" title="Permanent link">#</a></h2>
 <ul>
-<li>The alert fires inside the Live values job, which sets the breach. Turn on <strong>Live values</strong> on the Tracked object's screen and schedule the Live values job on the Sojourn Settings overview; without both, nothing is marked breached and no alert is sent.</li>
+<li>For an open Interval, the alert fires inside the Live values job, which sets the breach. Turn on <strong>Live values</strong> on the Tracked object's screen and schedule the Live values job on the Sojourn Settings overview; without both, open Intervals are not marked breached and no alert is sent for them.</li>
+<li>By default the template emails only while an Interval is still open, when someone can still act. To email for a stay that closed past its goal too, turn on <strong>Also email when a stay closes past its goal</strong> under <strong>Breach alerts</strong> on the <strong>Goals</strong> screen of Sojourn Settings. The setting applies to every Tracked object; the breach flag and reports are the same either way.</li>
 <li>Only Intervals owned by a user are alerted. Queue-owned Intervals have no user to email.</li>
-<li>Each email counts toward the org's daily email limit. If an email cannot be sent, the Flow ends without it and the Live values job carries on.</li>
+<li>Each email counts toward the org's daily email limit. If an email cannot be sent, the Flow ends without it and the save that marked the breach carries on.</li>
 <li>Your copy is yours to change: add a condition on the Tracked field, or send to a team address instead.</li>
 </ul>
 <div class="sj-verify">

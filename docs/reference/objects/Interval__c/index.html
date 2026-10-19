@@ -1376,10 +1376,10 @@
 <td>When the breach was detected.</td>
 </tr>
 <tr>
-<td>Business Days</td>
+<td>Business Days (8 h)</td>
 <td><code>Business_Days__c</code></td>
 <td>Formula (Number)</td>
-<td>Business minutes as eight-hour business days.<br><em>Help text:</em> Based on an eight-hour business day.</td>
+<td>Business minutes divided by 480: days of eight business hours, whatever the business hours behind the Interval. For other day lengths, divide Business Minutes in a report formula.<br><em>Help text:</em> Business minutes as days of eight hours. If your business day is longer or shorter, use Business Minutes instead.</td>
 </tr>
 <tr>
 <td>Business Hours Display</td>
@@ -1392,12 +1392,6 @@
 <td><code>Business_Hours_Id__c</code></td>
 <td>Text (18)</td>
 <td>Business hours record used for this interval, kept so minutes can be recomputed.<br><em>Help text:</em> Which business hours were used.</td>
-</tr>
-<tr>
-<td>Business Hours</td>
-<td><code>Business_Hours__c</code></td>
-<td>Formula (Number)</td>
-<td>Business minutes as hours.</td>
 </tr>
 <tr>
 <td>Business Minutes To Date</td>
@@ -1416,12 +1410,6 @@
 <td><code>Calendar_Days__c</code></td>
 <td>Formula (Number)</td>
 <td>Calendar minutes as days.<br><em>Help text:</em> Calendar minutes as 24-hour days.</td>
-</tr>
-<tr>
-<td>Calendar Hours</td>
-<td><code>Calendar_Hours__c</code></td>
-<td>Formula (Number)</td>
-<td>Calendar minutes as hours.</td>
 </tr>
 <tr>
 <td>Calendar Minutes To Date</td>
@@ -1463,7 +1451,19 @@
 <td>Changed By</td>
 <td><code>Changed_By__c</code></td>
 <td>Lookup (User)</td>
-<td>Who made the change that started this interval.</td>
+<td>Who made the change that started this Interval. For an Interval a job wrote (Reconcile, Catch up, backfill, or a repair), the user who ran or scheduled that job, not the person who changed the record; Source tells which.<br><em>Help text:</em> The user whose save started this Interval. When Source is Reconcile, Catch-Up, Backfill, or Manual-Repair, it is the user who ran or scheduled that job.</td>
+</tr>
+<tr>
+<td>Elapsed Business Hours</td>
+<td><code>Elapsed_Business_Hours__c</code></td>
+<td>Formula (Number)</td>
+<td>Time the Interval took in business hours: Business Minutes divided by 60. A duration, not the Business hours schedule; Business Hours Id names the schedule used.<br><em>Help text:</em> Elapsed time in this value, counted in business hours, as hours with two decimals.</td>
+</tr>
+<tr>
+<td>Elapsed Calendar Hours</td>
+<td><code>Elapsed_Calendar_Hours__c</code></td>
+<td>Formula (Number)</td>
+<td>Time the Interval took on the clock: Calendar Minutes divided by 60, nights and weekends included.<br><em>Help text:</em> Elapsed time in this value on the clock, as hours with two decimals.</td>
 </tr>
 <tr>
 <td>Entered At</td>
@@ -1534,8 +1534,8 @@
 <tr>
 <td>Opportunity Amount</td>
 <td><code>Opportunity_Amount__c</code></td>
-<td>Currency (16, 2)</td>
-<td>Opportunity amount at capture time.</td>
+<td>Number (18, 2)</td>
+<td>Opportunity amount at capture time, as a plain number in the Opportunity's own currency (D-606).<br><em>Help text:</em> Opportunity amount at capture time.</td>
 </tr>
 <tr>
 <td>Opportunity Stage</td>

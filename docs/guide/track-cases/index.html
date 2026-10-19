@@ -586,6 +586,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cases-and-leads-routed-by-assignment-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cases and Leads routed by assignment rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#turn-on-the-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1446,6 +1457,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cases-and-leads-routed-by-assignment-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cases and Leads routed by assignment rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#turn-on-the-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1507,6 +1529,14 @@
 <li>Under <strong>Status field</strong>, keep <strong>Status</strong>, and add <strong>Closed</strong> to <strong>Closed values</strong>.</li>
 <li>Choose <strong>Save</strong>.</li>
 </ol>
+<h2 id="cases-and-leads-routed-by-assignment-rules">Cases and Leads routed by assignment rules<a class="headerlink" href="#cases-and-leads-routed-by-assignment-rules" title="Permanent link">#</a></h2>
+<p>When an assignment rule routes a new Case or Lead, for example from Email-to-Case, Web-to-Case, Web-to-Lead, or an import that uses the default rule, Sojourn records the owner the rule chose as the record's first owner, from the moment the record was created. Salesforce runs assignment rules after the save that creates the record, in the same transaction, and Sojourn treats an owner set there as part of creating the record:</p>
+<ul>
+<li>the first Owner Interval names the queue or user the rule chose, not the user who created the record (for Email-to-Case, the Automated Case User);</li>
+<li>the first Status Interval names that owner too;</li>
+<li>the Case's <strong>Owner Change Count</strong> does not count the routing.</li>
+</ul>
+<p>An owner change in any later save, by a person, a Flow, or a rule run on edit, closes the Owner Interval and opens the next one as usual.</p>
 <h2 id="turn-on-the-jobs">Turn on the jobs<a class="headerlink" href="#turn-on-the-jobs" title="Permanent link">#</a></h2>
 <p>On the <strong>Overview</strong>, the <strong>Jobs</strong> card schedules the three jobs that keep Intervals current. Choose <strong>Turn on</strong> for <strong>Live values</strong>, <strong>Reconcile</strong>, and <strong>Summaries</strong>. See <a href="../jobs/">Run the jobs</a> for what each does.</p>
 <h2 id="open-your-first-report">Open your first report<a class="headerlink" href="#open-your-first-report" title="Permanent link">#</a></h2>

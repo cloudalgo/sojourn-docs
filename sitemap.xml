@@ -29,6 +29,7 @@
   <url><loc>https://sojourn.cloudalgo.com/docs/guide/uninstall/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Case/</loc></url>
+  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Error_Log__c/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Goal__c/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Interval_Archive__b/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Interval_Summary__c/</loc></url>
@@ -41,7 +42,6 @@
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Settings__c/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Tracked_Field__c/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Tracked_Object__c/</loc></url>
-  <url><loc>https://sojourn.cloudalgo.com/docs/reference/objects/Tracking_Error__c/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/permission-sets/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/reference/reports/</loc></url>
   <url><loc>https://sojourn.cloudalgo.com/docs/security/code-analyzer/</loc></url>

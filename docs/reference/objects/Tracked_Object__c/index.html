@@ -1406,6 +1406,12 @@
 <td>Shows how changes reach Sojourn; the engine does not branch on it.<br><em>Help text:</em> Case, Lead, and Opportunity use the packaged trigger. Other objects use a Flow cloned from the Sojourn template.</td>
 </tr>
 <tr>
+<td>Catch Up Message</td>
+<td><code>Catch_Up_Message__c</code></td>
+<td>LongTextArea (2000)</td>
+<td>Result of the last Catch up on this object: when it ran, how many records it replayed, and anything still waiting. Kept apart from Backfill Message so a catch up never hides the last backfill result.<br><em>Help text:</em> Last Catch up result. If it stopped or capture was paused during it, run Catch up again: records already replayed are skipped.</td>
+</tr>
+<tr>
 <td>Closed Values</td>
 <td><code>Closed_Values__c</code></td>
 <td>LongTextArea (1000)</td>

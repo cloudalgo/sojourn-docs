@@ -1370,6 +1370,12 @@
 </thead>
 <tbody>
 <tr>
+<td>Alert Closed Breaches</td>
+<td><code>Alert_Closed_Breaches__c</code></td>
+<td>Checkbox</td>
+<td>When true, the Sojourn Breach Alert Flow also emails the owner of an Interval that is flagged as breached when it closes past its goal; off by default, so alerts go only for Intervals still open (D-614). Set on the Goals screen of Sojourn Settings.<br><em>Help text:</em> On: owners also get a breach email for a stay that closed past its goal before the Live values job flagged it. Off: breach emails only for Intervals still open.</td>
+</tr>
+<tr>
 <td>Archive Enabled</td>
 <td><code>Archive_Enabled__c</code></td>
 <td>Checkbox</td>
@@ -1379,37 +1385,37 @@
 <td>Default Business Hours Id</td>
 <td><code>Default_Business_Hours_Id__c</code></td>
 <td>Text (18)</td>
-<td>BusinessHours Id used when no object, field, or queue override applies. Empty means the org default.</td>
+<td>BusinessHours Id used when no object, field, or queue override applies. Empty means the org default.<br><em>Help text:</em> The business hours Sojourn uses when no field, record, queue, or object setting applies. Set it on the Sojourn Settings overview; leave blank for the org default.</td>
 </tr>
 <tr>
 <td>Limit Reserve CPU Ms</td>
 <td><code>Limit_Reserve_CPU_Ms__c</code></td>
 <td>Number (6, 0)</td>
-<td>CPU milliseconds Sojourn leaves unused. Default 2000.</td>
+<td>CPU milliseconds Sojourn leaves unused. Default 2000.<br><em>Help text:</em> How many milliseconds of CPU time Sojourn leaves for your own automation in each save.</td>
 </tr>
 <tr>
 <td>Limit Reserve DML Rows</td>
 <td><code>Limit_Reserve_DML_Rows__c</code></td>
 <td>Number (6, 0)</td>
-<td>DML rows Sojourn leaves unused. Default 2000.</td>
+<td>DML rows Sojourn leaves unused. Default 2000.<br><em>Help text:</em> How many DML rows Sojourn leaves for your own automation in each save. Raise it if your Flows or triggers run out of rows after Sojourn.</td>
 </tr>
 <tr>
 <td>Limit Reserve Queries</td>
 <td><code>Limit_Reserve_Queries__c</code></td>
 <td>Number (4, 0)</td>
-<td>SOQL queries Sojourn leaves unused in the host transaction. Default 10.</td>
+<td>SOQL queries Sojourn leaves unused in the host transaction. Default 10.<br><em>Help text:</em> How many SOQL queries Sojourn leaves for your own automation in each save.</td>
 </tr>
 <tr>
 <td>Live Values Window Days</td>
 <td><code>Live_Values_Window_Days__c</code></td>
 <td>Number (4, 0)</td>
-<td>Open intervals older than this are not refreshed by the live job. Default 90.</td>
+<td>Open intervals older than this are not refreshed by the live job. Default 90.<br><em>Help text:</em> How far back, in days, the Live values job keeps refreshing open Intervals. Older open Intervals keep their last values.</td>
 </tr>
 <tr>
 <td>Omni Open Statuses</td>
 <td><code>Omni_Open_Statuses__c</code></td>
 <td>Text (255)</td>
-<td>Comma-separated AgentWork statuses that open an agent interval. Default Assigned,Opened.</td>
+<td>Comma-separated AgentWork statuses that open an agent interval. Default Assigned,Opened.<br><em>Help text:</em> Omni-Channel work statuses that open an Agent work Interval, separated by commas. For example Assigned,Opened.</td>
 </tr>
 <tr>
 <td>Purge Batch Size</td>
@@ -1445,7 +1451,7 @@
 <td>Tracking Enabled</td>
 <td><code>Tracking_Enabled__c</code></td>
 <td>Checkbox</td>
-<td>Master switch. When false, no intervals are written.</td>
+<td>Master switch. When false, no intervals are written.<br><em>Help text:</em> Turns all Sojourn capture on or off for the whole org. Change it on the Sojourn Settings overview.</td>
 </tr>
 </tbody>
 </table>

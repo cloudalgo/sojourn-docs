@@ -1482,7 +1482,8 @@
 <li><strong>Target, business minutes</strong>: how long an Interval in this value should last. Leave it blank for no goal.</li>
 <li><strong>Warn at, percent</strong>: when the Health Monitor and reports show an Interval as close to its goal, from 1 to 100.</li>
 </ul>
-<p>A value's own goal wins over Any value. Choose <strong>Save goals</strong>. New Intervals carry the goal; Intervals already open keep the one they started with. An Interval that runs past its goal is a Breach.</p>
+<p>A value's own goal wins over Any value. Choose <strong>Save goals</strong>. New Intervals carry the goal; Intervals already open keep the one they started with. An Interval that runs past its goal is a Breach: the Live values job flags one that is still open, and a stay is flagged when it closes past its goal.</p>
+<p>The <strong>Breach alerts</strong> card below the goals is for every Tracked object. Its switch, <strong>Also email when a stay closes past its goal</strong>, decides whether the breach alert email also goes for stays that closed late, or only while an Interval is still open (the default). See <a href="../breach-alerts/">Email a breach alert</a>; the card's <strong>When to turn it on</strong> explains the choice.</p>
 <p>Clearing a target turns the goal off. Goals are never deleted, so Intervals that point at one keep it.</p>
 <h2 id="give-queues-their-business-hours">Give queues their business hours<a class="headerlink" href="#give-queues-their-business-hours" title="Permanent link">#</a></h2>
 <p>Open <strong>Business hours</strong>. The card at the top names the org default, the hours used when nothing more specific applies; change it on the Overview. The <strong>Queues</strong> table lists every queue with the objects it takes. Choose business hours for a queue, or leave it on <strong>Use the next rule</strong>, then choose <strong>Save</strong>.</p>
