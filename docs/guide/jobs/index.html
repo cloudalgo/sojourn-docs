@@ -1497,7 +1497,7 @@
       <span class="pill open">Since release 1</span>
     </div>
   
-  <p>Every Sojourn job runs as the admin who schedules or starts it, with that admin's access, and the <a href="../health-monitor/">Health Monitor</a> shows each run. No job calls a service outside Salesforce.</p>
+  <p>Every Sojourn job runs as the admin who schedules or starts it, with that admin's access, and the <a href="../health-monitor/">Health Monitor</a> shows each run. No job calls a service outside Salesforce. Schedule the jobs as a dedicated, long-lived Sojourn admin user rather than a person who may leave: if that user is deactivated, every run fails, and the Health Monitor says so and names the user.</p>
 <h2 id="scheduled-jobs">Scheduled jobs<a class="headerlink" href="#scheduled-jobs" title="Permanent link">#</a></h2>
 <p>Schedule them on the <strong>Jobs</strong> card of the Sojourn Settings overview: <strong>Turn on</strong> schedules a job, <strong>Change</strong> saves a new interval or time, and <strong>Turn off</strong> stops it. A run that is still going when the next one is due is skipped.</p>
 <table>

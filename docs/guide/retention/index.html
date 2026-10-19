@@ -1577,7 +1577,7 @@
 <p>Choose <strong>Save retention</strong>. Keeping a number of days asks you to type DELETE first, because a purge deletes records. Days start and end at midnight in the org time zone.</p>
 <h2 id="what-a-purge-deletes">What a purge deletes<a class="headerlink" href="#what-a-purge-deletes" title="Permanent link">#</a></h2>
 <p>A purge deletes only Intervals that are closed, already summarised, and ended before the cutoff. Open Intervals are never deleted, however old.</p>
-<p>It works a few hundred Intervals at a time. Each part is first written to a CSV file, attached to the run's <strong>Purge Run</strong> record, then deleted in the same step: a part is saved and deleted together, or not at all. The first part that fails stops the run, and the run says why.</p>
+<p>It works 2,000 Intervals at a time, so a purge of a million Intervals leaves 500 CSV files on its run. Each part is first written to a CSV file, attached to the run's <strong>Purge Run</strong> record, then deleted in the same step: a part is saved and deleted together, or not at all. The first part that fails stops the run, and the run says why. Choosing <strong>Keep everything</strong> while a purge runs stops it at its next part, and the run says the rest is kept. <strong>Purge now</strong> waits while summaries are being built or rebuilt, because a rebuild still reads the Intervals a purge would delete.</p>
 <div class="sj-callout">
 <p><strong>The CSV file is your copy.</strong> Download it from the Purge Run record before you delete the record or the file. Sojourn never deletes them.</p>
 </div>

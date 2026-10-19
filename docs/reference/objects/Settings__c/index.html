@@ -1421,7 +1421,7 @@
 <td>Purge Batch Size</td>
 <td><code>Purge_Batch_Size__c</code></td>
 <td>Number (4, 0)</td>
-<td>Intervals per purge chunk, 50 to 2000; blank means 200 (D-388).<br><em>Help text:</em> Lower it if purge chunks hit limits.</td>
+<td>Intervals per purge chunk, 50 to 2000; blank means 2000 (D-388, R-64). Each chunk writes one CSV file to the purge run, so a larger chunk leaves fewer files.<br><em>Help text:</em> Leave blank for 2000. Lower it only if purge chunks hit limits; each chunk adds one CSV file to the purge run.</td>
 </tr>
 <tr>
 <td>Purge Enabled</td>

@@ -1504,12 +1504,12 @@
 <ul>
 <li><strong>The banner</strong> reads Healthy, Needs attention, or Not working, with one line that says what needs you. <strong>Check again</strong> reads everything afresh.</li>
 <li><strong>Capture</strong> lists what stops Intervals being recorded: tracking off for the whole org, a Tracked object whose capture Flow is missing or cannot be read, a paused object or one waiting for Catch up, a failed backfill. On the Free plan, an object other than Case, Lead, and Opportunity shows "Plus plan needed" as information: it keeps its Intervals, and new changes are not recorded. If you cannot see Flows (you lack View Setup and Configuration and are not a Sojourn admin), an object captured by a Flow shows "Flow status hidden from you" as information: it does not change the overall status, and a Sojourn admin sees the real Flow status.</li>
-<li><strong>Jobs</strong> shows whether Live values, Reconcile, and Summaries are scheduled, their last run, and the next one. A job that is off shows as a warning until a Sojourn admin schedules it on the Sojourn Settings overview; on a new install, that includes Summaries.</li>
+<li><strong>Jobs</strong> shows whether Live values, Reconcile, and Summaries are scheduled, their last run, and the next one. A job that is off shows as a warning until a Sojourn admin schedules it on the Sojourn Settings overview; on a new install, that includes Summaries. A job scheduled by a user who is no longer active shows as a failure, and Live values with an entry missing (for example after someone deleted one in Setup) shows as a warning with the minutes it still runs at; choosing the interval again on the overview restores it.</li>
 <li><strong>Errors</strong> counts the errors that need you, those in the last 24 hours, and those fixed in the last 24 hours, by type.</li>
 <li><strong>Recent errors</strong> lists the latest, each with its fix.</li>
 </ul>
 <h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">#</a></h2>
-<p>The <strong>Errors</strong> tab lists Error Log rows by status, type, object, and age. Select rows to <strong>Create intervals</strong>, <strong>Mark resolved</strong>, or <strong>Ignore</strong> them together. Open a row to see what happened, why, how to fix it, and the technical details for support.</p>
+<p>The <strong>Errors</strong> tab lists Error Log rows by status, type, object, and age. Select rows to <strong>Create intervals</strong>, <strong>Mark resolved</strong>, or <strong>Ignore</strong> them together. The list shows the newest 200 errors that match the filters; when more match, it says "Showing the newest 200 errors" and <strong>Select all</strong> takes only those 200. Resolve or ignore them, or narrow the filters, to reach older ones. Open a row to see what happened, why, how to fix it, and the technical details for support.</p>
 <table>
 <thead>
 <tr>
@@ -1531,8 +1531,8 @@
 </tr>
 <tr>
 <td>Config</td>
-<td>A Tracked field names a field that was deleted or renamed, or that Sojourn can no longer read.</td>
-<td>In Sojourn Settings, remove the field or choose its replacement, then mark the error resolved.</td>
+<td>A Tracked field names a field that was deleted or renamed, or that Sojourn can no longer read; or automation on an object changed a tracked field on every save, and Sojourn stopped following the saves three levels deep.</td>
+<td>In Sojourn Settings, remove the field or choose its replacement, then mark the error resolved. For the save loop, find the Flow or trigger on the named object that changes the field each time it saves, and stop it repeating.</td>
 </tr>
 <tr>
 <td>Business hours</td>
