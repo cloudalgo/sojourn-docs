@@ -5,14 +5,43 @@
   <id>tag:sojourn.cloudalgo.com,2026:changelog</id>
   <link rel="self" type="application/atom+xml" href="https://sojourn.cloudalgo.com/docs/changelog/feed.xml" />
   <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/" />
-  <updated>2026-10-18T00:00:00Z</updated>
+  <updated>2026-10-20T00:00:00Z</updated>
   <author>
     <name>CloudAlgo</name>
     <uri>https://sojourn.cloudalgo.com/</uri>
   </author>
   <entry>
+    <title>Sprint 10: the last fixes before promotion (20 October 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-10</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-10-the-last-fixes-before-promotion-20-october-2026" />
+    <updated>2026-10-20T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Loading states.&lt;/strong&gt; Every Sojourn Settings and Health Monitor screen shows a loading state shaped like its content until its data arrives, instead of an empty page.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Busy buttons.&lt;/strong&gt; The button you press shows the Lanes mark at work until its action ends.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Notifications.&lt;/strong&gt; What an action did appears at the top of the page as a slim Harbor bar, one stack each for Done, Started, and Failed, with the newest in front and a count that opens the list. Done and Started close after 6 seconds; point at one to read the whole message and keep it open. A failure says what went wrong and stays until you dismiss it. Repair results that list problems still show on their screen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Partial saves.&lt;/strong&gt; When a save of many records partly fails and Salesforce saves the rest again, each saved record keeps an Interval for every value it passed through in that save, including changes your own automation made in the same save.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Backfill.&lt;/strong&gt; A backfill that cannot start, for example because its object is no longer tracked, shows Failed with the reason at once instead of staying Queued.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Sprint 9 (in progress): review fixes and lock-in (20 October 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-9</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-9-in-progress-review-fixes-and-lock-in-20-october-2026" />
+    <updated>2026-10-20T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;p&gt;What is merged so far; promoting the 1.0.0 packages and submitting them for the security review come after sprint 10.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Assignment rules.&lt;/strong&gt; A Case or Lead that an assignment rule routes when it is created starts with the rule's owner, so its first queue time is right.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Breach at close.&lt;/strong&gt; An Interval that closes past its goal is flagged as a Breach when it closes, not only by Live values. A new &lt;strong&gt;Breach alerts&lt;/strong&gt; card on the Goals screen chooses whether owners are also emailed when a stay closes past its goal; it is off by default.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Correct Intervals in edge cases.&lt;/strong&gt; A save that partly fails records every row that saves, Reconcile and Catch up open no blank or unchanged Intervals, and a record with two open Intervals for one field heals on its next change.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Health Monitor.&lt;/strong&gt; Repair recomputes the Case figures as the person running it, errors carry stable codes, and no stack trace or query text reaches people who are not admins. The error list says when it shows only the newest 200.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Jobs say what they did.&lt;/strong&gt; A backfill that a move to the Free plan cut short finishes Failed and says why, Purge now waits while summaries are rebuilt, and the object screen's Backfill card lists the last Catch up.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;Elapsed Business Hours&lt;/strong&gt; and &lt;strong&gt;Elapsed Calendar Hours&lt;/strong&gt; fields replace Business Hours and Calendar Hours on Intervals, so a duration is never confused with a Business hours schedule.&lt;/li&gt;
+&lt;li&gt;Numbers and months follow your locale, every field has a description and help text, and the install guide adds the step that sets each dashboard's running user.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
     <title>Sprint 8: Free and Plus plans, hardening, and performance runs (18 October 2026)</title>
-    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-8-free-and-plus-plans-hardening-and-performance-runs-18-october-2026</id>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-8</id>
     <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-8-free-and-plus-plans-hardening-and-performance-runs-18-october-2026" />
     <updated>2026-10-18T00:00:00Z</updated>
     <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
@@ -24,7 +53,7 @@
   </entry>
   <entry>
     <title>Sprint 7: the record timeline, reports, and dashboards (14 October 2026)</title>
-    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-7-the-record-timeline-reports-and-dashboards-14-october-2026</id>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-7</id>
     <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-7-the-record-timeline-reports-and-dashboards-14-october-2026" />
     <updated>2026-10-14T00:00:00Z</updated>
     <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
@@ -37,7 +66,7 @@
   </entry>
   <entry>
     <title>Sprint 6: Case metrics, Omni-Channel, and breach alerts (13 October 2026)</title>
-    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-6-case-metrics-omni-channel-and-breach-alerts-13-october-2026</id>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-6</id>
     <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-6-case-metrics-omni-channel-and-breach-alerts-13-october-2026" />
     <updated>2026-10-13T00:00:00Z</updated>
     <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
@@ -50,7 +79,7 @@
   </entry>
   <entry>
     <title>Sprint 5: summaries, retention, goals, and moving settings (12 October 2026)</title>
-    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-5-summaries-retention-goals-and-moving-settings-12-october-2026</id>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-5</id>
     <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-5-summaries-retention-goals-and-moving-settings-12-october-2026" />
     <updated>2026-10-12T00:00:00Z</updated>
     <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
@@ -66,7 +95,7 @@
   </entry>
   <entry>
     <title>Sprint 4: jobs and the Health Monitor (12 October 2026)</title>
-    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-4-jobs-and-the-health-monitor-12-october-2026</id>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-4</id>
     <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-4-jobs-and-the-health-monitor-12-october-2026" />
     <updated>2026-10-12T00:00:00Z</updated>
     <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
@@ -83,7 +112,7 @@
   </entry>
   <entry>
     <title>Sprint 3: Flow template and Sojourn Settings (12 October 2026)</title>
-    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-3-flow-template-and-sojourn-settings-12-october-2026</id>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-3</id>
     <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-3-flow-template-and-sojourn-settings-12-october-2026" />
     <updated>2026-10-12T00:00:00Z</updated>
     <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
@@ -99,7 +128,7 @@
   </entry>
   <entry>
     <title>Sprint 2: capture engine (11 October 2026)</title>
-    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-2-capture-engine-11-october-2026</id>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-2</id>
     <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-2-capture-engine-11-october-2026" />
     <updated>2026-10-11T00:00:00Z</updated>
     <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
@@ -114,7 +143,7 @@
   </entry>
   <entry>
     <title>Sprint 1: data model (11 October 2026)</title>
-    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-1-data-model-11-october-2026</id>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-1</id>
     <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-1-data-model-11-october-2026" />
     <updated>2026-10-11T00:00:00Z</updated>
     <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
@@ -128,7 +157,7 @@
   </entry>
   <entry>
     <title>Sprint 0: foundation (11 October 2026)</title>
-    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-0-foundation-11-october-2026</id>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-0</id>
     <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-0-foundation-11-october-2026" />
     <updated>2026-10-11T00:00:00Z</updated>
     <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;

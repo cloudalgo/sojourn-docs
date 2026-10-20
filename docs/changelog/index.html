@@ -131,9 +131,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:10"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i></span>
-          <span class="st-long">Release 1 in development, 9 of 10 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">9 of 10 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:11"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 10 of 11 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">10 of 11 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -1365,6 +1365,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sprint-10-the-last-fixes-before-promotion-20-october-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 10: the last fixes before promotion (20 October 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-9-in-progress-review-fixes-and-lock-in-20-october-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 9 (in progress): review fixes and lock-in (20 October 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sprint-8-free-and-plus-plans-hardening-and-performance-runs-18-october-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1523,6 +1545,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sprint-10-the-last-fixes-before-promotion-20-october-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 10: the last fixes before promotion (20 October 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-9-in-progress-review-fixes-and-lock-in-20-october-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 9 (in progress): review fixes and lock-in (20 October 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sprint-8-free-and-plus-plans-hardening-and-performance-runs-18-october-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1652,6 +1696,25 @@
   
   <p>Follow each sprint with the <a href="feed.xml" type="application/atom+xml">Atom feed</a>.</p>
 <h2 id="release-1-in-development">Release 1, in development<a class="headerlink" href="#release-1-in-development" title="Permanent link">#</a></h2>
+<h3 id="sprint-10-the-last-fixes-before-promotion-20-october-2026">Sprint 10: the last fixes before promotion (20 October 2026)<a class="headerlink" href="#sprint-10-the-last-fixes-before-promotion-20-october-2026" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Loading states.</strong> Every Sojourn Settings and Health Monitor screen shows a loading state shaped like its content until its data arrives, instead of an empty page.</li>
+<li><strong>Busy buttons.</strong> The button you press shows the Lanes mark at work until its action ends.</li>
+<li><strong>Notifications.</strong> What an action did appears at the top of the page as a slim Harbor bar, one stack each for Done, Started, and Failed, with the newest in front and a count that opens the list. Done and Started close after 6 seconds; point at one to read the whole message and keep it open. A failure says what went wrong and stays until you dismiss it. Repair results that list problems still show on their screen.</li>
+<li><strong>Partial saves.</strong> When a save of many records partly fails and Salesforce saves the rest again, each saved record keeps an Interval for every value it passed through in that save, including changes your own automation made in the same save.</li>
+<li><strong>Backfill.</strong> A backfill that cannot start, for example because its object is no longer tracked, shows Failed with the reason at once instead of staying Queued.</li>
+</ul>
+<h3 id="sprint-9-in-progress-review-fixes-and-lock-in-20-october-2026">Sprint 9 (in progress): review fixes and lock-in (20 October 2026)<a class="headerlink" href="#sprint-9-in-progress-review-fixes-and-lock-in-20-october-2026" title="Permanent link">#</a></h3>
+<p>What is merged so far; promoting the 1.0.0 packages and submitting them for the security review come after sprint 10.</p>
+<ul>
+<li><strong>Assignment rules.</strong> A Case or Lead that an assignment rule routes when it is created starts with the rule's owner, so its first queue time is right.</li>
+<li><strong>Breach at close.</strong> An Interval that closes past its goal is flagged as a Breach when it closes, not only by Live values. A new <strong>Breach alerts</strong> card on the Goals screen chooses whether owners are also emailed when a stay closes past its goal; it is off by default.</li>
+<li><strong>Correct Intervals in edge cases.</strong> A save that partly fails records every row that saves, Reconcile and Catch up open no blank or unchanged Intervals, and a record with two open Intervals for one field heals on its next change.</li>
+<li><strong>Health Monitor.</strong> Repair recomputes the Case figures as the person running it, errors carry stable codes, and no stack trace or query text reaches people who are not admins. The error list says when it shows only the newest 200.</li>
+<li><strong>Jobs say what they did.</strong> A backfill that a move to the Free plan cut short finishes Failed and says why, Purge now waits while summaries are rebuilt, and the object screen's Backfill card lists the last Catch up.</li>
+<li>The <strong>Elapsed Business Hours</strong> and <strong>Elapsed Calendar Hours</strong> fields replace Business Hours and Calendar Hours on Intervals, so a duration is never confused with a Business hours schedule.</li>
+<li>Numbers and months follow your locale, every field has a description and help text, and the install guide adds the step that sets each dashboard's running user.</li>
+</ul>
 <h3 id="sprint-8-free-and-plus-plans-hardening-and-performance-runs-18-october-2026">Sprint 8: Free and Plus plans, hardening, and performance runs (18 October 2026)<a class="headerlink" href="#sprint-8-free-and-plus-plans-hardening-and-performance-runs-18-october-2026" title="Permanent link">#</a></h3>
 <ul>
 <li><strong>Free and Plus plans.</strong> Sojourn installs on the Free plan: tracking Case, Lead, and Opportunity, the record timeline, the reports and dashboards, goals and breach flags, business hours, pause and Catch up, summaries, the Health Monitor, and settings export and import. The <strong>Plus plan</strong> adds tracking for any other object, Live values on the record, Backfill with History or Seed, purge and the archive, and Omni-Channel agent work. On Free, Plus features stay visible in Sojourn Settings with their controls off and an <strong>Upgrade to Plus</strong> link. Moving an org from Plus to Free deletes nothing. See <a href="../guide/plans/">Free and Plus plans</a>.</li>
