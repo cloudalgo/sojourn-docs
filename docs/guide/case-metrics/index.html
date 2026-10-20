@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:11"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 10 of 11 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">10 of 11 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i></i><i></i></span>
+          <span class="st-long">Release 1 in development, 11 of 14 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">11 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -1564,13 +1564,14 @@
 </tbody>
 </table>
 <p>The queue, agent, and total minutes count finished ownership only. Time with the current owner is in <strong>Sojourn Owner Minutes</strong>, which the Live values job keeps current on the Plus plan (see <a href="../track-an-object/#live-values-and-the-jobs">Track an object</a>).</p>
-<p>A status is closed when it is in the Tracked object's <strong>Closed values</strong>. With Closed values empty and Status as the status field, Sojourn uses the case statuses marked Closed in Setup. If you track a custom status field, list its closed values; otherwise no value counts as closed and the first-close figures stay blank.</p>
+<p>A status is closed when it is in the Tracked object's <strong>Closed values</strong>. With Closed values empty and Status as the status field, Sojourn uses the case statuses marked Closed in Setup. If you track a custom status field, list its closed values; otherwise no value counts as closed and the first-close figures stay blank. When the Tracked object names a <strong>Closed Checkbox Field</strong>, the first close and the reopens come from that checkbox's own Intervals instead, so track the checkbox as a field too (see <a href="../track-an-object/#when-a-record-closes">When a record closes</a>). The owner's minutes stop at each close: no Owner Interval is open while the Case is closed.</p>
 <h2 id="when-they-change">When they change<a class="headerlink" href="#when-they-change" title="Permanent link">#</a></h2>
 <p>Sojourn recomputes the figures from the Case's Status and Owner Intervals whenever one of them opens or closes: on every save, and after a catch up, a backfill, or a repair. A Case that missed an update, for example because a save was close to a Salesforce limit, is corrected by its next change.</p>
 <p>Every Case gets its figures whoever saves it: Sojourn writes them itself, so agents do not need edit access to these fields, and the fields stay read-only for everyone but Sojourn admins. A catch up, backfill, repair, or the nightly Reconcile writes the figures in its own run, so the Case's Last Modified Date moves to that run's time.</p>
 <h2 id="sojourns-own-update-of-the-case">Sojourn's own update of the Case<a class="headerlink" href="#sojourns-own-update-of-the-case" title="Permanent link">#</a></h2>
 <p>Sojourn writes the figures with one more update of the Case, in the same transaction, right after a save that opens a Status or Owner Interval and after a Case is created. That update carries only the eight Sojourn fields, but your own Case automation runs for it like for any update: validation rules, before-update triggers, and Flows or processes set to run every time a record is edited. Set automation that should run once per user save to run only when the fields it cares about change.</p>
 <p>If automation that runs during Sojourn's update changes the Case's Status or Owner, Sojourn records that change as it happens, like any other save, and recomputes the figures, unless a validation rule refuses Sojourn's update of another Case in the same save; then the next change to the Case or the Reconcile job records it. A validation rule that refuses Sojourn's update leaves the user's save in place; the refused figures are an entry in the Error Log, and the next change to the Case recomputes them.</p>
+<p>Automation on Sojourn's Interval object is different. If a Flow or trigger that runs when an Interval is saved changes a Tracked field of the Case, Lead, or Opportunity the Interval belongs to, in the same save, Sojourn does not record that change as it happens; the next Reconcile run records it. Keep automation on Intervals from writing to the record they belong to.</p>
 <div class="sj-callout">
 <p><strong>Often missed.</strong> The figures are fields on Case, so they show only where you add them. Add them to your Case page layouts and to Case reports; Sojourn does not change your layouts.</p>
 </div>

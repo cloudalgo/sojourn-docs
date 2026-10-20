@@ -124,9 +124,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:11"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 10 of 11 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">10 of 11 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i></i><i></i></span>
+          <span class="st-long">Release 1 in development, 11 of 14 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">11 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -1454,6 +1454,12 @@
 <td>Who made the change that started this Interval. For an Interval a job wrote (Reconcile, Catch up, backfill, or a repair), the user who ran or scheduled that job, not the person who changed the record; Source tells which.<br><em>Help text:</em> The user whose save started this Interval. When Source is Reconcile, Catch-Up, Backfill, or Manual-Repair, it is the user who ran or scheduled that job.</td>
 </tr>
 <tr>
+<td>Closed at Deletion</td>
+<td><code>Closed_At_Deletion__c</code></td>
+<td>Checkbox</td>
+<td>Checked by Reconcile on an Interval it closed because its record was deleted. When the record comes back from the Recycle Bin, only these Intervals open again, and the check is cleared; an Interval that ended before the deletion stays ended (D-665, R3-01).<br><em>Help text:</em> Checked when this Interval was ended only because its record was deleted. If the record is restored from the Recycle Bin, this Interval opens again.</td>
+</tr>
+<tr>
 <td>Elapsed Business Hours</td>
 <td><code>Elapsed_Business_Hours__c</code></td>
 <td>Formula (Number)</td>
@@ -1512,6 +1518,12 @@
 <td><code>Is_Orphaned__c</code></td>
 <td>Checkbox</td>
 <td>The tracked record no longer exists; the interval is kept as history.<br><em>Help text:</em> The tracked record was deleted or merged. The interval is kept as history.</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td><code>Is_Warning__c</code></td>
+<td>Checkbox</td>
+<td>Business minutes reached Warn Minutes, the goal's warn at percent stamped on the Interval: the Interval is close to its goal, or past it. Set as Breached is, by Live values on open Intervals and by the close on closed ones; a breached Interval is also a warning.<br><em>Help text:</em> Set when business minutes reach the goal's Warn at percent. Filter reports on it to find stays close to their goal.</td>
 </tr>
 <tr>
 <td>Lead Rating</td>
@@ -1604,6 +1616,12 @@
 <td>Record type developer name of the tracked record at capture time.<br><em>Help text:</em> Record type of the tracked record at capture time.</td>
 </tr>
 <tr>
+<td>Record Closed</td>
+<td><code>Record_Closed__c</code></td>
+<td>Checkbox</td>
+<td>Checked while the record is closed by its Tracked object's Closed when setting (a closed value of the status field, or the chosen checkbox). A reopen clears it on Intervals still open; an Interval that ended while the record was closed, or at its reopen, keeps it (D-670).<br><em>Help text:</em> Checked on Intervals of a record that is closed. Reports of open stays leave these out, so a closed record never counts as open.</td>
+</tr>
+<tr>
 <td>Sequence</td>
 <td><code>Sequence__c</code></td>
 <td>Number (9, 0)</td>
@@ -1680,6 +1698,24 @@
 <td><code>Tracked_Field__c</code></td>
 <td>Text (255)</td>
 <td>API name of the tracked field; always filter or group by it before grouping by value.<br><em>Help text:</em> API name of the tracked field, for example Status or OwnerId.</td>
+</tr>
+<tr>
+<td>Value Group</td>
+<td><code>Value_Group__c</code></td>
+<td>Text (255)</td>
+<td>The value group this Interval's value belongs to, for example Backlog for New and Reopened (D-675). Blank until value groups are set up.<br><em>Help text:</em> The named group of values this stay counts toward in reports and summaries. Blank when the field has no value groups.</td>
+</tr>
+<tr>
+<td>Warn Minutes</td>
+<td><code>Warn_Minutes__c</code></td>
+<td>Number (16, 2)</td>
+<td>Business minutes at which the Interval becomes a warning, copied from the goal at capture time with Goal Minutes: the goal's Warn at percent of its target, a percent above 100 counting as 100. Blank when the goal has no warn percent. The warning reads this value, so a later change to the goal, or turning it off, leaves it as it was.<br><em>Help text:</em> Business minutes at which this stay is flagged as a warning: the goal's Warn at percent of Goal Minutes, copied when the stay began.</td>
+</tr>
+<tr>
+<td>Warned At</td>
+<td><code>Warned_At__c</code></td>
+<td>DateTime</td>
+<td>When the business minutes reached Warn Minutes: Entered At plus Warn Minutes, in the Interval's business hours. Kept once set.<br><em>Help text:</em> When the stay reached the goal's Warn at percent, counted in its business hours from Entered At.</td>
 </tr>
 </tbody>
 </table>

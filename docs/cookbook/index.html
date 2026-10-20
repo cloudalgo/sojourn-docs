@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The one rule that keeps interval reports honest, the packaged reports, and worked examples.">
+        <meta name="description" content="The rules that keep interval reports honest, the packaged reports, and worked examples.">
       
       
       
@@ -62,7 +62,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Sojourn">
   <meta property="og:title" content="Report cookbook · Sojourn documentation">
-  <meta property="og:description" content="The one rule that keeps interval reports honest, the packaged reports, and worked examples.">
+  <meta property="og:description" content="The rules that keep interval reports honest, the packaged reports, and worked examples.">
   <meta property="og:url" content="https://sojourn.cloudalgo.com/docs/cookbook/">
   <meta property="og:image" content="https://sojourn.cloudalgo.com/assets/theme/images/card-docs.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:11"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 10 of 11 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">10 of 11 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i></i><i></i></span>
+          <span class="st-long">Release 1 in development, 11 of 14 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">11 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -1368,6 +1368,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#average-finished-stays-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Average finished stays only
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leave-closed-records-out-of-open-stays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leave closed records out of open stays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#report-on-summaries" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1400,12 +1422,19 @@
   
   
   <h1>Report cookbook</h1>
-  <p class="sj-summary">The one rule that keeps interval reports honest, the packaged reports, and worked examples.</p>
+  <p class="sj-summary">The rules that keep interval reports honest, the packaged reports, and worked examples.</p>
   
   <p><a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=question&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=cookbook-tellus" target="_blank" rel="noopener">Tell us the report you need and we will write it up first.</a></p>
 <h2 id="filter-by-object-then-field-then-value">Filter by object, then field, then value<a class="headerlink" href="#filter-by-object-then-field-then-value" title="Permanent link">#</a></h2>
 <p>Every interval belongs to one Tracked object and one Tracked field. Before you group by Value, filter or group by <strong>Tracked object</strong> and then <strong>Tracked field</strong>. A grouping that mixes fields adds Status minutes to Owner minutes, and the totals stop meaning anything.</p>
 <p>The 19 packaged reports (20 with Sojourn Omni-Channel) and 4 dashboards, with the filters each relies on, are listed in <a href="../reference/reports/">Reports and dashboards</a>. They follow this rule: each filters <strong>Tracked Field</strong> before it groups by value. The dashboards run as the user each one names, the installing admin until you change it; see step 3 of <a href="../guide/install/">Install Sojourn</a> before you share them.</p>
+<h2 id="average-finished-stays-only">Average finished stays only<a class="headerlink" href="#average-finished-stays-only" title="Permanent link">#</a></h2>
+<p>An open stay has no business minutes until it ends, so its <strong>Elapsed Business Hours</strong> is 0, and an average that takes in open stays runs low. Every packaged report that averages hours filters <strong>Exited At</strong> not blank; do the same in your own reports. For the time so far on open stays, use <strong>Business Minutes To Date</strong>, which the Live values job keeps current for the stays entered within its window; older open stays show it blank.</p>
+<p>For open stays of any age, <strong>Longest Open Intervals</strong> has a <strong>Days Open</strong> column: a row-level formula, <strong>Calendar Minutes To Date</strong> divided by 1,440, with one decimal place. It is current on every row, because Calendar Minutes To Date counts to now for an open stay, and it counts calendar days, not business hours. To add it to your own report, choose <strong>Add Row-Level Formula</strong>, type Number, insert <strong>Calendar Minutes To Date</strong> from the field list, and divide it by 1440.</p>
+<p>In the same way as the hours averages, <strong>Status Changes per Case</strong> and <strong>Owner Changes per Case</strong> filter their counts not blank, so Cases that were never tracked do not average in as zero.</p>
+<h2 id="leave-closed-records-out-of-open-stays">Leave closed records out of open stays<a class="headerlink" href="#leave-closed-records-out-of-open-stays" title="Permanent link">#</a></h2>
+<p>A record's last Interval stays open after the record closes: a closed Case sits in an open Closed stay. Sojourn checks <strong>Record Closed</strong> on the Intervals of a record while it is closed, by the Tracked object's closed setting. The reports of open stays, <strong>Open Cases by Status and Time to Date</strong> and <strong>Longest Open Intervals</strong>, and the <strong>Open Intervals</strong> list view on the Intervals tab filter <strong>Open</strong> true and <strong>Record Closed</strong> false. <strong>Average Hours per Status, 90 Days</strong> and <strong>Average Hours per Owner, 30 Days</strong> leave out the time reopened Cases spent closed. The Open Intervals list view shows <strong>Calendar Minutes To Date</strong>, which is always current; Elapsed Business Hours stays empty until a stay ends.</p>
+<p>The dashboards chart hours or counts, never minutes: <strong>SLA Health</strong> counts breaches and open Cases, and shows the hours to first close.</p>
 <ul>
 <li><a href="worked-examples/">Worked examples</a>: time in status for a queue, time per owner, and the statuses that miss their goal.</li>
 <li><a href="hours-per-case/">Hours per Case</a>: total business hours, from the Case metrics or from the Intervals.</li>
@@ -1418,7 +1447,7 @@
 <li>Filter <strong>Granularity</strong> to Month for trends, or Day for the last weeks. Never add Day and Month rows together: each Month row already holds its days.</li>
 <li>Filter <strong>Parent Object</strong> and <strong>Tracked Field</strong>, as for Intervals, then group by <strong>To Value</strong>, and by <strong>Owner Name</strong> for time per owner.</li>
 <li>For the average time in a value, add a summary formula: the sum of <strong>Sum Business Minutes</strong> divided by the sum of <strong>Interval Count</strong>. Averaging <strong>Avg Business Minutes</strong> across rows weighs a quiet day like a busy one.</li>
-<li><strong>Breach Count</strong> counts the Intervals that ran past their goal.</li>
+<li><strong>Breach Count</strong> counts the Intervals that ran past their goal, and <strong>Warning Count</strong> the Intervals that reached their goal's warn percent. A Breach is also a warning, so for goals with a warn percent, Warning Count less Breach Count is the stays that came close and finished in time.</li>
 </ol>
 <div class="sj-callout">
 <p><strong>Record Count is close, not exact.</strong> It counts each record once per row as the row is built. A record that gets another Interval later for a period already summarised is counted again on that row, so the count can run slightly high. Interval Count and the minutes are exact.</p>

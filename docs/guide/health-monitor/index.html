@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:11"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 10 of 11 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">10 of 11 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i></i><i></i></span>
+          <span class="st-long">Release 1 in development, 11 of 14 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">11 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -1504,12 +1504,12 @@
 <ul>
 <li><strong>The banner</strong> reads Healthy, Needs attention, or Not working, with one line that says what needs you. <strong>Check again</strong> reads everything afresh.</li>
 <li><strong>Capture</strong> lists what stops Intervals being recorded: tracking off for the whole org, a Tracked object whose capture Flow is missing or cannot be read, a paused object or one waiting for Catch up, a failed backfill. On the Free plan, an object other than Case, Lead, and Opportunity shows "Plus plan needed" as information: it keeps its Intervals, and new changes are not recorded. If you cannot see Flows (you lack View Setup and Configuration and are not a Sojourn admin), an object captured by a Flow shows "Flow status hidden from you" as information: it does not change the overall status, and a Sojourn admin sees the real Flow status.</li>
-<li><strong>Jobs</strong> shows whether Live values, Reconcile, and Summaries are scheduled, their last run, and the next one. A job that is off shows as a warning until a Sojourn admin schedules it on the Sojourn Settings overview; on a new install, that includes Summaries. A job scheduled by a user who is no longer active shows as a failure, and Live values with an entry missing (for example after someone deleted one in Setup) shows as a warning with the minutes it still runs at; choosing the interval again on the overview restores it.</li>
+<li><strong>Jobs</strong> shows whether Live values, Reconcile, and Summaries are scheduled, their last run, and the next one. A job that is off shows as a warning until a Sojourn admin schedules it on the Sojourn Settings overview; on a new install, that includes Summaries. A job scheduled by a user who is no longer active shows as a failure, and Live values with an entry missing (for example after someone deleted one in Setup) shows as a warning with the minutes it still runs at; choosing the interval again on the overview restores it. A last run in which chunks failed shows as a failure that says how many, here and on the overview's Jobs card; Salesforce's reason is in Setup, under <strong>Apex Jobs</strong>.</li>
 <li><strong>Errors</strong> counts the errors that need you, those in the last 24 hours, and those fixed in the last 24 hours, by type.</li>
 <li><strong>Recent errors</strong> lists the latest, each with its fix.</li>
 </ul>
 <h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">#</a></h2>
-<p>The <strong>Errors</strong> tab lists Error Log rows by status, type, object, and age. Select rows to <strong>Create intervals</strong>, <strong>Mark resolved</strong>, or <strong>Ignore</strong> them together. The list shows the newest 200 errors that match the filters; when more match, it says "Showing the newest 200 errors" and <strong>Select all</strong> takes only those 200. Resolve or ignore them, or narrow the filters, to reach older ones. Open a row to see what happened, why, how to fix it, and the technical details for support.</p>
+<p>The <strong>Errors</strong> tab lists Error Log rows by status, type, object, and age. Select rows to <strong>Create intervals</strong>, <strong>Mark resolved</strong>, or <strong>Ignore</strong> them together. The list shows the newest 200 errors that match the filters; when more match, it says "Showing the newest 200 errors" and <strong>Select all</strong> takes only those 200. Resolve or ignore them, or narrow the filters, to reach older ones. Open a row to see what happened, why, how to fix it, and the technical details for support. When a job such as Backfill or Purge fails for a reason Sojourn did not describe itself, the message says so in a fixed sentence, and Salesforce's own words are in the technical details, which only Sojourn admins see.</p>
 <table>
 <thead>
 <tr>
@@ -1546,7 +1546,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Create interval</strong> records the change at the time it happened and marks the error Resolved. It is refused when later changes to the same field were already recorded, because the change can no longer be placed; ignore the error, or run a History backfill to rebuild the record's history.</p>
+<p><strong>Create interval</strong> records the change at the time it happened and marks the error Resolved. It is refused when later changes to the same field were already recorded, because the change can no longer be placed; ignore the error, or run a History backfill to rebuild the record's history. It is also refused, with the reason, when the change left blank a field that starts timing at its first value, or when the value is already recorded: there is no Interval to create, so ignore the error. The nightly reconcile counts each refusal as a retry and adds its reason to the error's message, so such an error stops being retried after three tries instead of looping.</p>
 <p>The same <strong>Create Interval</strong> action is on every Error Log record page.</p>
 <div class="sj-verify">
 <p><strong>You are done when</strong></p>

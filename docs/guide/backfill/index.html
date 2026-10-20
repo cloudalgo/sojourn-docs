@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:11"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 10 of 11 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">10 of 11 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i></i><i></i></span>
+          <span class="st-long">Release 1 in development, 11 of 14 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">11 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -1480,11 +1480,12 @@
 <p>Open <strong>Sojourn Settings</strong>, then <strong>Tracked objects</strong>, then the object. The <strong>Backfill</strong> card offers three modes:</p>
 <ul>
 <li><strong>History</strong> recreates past Intervals from the object's field history: from each record's creation to its first change, then each change to the next, with the last one open. A Tracked field without history starts from its current value.</li>
-<li><strong>Seed</strong> starts each record from its current value: one open Interval per Tracked field, from the record's last change; the owner's Interval starts at the record's creation.</li>
+<li><strong>Seed</strong> starts each record from its current value: one open Interval per Tracked field, from the record's last change; the owner's Interval starts at the record's creation. A blank field set to <strong>Start timing at the first value</strong> gets no Interval from Seed, nor from <strong>Create interval</strong> on the <a href="../health-monitor/">Health Monitor</a>: its first Interval opens when it first gets a value.</li>
 <li><strong>Fresh</strong> adds nothing: capture begins with the next change.</li>
 </ul>
 <p>History and Seed are on the Plus plan; on the Free plan the card offers Fresh. See <a href="../plans/">Free and Plus plans</a>.</p>
 <p>History needs field history tracking turned on for the object and its fields in Salesforce Setup before the changes happened. If the object keeps no field history at all, History seeds every record and says so in the result.</p>
+<p>For the Closed when rule (see <a href="../track-an-object/">Track an object</a>), History reads the field that decides: the status field, or the chosen checkbox. Track that field's history too. Without it, a closed record counts as closed since its last change, so its owner stay ends and Record Closed starts there rather than at the real close. A checkbox that Salesforce sets from the status, such as Closed (IsClosed) on Case and Opportunity, keeps no field history at all, so History always places its close at the last change. To run History on those objects, leave the Closed Checkbox Field empty and let the Closed values decide: Status and Stage keep history.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">#</a></h2>
 <ol>
 <li>Choose the mode, then <strong>Run backfill</strong>.</li>

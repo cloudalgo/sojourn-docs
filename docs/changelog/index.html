@@ -131,9 +131,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:11"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 10 of 11 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">10 of 11 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i></i><i></i></span>
+          <span class="st-long">Release 1 in development, 11 of 14 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">11 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -1365,6 +1365,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sprint-11-the-live-check-fixes-20-october-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 11: the live check fixes (20 October 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sprint-10-the-last-fixes-before-promotion-20-october-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1545,6 +1556,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sprint-11-the-live-check-fixes-20-october-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 11: the live check fixes (20 October 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sprint-10-the-last-fixes-before-promotion-20-october-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1696,6 +1718,41 @@
   
   <p>Follow each sprint with the <a href="feed.xml" type="application/atom+xml">Atom feed</a>.</p>
 <h2 id="release-1-in-development">Release 1, in development<a class="headerlink" href="#release-1-in-development" title="Permanent link">#</a></h2>
+<h3 id="sprint-11-the-live-check-fixes-20-october-2026">Sprint 11: the live check fixes (20 October 2026)<a class="headerlink" href="#sprint-11-the-live-check-fixes-20-october-2026" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Closed when.</strong> Each Tracked object says when its records count as closed: the status field holds one of the closed values, or one checkbox on the record, such as IsClosed on Opportunity, is checked. The object screen lists every checkbox on the object as "Label (API name)", except Deleted. The choice is saved, exported, and imported with the object's other settings. See <a href="../guide/track-an-object/#when-a-record-closes">When a record closes</a>.</li>
+<li><strong>Record Closed.</strong> While a record is closed, its Intervals carry the new <strong>Record Closed</strong> flag, and so does every Interval that opens before it reopens. The owner's stay ends at the close, and no Owner Interval opens while the record stays closed. A reopen starts a new owner stay for the owner the record has then. Capture, History and Seed backfill, Catch up, Reconcile, Live values, and the Case metrics all follow the same rule, and the nightly Reconcile puts the flag in step on the open Intervals of the records it checks.</li>
+<li><strong>Warning.</strong> An Interval whose business minutes reach its goal's warn percent is flagged <strong>Warning</strong>, with <strong>Warned At</strong> set to the moment it got there. Live values flags open Intervals, and a stay is flagged when it closes. A breached Interval is always a warning too. The Goals screen says what Warn at does, and the timeline names a warning in a stay's details. See <a href="../guide/goals-and-business-hours/#set-goals">Set goals</a>.</li>
+<li><strong>Breach and warning times to the second.</strong> Breached At and Warned At count the goal from the second an Interval entered its value, not from the start of that minute, so under Business hours that close they are no longer up to a minute early. A goal that ran out at closing time had been stamped at the close; it now lands when the hours open again, at the seconds it entered with.</li>
+<li><strong>Value group and summary columns.</strong> Intervals gain <strong>Value Group</strong>, and Interval Summaries gain <strong>Value Group</strong>, <strong>Record Type</strong>, and <strong>Snapshot 1</strong>, each part of a summary row's key from the first version, and the report types show them. They stay blank for now; value groups come in sprint 13.</li>
+<li><strong>Links into Sojourn.</strong> Each Sojourn Settings screen, Tracked object, and card, and each Health Monitor tab and error status, has its own address. The address follows you as you move, so you can copy it at any time, and a link to an object that is not tracked opens Tracked objects and says so. See <a href="../guide/install/#links-into-sojourn">Links into Sojourn</a>.</li>
+<li><strong>Reports and dashboards.</strong> The Lead and Opportunity reports average finished stays only, and the change counts per Case leave out Cases never tracked. Reports of open stays leave out closed records by Record Closed, and Longest Open Intervals lists the open stays entered longest ago. The weekly trend runs in date order. SLA Health counts breaches and open Cases and shows the hours to first close, and the dashboards chart counts, not sums, and hours, not minutes. The Case, Lead, and Opportunity report types list only records with Intervals, and the two by-Case reports open on Cases created in the last 30 days. Report types on Intervals show Record Closed, Warning, Warned At, and Value Group.</li>
+<li><strong>Weekly trends without closed time.</strong> Summary rows keep time spent while a record was closed apart, in a new <strong>Record Closed</strong> column of their own, and Average Hours per Status by Week leaves it out, so no Closed line runs through the weekly charts.</li>
+<li><strong>Owner changes per Case.</strong> A Case closed and reopened by the same owner no longer counts an owner change; only a different owner is a handoff.</li>
+<li><strong>Longest Open Intervals.</strong> A <strong>Days Open</strong> column gives every stay its calendar days to now, beside the business minutes Live values keeps for recent stays.</li>
+<li><strong>Imported records.</strong> A Case, Lead, or Opportunity imported with its original Created Date starts its first Intervals at that date, not at the import.</li>
+<li><strong>Deleted records.</strong> Reconcile flags every Interval of a deleted record, not only the ones still open, so reports that leave out orphaned Intervals leave out the whole record.</li>
+<li><strong>Undeleted records.</strong> A record brought back from the Recycle Bin is tracked again: its Intervals lose the orphaned flag and carry on from where they stopped. Only the Intervals Reconcile ended at the deletion open again, marked by a new <strong>Closed at Deletion</strong> checkbox; an owner stay that ended when the record closed, or agent work that had ended, stays ended. Summaries leave out an Interval Reconcile ended at the deletion for the 15 days the record can be brought back and one day more, so the next Reconcile can open it again: a reopened Interval is counted once, when it next closes, and one whose record stays deleted is counted after the 16 days. Reconcile finds records back from the Recycle Bin however many deleted records are still in it.</li>
+<li><strong>Repair of owner changes on closed records.</strong> Create interval resolves an owner change on a record that is closed, with the reason: owner time is not counted while a record is closed, so there is no Interval to create.</li>
+<li><strong>Rule owners on records created closed.</strong> A Case or Lead created closed and assigned by a rule in the same save takes the rule's owner on its first Intervals.</li>
+<li><strong>Field API names.</strong> The object screen shows each field's API name under its label, and the field lists read "Label (API name)", so two fields with the same label are told apart. On a window narrower than 1360 px, the Tracked fields list sits above the chosen fields instead of pushing the page sideways.</li>
+<li><strong>Intervals tab.</strong> Three list views, All Intervals, Open Intervals, and Breached Intervals, and an Interval page in sections (the value, the time, the goal, Live values, the record's snapshot) with read-only fields and highlights at the top.</li>
+<li><strong>Notifications.</strong> They sit over the Settings content, centred on it, just below the Salesforce header whatever its height. Pause, Resume, Turn on, Run backfill, Save settings, and the Overview's job buttons now say what they did, and Save settings keeps your choice on screen while the Overview reloads.</li>
+<li><strong>Loading and busy.</strong> The Tracked objects list loads under its real column labels, and Re-check Flows shows it is at work.</li>
+<li><strong>Retention.</strong> Neither choice is selected until you save one, and the org time zone is named once.</li>
+<li><strong>Repair.</strong> Create interval refuses, with the reason, an error that has no Interval to create; the nightly retries count it and stop after three, instead of looping.</li>
+<li><strong>Jobs card.</strong> Live values says how far back it keeps Intervals current (90 days unless changed), and each job's schedule is read from the job itself.</li>
+<li><strong>Warnings follow the Interval.</strong> Each new Interval carries its warn threshold as Warn Minutes beside Goal Minutes, so changing or turning off a goal no longer changes the warnings of Intervals already started, just as it leaves their Breach. Purge CSV files gain Warning and Warned at columns at the end, the archive keeps each Interval's warning, and summary rows count warnings in Warning Count.</li>
+<li><strong>Settings files.</strong> A file of more than 1,000,000 characters is refused before it is read, and the import box can be read again after an edit. A file with a misspelt setting is refused with Sojourn's own sentence alone.</li>
+<li><strong>Purge files and the archive keep what summaries group by.</strong> Purge CSV files gain Record Closed and Value Group columns after Warned at, and the archive keeps each Interval's Record Closed Flag and Value Group. See <a href="../guide/retention/">Keep or purge Intervals</a>.</li>
+<li><strong>Open Intervals list view.</strong> It leaves out the Intervals of closed records and shows Calendar Minutes To Date, which is always current, in place of Exited At and Elapsed Business Hours, which stay empty until a stay ends.</li>
+<li><strong>Average Hours per Owner, 30 Days.</strong> It leaves out time spent while the Case was closed, as Average Hours per Status, 90 Days does. Share of Time per Status Group says in its description that its groups hold example statuses to edit.</li>
+<li><strong>Goals.</strong> Warn At Percent is refused outside 1 to 100 on every save, not only on the Goals screen and in a settings file.</li>
+<li><strong>Summary rows.</strong> A value, group, record type, or snapshot that contains a pipe no longer shares a summary row with another. Rows built before this change are recounted by Rebuild summaries.</li>
+<li><strong>Error messages.</strong> A failure Sojourn did not describe itself reaches Sojourn Settings, the Health Monitor, and the timeline as a fixed sentence that says what to do, never Salesforce's own words, which can name objects and fields. A save Salesforce refused still shows the reason it gave. Backfill, Catch up, Purge, and the nightly Summaries run report a failed part the same way, in their results and in the Error Log message, and so does a Flow check that could not read your Flows; Salesforce's own words stay in the error's technical details, which only Sojourn admins see. A Live values, Reconcile, or Summaries run with failed chunks says how many on the Jobs card and the Health Monitor, and Salesforce's reason stays in Setup, under Apex Jobs.</li>
+<li><strong>Read failures.</strong> When Reconcile's Recycle Bin check or the Error Log's record names cannot be read for a reason other than missing access, the failure is written to the Error Log instead of passing as no data. On the timeline, such a failure shows as an error instead of an empty history; a reader without access still sees what they may read.</li>
+<li><strong>Name field and snapshot fields.</strong> The object screen lists only fields you can read. The guide says which record values everyone with Sojourn User can read on Intervals, so you can choose a Name field to suit; see <a href="../guide/track-an-object/#add-an-object">Add an object</a>.</li>
+</ul>
 <h3 id="sprint-10-the-last-fixes-before-promotion-20-october-2026">Sprint 10: the last fixes before promotion (20 October 2026)<a class="headerlink" href="#sprint-10-the-last-fixes-before-promotion-20-october-2026" title="Permanent link">#</a></h3>
 <ul>
 <li><strong>Loading states.</strong> Every Sojourn Settings and Health Monitor screen shows a loading state shaped like its content until its data arrives, instead of an empty page.</li>

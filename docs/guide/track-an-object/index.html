@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:11"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 10 of 11 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">10 of 11 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i></i><i></i></span>
+          <span class="st-long">Release 1 in development, 11 of 14 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">11 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -646,6 +646,17 @@
     <span class="md-ellipsis">
       
         Settings on the object's screen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-a-record-closes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a record closes
       
     </span>
   </a>
@@ -1512,6 +1523,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#when-a-record-closes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a record closes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#check-that-capture-is-live" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1613,11 +1635,12 @@
 <ol>
 <li>Open the Sojourn app and the <strong>Sojourn Settings</strong> tab, then <strong>Tracked objects</strong> in the menu.</li>
 <li>Choose <strong>Add object</strong>, search for the object, pick it, and choose <strong>Add object</strong> again. The list shows only objects Sojourn can track, so you never type an API name; objects you already track are marked Already tracked.</li>
-<li>On the object's screen, check the <strong>Tracked fields</strong> whose time in each value you want; they appear in the table beside the checkboxes, where <strong>Remove</strong> takes one off and <strong>Business hours</strong> sets hours for that field alone (leave it on <strong>Use the object's</strong> to use the object's hours). Picklists, lookups, checkboxes, dates, and short text fields are offered; formulas, auto-numbers, and long text are not.</li>
+<li>On the object's screen, check the <strong>Tracked fields</strong> whose time in each value you want; they appear in the table beside the checkboxes, where <strong>Remove</strong> takes one off and <strong>Business hours</strong> sets hours for that field alone (leave it on <strong>Use the object's</strong> to use the object's hours). Picklists, lookups, checkboxes, dates, and short text fields are offered; formulas, auto-numbers, and long text are not. Each field shows its API name under its label, here and in the snapshot fields, and the field lists read "Label (API name)", so two fields with the same label are never confused; search finds a field by either.</li>
 <li>Leave <strong>Track owner</strong> on to measure time with each user and each queue.</li>
 <li>Choose <strong>Save</strong>.</li>
 </ol>
 <p>Track only fields that everyone who reads Intervals may see. Sojourn copies a Tracked field's values into each Interval whatever the field-level security of the person who saved the record, and Sojourn User and Sojourn Site User can read those values, so a field you hide from a group shows to that group through Intervals and the timeline.</p>
+<p>The same goes for the other record values each Interval carries. Sojourn User can read the record's name (from the <strong>Name field</strong> below), the owner's name, the record type, and on Case, Lead, and Opportunity the values Sojourn copies there (Case Priority, Origin, and Type; Lead Source and Rating; Opportunity Stage), and the Interval list views show the record and owner names. Intervals are readable by everyone with Sojourn User, whether or not they can open the record, so choose a Name field such as the record number, not one that holds private text such as a Case subject. Snapshot fields and the Opportunity amount are not readable with Sojourn User. The Name field and Snapshot fields lists offer only fields you can read.</p>
 <p>An object can have up to 10 Tracked fields, the owner included. From the sixth, the picker reminds you that each field adds Interval rows for every record; at 10, it asks you to turn one off first. Short text fields are listed apart, under "Usually not useful for time in value".</p>
 <p>Each Tracked field has <strong>Start timing at the first value</strong>, on by default. When a record is created with the field blank, timing starts when the field first gets a value, so reports do not count the blank stretch before anyone filled it in. Turn it off to time the blank value from creation as well. The owner always starts at creation. Once a field has had a value, clearing it is a change like any other: the stay in the old value closes and a blank Interval opens, so time spent blank after a value is measured whichever way the switch is set.</p>
 <p>Under the picker, the <strong>Estimate</strong> shows about how many Interval rows a month your choice adds, and how much of your data storage a year that is. It counts the records you can see that were created in the last 30 days and their field history; fields without history are assumed to change once a month. "At least" means the count reached its limit, so the real number is higher.</p>
@@ -1630,6 +1653,15 @@
 <li><strong>Record types</strong>: track only these record types; leave empty for all.</li>
 <li><strong>Live values</strong> and its two minute fields: number fields on the record for the minutes in the current status and with the current owner. The Live values job keeps them current on the schedule set on the Jobs card of the Sojourn Settings overview (see <a href="#live-values-and-the-jobs">Live values and the jobs</a>).</li>
 </ul>
+<h2 id="when-a-record-closes">When a record closes<a class="headerlink" href="#when-a-record-closes" title="Permanent link">#</a></h2>
+<p>A record counts as closed while its status field holds one of the <strong>Closed values</strong>. When the Tracked object's <strong>Closed Checkbox Field</strong> names a checkbox on the object, such as IsClosed on Opportunity, the record counts as closed while that checkbox is checked instead, and the closed values no longer decide. The list offers every checkbox on the object except Deleted (IsDeleted), which a live record never has checked. A name that is not a checkbox on the object, or IsDeleted, is ignored, with a Config row in the Error Log, and the closed values decide.</p>
+<p>While a record is closed:</p>
+<ul>
+<li>every Interval open on it carries <strong>Record Closed</strong>, and so does every Interval that opens while it stays closed. An Interval that ends while the record is closed keeps the flag, and so does the one the reopen ends, such as the closed status;</li>
+<li>the owner's stay ends at the close, with its minutes as usual, and no Owner Interval opens, even when the owner changes;</li>
+<li>when the record reopens, a new Owner Interval opens for the owner it has then. Intervals still open after the reopen lose Record Closed, because the record is live again, and Intervals that open from then on do not carry it.</li>
+</ul>
+<p>History and Seed backfill, Catch up, and the nightly Reconcile follow the same rule; History reads the deciding field's history, and without it a closed record counts as closed since its last change (see <a href="../backfill/">Backfill</a>). Reconcile also puts Record Closed in step on the open Intervals of the records it checks and ends their open owner stays, at the entry of the Interval that holds the closed value when there is one, otherwise at the record's last modification.</p>
 <h2 id="check-that-capture-is-live">Check that capture is live<a class="headerlink" href="#check-that-capture-is-live" title="Permanent link">#</a></h2>
 <p>Each Tracked object shows a pill:</p>
 <table>
@@ -1673,14 +1705,15 @@
 <li>In <strong>Sojourn: Capture Change</strong>, set the object for Record and Prior record to the same object. Pass the prior record on every save, as the template does: when some saves in one batch pass it and others do not, Sojourn records each correctly but in two passes, at twice the queries.</li>
 <li>Activate the Flow, then choose <strong>Re-check</strong> on the object's screen. The pill turns to Flow active.</li>
 </ol>
-<p>Keep your copy a record-triggered Flow that runs after the save, as the template is: it runs in system context, so it records every user's changes. If you call <strong>Sojourn: Capture Change</strong> from a screen Flow or another Flow that runs as the user, give those users access to the action's Apex class (<code>ChangeCapture</code>) through a permission set of your own; only Sojourn Admin includes it, and without it the Flow fails for everyone else.</p>
+<p>Keep your copy a record-triggered Flow that runs after the save, as the template is: it runs in system context, so it records every user's changes. If you call <strong>Sojourn: Capture Change</strong> from a screen Flow or another Flow that runs as the user, give those users access to the action's Apex class (<code>ChangeCapture</code>) through a permission set of your own; only Sojourn Admin includes it, and without it the Flow fails for everyone else. Grant it with care: the action records the field values and change time of the record the Flow hands it, without reading the record again, so a Flow that changes that record variable before the action, run by a user with the class, records Intervals for values the record never held.</p>
 <p>If both a trigger and a Flow capture the same change in one save, Sojourn records it once. Each Interval records how the change arrived in its Source field: Trigger, Flow, or Catch-Up.</p>
 <div class="sj-callout">
 <p><strong>Often missed.</strong> Setup objects such as User and Group cannot be tracked. Salesforce does not allow their changes and Sojourn's Intervals to be saved in one transaction, so Sojourn leaves them out of the list.</p>
 </div>
 <h2 id="pause-capture-during-a-bulk-import">Pause capture during a bulk import<a class="headerlink" href="#pause-capture-during-a-bulk-import" title="Permanent link">#</a></h2>
 <p>The Tracked objects list shows each object's Tracked fields, whether it tracks the owner, its capture pill, and where its business hours come from: named hours, <strong>From record field</strong>, or <strong>Sojourn default</strong>.</p>
-<p>Choose <strong>Pause</strong> on the Tracked object, in the list or on its screen, before a large import or update, and <strong>Resume</strong> afterwards. The list shows when the pause started. To stop tracking an object, turn off <strong>Active</strong> on its screen and choose <strong>Save</strong>; <strong>Turn on</strong> in the list brings it back. While paused, triggers and Flows skip the object, so the import runs without Sojourn's work. After you resume, the list says "Changes made while paused wait for Catch up". Choose <strong>Catch up</strong> to replay the records changed during the pause: each gets its Interval at the time it changed (its last modification, or its creation if it was created during the pause), and values Sojourn already holds are skipped, so running it twice is safe. A field with no open Interval gets its first one only on a record created during the pause; on older records it waits for the field's next change, and a blank field timed from its first value gets nothing until it has one. One catch up runs at a time across all objects: while one is going, the list says "Catch up is running" in place of the button, and starting another is refused. If part of the run is skipped or fails (for example, tracking was turned off, or the Error Log records a Limit or DML error), the list keeps offering Catch up, so you can run it again. If you pause the object while a catch up runs, even briefly and resumed before it ends, the pause window is kept for the next catch up. Pausing again before you catch up keeps the earlier start, so one catch up covers both pauses. The result of the last catch up is kept in the Tracked object record's <strong>Catch Up Message</strong> field, apart from the last backfill result, so a catch up never hides how the backfill went; the object's screen lists both in its Backfill card, as <strong>Last backfill</strong> and <strong>Last Catch up</strong>.</p>
+<p>Choose <strong>Pause</strong> on the Tracked object, in the list or on its screen, before a large import or update, and <strong>Resume</strong> afterwards. The list shows when the pause started. To stop tracking an object, turn off <strong>Active</strong> on its screen and choose <strong>Save</strong>; <strong>Turn on</strong> in the list brings it back. A notice at the top of the page says each took effect, for example "Case is paused. Changes made now wait for Catch up." While paused, triggers and Flows skip the object, so the import runs without Sojourn's work. After you resume, the list says "Changes made while paused wait for Catch up". Choose <strong>Catch up</strong> to replay the records changed during the pause: each gets its Interval at the time it changed (its last modification, or its creation if it was created during the pause), and values Sojourn already holds are skipped, so running it twice is safe. A field with no open Interval gets its first one only on a record created during the pause; on older records it waits for the field's next change, and a blank field timed from its first value gets nothing until it has one. One catch up runs at a time across all objects: while one is going, the list says "Catch up is running" in place of the button, and starting another is refused. If part of the run is skipped or fails (for example, tracking was turned off, or the Error Log records a Limit or DML error), the list keeps offering Catch up, so you can run it again. If you pause the object while a catch up runs, even briefly and resumed before it ends, the pause window is kept for the next catch up. Pausing again before you catch up keeps the earlier start, so one catch up covers both pauses. The result of the last catch up is kept in the Tracked object record's <strong>Catch Up Message</strong> field, apart from the last backfill result, so a catch up never hides how the backfill went; the object's screen lists both in its Backfill card, as <strong>Last backfill</strong> and <strong>Last Catch up</strong>.</p>
+<p><strong>Importing past records.</strong> When an import sets each record's Created Date (Salesforce's Set Audit Fields upon Record Creation), Cases, Leads, and Opportunities start their first Intervals at that date. A Flow cannot tell a new record from an update, so for other objects also set Last Modified Date to the Created Date in the import; otherwise their first Intervals start at the import.</p>
 <h2 id="backfill-past-intervals">Backfill past Intervals<a class="headerlink" href="#backfill-past-intervals" title="Permanent link">#</a></h2>
 <p>A new object starts with the next change. To give existing records their Intervals, use the <strong>Backfill</strong> card on the object's screen; see <a href="../backfill/">Backfill past Intervals</a>.</p>
 <h2 id="live-values-and-the-jobs">Live values and the jobs<a class="headerlink" href="#live-values-and-the-jobs" title="Permanent link">#</a></h2>
