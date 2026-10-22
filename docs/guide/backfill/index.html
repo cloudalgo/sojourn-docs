@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i></i><i></i></span>
-          <span class="st-long">Release 1 in development, 11 of 14 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">11 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
+          <span class="st-long">Release 1 in development, 12 of 14 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">12 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -331,6 +331,8 @@
       
         
           
+        
+      
         
       
         
@@ -788,6 +790,34 @@
     
   
     Keep or purge Intervals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tune the advanced settings
   
 
     
@@ -1477,7 +1507,7 @@
   
   <p>A new Tracked object starts with the next change. Backfill gives the records that already exist their Intervals, so reports cover the time before you turned tracking on.</p>
 <h2 id="choose-a-mode">Choose a mode<a class="headerlink" href="#choose-a-mode" title="Permanent link">#</a></h2>
-<p>Open <strong>Sojourn Settings</strong>, then <strong>Tracked objects</strong>, then the object. The <strong>Backfill</strong> card offers three modes:</p>
+<p>Open <strong>Sojourn Settings</strong>, then <strong>Tracked objects</strong>, then the object, and its <strong>Backfill</strong> tab. The <strong>Backfill</strong> card offers three modes:</p>
 <ul>
 <li><strong>History</strong> recreates past Intervals from the object's field history: from each record's creation to its first change, then each change to the next, with the last one open. A Tracked field without history starts from its current value.</li>
 <li><strong>Seed</strong> starts each record from its current value: one open Interval per Tracked field, from the record's last change; the owner's Interval starts at the record's creation. A blank field set to <strong>Start timing at the first value</strong> gets no Interval from Seed, nor from <strong>Create interval</strong> on the <a href="../health-monitor/">Health Monitor</a>: its first Interval opens when it first gets a value.</li>
@@ -1490,7 +1520,7 @@
 <ol>
 <li>Choose the mode, then <strong>Run backfill</strong>.</li>
 <li>Read the confirmation: it names the mode and the object. Choose <strong>Run backfill</strong> again.</li>
-<li>History and Seed run in the background, History 20 records at a time and Seed 200, because History reads every field change of each record. If the org leaves the Plus plan during a run, the run stops at its next part and shows Failed, saying how many records it reached; run it again on Plus to finish. If the object stopped being tracked before the run started, the run ends at once and shows Failed, saying the object is not tracked now. A Queued or Running backfill with no job left going, for example after the job was stopped, also shows Failed and says it stopped before it finished. The card shows Queued, then Running, then Complete or Failed with what was done, for example "Seed backfill on 12 Oct 2026, 13:56: 60 Intervals for 20 records." A new backfill is refused only while a backfill job is really running in the org (on any object), with "A backfill is still running. Try again when it finishes." If a run stopped before it could record its result, the card can still say Queued or Running; once no backfill job is going, you can run it again.</li>
+<li>History and Seed run in the background, History 20 records at a time and Seed 200, because History reads every field change of each record. To change how many records History reads at a time, set <strong>History backfill: records per chunk</strong> on the object's <strong>Advanced</strong> tab, from 5 to 50, and choose <strong>Save</strong>; fewer suit records with long field history. The chunk is on the Plus plan, with History, and applies to the next run. If the org leaves the Plus plan during a run, the run stops at its next part and shows Failed, saying how many records it reached; run it again on Plus to finish. If the object stopped being tracked before the run started, the run ends at once and shows Failed, saying the object is not tracked now. A Queued or Running backfill with no job left going, for example after the job was stopped, also shows Failed and says it stopped before it finished. The card shows Queued, then Running, then Complete or Failed with what was done, for example "Seed backfill on 12 Oct 2026, 13:56: 60 Intervals for 20 records." A new backfill is refused only while a backfill job is really running in the org (on any object), with "A backfill is still running. Try again when it finishes." If a run stopped before it could record its result, the card can still say Queued or Running; once no backfill job is going, you can run it again.</li>
 </ol>
 <p>The job runs as you: only records and fields you can see are read and written. A backfill and a Catch up never run at the same time: each waits for the other to finish, so their parts cannot both open an Interval for the same field.</p>
 <div class="sj-callout">

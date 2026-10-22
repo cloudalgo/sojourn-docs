@@ -131,9 +131,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i></i><i></i></span>
-          <span class="st-long">Release 1 in development, 11 of 14 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">11 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
+          <span class="st-long">Release 1 in development, 12 of 14 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">12 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -327,6 +327,8 @@
       
         
           
+        
+      
         
       
         
@@ -714,6 +716,34 @@
     
   
     Keep or purge Intervals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/advanced-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tune the advanced settings
   
 
     
@@ -1365,6 +1395,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sprint-12-the-settings-console-23-october-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 12: the settings console (23 October 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sprint-11-the-live-check-fixes-20-october-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1556,6 +1597,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sprint-12-the-settings-console-23-october-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 12: the settings console (23 October 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sprint-11-the-live-check-fixes-20-october-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1718,6 +1770,25 @@
   
   <p>Follow each sprint with the <a href="feed.xml" type="application/atom+xml">Atom feed</a>.</p>
 <h2 id="release-1-in-development">Release 1, in development<a class="headerlink" href="#release-1-in-development" title="Permanent link">#</a></h2>
+<h3 id="sprint-12-the-settings-console-23-october-2026">Sprint 12: the settings console (23 October 2026)<a class="headerlink" href="#sprint-12-the-settings-console-23-october-2026" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>The Settings menu in four sections.</strong> <strong>Capture</strong> (Overview, Tracked objects), <strong>Time</strong> (Business hours, Goals, Alerts), <strong>Data</strong> (Retention and purge, Summaries, Export settings), and <strong>Operations</strong> (Jobs, Advanced), so each setting sits with its subject. The menu stays in view while a screen scrolls, in a console app too.</li>
+<li><strong>Jobs screen.</strong> The Jobs card moves off the Overview to its own screen under Operations, showing what it showed; the Overview keeps one line on how the jobs stand, with <strong>Open Jobs</strong>. See <a href="../guide/jobs/">Run the jobs</a>.</li>
+<li><strong>Run now.</strong> Each job's card starts one run of Live values, Reconcile, or Summaries straight away, as you, and leaves its schedule as it is. It is refused while that job is running, and when Salesforce already holds the most batch jobs it allows.</li>
+<li><strong>Live values window.</strong> <strong>Keep current for</strong>, on the Live values card, sets how many days back Live values keeps open Intervals current, from 1 to 365, 90 by default. It saves with <strong>Change</strong> or <strong>Turn on</strong>.</li>
+<li><strong>Alerts screen.</strong> The <strong>Breach alerts</strong> card moves off Goals, unchanged, to its own screen under Time. See <a href="../guide/breach-alerts/">Email a breach alert</a>.</li>
+<li><strong>Summaries screen.</strong> <strong>Rebuild summaries</strong> moves here from Retention and purge, beside <strong>Roll-up</strong>: how many days Day rows are kept before only their Month rows remain, from 35 to 3,650, 400 by default. See <a href="../guide/retention/#summaries">Summaries</a>.</li>
+<li><strong>Purge part size.</strong> Under <strong>Advanced</strong> on the Retention and purge screen's Purge card: how many Intervals each purge part saves to a file and deletes, from 50 to 2,000, 2,000 by default. On the Plus plan, with purge.</li>
+<li><strong>Which business hours an Interval uses.</strong> A card on the Business hours screen lists the order Sojourn applies: the Tracked field, the record's hours field, the queue, the object, then the Sojourn default.</li>
+<li><strong>Object screen in tabs.</strong> Fields, Records, Backfill, Live values, and Advanced, under the object's header. One <strong>Save</strong> on every tab saves all of them together, switching tabs keeps your changes, and a value that cannot be saved is named with its tab. See <a href="../guide/track-an-object/#the-objects-tabs">The object's tabs</a>.</li>
+<li><strong>The object's Advanced tab.</strong> <strong>Lookup to fill on each Interval</strong> chooses which lookup Sojourn fills when two or more lookups on Interval point to the object. <strong>History backfill: records per chunk</strong> sets how many records a History backfill reads at a time, from 5 to 50, 20 by default, in the new <strong>History Chunk Size</strong> field on Tracked Object; on the Plus plan, with History backfill.</li>
+<li><strong>Advanced screen.</strong> The three limits Sojourn leaves in each save for your own automation (queries, rows, and CPU), and on the Plus plan the Omni-Channel statuses that start agent work, chosen from the org's list. <strong>Reset to defaults</strong> puts these, the Live values window, the purge part size, and the roll-up days back to their defaults after you type RESET; Tracked objects, fields, goals, retention, alerts, and job schedules are kept. See <a href="../guide/advanced-settings/">Tune the advanced settings</a>.</li>
+<li><strong>Every setting names its default.</strong> Each number box shows the saved number, or the default while none is saved, and its hint names the default; a blank box goes back to it, and a number out of range is refused with what to enter. On the Free plan, the Plus settings show with their controls off and the Plus notice.</li>
+<li><strong>Usage.</strong> The Overview estimates the Intervals written this month, the storage Sojourn's records use and their share of your data storage, and a year at this rate, at 2 KB a row. See <a href="../guide/track-an-object/#the-overview">The Overview</a>.</li>
+<li><strong>Links.</strong> The new screens and the object's tabs have their own links, and a link saved before opens the same card in its new place. The Health Monitor's job fixes open the Jobs screen and name it. See <a href="../guide/install/#links-into-sojourn">Links into Sojourn</a>.</li>
+<li><strong>The settings file carries the new settings.</strong> Export settings now writes the Live values window, the three limits, the roll-up days, the Omni-Channel statuses, and each Tracked object's lookup to fill and History chunk, and the import checks each as its screen does. The purge part size stays in the org, with retention. See <a href="../guide/move-settings/">Move settings between orgs</a>.</li>
+<li><strong>Salesforce API version 68.0.</strong> Every component of both packages is at API version 68.0 (Winter '27).</li>
+</ul>
 <h3 id="sprint-11-the-live-check-fixes-20-october-2026">Sprint 11: the live check fixes (20 October 2026)<a class="headerlink" href="#sprint-11-the-live-check-fixes-20-october-2026" title="Permanent link">#</a></h3>
 <ul>
 <li><strong>Closed when.</strong> Each Tracked object says when its records count as closed: the status field holds one of the closed values, or one checkbox on the record, such as IsClosed on Opportunity, is checked. The object screen lists every checkbox on the object as "Label (API name)", except Deleted. The choice is saved, exported, and imported with the object's other settings. See <a href="../guide/track-an-object/#when-a-record-closes">When a record closes</a>.</li>

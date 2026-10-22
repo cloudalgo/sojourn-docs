@@ -5,11 +5,35 @@
   <id>tag:sojourn.cloudalgo.com,2026:changelog</id>
   <link rel="self" type="application/atom+xml" href="https://sojourn.cloudalgo.com/docs/changelog/feed.xml" />
   <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/" />
-  <updated>2026-10-20T00:00:00Z</updated>
+  <updated>2026-10-23T00:00:00Z</updated>
   <author>
     <name>CloudAlgo</name>
     <uri>https://sojourn.cloudalgo.com/</uri>
   </author>
+  <entry>
+    <title>Sprint 12: the settings console (23 October 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-12</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-12-the-settings-console-23-october-2026" />
+    <updated>2026-10-23T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Settings menu in four sections.&lt;/strong&gt; &lt;strong&gt;Capture&lt;/strong&gt; (Overview, Tracked objects), &lt;strong&gt;Time&lt;/strong&gt; (Business hours, Goals, Alerts), &lt;strong&gt;Data&lt;/strong&gt; (Retention and purge, Summaries, Export settings), and &lt;strong&gt;Operations&lt;/strong&gt; (Jobs, Advanced), so each setting sits with its subject. The menu stays in view while a screen scrolls, in a console app too.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Jobs screen.&lt;/strong&gt; The Jobs card moves off the Overview to its own screen under Operations, showing what it showed; the Overview keeps one line on how the jobs stand, with &lt;strong&gt;Open Jobs&lt;/strong&gt;. See &lt;a href="../guide/jobs/"&gt;Run the jobs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Run now.&lt;/strong&gt; Each job's card starts one run of Live values, Reconcile, or Summaries straight away, as you, and leaves its schedule as it is. It is refused while that job is running, and when Salesforce already holds the most batch jobs it allows.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Live values window.&lt;/strong&gt; &lt;strong&gt;Keep current for&lt;/strong&gt;, on the Live values card, sets how many days back Live values keeps open Intervals current, from 1 to 365, 90 by default. It saves with &lt;strong&gt;Change&lt;/strong&gt; or &lt;strong&gt;Turn on&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alerts screen.&lt;/strong&gt; The &lt;strong&gt;Breach alerts&lt;/strong&gt; card moves off Goals, unchanged, to its own screen under Time. See &lt;a href="../guide/breach-alerts/"&gt;Email a breach alert&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Summaries screen.&lt;/strong&gt; &lt;strong&gt;Rebuild summaries&lt;/strong&gt; moves here from Retention and purge, beside &lt;strong&gt;Roll-up&lt;/strong&gt;: how many days Day rows are kept before only their Month rows remain, from 35 to 3,650, 400 by default. See &lt;a href="../guide/retention/#summaries"&gt;Summaries&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Purge part size.&lt;/strong&gt; Under &lt;strong&gt;Advanced&lt;/strong&gt; on the Retention and purge screen's Purge card: how many Intervals each purge part saves to a file and deletes, from 50 to 2,000, 2,000 by default. On the Plus plan, with purge.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Which business hours an Interval uses.&lt;/strong&gt; A card on the Business hours screen lists the order Sojourn applies: the Tracked field, the record's hours field, the queue, the object, then the Sojourn default.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Object screen in tabs.&lt;/strong&gt; Fields, Records, Backfill, Live values, and Advanced, under the object's header. One &lt;strong&gt;Save&lt;/strong&gt; on every tab saves all of them together, switching tabs keeps your changes, and a value that cannot be saved is named with its tab. See &lt;a href="../guide/track-an-object/#the-objects-tabs"&gt;The object's tabs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The object's Advanced tab.&lt;/strong&gt; &lt;strong&gt;Lookup to fill on each Interval&lt;/strong&gt; chooses which lookup Sojourn fills when two or more lookups on Interval point to the object. &lt;strong&gt;History backfill: records per chunk&lt;/strong&gt; sets how many records a History backfill reads at a time, from 5 to 50, 20 by default, in the new &lt;strong&gt;History Chunk Size&lt;/strong&gt; field on Tracked Object; on the Plus plan, with History backfill.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Advanced screen.&lt;/strong&gt; The three limits Sojourn leaves in each save for your own automation (queries, rows, and CPU), and on the Plus plan the Omni-Channel statuses that start agent work, chosen from the org's list. &lt;strong&gt;Reset to defaults&lt;/strong&gt; puts these, the Live values window, the purge part size, and the roll-up days back to their defaults after you type RESET; Tracked objects, fields, goals, retention, alerts, and job schedules are kept. See &lt;a href="../guide/advanced-settings/"&gt;Tune the advanced settings&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Every setting names its default.&lt;/strong&gt; Each number box shows the saved number, or the default while none is saved, and its hint names the default; a blank box goes back to it, and a number out of range is refused with what to enter. On the Free plan, the Plus settings show with their controls off and the Plus notice.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Usage.&lt;/strong&gt; The Overview estimates the Intervals written this month, the storage Sojourn's records use and their share of your data storage, and a year at this rate, at 2 KB a row. See &lt;a href="../guide/track-an-object/#the-overview"&gt;The Overview&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Links.&lt;/strong&gt; The new screens and the object's tabs have their own links, and a link saved before opens the same card in its new place. The Health Monitor's job fixes open the Jobs screen and name it. See &lt;a href="../guide/install/#links-into-sojourn"&gt;Links into Sojourn&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The settings file carries the new settings.&lt;/strong&gt; Export settings now writes the Live values window, the three limits, the roll-up days, the Omni-Channel statuses, and each Tracked object's lookup to fill and History chunk, and the import checks each as its screen does. The purge part size stays in the org, with retention. See &lt;a href="../guide/move-settings/"&gt;Move settings between orgs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Salesforce API version 68.0.&lt;/strong&gt; Every component of both packages is at API version 68.0 (Winter '27).&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Sprint 11: the live check fixes (20 October 2026)</title>
     <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-11</id>

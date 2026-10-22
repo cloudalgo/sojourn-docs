@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The scheduled jobs that keep Intervals current, the one-off jobs you start, and who they run as.">
+        <meta name="description" content="The scheduled jobs that keep Intervals current, how to run one now, the one-off jobs you start, and who they run as.">
       
       
       
@@ -62,7 +62,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Sojourn">
   <meta property="og:title" content="Run the jobs · Sojourn documentation">
-  <meta property="og:description" content="The scheduled jobs that keep Intervals current, the one-off jobs you start, and who they run as.">
+  <meta property="og:description" content="The scheduled jobs that keep Intervals current, how to run one now, the one-off jobs you start, and who they run as.">
   <meta property="og:url" content="https://sojourn.cloudalgo.com/docs/guide/jobs/">
   <meta property="og:image" content="https://sojourn.cloudalgo.com/assets/theme/images/card-docs.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i></i><i></i></span>
-          <span class="st-long">Release 1 in development, 11 of 14 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">11 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
+          <span class="st-long">Release 1 in development, 12 of 14 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">12 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -331,6 +331,8 @@
       
         
           
+        
+      
         
       
         
@@ -670,6 +672,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-far-back-live-values-reaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How far back Live values reaches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-a-job-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run a job now
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#jobs-you-start" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -799,6 +823,34 @@
     
   
     Keep or purge Intervals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tune the advanced settings
   
 
     
@@ -1446,6 +1498,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-far-back-live-values-reaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How far back Live values reaches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-a-job-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run a job now
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#jobs-you-start" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1489,7 +1563,7 @@
   
   <div class="sj-crumb">Guide</div>
   <h1>Run the jobs</h1>
-  <p class="sj-summary">The scheduled jobs that keep Intervals current, the one-off jobs you start, and who they run as.</p>
+  <p class="sj-summary">The scheduled jobs that keep Intervals current, how to run one now, the one-off jobs you start, and who they run as.</p>
   
     <div class="sj-meta">
       <span class="pill closed">Salesforce admin</span>
@@ -1499,7 +1573,7 @@
   
   <p>Every Sojourn job runs as the admin who schedules or starts it, with that admin's access, and the <a href="../health-monitor/">Health Monitor</a> shows each run. No job calls a service outside Salesforce. Schedule the jobs as a dedicated, long-lived Sojourn admin user rather than a person who may leave: if that user is deactivated, every run fails, and the Health Monitor says so and names the user.</p>
 <h2 id="scheduled-jobs">Scheduled jobs<a class="headerlink" href="#scheduled-jobs" title="Permanent link">#</a></h2>
-<p>Schedule them on the <strong>Jobs</strong> card of the Sojourn Settings overview: <strong>Turn on</strong> schedules a job, <strong>Change</strong> saves a new interval or time, and <strong>Turn off</strong> stops it. A run that is still going when the next one is due is skipped.</p>
+<p>Open <strong>Sojourn Settings</strong>, then <strong>Jobs</strong> under <strong>Operations</strong>. Each job has its own card with an On or Off pill, its last run, and its next one: <strong>Turn on</strong> schedules a job, <strong>Change</strong> saves a new interval or time, and <strong>Turn off</strong> stops it. A run that is still going when the next one is due is skipped. The Overview keeps one line saying how the jobs stand, for example "Live values On, every 15 minutes. Reconcile Off. Summaries On, daily at 01:00.", with <strong>Open Jobs</strong>.</p>
 <table>
 <thead>
 <tr>
@@ -1532,7 +1606,15 @@
 </table>
 <p>When a record comes back from the Recycle Bin after Reconcile flagged it, its Intervals lose the flag and each Interval Reconcile closed at the deletion opens again, so the days in the Recycle Bin count in that value. Reconcile checks <strong>Closed at Deletion</strong> on the Intervals it closes, and only those open again: an Interval that had already ended stays ended, such as the owner stay of a record that was closed when it was deleted, or agent work that had finished. Summary rows only ever add, so for the 15 days a deleted record can be brought back, and one day more so the next Reconcile can open them again, Summaries and <strong>Rebuild summaries</strong> leave out the Intervals Reconcile closed at its deletion: once the 16 days have passed, each is counted as it closed, and if the record comes back, each is counted once, when it closes again. No stay is counted twice. Cases, Leads, and Opportunities are tracked again the moment they are undeleted; other objects at the next Reconcile, however many deleted records are still in the Recycle Bin, and a change made to such a record before then starts its Intervals again from that change.</p>
 <p>Reconcile corrects Intervals that are open: a value that changed without capture closes the open Interval and opens the new value's. It never starts a field's first Interval, so a field with none, for example after a Fresh start, waits for its next change, and a blank field timed from its first value gets nothing until it has one.</p>
-<p>Live values refreshes open Intervals that started in the last 90 days. An Interval open longer than that keeps the minutes to date and breach flag of its last refresh, and so do the minute fields on its record: for a Case that has stayed in one status for four months, the Status Interval shows the minutes it had at 90 days, and a Goal it passes after that is flagged as a Breach only when the Interval closes. To change the window, set <strong>Live Values Window Days</strong> in Setup, under <strong>Custom Settings</strong>, then <strong>Sojourn Settings</strong>.</p>
+<h2 id="how-far-back-live-values-reaches">How far back Live values reaches<a class="headerlink" href="#how-far-back-live-values-reaches" title="Permanent link">#</a></h2>
+<p>Live values refreshes open Intervals that started in the last 90 days, unless you change it. An Interval open longer than that keeps the minutes to date and breach flag of its last refresh, and so do the minute fields on its record: for a Case that has stayed in one status for four months, the Status Interval shows the minutes it had at 90 days, and a Goal it passes after that is flagged as a Breach only when the Interval closes.</p>
+<p>To change the window, set <strong>Keep current for</strong> on the Live values card, from 1 to 365 days. The box shows the saved number, or 90 while none is saved, and its hint names the default; clear the box to go back to 90. The window saves with the card's <strong>Change</strong>, or <strong>Turn on</strong> when the job is off, before the schedule: a number outside 1 to 365 is refused with what to enter, and the schedule stays as it was. <strong>Turn off</strong> and <strong>Run now</strong> do not save it.</p>
+<h2 id="run-a-job-now">Run a job now<a class="headerlink" href="#run-a-job-now" title="Permanent link">#</a></h2>
+<p><strong>Run now</strong> on a job's card starts one run of Live values, Reconcile, or Summaries straight away, as you, whether the job is scheduled or not. Its schedule stays as it is, and the run follows the same plan rules as a scheduled one: on the Free plan, a Live values run flags breaches and writes no minute fields. A notice says the run started, for example "Reconcile started.", and the Health Monitor shows the run. Run now is refused, with the reason, when:</p>
+<ul>
+<li>that job is already running: "Live values is already running."</li>
+<li>Salesforce already holds 100 batch jobs waiting to run, the most it allows: the notice says so and points to <strong>Apex Flex Queue</strong> in Setup, which lists them. Try again once some have run.</li>
+</ul>
 <h2 id="jobs-you-start">Jobs you start<a class="headerlink" href="#jobs-you-start" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -1550,7 +1632,7 @@
 </tr>
 <tr>
 <td>Backfill</td>
-<td>The <strong>Backfill</strong> card on an object's screen; see <a href="../backfill/">Backfill past Intervals</a></td>
+<td>The <strong>Backfill</strong> tab of an object's screen; see <a href="../backfill/">Backfill past Intervals</a></td>
 <td>History and Seed are Plus; Fresh starts no job</td>
 </tr>
 <tr>
@@ -1560,14 +1642,14 @@
 </tr>
 <tr>
 <td>Rebuild summaries</td>
-<td><strong>Rebuild</strong> on Retention and purge</td>
+<td><strong>Rebuild</strong> on Summaries; see <a href="../retention/#summaries">Summaries</a></td>
 <td>Free and Plus</td>
 </tr>
 </tbody>
 </table>
 <p>One catch up, one backfill, and one purge run at a time across the org.</p>
 <h2 id="before-you-uninstall">Before you uninstall<a class="headerlink" href="#before-you-uninstall" title="Permanent link">#</a></h2>
-<p>Turn off every scheduled job first, on the Jobs card. See <a href="../uninstall/">Uninstall Sojourn</a>.</p>
+<p>Turn off every scheduled job first, on the Jobs screen. See <a href="../uninstall/">Uninstall Sojourn</a>.</p>
   
     <nav class="sj-pn" aria-label="Previous and next">
       <a href="../track-an-object/"><small>Previous</small><span>Track an object</span></a>

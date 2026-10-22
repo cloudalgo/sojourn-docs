@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Choose how long Sojourn keeps Intervals, what a purge deletes and keeps, and how to rebuild summaries.">
+        <meta name="description" content="Choose how long Sojourn keeps Intervals, what a purge deletes and keeps, and how summaries roll up and rebuild.">
       
       
       
@@ -16,7 +16,7 @@
         <link rel="prev" href="../goals-and-business-hours/">
       
       
-        <link rel="next" href="../move-settings/">
+        <link rel="next" href="../advanced-settings/">
       
       
         
@@ -62,7 +62,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Sojourn">
   <meta property="og:title" content="Keep or purge Intervals · Sojourn documentation">
-  <meta property="og:description" content="Choose how long Sojourn keeps Intervals, what a purge deletes and keeps, and how to rebuild summaries.">
+  <meta property="og:description" content="Choose how long Sojourn keeps Intervals, what a purge deletes and keeps, and how summaries roll up and rebuild.">
   <meta property="og:url" content="https://sojourn.cloudalgo.com/docs/guide/retention/">
   <meta property="og:image" content="https://sojourn.cloudalgo.com/assets/theme/images/card-docs.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i></i><i></i></span>
-          <span class="st-long">Release 1 in development, 11 of 14 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">11 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
+          <span class="st-long">Release 1 in development, 12 of 14 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">12 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -331,6 +331,8 @@
       
         
           
+        
+      
         
       
         
@@ -826,10 +828,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rebuild-summaries" class="md-nav__link">
+  <a href="#the-purge-part-size" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rebuild summaries
+        The purge part size
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summaries
       
     </span>
   </a>
@@ -840,6 +853,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tune the advanced settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1523,10 +1564,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rebuild-summaries" class="md-nav__link">
+  <a href="#the-purge-part-size" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rebuild summaries
+        The purge part size
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summaries
       
     </span>
   </a>
@@ -1555,7 +1607,7 @@
   
   <div class="sj-crumb">Guide</div>
   <h1>Keep or purge Intervals</h1>
-  <p class="sj-summary">Choose how long Sojourn keeps Intervals, what a purge deletes and keeps, and how to rebuild summaries.</p>
+  <p class="sj-summary">Choose how long Sojourn keeps Intervals, what a purge deletes and keeps, and how summaries roll up and rebuild.</p>
   
     <div class="sj-meta">
       <span class="pill closed">Salesforce admin</span>
@@ -1565,8 +1617,8 @@
   
   <p>Every change to a Tracked field adds an Interval, so a busy org collects millions of rows. Sojourn keeps the totals in summary rows and lets you decide how long the Intervals themselves stay.</p>
 <h2 id="summaries-come-first">Summaries come first<a class="headerlink" href="#summaries-come-first" title="Permanent link">#</a></h2>
-<p>Each night the <strong>Summaries</strong> job counts closed Intervals into daily and monthly summary rows: how many Intervals, how many records, and the total, average, shortest, and longest time, in business and calendar minutes, per object, field, value, owner, and period. Set its time on the Sojourn Settings Overview, under the jobs. Report on summaries with the <strong>Sojourn Interval Summaries</strong> report type; see the <a href="../../cookbook/">Report cookbook</a>.</p>
-<p>Summary rows are never purged with Intervals. Daily rows older than 400 days are removed after a complete purge run; monthly rows are kept.</p>
+<p>Each night the <strong>Summaries</strong> job counts closed Intervals into daily and monthly summary rows: how many Intervals, how many records, and the total, average, shortest, and longest time, in business and calendar minutes, per object, field, value, owner, and period. Set its time on the <strong>Jobs</strong> screen, under <strong>Operations</strong>; see <a href="../jobs/">Run the jobs</a>. Report on summaries with the <strong>Sojourn Interval Summaries</strong> report type; see the <a href="../../cookbook/">Report cookbook</a>.</p>
+<p>Summary rows are never purged with Intervals. Daily rows older than the roll-up days, 400 unless you change it, are removed after a complete purge run; monthly rows are kept. See <a href="#summaries">Summaries</a> below.</p>
 <h2 id="choose-retention">Choose retention<a class="headerlink" href="#choose-retention" title="Permanent link">#</a></h2>
 <p>Purge and the archive are on the Plus plan. On the Free plan, every Interval is kept, and the screen shows Keep everything with a note; see <a href="../plans/">Free and Plus plans</a>.</p>
 <p>Until you choose, the Sojourn Settings Overview shows <strong>Choose how long to keep Intervals</strong>, and neither choice is selected on the screen. Open <strong>Sojourn Settings</strong>, then <strong>Data</strong>, then <strong>Retention and purge</strong>:</p>
@@ -1577,7 +1629,7 @@
 <p>Choose <strong>Save retention</strong>; it is off until you pick one. Keeping a number of days asks you to type DELETE first, because a purge deletes records. Days start and end at midnight in the org time zone.</p>
 <h2 id="what-a-purge-deletes">What a purge deletes<a class="headerlink" href="#what-a-purge-deletes" title="Permanent link">#</a></h2>
 <p>A purge deletes only Intervals that are closed, already summarised, and ended before the cutoff. Open Intervals are never deleted, however old.</p>
-<p>It works 2,000 Intervals at a time, so a purge of a million Intervals leaves 500 CSV files on its run. Each part is first written to a CSV file, attached to the run's <strong>Purge Run</strong> record, then deleted in the same step: a part is saved and deleted together, or not at all. The first part that fails stops the run, and the run says why. Choosing <strong>Keep everything</strong> while a purge runs stops it at its next part, and the run says the rest is kept. <strong>Purge now</strong> waits while summaries are being built or rebuilt, because a rebuild still reads the Intervals a purge would delete.</p>
+<p>It works in parts of 2,000 Intervals unless you change the part size (see <a href="#the-purge-part-size">The purge part size</a>), so a purge of a million Intervals leaves 500 CSV files on its run. Each part is first written to a CSV file, attached to the run's <strong>Purge Run</strong> record, then deleted in the same step: a part is saved and deleted together, or not at all. The first part that fails stops the run, and the run says why. Choosing <strong>Keep everything</strong> while a purge runs stops it at its next part, and the run says the rest is kept. <strong>Purge now</strong> waits while summaries are being built or rebuilt, because a rebuild still reads the Intervals a purge would delete.</p>
 <p>Each CSV file has a header row, then one row per Interval, in these columns: Interval, Object, Record Id, Record, Tracked field, From, To, To Id, Entered at, Exited at, Business minutes, Calendar minutes, Owner Id, Owner, Owner type, Source, Goal minutes, Breached, Sequence, Warning, Warned at, Record Closed, Value Group. Times are in UTC; Breached, Warning, and Record Closed are true or false. Record Closed and Value Group are what the summary rows group by: whether the record was closed during the stay, and the value group its value belonged to (blank when the field has no value groups).</p>
 <div class="sj-callout">
 <p><strong>The CSV file is your copy.</strong> Download it from the Purge Run record before you delete the record or the file. Sojourn never deletes them.</p>
@@ -1587,8 +1639,12 @@
 <h2 id="purge-now-and-the-runs">Purge now and the runs<a class="headerlink" href="#purge-now-and-the-runs" title="Permanent link">#</a></h2>
 <p><strong>Purge now</strong> starts a run straight away, without waiting for the night. The button is on only while the saved choice is Keep N days: on a new install, and under Keep everything, it is off. The confirmation names the window; type DELETE to confirm. One purge runs at a time; a second is refused with "A purge is already running. Try again when it finishes."</p>
 <p><strong>Purge runs</strong> lists each run: when it ran, its status (Queued, Running, Complete, or Failed), how many Intervals it deleted and archived, and how many files it holds; choose the files to open the run. A run counts its Intervals as each part finishes, so a run that stopped part-way shows what it deleted before it stopped. The run's record also keeps <strong>Interval Count</strong>: how many Intervals the run set out to delete when it started, so you can compare it with what it deleted.</p>
-<h2 id="rebuild-summaries">Rebuild summaries<a class="headerlink" href="#rebuild-summaries" title="Permanent link">#</a></h2>
-<p><strong>Rebuild summaries</strong> recounts the summary rows of whole months from their Intervals, for example after a backfill. Choose <strong>From</strong> and <strong>To</strong>, then <strong>Rebuild</strong>. A rebuild is refused for a month a purge has cut into, because its deleted Intervals are no longer there to count, and for a range of more than 9,000 summary rows; rebuild fewer months at a time.</p>
+<h2 id="the-purge-part-size">The purge part size<a class="headerlink" href="#the-purge-part-size" title="Permanent link">#</a></h2>
+<p>Under the <strong>Purge</strong> card, open <strong>Advanced</strong> to set <strong>Intervals per purge part</strong>, from 50 to 2,000. Each part is saved to one CSV file and deleted in one step, so a smaller part means more, smaller files and less work in each step. The box shows the saved number, or 2,000 while none is saved; clear it to go back to 2,000. Choose <strong>Save part size</strong>; it saves on its own and asks for no DELETE, because it changes how a purge runs, not what it deletes. A number outside 50 to 2,000 is refused with what to enter. The part size is on the Plus plan, with purge: on the Free plan it shows with its box off and the Plus notice. <strong>Reset to defaults</strong> on the <a href="../advanced-settings/">Advanced screen</a> puts it back to 2,000.</p>
+<h2 id="summaries">Summaries<a class="headerlink" href="#summaries" title="Permanent link">#</a></h2>
+<p>Open <strong>Sojourn Settings</strong>, then <strong>Summaries</strong> under <strong>Data</strong>.</p>
+<p><strong>Roll-up</strong> sets <strong>Day rows become Month rows after</strong>, from 35 to 3,650 days, 400 unless you change it. After a complete purge run, Day rows older than this are removed; their Month rows keep the totals, so reports by month are unchanged, and reports by day reach back this far. The box shows the saved number, or 400 while none is saved; clear it to go back to 400. Choose <strong>Save roll-up</strong>. A number outside 35 to 3,650 is refused with what to enter. Without purge, as on the Free plan, Day rows are kept.</p>
+<p><strong>Rebuild summaries</strong> recounts the summary rows of whole months from their Intervals, for example after a backfill. Choose <strong>From</strong> and <strong>To</strong>, then <strong>Rebuild</strong>; the line under the dates names the months it rebuilds. A rebuild is refused for a month a purge has cut into, because its deleted Intervals are no longer there to count, and for a range of more than 9,000 summary rows; rebuild fewer months at a time.</p>
 <div class="sj-verify">
 <p><strong>You are done when</strong></p>
 <ul>
@@ -1599,7 +1655,7 @@
   
     <nav class="sj-pn" aria-label="Previous and next">
       <a href="../goals-and-business-hours/"><small>Previous</small><span>Set goals and business hours</span></a>
-      <a class="sj-pn__next" href="../move-settings/"><small>Next</small><span>Move settings between orgs</span></a>
+      <a class="sj-pn__next" href="../advanced-settings/"><small>Next</small><span>Tune the advanced settings</span></a>
     </nav>
   
   
