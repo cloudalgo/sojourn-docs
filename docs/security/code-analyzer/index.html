@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:14"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 12 of 14 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">12 of 14 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
+          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -329,6 +329,8 @@
       
         
           
+        
+      
         
       
         
@@ -802,6 +804,34 @@
     
   
     Show the timeline on a record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/dashboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a dashboard
   
 
     
@@ -1703,6 +1733,10 @@
 <td><code>**/__tests__/**</code></td>
 <td>Jest tests never ship (.forceignore excludes <strong>/<strong>tests</strong>/</strong>); the LWC rules guard component code.</td>
 </tr>
+<tr>
+<td><code>**/lwc/motion/motion.js</code></td>
+<td>Accepted (D-757): the one frame loop in the package, the dashboard Number's 650 ms count-up. Every other motion is CSS or the Web Animations API; this file holds only requestAnimationFrame, which LWS allows, and nothing else.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="suppressed-in-code">Suppressed in code<a class="headerlink" href="#suppressed-in-code" title="Permanent link">#</a></h3>
@@ -1715,6 +1749,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>PMD.ApexUnitTestClassShouldHaveAsserts</td>
+<td><code>DashboardControllerTest</code></td>
+<td>assertEveryMethodRefused holds the assertions both refusal tests share.</td>
+</tr>
 <tr>
 <td>PMD.ApexUnitTestClassShouldHaveAsserts</td>
 <td><code>ErrorLogServiceTest</code></td>
@@ -1767,6 +1806,11 @@
 </tr>
 <tr>
 <td>PMD.AvoidBooleanMethodParameters</td>
+<td><code>ChartPeriods</code></td>
+<td>monthly is Chart.byMonth as the data service read it, passed through, not a mode of this class.</td>
+</tr>
+<tr>
+<td>PMD.AvoidBooleanMethodParameters</td>
 <td><code>ConfigTransferService</code>, <code>ConfigTransferServiceImpl</code>, <code>DataController</code>, <code>IConfigTransferService</code></td>
 <td>replace and apply are the screen's switch and its Apply button.</td>
 </tr>
@@ -1812,6 +1856,11 @@
 </tr>
 <tr>
 <td>PMD.CognitiveComplexity</td>
+<td><code>DashboardLayouts</code></td>
+<td>Every rule a layout and its filters must meet, kept in one place so the editor and the save never disagree (D-747); each method is short, the class total is the number of rules.</td>
+</tr>
+<tr>
+<td>PMD.CognitiveComplexity</td>
 <td><code>JobsServiceImpl</code></td>
 <td>One entry point per job, none above 9; the total is their sum, and the plan check is one of them (D-585).</td>
 </tr>
@@ -1829,6 +1878,11 @@
 <td>PMD.CognitiveComplexity</td>
 <td><code>TestDataFactory</code></td>
 <td>The public count and the complexity total are the catalogue of the five delegated classes; each method is one line.</td>
+</tr>
+<tr>
+<td>PMD.CognitiveComplexity</td>
+<td><code>DashboardDataServiceImpl</code></td>
+<td>The total is the sum of one small builder per chart type; each method stays under the complexity limit.</td>
 </tr>
 <tr>
 <td>PMD.CognitiveComplexity</td>
@@ -1882,6 +1936,16 @@
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
+<td><code>DashboardDataServiceTest</code></td>
+<td>Chart data from summary rows and open Intervals (D-746, D-749, D-755). Methods run as the Sojourn admin (D-619); the last test proves user mode refuses a user without access.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>DashboardLayouts</code></td>
+<td>Every rule a layout and its filters must meet, kept in one place so the editor and the save never disagree (D-747); each method is short, the class total is the number of rules.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
 <td><code>JobsServiceTest</code></td>
 <td>Methods run as the Sojourn admin (D-619) (access denial is proven in the controller tests); total complexity is the sum of independent one-scenario tests, none above 4.</td>
 </tr>
@@ -1894,6 +1958,11 @@
 <td>PMD.CyclomaticComplexity</td>
 <td><code>IntervalWarningsTest</code></td>
 <td>Methods run as the Sojourn admin (D-619); aUserWhoCannotEditTheWarningLeavesItUnset proves user mode with System.runAs. Total complexity is the sum of independent one-scenario tests; no method exceeds 4.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>SchemaTest</code></td>
+<td>Methods run as the Sojourn admin (D-619); access denial is proven with System.runAs in the security tests. Field map keys carry the package's namespace prefix in a namespaced org (sprint 8 Task 7).</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
@@ -1934,6 +2003,16 @@
 <td>PMD.CyclomaticComplexity</td>
 <td><code>IntervalWriter</code></td>
 <td>The class totals are the sum of small steps, none above 7: a change's step, open, close, heal a double open (D-626), the Record Closed flag (D-670), and matching results to failures; the decisions are in OwnerStays and CreatedFirsts (R3-10).</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>IntervalsSelector</code></td>
+<td>The one selector for Interval__c (architecture standard: selectors own SOQL, one per object); each read is a few lines, so the class totals grow with the reads the package needs, not with any one method.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>DashboardDataServiceImpl</code></td>
+<td>The total is the sum of one small builder per chart type; each method stays under the complexity limit.</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
@@ -2017,8 +2096,13 @@
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
+<td><code>DashboardDataServiceImpl</code></td>
+<td>---- Bars: each value against its Goal, or each owner against the team average ---- The chart, the filters, the period, and the chart it fills: a holder type would only rename them.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
 <td><code>SummaryRows</code></td>
-<td>A row is its code, granularity, period, and the Interval that brings it its keys.</td>
+<td>A row is its code, granularity, period, and the Interval that brings it its keys; an all-owners row carries no owner and says so (D-742).</td>
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
@@ -2052,6 +2136,11 @@
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
+<td><code>DashboardLayouts</code></td>
+<td>A value, its two bounds, and what a blank becomes: a holder type would only rename them.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
 <td><code>VolumeEstimate</code></td>
 <td>An estimate is creates, changes per field, the fields, and the storage limit (D-399).</td>
 </tr>
@@ -2067,6 +2156,21 @@
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
+<td><code>DashboardDataServiceTest</code></td>
+<td>One Case Status summary row; ownerId null makes it an all-owners row.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
+<td><code>IntervalsSelectorTest</code></td>
+<td>One Interval of a Case Status stay; open unless exited is given.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
+<td><code>SummaryRows</code></td>
+<td>One Interval's counts and minutes into one row; a record counts once per row within a build (D-384).</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
 <td><code>HistorySelector</code></td>
 <td>One capped count per Tracked field, at most 10 (D-397, D-399); the inputs are the object, its history field names, the window, and the cap.</td>
 </tr>
@@ -2074,6 +2178,11 @@
 <td>PMD.ExcessiveParameterList</td>
 <td><code>ConfigImport</code>, <code>TransferModels</code></td>
 <td>One result is the four columns of the screen's table.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
+<td><code>DashboardLayoutsTest</code></td>
+<td>Pure logic on layouts and filters (D-747, D-748); DashboardServiceTest covers the reads and writes.</td>
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
@@ -2087,6 +2196,11 @@
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
+<td><code>DashboardDataServiceTest</code></td>
+<td>Test data: each argument is one column of a summary row.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
 <td><code>CaseMetricsTest</code>, <code>TimelineServiceTest</code></td>
 <td>Test data: each argument is one column of an Interval row.</td>
 </tr>
@@ -2094,6 +2208,16 @@
 <td>PMD.ExcessiveParameterList</td>
 <td><code>TimelineServiceTest</code></td>
 <td>Test data: each argument is one column of an archive row.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
+<td><code>DashboardDataServiceTest</code></td>
+<td>Test data: each argument is one column of an open Interval.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
+<td><code>DashboardDataServiceTest</code></td>
+<td>Test data: each argument is one key of a stored chart.</td>
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
@@ -2137,8 +2261,18 @@
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
+<td><code>SummaryRows</code></td>
+<td>The same key with the owner part given: the Interval's owner, or SummaryKeys.ALL_OWNERS (D-742). Each argument is one part of the key; a holder type would only rename them.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
 <td><code>SummaryKeys</code></td>
 <td>The same, with the dimensions (D-675, D-725): the key has all ten parts from the first promoted version, blank ones included, so a dimension switched on later needs no new key, only Rebuild summaries. Each part is written as its length, a colon, and its text (R3-08), so a pipe or colon inside a picklist value, group, record type, or snapshot can never move a boundary and merge two rows. The ten are joined by pipes for readability, then hashed.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
+<td><code>DashboardDataServiceImpl</code></td>
+<td>The summary read for the window: the all-owners rows, or the per-owner rows for owner charts or one owner. Day rows unless the call's reads would pass the row budget; then Month rows over whole months, and the chart says so (D-749). The chart, the filters, the period, and the chart it fills: a holder type would only rename them.</td>
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
@@ -2184,6 +2318,11 @@
 <td>PMD.ExcessivePublicCount</td>
 <td><code>SetupServiceImpl</code></td>
 <td>One method per Settings page use case of ISetupService (highest complexity 8), each handing the work to support classes, so the totals grow with the screens; setActive, setPaused, and saveSettings take a switch's new state.</td>
+</tr>
+<tr>
+<td>PMD.ExcessivePublicCount</td>
+<td><code>IntervalsSelector</code></td>
+<td>The one selector for Interval__c (architecture standard: selectors own SOQL, one per object); each read is a few lines, so the class totals grow with the reads the package needs, not with any one method.</td>
 </tr>
 <tr>
 <td>PMD.ExcessivePublicCount</td>
@@ -2259,6 +2398,11 @@
 <td>PMD.TooManyFields</td>
 <td><code>SetupModels</code></td>
 <td>A data transfer object for the UI: one public field per fact a Tracked objects list row shows, so the count grows with the screen, not with behaviour.</td>
+</tr>
+<tr>
+<td>PMD.TooManyFields</td>
+<td><code>DashboardModels</code></td>
+<td>One field per thing a chart type draws; each type sets its own and leaves the rest empty (D-746).</td>
 </tr>
 </tbody>
 </table>

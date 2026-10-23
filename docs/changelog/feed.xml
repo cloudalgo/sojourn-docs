@@ -11,6 +11,21 @@
     <uri>https://sojourn.cloudalgo.com/</uri>
   </author>
   <entry>
+    <title>Sprint 14: Sojourn Dashboards (23 October 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-14</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-14-sojourn-dashboards-23-october-2026" />
+    <updated>2026-10-23T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sojourn Dashboards.&lt;/strong&gt; A new tab where each manager builds their own dashboards of where the time went: time in each value against its Goal, owners, Breaches, and the longest open stays. A dashboard is its owner's alone. On the Plus plan; on the Free plan the tab shows what it offers. See &lt;a href="../guide/dashboards/"&gt;Build a dashboard&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Six charts.&lt;/strong&gt; Number, Bars, Trend, Share, Heatmap, and Table; any chart's menu has &lt;strong&gt;Show as table&lt;/strong&gt; for its numbers. The filters above the charts (Tracked object and field, a period of 7, 30, or 90 days, business or calendar hours, and an owner or everyone) apply to every chart and are kept with the dashboard.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Layout editor.&lt;/strong&gt; Add, move, and resize charts on a snapping grid, with Undo, the keyboard, and each chart type's size limits; up to 20 dashboards of up to 20 charts each. &lt;strong&gt;Start from Support desk&lt;/strong&gt; begins with ten charts.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Zoom and print.&lt;/strong&gt; &lt;strong&gt;Expand&lt;/strong&gt; opens one chart full screen, and on a Trend you drag across the chart to zoom into a range. Print a dashboard in black and white or colour, on A4 or Letter, with the data tables at the end if you choose.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Sojourn Dashboards permission.&lt;/strong&gt; In the Sojourn Admin and Sojourn Manager permission sets, with the new &lt;strong&gt;Sojourn Dashboard&lt;/strong&gt; object. See &lt;a href="../guide/permission-sets/"&gt;Assign permission sets&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Totals for every owner.&lt;/strong&gt; The Summaries job also writes rows that add up every owner, marked &lt;strong&gt;All Owners&lt;/strong&gt;, so a chart for everyone reads one row a day. The packaged summary reports leave them out, so nothing is counted twice; a report of your own on Interval Summaries should filter All Owners equals false (see the &lt;a href="../cookbook/"&gt;report cookbook&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Summaries in parts of 1,000.&lt;/strong&gt; The Summaries job and Rebuild summaries now count 1,000 Intervals at a time, so a night with many owners stays inside Salesforce's limits.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
     <title>Sprint 12: the settings console (23 October 2026)</title>
     <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-12</id>
     <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-12-the-settings-console-23-october-2026" />
