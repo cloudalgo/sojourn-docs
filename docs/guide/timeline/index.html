@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -331,6 +331,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -957,6 +961,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../case-metrics/" class="md-nav__link">
         
   
@@ -1021,6 +1053,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1605,12 +1665,14 @@
 <h2 id="what-it-shows">What it shows<a class="headerlink" href="#what-it-shows" title="Permanent link">#</a></h2>
 <ul>
 <li><strong>Lanes.</strong> One per Tracked field, the status field first and the owner last. Each stay is a segment sized by its business minutes, or calendar minutes when you switch to <strong>Calendar</strong>. The stay that is still open is Lantern orange and grows until it ends.</li>
-<li><strong>Goals.</strong> A stay with a Goal shows a tick where the goal fell; time past the goal is a red stripe along the bottom of the segment.</li>
+<li><strong>Colours.</strong> A value takes the colour its Tracked field's <strong>Value Colours</strong> setting gives it: Tide, Harbor, Slate, or Mist. The setting's help text gives its format; Sojourn refuses any other colour on save. Values without one take Tide, Harbor, and Slate in turn, in the order they first appear. Coral and Lantern are kept for Breach and the open stay, so a value never takes them; a queue on the owner lane is always Slate. A field that keeps only the change shows "(hidden)" in the palette's next colour.</li>
+<li><strong>Goals.</strong> A stay with a Goal shows a tick where the goal fell; time past the goal is a red stripe along the bottom of the segment. Turn off <strong>Show goal ticks and breach stripes</strong> to draw neither.</li>
 <li><strong>Details.</strong> Focus a segment with the keyboard or point at it to see its value, owner, when it began and ended, its business and calendar time, and its goal: how far past it a breached stay went, or that a stay reached its goal's warn percent and is a warning. Press Escape to close it.</li>
 <li><strong>Totals.</strong> Below the lanes, <strong>Time by value</strong> and <strong>Time by owner</strong> list each value's time, its share, and its number of stays.</li>
-<li><strong>History that was purged.</strong> When older Intervals were purged to the archive, the timeline also reads the archive and shows those stays dashed, marked as from the archive. Archived stays have no goal marks. See <a href="../retention/">Keep or purge Intervals</a>.</li>
+<li><strong>History that was purged.</strong> When older Intervals were purged to the archive, the timeline also reads the archive and shows those stays dashed, marked as from the archive. Archived stays have no goal marks. <strong>Show archived history</strong> decides when it looks; see <a href="../retention/">Keep or purge Intervals</a>.</li>
 <li><strong>Up to date.</strong> The card keeps what it last read while the page is open; select <strong>Refresh</strong> to read the latest Intervals and the minutes so far.</li>
 <li><strong>Long histories.</strong> A record shows its newest 500 Intervals by default, at most 2,000; the timeline says so when older ones are left out. Reports show every Interval.</li>
+<li><strong>Merged records.</strong> After a merge, the record that remains shows only its own stays. The stays of a record merged into it stay with that deleted record and are not moved; see <a href="../track-an-object/#when-records-are-merged">When records are merged</a>.</li>
 </ul>
 <h2 id="add-it-to-a-record-page">Add it to a record page<a class="headerlink" href="#add-it-to-a-record-page" title="Permanent link">#</a></h2>
 <ol>
@@ -1642,8 +1704,17 @@
 <td>Show summary</td>
 <td>Show Time by value and Time by owner below the lanes.</td>
 </tr>
+<tr>
+<td>Show goal ticks and breach stripes</td>
+<td>On by default. Off: no goal ticks, no breach stripes, and no goal in the details or the legend.</td>
+</tr>
+<tr>
+<td>Show archived history</td>
+<td><strong>When the archive is on</strong> (the default): purged stays show while Sojourn archives or purges. <strong>Always</strong>: they still show after both are turned off. <strong>Never</strong>: live Intervals only.</td>
+</tr>
 </tbody>
 </table>
+<p>Show archived history never shows more than a person may read: without read on the archive, they see the live Intervals only. Both properties are on record pages and Experience Cloud pages.</p>
 <h2 id="who-sees-it">Who sees it<a class="headerlink" href="#who-sees-it" title="Permanent link">#</a></h2>
 <p>People need the <strong>Sojourn Timeline</strong> permission, which the Sojourn User, Manager, Health Monitor, and Admin permission sets include; see <a href="../permission-sets/">Assign permission sets</a>. The timeline shows the history of a record only to people who can open that record. Without the permission, the card says so and shows nothing else.</p>
 <h2 id="add-it-to-an-experience-cloud-page">Add it to an Experience Cloud page<a class="headerlink" href="#add-it-to-an-experience-cloud-page" title="Permanent link">#</a></h2>

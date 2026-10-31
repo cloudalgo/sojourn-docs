@@ -5,11 +5,40 @@
   <id>tag:sojourn.cloudalgo.com,2026:changelog</id>
   <link rel="self" type="application/atom+xml" href="https://sojourn.cloudalgo.com/docs/changelog/feed.xml" />
   <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/" />
-  <updated>2026-10-23T00:00:00Z</updated>
+  <updated>2026-10-30T00:00:00Z</updated>
   <author>
     <name>CloudAlgo</name>
     <uri>https://sojourn.cloudalgo.com/</uri>
   </author>
+  <entry>
+    <title>Sprint 13: the settings levers (30 October 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-13</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-13-the-settings-levers-30-october-2026" />
+    <updated>2026-10-30T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Values that do not count.&lt;/strong&gt; On an object's &lt;strong&gt;Values&lt;/strong&gt; tab, choose values of a Tracked field that open no Interval: the clock stops while a record is in one and starts again at the next counted value. Goals, reports, and the timeline leave them out. See &lt;a href="../guide/track-an-object/#the-values-tab"&gt;The Values tab&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Value groups.&lt;/strong&gt; Name groups of values, such as Backlog or Active; each Interval carries its value's group in &lt;strong&gt;Value Group&lt;/strong&gt;, so reports and summaries can count a group as one. A group applies to Intervals that open after it is saved.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Timeline colours.&lt;/strong&gt; Choose Tide, Harbor, Slate, or Mist for each value's segments on the timeline, or leave it on Automatic. Coral stays for a Breach and Lantern for the current Interval.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Only that the value changed.&lt;/strong&gt; For a field whose values are private, Intervals can keep only the time in each value and leave the values blank. It cannot be chosen on the status field or the field Closed when reads.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Owner tracking.&lt;/strong&gt; Track owners who are users and queues, users only, or queues only, and choose to keep one owner stay when a record moves between members of the same queue.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Records to track.&lt;/strong&gt; Conditions on the &lt;strong&gt;Records&lt;/strong&gt; tab choose which records get Intervals, such as Origin equals Web; a record that stops matching keeps its Intervals.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Business hours by record type.&lt;/strong&gt; Each record type can use its own business hours, which win over the object's and lose to the record's own hours field.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Goals split by a second field.&lt;/strong&gt; A goal for each value of a field such as Priority, beside the value's own goal; the most specific goal wins. See &lt;a href="../guide/goals-and-business-hours/#set-goals"&gt;Set goals&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Retention per object.&lt;/strong&gt; Each Tracked object can keep its Intervals for its own number of days, or everything, while the org keeps N days. See &lt;a href="../guide/retention/"&gt;Retention and purge&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Health thresholds.&lt;/strong&gt; The Health screen under Operations sets when the Health Monitor needs attention, when something is wrong, and when a job counts as late. See &lt;a href="../guide/health-monitor/"&gt;The Health Monitor&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Breaches now.&lt;/strong&gt; A Sojourn widget for Lightning dashboards that lists the open Breaches as each viewer sees them. See &lt;a href="../guide/breaches-now/"&gt;Breaches now&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The timeline in App Builder.&lt;/strong&gt; &lt;strong&gt;Show goal ticks and breach stripes&lt;/strong&gt; turns the goal ticks and breach stripes on or off, and &lt;strong&gt;Show archived history&lt;/strong&gt; chooses when the archive is offered. See &lt;a href="../guide/timeline/"&gt;The timeline&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The settings file carries every setting of this sprint&lt;/strong&gt;, except retention per object, and each setting is checked and skipped on its own with its screen's words. See &lt;a href="../guide/move-settings/"&gt;Move settings between orgs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Capture Change in Flow Builder.&lt;/strong&gt; The action's inputs sit in one &lt;strong&gt;Record change&lt;/strong&gt; section, Record first and Prior record second.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Encrypted fields.&lt;/strong&gt; The field picker marks a Tracked field your org encrypts with Shield Platform Encryption, since Intervals copy its values in plain text. See &lt;a href="../guide/track-an-object/#encrypted-fields"&gt;Encrypted fields&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Breach alerts.&lt;/strong&gt; The breach alert template emails only an active owner or manager.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Backfill on large objects.&lt;/strong&gt; History and Seed backfill run as a chain of steps over one set of records, so a large object backfills without the batch limits.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reconcile.&lt;/strong&gt; Every closed Interval of a deleted record is flagged in the same run, not only the first 2,000.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sojourn Dashboards.&lt;/strong&gt; A stored layout with a key Sojourn does not write stays in the list and does not open until it is saved again. See &lt;a href="../guide/dashboards/"&gt;Build a dashboard&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dashboards settings.&lt;/strong&gt; A Sojourn Admin sets what a new dashboard opens on, how many owners, Trend values, and Longest open rows the charts show, what the print preview starts with, and the dashboard, chart, and summary row limits, on the Dashboards screen under Data. A lower limit stops adding and never removes. On the Plus plan; in the settings file and Reset to defaults. See &lt;a href="../guide/dashboards/#set-what-dashboards-start-with"&gt;Set what dashboards start with&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;New guide pages.&lt;/strong&gt; &lt;a href="../guide/scope-and-limits/"&gt;Scope and limits&lt;/a&gt;, and sections on merged records, encrypted fields, after a sandbox refresh, and the first steps after install.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Sprint 14: Sojourn Dashboards (23 October 2026)</title>
     <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-14</id>

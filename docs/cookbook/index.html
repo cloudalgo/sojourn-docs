@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -329,6 +329,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -852,6 +856,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/case-metrics/" class="md-nav__link">
         
   
@@ -916,6 +948,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1460,6 +1520,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#merged-and-deleted-records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merged and deleted records
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opportunity-amounts-in-more-than-one-currency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opportunity amounts in more than one currency
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email-me-when-sojourn-logs-an-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Email me when Sojourn logs an error
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1498,7 +1591,7 @@
 <ul>
 <li><a href="worked-examples/">Worked examples</a>: time in status for a queue, time per owner, and the statuses that miss their goal.</li>
 <li><a href="hours-per-case/">Hours per Case</a>: total business hours, from the Case metrics or from the Intervals.</li>
-<li><a href="status-groups/">Status groups</a>: edit the bucket that splits customer time from company time.</li>
+<li><a href="status-groups/">Status groups</a>: report time by value group, or edit the bucket that splits customer time from company time.</li>
 <li><a href="large-data/">Reports at large volume</a>: date ranges, custom indexes, and summaries for trends.</li>
 </ul>
 <h2 id="report-on-summaries">Report on summaries<a class="headerlink" href="#report-on-summaries" title="Permanent link">#</a></h2>
@@ -1513,6 +1606,25 @@
 <div class="sj-callout">
 <p><strong>Record Count is close, not exact.</strong> It counts each record once per row as the row is built. A record that gets another Interval later for a period already summarised is counted again on that row, so the count can run slightly high. Interval Count and the minutes are exact.</p>
 </div>
+<h2 id="merged-and-deleted-records">Merged and deleted records<a class="headerlink" href="#merged-and-deleted-records" title="Permanent link">#</a></h2>
+<p>When records are merged, Salesforce deletes the records merged away, and their Intervals keep their own <strong>Parent Id</strong> and <strong>Parent Name</strong>: Sojourn does not move them onto the record that remains. The next Reconcile closes their open stays and checks <strong>Orphaned</strong> on each; see <a href="../guide/track-an-object/#when-records-are-merged">When records are merged</a>.</p>
+<ul>
+<li>In the <strong>Sojourn Intervals</strong> report type, a merged record's stays show apart from the record that remains. Filter <strong>Orphaned</strong> to False to count only records that still exist, or leave the filter off to keep every stay in the totals.</li>
+<li>A merge moves related records to the record that remains, so a report type that starts from the record, such as <strong>Leads with Sojourn Intervals</strong>, lists the merged record's stays under the remaining record. Filter <strong>Orphaned</strong> to False to leave them out once Reconcile has run; before then, add <strong>Parent Id</strong> to the report, since a merged stay keeps the Id of the record merged away.</li>
+<li>Summary rows count stays by value and owner, so the merged record's stays stay in their totals. A stay that Reconcile closed at the merge is counted once 16 days have passed, as for any deleted record; see <a href="../guide/jobs/#scheduled-jobs">Run the jobs</a>.</li>
+</ul>
+<h2 id="opportunity-amounts-in-more-than-one-currency">Opportunity amounts in more than one currency<a class="headerlink" href="#opportunity-amounts-in-more-than-one-currency" title="Permanent link">#</a></h2>
+<p><strong>Opportunity Amount</strong> on an Interval is the Opportunity's Amount when the stay began, in the Opportunity's own currency, with no conversion. In an org with more than one currency, a sum or average of it across Opportunities adds amounts in different currencies, so the total means nothing. Report on Opportunities in one currency at a time, or take converted amounts from your own Opportunity reports.</p>
+<h2 id="email-me-when-sojourn-logs-an-error">Email me when Sojourn logs an error<a class="headerlink" href="#email-me-when-sojourn-logs-an-error" title="Permanent link">#</a></h2>
+<p>Sojourn writes an Error Log row whenever it cannot record a change or a job cannot run. To hear about it without opening the Health Monitor, subscribe to a copy of the packaged <strong>Error Log by Type</strong> report. You need the Sojourn Admin or Sojourn Health Monitor permission set to read Error Log rows, and Salesforce's Subscribe to Reports permission.</p>
+<ol>
+<li>Open <strong>Reports</strong>, then the <strong>Sojourn Reports</strong> folder, then <strong>Error Log by Type</strong>. Choose <strong>Save As</strong>, give the copy a name such as Sojourn errors to fix, and save it in a folder of your own.</li>
+<li>Edit the copy, add the filter <strong>Status</strong> equals New, and save it. The report now lists only the errors that need you.</li>
+<li>Choose <strong>Subscribe</strong>. Set the schedule to <strong>Daily</strong>, at a time early in your working day.</li>
+<li>Under <strong>Run Report As</strong>, choose a user with Sojourn Admin or Sojourn Health Monitor, so the report sees every Error Log row. Every recipient sees what that user sees, messages included, and a message can hold a record's values, so add only people who may read them.</li>
+<li>Add a condition: <strong>Record Count</strong>, greater than, 0. Then choose <strong>Save</strong>.</li>
+</ol>
+<p>The email now arrives only on the mornings when at least one error waits. Fix each one from the Health Monitor; see <a href="../guide/health-monitor/">Watch Sojourn in the Health Monitor</a>.</p>
   
     <nav class="sj-pn" aria-label="Previous and next">
       <a href="../guide/uninstall/"><small>Previous</small><span>Uninstall Sojourn</span></a>

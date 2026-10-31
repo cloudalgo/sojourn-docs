@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Interval Summary object consolidates closed intervals into one row per period, tracked object, tracked field, value, and owner, plus all-owners rows for org-wide charts, with counts, sum, average, minimum, and maximum minutes. Built nightly into Day and Month rows; purge keeps them. Commonly used for leaderboards, trends, and dashboards.">
+        <meta name="description" content="The Interval Summary object consolidates closed Intervals into one row per period, Tracked object, Tracked field, value, and owner, plus all-owners rows for org-wide charts, with counts, sum, average, minimum, and maximum minutes. The nightly Summaries job builds Day and Month rows; a purge run keeps Month rows and removes Day rows older than Summary Rollup Days. Read by the Owner Leaderboard 30 Days and Average Hours per Status by Week reports, the packaged dashboards built on them, and Sojourn Dashboards.">
       
       
       
@@ -58,7 +58,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Sojourn">
   <meta property="og:title" content="Interval Summary · Sojourn documentation">
-  <meta property="og:description" content="The Interval Summary object consolidates closed intervals into one row per period, tracked object, tracked field, value, and owner, plus all-owners rows for org-wide charts, with counts, sum, average, minimum, and maximum minutes. Built nightly into Day and Month rows; purge keeps them. Commonly used for leaderboards, trends, and dashboards.">
+  <meta property="og:description" content="The Interval Summary object consolidates closed Intervals into one row per period, Tracked object, Tracked field, value, and owner, plus all-owners rows for org-wide charts, with counts, sum, average, minimum, and maximum minutes. The nightly Summaries job builds Day and Month rows; a purge run keeps Month rows and removes Day rows older than Summary Rollup Days. Read by the Owner Leaderboard 30 Days and Average Hours per Status by Week reports, the packaged dashboards built on them, and Sojourn Dashboards.">
   <meta property="og:url" content="https://sojourn.cloudalgo.com/docs/reference/objects/Interval_Summary__c/">
   <meta property="og:image" content="https://sojourn.cloudalgo.com/assets/theme/images/card-docs.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -124,9 +124,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -318,6 +318,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -841,6 +845,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../guide/breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../guide/case-metrics/" class="md-nav__link">
         
   
@@ -905,6 +937,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1414,7 +1474,7 @@
   
   
   <h1>Interval Summary</h1>
-  <p class="sj-summary">The Interval Summary object consolidates closed intervals into one row per period, tracked object, tracked field, value, and owner, plus all-owners rows for org-wide charts, with counts, sum, average, minimum, and maximum minutes. Built nightly into Day and Month rows; purge keeps them. Commonly used for leaderboards, trends, and dashboards.</p>
+  <p class="sj-summary">The Interval Summary object consolidates closed Intervals into one row per period, Tracked object, Tracked field, value, and owner, plus all-owners rows for org-wide charts, with counts, sum, average, minimum, and maximum minutes. The nightly Summaries job builds Day and Month rows; a purge run keeps Month rows and removes Day rows older than Summary Rollup Days. Read by the Owner Leaderboard 30 Days and Average Hours per Status by Week reports, the packaged dashboards built on them, and Sojourn Dashboards.</p>
   
   <!-- Generated by docs-site/scripts/generate_reference.py from package metadata. Do not edit. -->
 
@@ -1433,163 +1493,163 @@
 <td>All Owners</td>
 <td><code>All_Owners__c</code></td>
 <td>Checkbox</td>
-<td>Marks a rollup row that adds up every owner (owner part of the key '<em>', Owner Id blank), written beside the per-owner rows so org-wide dashboard charts read few rows (D-742). Reports per owner filter it out.<br></em>Help text:* Checked when this row counts every owner together. Filter it out when you report time per owner.</td>
+<td>Checked on an all-owners row: the same period, Tracked object, Tracked field, value, value group, and Record Closed as the per-owner rows, with every owner's Intervals added together. Its key's owner part is an asterisk (<em>), and Owner Id, Owner Name, Owner Type, and Owner User are blank. Unchecked (the default) on a per-owner row. The nightly Summaries job adds each closed Interval to its owner's rows and to the all-owners rows, so every Interval is counted twice. Sojourn Dashboards read the all-owners rows for org-wide charts and the per-owner rows for owner charts; the packaged summary reports keep All Owners false.<br></em>Help text:* Checked when this row adds up every owner together. Each stay is counted in its owner's row and again in an all-owners row, so filter any report you build on All Owners, or its totals double.</td>
 </tr>
 <tr>
 <td>Avg Business Minutes</td>
 <td><code>Avg_Business_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Average business minutes per interval.</td>
+<td>The average business minutes of the Intervals this row counts: Sum Business Minutes divided by Interval Count, to two decimal places. Business minutes count only time inside each Interval's Business hours. Recalculated by the nightly Summaries job each time it adds Intervals to the row; blank while no counted Interval has business minutes.<br><em>Help text:</em> Average time per stay in this row, inside Business hours. To average across several rows, divide the summed Sum Business Minutes by the summed Interval Count instead of averaging this column.</td>
 </tr>
 <tr>
 <td>Avg Calendar Minutes</td>
 <td><code>Avg_Calendar_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Average calendar minutes per interval.</td>
+<td>The average calendar minutes of the Intervals this row counts: Sum Calendar Minutes divided by Interval Count, to two decimal places. Calendar minutes are the elapsed clock time from Entered At to Exited At, nights and weekends included. Recalculated by the nightly Summaries job each time it adds Intervals to the row; blank while no counted Interval has calendar minutes.<br><em>Help text:</em> Average elapsed time per stay in this row, nights and weekends included. To average across several rows, divide the summed Sum Calendar Minutes by the summed Interval Count.</td>
 </tr>
 <tr>
 <td>Breach Count</td>
 <td><code>Breach_Count__c</code></td>
 <td>Number (9, 0)</td>
-<td>Intervals that breached their goal.</td>
+<td>How many of the Intervals this row counts were breached: their business minutes passed their Goal's target (the Interval's Is Breached). A whole number, 0 when none breached. Added to by the nightly Summaries job. Sojourn Dashboards add it up for breach charts and divide it by Interval Count for the breach rate.<br><em>Help text:</em> Stays in this row that went past their Goal's target. Divide by Interval Count for the breach rate.</td>
 </tr>
 <tr>
 <td>Granularity</td>
 <td><code>Granularity__c</code></td>
 <td>Picklist: Day, Month</td>
-<td>Whether the row covers one day or one month.<br><em>Help text:</em> Day rows are built nightly. Month rows replace day rows older than the roll-up window.</td>
+<td>The length of the period this row covers: Day or Month. The nightly Summaries job adds each closed Interval to one Day row, for the day it ended in the org's time zone, and to one Month row for that month, so Day and Month rows count the same Intervals and are never added together. Day rows older than Summary Rollup Days (blank means 400) are deleted only at the end of a complete purge run; purge never deletes Month rows. Sojourn Dashboards and the summary reports filter on one granularity.<br><em>Help text:</em> Day rows count one day; Month rows count a whole month. The same stays are in both, so filter a report to one granularity. Old Day rows are removed only by a purge run; Month rows are kept.</td>
 </tr>
 <tr>
 <td>Interval Count</td>
 <td><code>Interval_Count__c</code></td>
 <td>Number (9, 0)</td>
-<td>Number of intervals summarised.</td>
+<td>How many closed Intervals this row counts, a whole number. The nightly Summaries job adds 1 for each closed Interval not yet summarised (an Interval is summarised once, which sets its Summarised At); Rebuild summaries deletes the rows of the chosen months and counts their Intervals again. Sojourn Dashboards and the summary reports add it up for counts and divide summed minutes by it for averages.<br><em>Help text:</em> Number of stays this row counts. Add it up across rows for totals, and divide summed minutes by it for averages.</td>
 </tr>
 <tr>
 <td>Max Business Minutes</td>
 <td><code>Max_Business_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Longest interval in business minutes.</td>
+<td>The longest single Interval this row counts, in business minutes (time inside its Business hours). Kept by the nightly Summaries job as it adds Intervals to the row; blank while no counted Interval has business minutes.<br><em>Help text:</em> The longest stay in this row, inside Business hours. Compare it with the average to spot the outliers behind it.</td>
 </tr>
 <tr>
 <td>Max Calendar Minutes</td>
 <td><code>Max_Calendar_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Longest interval in calendar minutes.</td>
+<td>The longest single Interval this row counts, in calendar minutes (elapsed clock time, nights and weekends included). Kept by the nightly Summaries job as it adds Intervals to the row; blank while no counted Interval has calendar minutes.<br><em>Help text:</em> The longest stay in this row in elapsed time. Compare it with the average to spot the outliers behind it.</td>
 </tr>
 <tr>
 <td>Min Business Minutes</td>
 <td><code>Min_Business_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Shortest interval in business minutes.</td>
+<td>The shortest single Interval this row counts, in business minutes (time inside its Business hours); 0 when a stay fell wholly outside its hours. Kept by the nightly Summaries job as it adds Intervals to the row; blank while no counted Interval has business minutes.<br><em>Help text:</em> The shortest stay in this row, inside Business hours. A 0 means a stay began and ended outside Business hours.</td>
 </tr>
 <tr>
 <td>Min Calendar Minutes</td>
 <td><code>Min_Calendar_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Shortest interval in calendar minutes.</td>
+<td>The shortest single Interval this row counts, in calendar minutes (elapsed clock time). Kept by the nightly Summaries job as it adds Intervals to the row; blank while no counted Interval has calendar minutes.<br><em>Help text:</em> The shortest stay in this row in elapsed time, nights and weekends included.</td>
 </tr>
 <tr>
 <td>Owner Id</td>
 <td><code>Owner_Id__c</code></td>
 <td>Text (18)</td>
-<td>Owner during the summarised intervals.</td>
+<td>The 18-character Id of the user or queue that owned the records during the Intervals this row counts, copied from each Interval's Owner Id; part of the row's key, so each owner has rows of their own. Blank on an all-owners row. Written by the nightly Summaries job. Sojourn Dashboards group and filter owner charts by it.<br><em>Help text:</em> The user or queue that owned the records during these stays. Blank when All Owners is checked.</td>
 </tr>
 <tr>
 <td>Owner Name</td>
 <td><code>Owner_Name__c</code></td>
 <td>Text (255)</td>
-<td>Owner display name.</td>
+<td>The display name of the user or queue in Owner Id, copied from the first Interval that created the row; a later rename does not change rows already written. Blank on an all-owners row. Written by the nightly Summaries job; owner charts in Sojourn Dashboards and the Owner Leaderboard report show it.<br><em>Help text:</em> Name of the user or queue these stays belonged to, as it was when the row was first built. Blank when All Owners is checked.</td>
 </tr>
 <tr>
 <td>Owner Type</td>
 <td><code>Owner_Type__c</code></td>
 <td>Picklist: User, Queue</td>
-<td>Whether the owner was a user or a queue.<br><em>Help text:</em> User or Queue.</td>
+<td>Whether the owner in Owner Id is a user or a queue. Allowed values: User, Queue. Copied from the counted Intervals by the nightly Summaries job; blank on an all-owners row. The Owner Leaderboard report keeps User rows only.<br><em>Help text:</em> User or Queue. Filter to User to rank people; Queue rows show time records waited in a queue.</td>
 </tr>
 <tr>
 <td>Owner User</td>
 <td><code>Owner_User__c</code></td>
 <td>Lookup (User)</td>
-<td>Owner as a user lookup for role and manager roll-ups.<br><em>Help text:</em> Set when the owner is a user.</td>
+<td>The owner as a lookup to User, set only when Owner Id is a user; blank for a queue owner and on an all-owners row. Lets a report on Interval Summaries reach the user's role, manager, and other user fields. Written by the nightly Summaries job.<br><em>Help text:</em> The owning user as a lookup, so a report can group by role or manager. Blank for queues and on all-owners rows.</td>
 </tr>
 <tr>
 <td>Parent Object</td>
 <td><code>Parent_Object__c</code></td>
 <td>Text (255)</td>
-<td>API name of the tracked object.</td>
+<td>The API name of the Tracked object whose Intervals this row counts, for example Case or Work_Order__c; part of the row's key. Copied from the counted Intervals by the nightly Summaries job. Sojourn Dashboards and the summary reports filter on it to keep one object's rows.<br><em>Help text:</em> The object these stays belong to, such as Case. Filter on it so a report shows one object.</td>
 </tr>
 <tr>
 <td>Period Start</td>
 <td><code>Period_Start__c</code></td>
 <td>Date</td>
-<td>First day of the summarised period.<br><em>Help text:</em> The day, or the first day of the month, the summarised intervals closed in.</td>
+<td>The first day of the period this row covers: for a Day row, the day the counted Intervals ended; for a Month row, the first day of that month. Days follow the org's time zone. Part of the row's key. Sojourn Dashboards filter on it for their date range, Rebuild summaries replaces the rows of whole months by it, and a purge deletes old Day rows by it.<br><em>Help text:</em> The day, or the first day of the month, these stays ended in. Use it as the date in trend reports and date filters.</td>
 </tr>
 <tr>
 <td>Record Closed</td>
 <td><code>Record_Closed__c</code></td>
 <td>Checkbox</td>
-<td>The Intervals counted in this row carry Record Closed: time spent while their record was closed (D-725); part of the row's key, so weekly trends can leave closed time out.<br><em>Help text:</em> Checked when this row counts time spent while the record was closed. Trend reports filter it out.</td>
+<td>Checked when the Intervals this row counts were time spent while their record was closed (each Interval's Record Closed, set by the object's Closed when rule), so closed time is kept in rows of its own; part of the row's key. Unchecked by default. Sojourn Dashboards and the Average Hours per Status by Week report leave these rows out.<br><em>Help text:</em> Checked when this row counts time spent while the record was already closed. Filter it out to see working time only.</td>
 </tr>
 <tr>
 <td>Record Count</td>
 <td><code>Record_Count__c</code></td>
 <td>Number (9, 0)</td>
-<td>Distinct tracked records among the intervals.</td>
+<td>How many distinct tracked records the counted Intervals belong to, counting each record once per row in each Summaries run. A record whose Intervals reach the same row in two runs, such as on two nights of one month, is counted again, so the figure can be above the true distinct count, most often on Month rows. Rebuild summaries counts each record once per row. Written by the nightly Summaries job.<br><em>Help text:</em> Records behind the stays in this row. A record added on two different nights counts twice, so read it as approximate on Month rows.</td>
 </tr>
 <tr>
 <td>Record Type</td>
 <td><code>Record_Type__c</code></td>
 <td>Text (255)</td>
-<td>The record type of the records counted in this row, when summaries group by record type (D-675); part of the row's key. Blank otherwise.<br><em>Help text:</em> The record type this row counts, when summaries are split by record type. Blank otherwise.</td>
+<td>Reserved for the record type of the counted records, as one of the ten parts of the row's key. Always blank today: no Sojourn setting splits summaries by record type yet. Because the key already holds the part, a later split needs only Rebuild summaries, not new rows.<br><em>Help text:</em> Blank today: Sojourn does not split summaries by record type yet.</td>
 </tr>
 <tr>
 <td>Snapshot 1</td>
 <td><code>Snapshot_1__c</code></td>
 <td>Text (255)</td>
-<td>The first snapshot field's value of the Intervals counted in this row, when summaries group by it (D-675); part of the row's key. Blank otherwise.<br><em>Help text:</em> The snapshot value this row counts, when summaries are split by the first snapshot field. Blank otherwise.</td>
+<td>Reserved for the first Snapshot field's value of the counted Intervals, as one of the ten parts of the row's key. Always blank today: no Sojourn setting splits summaries by a Snapshot field yet. Because the key already holds the part, a later split needs only Rebuild summaries, not new rows.<br><em>Help text:</em> Blank today: Sojourn does not split summaries by a Snapshot field yet.</td>
 </tr>
 <tr>
 <td>Sum Business Minutes</td>
 <td><code>Sum_Business_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Total business minutes across the intervals.<br><em>Help text:</em> Total business minutes.</td>
+<td>The total business minutes of the Intervals this row counts: the time inside each Interval's Business hours, added up. Blank until an Interval with business minutes is added. Added to by the nightly Summaries job. Sojourn Dashboards and the summary reports, such as Average Hours per Status by Week, add it across rows and divide by Interval Count for averages.<br><em>Help text:</em> Total time inside Business hours across this row's stays. Add it across rows and divide by Interval Count for a true average.</td>
 </tr>
 <tr>
 <td>Sum Calendar Minutes</td>
 <td><code>Sum_Calendar_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Total calendar minutes across the intervals.<br><em>Help text:</em> Total calendar minutes.</td>
+<td>The total calendar minutes of the Intervals this row counts: the elapsed clock time from each Interval's Entered At to its Exited At, nights and weekends included, added up. Blank until an Interval with calendar minutes is added. Added to by the nightly Summaries job; Sojourn Dashboards add it across rows.<br><em>Help text:</em> Total elapsed time across this row's stays, nights and weekends included. Divide by Interval Count for the average.</td>
 </tr>
 <tr>
 <td>To Value</td>
 <td><code>To_Value__c</code></td>
 <td>Text (255)</td>
-<td>The value the summarised intervals held.</td>
+<td>The value of the Tracked field the counted Intervals held, as each Interval stores it: a picklist's API value, the text of a text field, or the display name for an owner or lookup field. Part of the row's key; blank when the Intervals held a blank value. Copied by the nightly Summaries job. Reports and Sojourn Dashboards group by it for time per status, stage, or owner.<br><em>Help text:</em> The status, stage, owner, or other value these stays were in. Group by it to see time per value.</td>
 </tr>
 <tr>
 <td>Tracked Field</td>
 <td><code>Tracked_Field__c</code></td>
 <td>Text (255)</td>
-<td>API name of the tracked field.</td>
+<td>The API name of the Tracked field whose Intervals this row counts, for example Status or OwnerId; part of the row's key. Copied from the counted Intervals by the nightly Summaries job. Each Tracked field has rows of its own, so Sojourn Dashboards and the packaged summary reports always filter on it before grouping by To Value.<br><em>Help text:</em> The field these stays measure, such as Status or OwnerId. Filter on one field first, then group by To Value.</td>
 </tr>
 <tr>
 <td>Unique Code</td>
 <td><code>Unique_Code__c</code></td>
 <td>Text (255)</td>
-<td>Lowercase hex SHA-256 of the row's ten parts, each written as its length, a colon, and its text, joined by pipes: granularity, period start, object, field, value, owner Id, value group, record type, first snapshot, and Record Closed (D-385, D-675, D-725, R3-08). Makes each summary row unique.<br><em>Help text:</em> Set by the summary job.</td>
+<td>The row's key, set by the Summaries job so each combination has exactly one row: the 64-character lowercase hex SHA-256 of ten parts joined by pipes, each written as its length, a colon, and its text (a blank part is 0:). The parts are Granularity, Period Start (yyyy-MM-dd), Parent Object, Tracked Field, To Value, Owner Id (an asterisk on an all-owners row), Value Group, Record Type, Snapshot 1, and Record Closed (closed, or blank). Each run reads the stored rows by this code and adds to them.<br><em>Help text:</em> Set by the Summaries job to keep one row per period, object, field, value, owner, and the other key parts. Do not edit it: the next run would start a second row for the same combination.</td>
 </tr>
 <tr>
 <td>Value Group</td>
 <td><code>Value_Group__c</code></td>
 <td>Text (255)</td>
-<td>The value group of the Intervals counted in this row (D-675); part of the row's key. Blank until value groups are set up.<br><em>Help text:</em> The named group of values this row counts. Blank when the field has no value groups.</td>
+<td>The value group of the counted Intervals, copied from each Interval's Value Group: a named set of the Tracked field's values, such as Backlog for New and Reopened. Part of the row's key. Blank when the Intervals carry no value group, as every Interval does until value groups are set up for its field. Sojourn Dashboards can group a chart by it.<br><em>Help text:</em> The named group of values these stays count toward. Blank when the field has no value groups.</td>
 </tr>
 <tr>
 <td>Warning Count</td>
 <td><code>Warning_Count__c</code></td>
 <td>Number (9, 0)</td>
-<td>Intervals that were warnings: their business minutes reached their warn minutes. A breached Interval is also a warning when its goal has a warn percent.<br><em>Help text:</em> Intervals that reached their goal's Warn at percent. A breach is also a warning.</td>
+<td>How many of the Intervals this row counts were warnings (the Interval's Is Warning): their business minutes reached their warn minutes, the Goal's Warn At Percent of its target. A breached Interval is also a warning when its Goal has a Warn At Percent. A whole number, 0 when none. Added to by the nightly Summaries job.<br><em>Help text:</em> Stays in this row that reached their Goal's Warn at percent. A Breach also counts here when its Goal sets a warn percent.</td>
 </tr>
 </tbody>
 </table>

@@ -124,9 +124,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -318,6 +318,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -841,6 +845,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../guide/breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../guide/case-metrics/" class="md-nav__link">
         
   
@@ -905,6 +937,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1433,19 +1493,19 @@
 <td>Business Hours Id</td>
 <td><code>Business_Hours_Id__c</code></td>
 <td>Text (18)</td>
-<td>Business hours applied while this queue owns a record.</td>
+<td>The business hours applied while this queue owns a record, as an 18-character BusinessHours Id. Required. Read whenever business minutes are worked out for an Interval while the queue is the owner: it comes after the Tracked field's business hours and the record's business hours field, and before the Tracked object's business hours and the default. Set on the Business hours screen of Sojourn Settings, or by a settings file import, which matches business hours by name.<br><em>Help text:</em> Business hours used while this queue owns a record, for example overnight hours for a night queue. Set it on the Business hours screen.</td>
 </tr>
 <tr>
 <td>Queue Developer Name</td>
 <td><code>Queue_Developer_Name__c</code></td>
 <td>Text (255)</td>
-<td>Developer name of the queue, used to match queues across orgs on import.<br><em>Help text:</em> Developer name of the queue, used when importing configuration into another org.</td>
+<td>The developer name of the queue, copied from the queue each time the mapping is saved. A queue's Id differs from org to org, so a settings file carries this name and an import into another org finds the queue by it. Blank only on a row created outside Sojourn Settings.<br><em>Help text:</em> Developer name of the queue, set by Sojourn. Used to find the same queue when you import settings into another org.</td>
 </tr>
 <tr>
 <td>Queue Id</td>
 <td><code>Queue_Id__c</code></td>
 <td>Text (18)</td>
-<td>Id of the queue this mapping applies to.<br><em>Help text:</em> Id of the queue. Set by Sojourn Settings.</td>
+<td>The Id of the queue this mapping applies to, as an 18-character Group Id. Required, unique, and an external ID, so a queue has at most one mapping. Read with the configuration on every save: when a record's owner during an Interval is this queue, the mapping's business hours apply. Set by the Business hours screen of Sojourn Settings or by a settings file import; do not edit it by hand.<br><em>Help text:</em> Id of the queue. Set by Sojourn Settings when you choose the queue.</td>
 </tr>
 </tbody>
 </table>

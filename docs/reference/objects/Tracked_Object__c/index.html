@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Tracked Object object lists each Salesforce object Sojourn watches. It holds the Object API Name (required, external ID), the Active switch, business hours overrides, snapshot fields, live value mappings, closed values, and backfill mode and status. Commonly used by Sojourn Settings to enable tracking on Case, Lead, Opportunity, or any custom object.">
+        <meta name="description" content="The Tracked Object object lists each Salesforce object Sojourn watches. It holds the Object API Name (required, external ID), the Active switch, the status field and Closed when rule, business hours overrides, snapshot fields, the record type filter, Live values settings, the pause and Catch up window, and Backfill mode and status. The capture engine and every job read it with its Tracked fields and Goals. Set in Sojourn Settings; Case, Lead, and Opportunity are on every plan, and any other object needs the Plus plan.">
       
       
       
@@ -58,7 +58,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Sojourn">
   <meta property="og:title" content="Tracked Object · Sojourn documentation">
-  <meta property="og:description" content="The Tracked Object object lists each Salesforce object Sojourn watches. It holds the Object API Name (required, external ID), the Active switch, business hours overrides, snapshot fields, live value mappings, closed values, and backfill mode and status. Commonly used by Sojourn Settings to enable tracking on Case, Lead, Opportunity, or any custom object.">
+  <meta property="og:description" content="The Tracked Object object lists each Salesforce object Sojourn watches. It holds the Object API Name (required, external ID), the Active switch, the status field and Closed when rule, business hours overrides, snapshot fields, the record type filter, Live values settings, the pause and Catch up window, and Backfill mode and status. The capture engine and every job read it with its Tracked fields and Goals. Set in Sojourn Settings; Case, Lead, and Opportunity are on every plan, and any other object needs the Plus plan.">
   <meta property="og:url" content="https://sojourn.cloudalgo.com/docs/reference/objects/Tracked_Object__c/">
   <meta property="og:image" content="https://sojourn.cloudalgo.com/assets/theme/images/card-docs.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -124,9 +124,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -318,6 +318,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -841,6 +845,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../guide/breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../guide/case-metrics/" class="md-nav__link">
         
   
@@ -905,6 +937,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1414,7 +1474,7 @@
   
   
   <h1>Tracked Object</h1>
-  <p class="sj-summary">The Tracked Object object lists each Salesforce object Sojourn watches. It holds the Object API Name (required, external ID), the Active switch, business hours overrides, snapshot fields, live value mappings, closed values, and backfill mode and status. Commonly used by Sojourn Settings to enable tracking on Case, Lead, Opportunity, or any custom object.</p>
+  <p class="sj-summary">The Tracked Object object lists each Salesforce object Sojourn watches. It holds the Object API Name (required, external ID), the Active switch, the status field and Closed when rule, business hours overrides, snapshot fields, the record type filter, Live values settings, the pause and Catch up window, and Backfill mode and status. The capture engine and every job read it with its Tracked fields and Goals. Set in Sojourn Settings; Case, Lead, and Opportunity are on every plan, and any other object needs the Plus plan.</p>
   
   <!-- Generated by docs-site/scripts/generate_reference.py from package metadata. Do not edit. -->
 
@@ -1433,145 +1493,181 @@
 <td>Backfill Message</td>
 <td><code>Backfill_Message__c</code></td>
 <td>LongTextArea (32768)</td>
-<td>Result or error from the last backfill run.<br><em>Help text:</em> Last backfill result. Errors list the records that could not be imported.</td>
+<td>The result of the last Backfill on this Tracked object, in words: for a finished run, the mode, when it finished, and how many Intervals it wrote for how many records, for example "Seed backfill on 3 Oct 2026, 14:20: 400 Intervals for 200 records."; for a failed run, why, and how many chunks failed with a pointer to the Error Log. Blank before the first Backfill and while a run is queued. Written by the Backfill job when it finishes, and by a Fresh start at once. Shown on the object's Backfill tab in Sojourn Settings. Kept apart from Catch Up Message, so a Catch up never hides it.<br><em>Help text:</em> The last Backfill result, written by Sojourn. A failed run says why; the records it could not import are in the Error Log. Run Backfill again from the object's Backfill tab.</td>
 </tr>
 <tr>
 <td>Backfill Mode</td>
 <td><code>Backfill_Mode__c</code></td>
 <td>Picklist: History, Seed, Fresh</td>
-<td>How existing records get intervals when tracking starts.<br><em>Help text:</em> History imports native field history, Seed opens an interval from current values, Fresh starts empty.</td>
+<td>The mode of the last Backfill started on this Tracked object. One of History (rebuild past Intervals from the object's native field history, where the object keeps it), Seed (open one Interval per Tracked field from each record's current value, starting now), or Fresh (add nothing; capture begins with the next change). New rows start as History, though no Backfill has run until Backfill Status says so. Set by Run backfill on the object's Backfill tab of Sojourn Settings and read by the Backfill job and the Jobs screen. History and Seed need the Plus plan; Fresh works on every plan.<br><em>Help text:</em> How the last Backfill gave existing records their Intervals. History imports native field history, Seed opens an Interval from current values, and Fresh starts empty. Choose the mode when you run Backfill on the object's Backfill tab.</td>
 </tr>
 <tr>
 <td>Backfill Status</td>
 <td><code>Backfill_Status__c</code></td>
 <td>Picklist: None, Queued, Running, Complete, Failed</td>
-<td>State of the last backfill for this object.<br><em>Help text:</em> Updated by the backfill job. Run backfill from Sojourn Settings.</td>
+<td>Where the last Backfill on this Tracked object stands. One of None (no Backfill yet, the default), Queued (the job is waiting to start), Running, Complete, or Failed (the reason is in Backfill Message). Set by Run backfill and by the Backfill job as it starts and finishes; a Fresh start goes straight to Complete. A stored Queued or Running blocks a new Backfill only while a Backfill job is really running, so a run that died and left it behind does not block the next one. Shown on the Tracked objects list, the object's Backfill tab, and the Health Monitor.<br><em>Help text:</em> Updated by the Backfill job. Failed means the reason is in Backfill Message. Run Backfill from the object's Backfill tab in Sojourn Settings.</td>
 </tr>
 <tr>
 <td>Business Hours Id</td>
 <td><code>Business_Hours_Id__c</code></td>
 <td>Text (18)</td>
-<td>Business hours override for this object; the org default applies when empty.<br><em>Help text:</em> Business hours used for this object when no field or queue override applies. Empty means the org default.</td>
+<td>The business hours for this Tracked object, as an 18-character BusinessHours Id. Blank: the default business hours in Sojourn Settings, then the org's default. Read whenever business minutes are worked out for this object's Intervals, after the Tracked field's business hours, the record's business hours field, and the owning queue's mapping, so it is the fourth choice of six. Set on the object's Records tab of Sojourn Settings, or by a settings file import, which matches business hours by name.<br><em>Help text:</em> Business hours used for this object when no field, record, or queue setting applies. Leave blank for the default business hours in Sojourn Settings. A change applies to stays measured from then on.</td>
 </tr>
 <tr>
 <td>Business Hours Source Field</td>
 <td><code>Business_Hours_Source_Field__c</code></td>
 <td>Text (255)</td>
-<td>Field on the tracked record that holds a Business Hours Id, checked before the object override.<br><em>Help text:</em> API name of a field on the record that holds a Business Hours Id, for example BusinessHoursId on Case.</td>
+<td>The API name of a field on the tracked record that holds a BusinessHours Id, for example BusinessHoursId on Case. Blank: no record-level business hours. Read for each Interval of this object, after the Tracked field's business hours and before the owning queue's mapping and the object's business hours, so a record can carry its own hours, such as a region's. A value that is not a BusinessHours Id is passed over. Checked against the object's fields when saved on the object's Records tab of Sojourn Settings or by a settings file import.<br><em>Help text:</em> API name of a field on the record that holds a business hours Id, for example BusinessHoursId on Case. Set it when each record says which hours apply; it wins over queue and object business hours.</td>
 </tr>
 <tr>
 <td>Capture Mode</td>
 <td><code>Capture_Mode__c</code></td>
 <td>Picklist: Trigger, Flow</td>
-<td>Shows how changes reach Sojourn; the engine does not branch on it.<br><em>Help text:</em> Case, Lead, and Opportunity use the packaged trigger. Other objects use a Flow cloned from the Sojourn template.</td>
+<td>A note for admins on how changes to this object reach Sojourn. One of Trigger or Flow; new rows start as Flow. Sojourn's code never reads or writes it and capture does not depend on it: Case, Lead, and Opportunity are always captured by the packaged triggers, and any other object needs an active record-triggered Flow cloned from the Sojourn Capture Template. Sojourn Settings does not show or set it; set it on the record page if you want the record to say which path the object uses.<br><em>Help text:</em> For your notes only; Sojourn does not read it. Case, Lead, and Opportunity use the packaged trigger. Other objects use a Flow cloned from the Sojourn Capture Template.</td>
 </tr>
 <tr>
 <td>Catch Up Message</td>
 <td><code>Catch_Up_Message__c</code></td>
 <td>LongTextArea (2000)</td>
-<td>Result of the last Catch up on this object: when it ran, how many records it replayed, and anything still waiting. Kept apart from Backfill Message so a catch up never hides the last backfill result.<br><em>Help text:</em> Last Catch up result. If it stopped or capture was paused during it, run Catch up again: records already replayed are skipped.</td>
+<td>The result of the last Catch up on this Tracked object, in words: when it finished, how many records it replayed, and anything still waiting, for example a pause during the run or chunks that stopped (with a pointer to the Error Log). Blank before the first Catch up. Written by the Catch up job when it finishes; a complete run also clears Paused Since. Shown as Last Catch up on the object's Backfill tab in Sojourn Settings. Kept apart from Backfill Message, so a Catch up never hides the last Backfill result.<br><em>Help text:</em> The last Catch up result, written by Sojourn. If it stopped, or capture was paused during it, run Catch up again: records already replayed are skipped.</td>
 </tr>
 <tr>
 <td>Closed Checkbox Field</td>
 <td><code>Closed_Checkbox_Field__c</code></td>
 <td>Text (80)</td>
-<td>The API name of a checkbox field that means the record is closed when checked (Closed when, D-670). Blank: the status field's closed values decide.<br><em>Help text:</em> Set on the object's screen under Closed when. For example IsClosed on Opportunity. Leave blank to use the status field's closed values.</td>
+<td>The API name of a checkbox field on the tracked object that means the record is closed while it is checked, for example IsClosed on Opportunity; any checkbox but IsDeleted. Blank: the status field's Closed Values decide instead. Read by capture, Backfill, Catch up, the nightly reconcile, Live values, and the Case figures to tell whether a record is closed: closed records' Intervals are marked Record Closed, Live values skips them, and reports of open stays leave them out. A name that is not a checkbox on the object is ignored with an Error Log row. Set under Closed when on the object's Records tab of Sojourn Settings, or by a settings file import.<br><em>Help text:</em> Set it under Closed when on the object's Records tab, for example IsClosed on Opportunity. A record counts as closed while the checkbox is checked. Leave blank to use the status field's closed values.</td>
 </tr>
 <tr>
 <td>Closed Values</td>
 <td><code>Closed_Values__c</code></td>
 <td>LongTextArea (1000)</td>
-<td>Values of the primary status field that mean the record is closed.<br><em>Help text:</em> Comma-separated values of the primary status field that mean closed, for example Closed, Resolved.</td>
+<td>The values of the object's status field that mean the record is closed, as API values separated by commas, for example Closed,Resolved. Used only when Closed Checkbox Field is blank. Blank: for Case with Status as its status field, the case statuses marked Closed in Setup; for any other object, no record counts as closed. Read by capture, Backfill, Catch up, the nightly reconcile, Live values, and the Case figures: closed records' Intervals are marked Record Closed, Live values skips them, and reports of open stays leave them out. Set under Closed when on the object's Records tab of Sojourn Settings, or by a settings file import.<br><em>Help text:</em> Values of the status field that mean closed, for example Closed and Resolved. A record in one of them counts as closed. Leave blank on Case to use the statuses Setup marks closed.</td>
 </tr>
 <tr>
 <td>History Chunk Size</td>
 <td><code>History_Chunk_Size__c</code></td>
 <td>Number (2, 0)</td>
-<td>Records a History backfill reads in each chunk, 5 to 50. Blank means 20.<br><em>Help text:</em> Records a History backfill reads in each chunk, 5 to 50. Fewer when records have long field history.</td>
+<td>How many records a History Backfill on this object reads in each chunk. A whole number from 5 to 50; blank means 20. Read when a History Backfill starts, as its job's batch size; each chunk reads every field history row of its records, so fewer suit records with long field history. Seed Backfills do not use it. Set on the object's Advanced tab of Sojourn Settings or by a settings file import; changing it needs the Plus plan, since Backfill does.<br><em>Help text:</em> Records a History Backfill reads in each chunk, 5 to 50; blank for 20. Lower it when records have long field history and History Backfill stops on limits.</td>
+</tr>
+<tr>
+<td>Ignore Queue Member Moves</td>
+<td><code>Ignore_Queue_Member_Moves__c</code></td>
+<td>Checkbox</td>
+<td>When checked, a move between two users who are both direct members of the same queue that takes this object keeps the open owner Interval open with its first owner, and no new owner Interval opens; a move to anyone else opens a new one as usual. Off by default: every owner change opens a new owner Interval. Only direct user members of the queue count; nested groups and roles are not read. Leave it off when reports should show time per person. Applies from each record's next owner change; existing Intervals are never rewritten. Set on the Values tab of the object in Sojourn Settings.<br><em>Help text:</em> On: passing a record between members of the same queue keeps one owner stay, so time counts for the team, not each person. Leave off for time per person.</td>
 </tr>
 <tr>
 <td>Active</td>
 <td><code>Is_Active__c</code></td>
 <td>Checkbox</td>
-<td>Whether Sojourn records intervals for this object.<br><em>Help text:</em> Sojourn records intervals only for active tracked objects.</td>
+<td>Whether Sojourn tracks this object. A checkbox, on by default. Read on every save of the object's records and by the jobs: inactive, no new Intervals are written for it, Backfill and Catch up refuse to start, and the Intervals already written stay. An object beyond Case, Lead, and Opportunity is tracked only on the Plus plan, whatever this says. Set in Sojourn Settings, or by a settings file import.<br><em>Help text:</em> Sojourn records stays only for active Tracked objects. Turn it off to stop tracking the object and keep its history.</td>
 </tr>
 <tr>
 <td>Last Paused At</td>
 <td><code>Last_Paused_At__c</code></td>
 <td>DateTime</td>
-<td>When capture was last paused, stamped on every pause; catch up keeps its window when the object was paused after the run began (D-379).<br><em>Help text:</em> Set by Sojourn; Paused Since keeps the earliest pause not yet caught up.</td>
+<td>When capture on this object was last paused, stamped by Sojourn each time Pause Capture is turned on. Blank until the first pause. Read when Catch up finishes: a pause after the run began means some changes may not have been replayed, so Paused Since is kept and the result says to run Catch up again. Paused Since keeps the earliest pause not yet caught up; this field keeps the latest.<br><em>Help text:</em> Set by Sojourn each time capture is paused. Paused Since keeps the earliest pause not yet caught up.</td>
 </tr>
 <tr>
 <td>Live Owner Minutes Field</td>
 <td><code>Live_Owner_Minutes_Field__c</code></td>
 <td>Text (255)</td>
-<td>Number field on the record that Live values writes with business minutes with the current owner.<br><em>Help text:</em> API name of a Number field on the record. Live values writes business minutes with the current owner to it.</td>
+<td>The API name of a Number field on the tracked record that Live values writes with the business minutes the record has spent with its current owner, for objects other than Case, Lead, and Opportunity, which use Sojourn's own Owner Business Minutes field. Blank: no owner minutes are written to the record. Each Live values run writes it for open records within the Live values window, on the Plus plan with Live values on; closed records are not written. Checked against the object's fields when saved on the object's Live values tab of Sojourn Settings or by a settings file import.<br><em>Help text:</em> API name of a Number field on the record. Each Live values run writes the business minutes with the current owner to it, so list views and reports can show them. Plus plan.</td>
 </tr>
 <tr>
 <td>Live State Minutes Field</td>
 <td><code>Live_State_Minutes_Field__c</code></td>
 <td>Text (255)</td>
-<td>Number field on the record that Live values writes with business minutes in the current state.<br><em>Help text:</em> API name of a Number field on the record. Live values writes business minutes in the current state to it.</td>
+<td>The API name of a Number field on the tracked record that Live values writes with the business minutes the record has spent in the current value of its status field, for objects other than Case, Lead, and Opportunity, which use Sojourn's own State Business Minutes field. Blank: no state minutes are written to the record. Each Live values run writes it for open records within the Live values window, on the Plus plan with Live values on; closed records are not written. Checked against the object's fields when saved on the object's Live values tab of Sojourn Settings or by a settings file import.<br><em>Help text:</em> API name of a Number field on the record. Each Live values run writes the business minutes in the current status to it, so list views and reports can show them. Plus plan.</td>
 </tr>
 <tr>
 <td>Live Values Enabled</td>
 <td><code>Live_Values_Enabled__c</code></td>
 <td>Checkbox</td>
-<td>Opts this object into the Live values job.<br><em>Help text:</em> Refresh open intervals and the live fields on every Live values run.</td>
+<td>Whether the Live values job refreshes this object's open Intervals and its record's live minute fields. A checkbox, off by default. Read at the start of every Live values run: the run covers an object that is not paused, is on the org's plan, and has this on or has active Goals. Breach and warning flags are refreshed on every plan; writing the minute fields to the record needs the Plus plan. Set on the object's Live values tab of Sojourn Settings, or by a settings file import.<br><em>Help text:</em> On: each Live values run refreshes the minutes to date of this object's open stays and writes the live minute fields on the record (Plus plan). Goals are flagged either way.</td>
 </tr>
 <tr>
 <td>Lookup Field Override</td>
 <td><code>Lookup_Field_Override__c</code></td>
 <td>Text (255)</td>
-<td>Chooses which Interval lookup to fill when two lookups target this object.<br><em>Help text:</em> API name of the lookup on Interval to fill when more than one points at this object.</td>
+<td>The API name of the lookup on Interval to fill with the tracked record, for when more than one lookup on Interval points at this object. Blank: Sojourn fills the lookup named after the object, or else the first lookup to it. Read whenever an Interval of this object is written; a name that is not a lookup on Interval to the object is refused on save, and if one later stops being one Sojourn fills the automatic choice instead. Lets you add your own lookups to Interval without a package change. Set on the object's Advanced tab of Sojourn Settings or by a settings file import.<br><em>Help text:</em> API name of the lookup on Interval to fill when more than one points at this object. Leave blank and Sojourn fills the lookup named after the object.</td>
 </tr>
 <tr>
 <td>Name Field</td>
 <td><code>Name_Field__c</code></td>
 <td>Text (255)</td>
-<td>Field shown as the record's name on intervals.<br><em>Help text:</em> Field shown as the record's name on intervals, for example CaseNumber or Name.</td>
+<td>The API name of the field whose value names the record on its Intervals, for example CaseNumber or Name. Blank: the object's own name field. Read when an Interval opens, which copies the value into Parent Name for reports and Sojourn Dashboards; a later change to the field does not change Intervals already written. The field must be one the admin saving it can read. Set on the object's Records tab of Sojourn Settings or by a settings file import.<br><em>Help text:</em> Field shown as the record's name on stays, for example CaseNumber or Name. Leave blank for the object's own name field. Applies to stays that begin after you change it.</td>
 </tr>
 <tr>
 <td>Object API Name</td>
 <td><code>Object_API_Name__c</code></td>
 <td>Text (255)</td>
-<td>API name of the tracked object, the key the capture engine matches on.<br><em>Help text:</em> API name of the tracked object, for example Case or Work_Order__c.</td>
+<td>The API name of the Salesforce object this row tracks, for example Case or Work_Order__c. Required and unique, matched without regard to case; it is the key the capture engine, the jobs, and a settings file import match on. Checked against describe when the row is saved: the object must be one Sojourn can track, and an object other than Case, Lead, and Opportunity needs the Plus plan. Set when the object is added on the Tracked objects screen of Sojourn Settings.<br><em>Help text:</em> API name of the tracked object, for example Case or Work_Order__c. Set when you add the object in Sojourn Settings.</td>
+</tr>
+<tr>
+<td>Owner Tracking</td>
+<td><code>Owner_Tracking__c</code></td>
+<td>Text (20)</td>
+<td>Which owners get an owner Interval on this Tracked object. Allowed values: blank for users and queues (the default), Users for users only, or Queues for queues only. Any other value is refused on save and on import, and Sojourn reads it as blank. With Users, no owner Interval opens while a queue owns the record, and the user's stay closes when the record moves to a queue; with Queues it is the reverse. Applies when Track Owner is on, from each record's next owner change; existing Intervals are never rewritten. Set on the Values tab of the object in Sojourn Settings.<br><em>Help text:</em> Blank tracks time with users and queues. Users tracks only users; Queues tracks only queues. Applies from each record's next owner change.</td>
 </tr>
 <tr>
 <td>Pause Capture</td>
 <td><code>Pause_Capture__c</code></td>
 <td>Checkbox</td>
-<td>Pauses live capture for this object during a bulk import; catch-up replays the changes afterwards.<br><em>Help text:</em> Turn on before a bulk import. Live capture skips this object until you turn it off; then run Catch up.</td>
+<td>Pauses live capture for this object, for a bulk import or a data fix. A checkbox, off by default. While on, saves of the object's records write no Intervals, the nightly reconcile does not repair the object's values, Live values skips it, and Catch up refuses to start. Turning it on stamps Last Paused At and, unless an earlier pause is still waiting, Paused Since. After turning it off, run Catch up: it replays the records changed since Paused Since at their own times. Set from the Tracked objects screen or the object's screen in Sojourn Settings.<br><em>Help text:</em> Turn on before a bulk import. Sojourn skips this object until you turn it off; then run Catch up to record what changed meanwhile.</td>
 </tr>
 <tr>
 <td>Paused Since</td>
 <td><code>Paused_Since__c</code></td>
 <td>DateTime</td>
-<td>Start of the pause window that catch-up replays.<br><em>Help text:</em> Set when capture is paused. Catch up replays records changed since this time, then clears it.</td>
+<td>The start of the pause window Catch up replays: when capture was paused, kept from the earliest pause not yet caught up. Blank when nothing is waiting. Set by Sojourn when Pause Capture is turned on and this is blank; read by Catch up, which replays the records changed since then, and cleared when a Catch up completes with no pause during the run. While it has a value, the object is active, and capture is on again, Sojourn Settings offers Catch up for the object.<br><em>Help text:</em> Set when capture is paused. Catch up replays records changed since this time, then clears it.</td>
+</tr>
+<tr>
+<td>Record Criteria</td>
+<td><code>Record_Criteria__c</code></td>
+<td>LongTextArea (4000)</td>
+<td>Conditions a record must meet for Sojourn to record its changes, as JSON: a list of conditions, each a field API name, an operator of equals or notEquals, and a value, for example [{"field": "Type", "operator": "equals", "value": "Problem"}]. Every condition must hold. Fields are picklist, checkbox, or short text fields of the object; names are checked against the object's fields, and values are always bound, never added to a query. Blank, the default, means every record is tracked. Checked on the record's values after the save, like the record type filter: a record that does not match is skipped and its open Intervals stay open; when it matches again its next change is recorded, and Reconcile drift repairs what changed meanwhile. Set on the Records tab of the object in Sojourn Settings, which checks the JSON on save and on import.<br><em>Help text:</em> Only records that meet every condition, such as Type equals Problem, are tracked. A record that stops matching keeps its Intervals; its new changes are not recorded until it matches again.</td>
 </tr>
 <tr>
 <td>Record Type Filter</td>
 <td><code>Record_Type_Filter__c</code></td>
 <td>LongTextArea (1000)</td>
-<td>Limits tracking to the listed record types.<br><em>Help text:</em> Comma-separated record type developer names to track. Empty means all record types.</td>
+<td>The record types to track, as record type developer names separated by commas, for example Support,Billing. Blank: every record, with or without a record type. Read on every save of the object's records and by the jobs: with names listed, a record is tracked only while its record type is one of them, and a record with no record type is not tracked. Set under Record types on the object's Records tab of Sojourn Settings, or by a settings file import.<br><em>Help text:</em> Record type developer names to track, separated by commas. Leave blank to track every record. Records of other record types get no stays.</td>
+</tr>
+<tr>
+<td>Record Type Hours</td>
+<td><code>Record_Type_Hours__c</code></td>
+<td>LongTextArea (4000)</td>
+<td>Business hours for each record type of this Tracked object, as JSON from a record type developer name to a business hours Id, for example {"Support_EMEA": "the Id of the EMEA business hours"}. Blank, the default, or a record type not listed, falls through to the next step of the Business hours order. In that order the record type step comes after the record's business hours field and before the queue's business hours. The settings file writes record types by developer name and business hours by name. Applies to Intervals that open after the change; existing Intervals keep their business hours. Set on the Records tab of the object in Sojourn Settings, which checks the JSON on save and on import.<br><em>Help text:</em> Uses different Business hours for each record type, such as EMEA support hours for EMEA cases. Record types not listed use the next step in the Business hours order.</td>
+</tr>
+<tr>
+<td>Retention Days</td>
+<td><code>Retention_Days__c</code></td>
+<td>Number (4, 0)</td>
+<td>Days of closed Intervals to keep for this Tracked object when Retention Mode is Days, a whole number from 30 to 3,650. Blank by default; ignored for any other mode. A purge run deletes this object's closed Intervals that ended more than this many days ago, only through the typed confirmation of the Retention and purge screen. Plus plan. Not carried in the settings file. Set on the Advanced tab of the object in Sojourn Settings.<br><em>Help text:</em> How many days to keep this object's closed Intervals, 30 to 3,650, when Retention Mode is Days.</td>
+</tr>
+<tr>
+<td>Retention Mode</td>
+<td><code>Retention_Mode__c</code></td>
+<td>Text (20)</td>
+<td>How long this Tracked object's closed Intervals are kept when purge runs. Allowed values: blank to use the org's retention (the default), Days to keep the number of days in Retention Days, or Everything to keep every Interval of this object. Any other value is refused on save, and Sojourn reads it as blank. A purge run deletes each object's closed Intervals by its own window, only through the typed confirmation of the Retention and purge screen, and skips objects set to Everything; nothing is deleted outside that run. Plus plan. Not carried in the settings file. Set on the Advanced tab of the object in Sojourn Settings.<br><em>Help text:</em> Blank uses the org's retention. Days keeps this object's Intervals for the days you set; Everything keeps them all. Purge deletes only through its confirmed run.</td>
 </tr>
 <tr>
 <td>Snapshot Fields</td>
 <td><code>Snapshot_Fields__c</code></td>
 <td>LongTextArea (1000)</td>
-<td>Field API names copied onto each interval for reporting.<br><em>Help text:</em> Up to five field API names, comma-separated, copied onto each interval as Snapshot 1 to 5.</td>
+<td>Up to five field API names on the tracked object, separated by commas, for example Priority,Origin, whose values are copied onto each Interval as Snapshot 1 to Snapshot 5, in that order, when the Interval opens. Lets reports group time by a field Sojourn does not track. Blank: the snapshot fields stay blank. A name the object no longer has is passed over; a later change to the record does not change Intervals already written. Each field must be one the admin saving it can read. Set under Snapshot fields on the object's Records tab of Sojourn Settings, or by a settings file import.<br><em>Help text:</em> Up to five field API names, separated by commas, copied onto each stay as Snapshot 1 to 5 when it begins, for example Priority or Region. Applies to stays that begin after you change it.</td>
 </tr>
 <tr>
 <td>Status Field</td>
 <td><code>Status_Field__c</code></td>
 <td>Text (255)</td>
-<td>API name of the primary status field; Closed Values, goals, and Live values refer to it.<br><em>Help text:</em> API name of the main status or stage field, for example Status or StageName.</td>
+<td>The API name of the object's main status or stage field, for example Status or StageName. Blank: Status on Case, and no status field on any other object. Closed Values are values of this field; Goals with no Tracked field apply to it; Live values writes its state minutes from its Intervals; and Sojourn Dashboards and the Goals screen name it as the status field. Set on the object's Records tab of Sojourn Settings or by a settings file import; it should also be a Tracked field of the object.<br><em>Help text:</em> API name of the main status or stage field, for example Status or StageName. Closed values and Goals without a field refer to it.</td>
 </tr>
 <tr>
 <td>Track Owner</td>
 <td><code>Track_Owner__c</code></td>
 <td>Checkbox</td>
-<td>Adds an Owner tracked field automatically so time with each owner is recorded.<br><em>Help text:</em> Also track time with each owner.</td>
+<td>Whether time with each owner is tracked. A checkbox, on by default. When the row is saved, Sojourn adds or turns on an Owner Tracked field (OwnerId) for the object when it is on, and turns that row off when it is off; the row is never deleted, so its Intervals stay. The Owner field counts toward the ten active Tracked fields per object. Set on the object's Fields tab of Sojourn Settings, or by a settings file import.<br><em>Help text:</em> On: Sojourn also records how long each record spends with each owner, users and queues. Off: the Owner field stops recording and keeps its history.</td>
 </tr>
 </tbody>
 </table>

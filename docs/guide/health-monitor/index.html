@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="See whether field tracking works, what failed, why it failed, and the step that fixes it.">
+        <meta name="description" content="See whether field tracking works, what failed, why it failed, and the step that fixes it, and set when the Health Monitor turns amber or red.">
       
       
       
@@ -62,7 +62,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Sojourn">
   <meta property="og:title" content="Watch Sojourn in the Health Monitor · Sojourn documentation">
-  <meta property="og:description" content="See whether field tracking works, what failed, why it failed, and the step that fixes it.">
+  <meta property="og:description" content="See whether field tracking works, what failed, why it failed, and the step that fixes it, and set when the Health Monitor turns amber or red.">
   <meta property="og:url" content="https://sojourn.cloudalgo.com/docs/guide/health-monitor/">
   <meta property="og:image" content="https://sojourn.cloudalgo.com/assets/theme/images/card-docs.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -331,6 +331,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -741,6 +745,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#health-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health thresholds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#errors" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -935,6 +950,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../case-metrics/" class="md-nav__link">
         
   
@@ -999,6 +1042,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1517,6 +1588,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#health-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health thresholds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#errors" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1549,7 +1631,7 @@
   
   <div class="sj-crumb">Guide</div>
   <h1>Watch Sojourn in the Health Monitor</h1>
-  <p class="sj-summary">See whether field tracking works, what failed, why it failed, and the step that fixes it.</p>
+  <p class="sj-summary">See whether field tracking works, what failed, why it failed, and the step that fixes it, and set when the Health Monitor turns amber or red.</p>
   
     <div class="sj-meta">
       <span class="pill closed">Salesforce admin, support or operations team</span>
@@ -1562,14 +1644,48 @@
 <p>Give people the <strong>Sojourn Health Monitor</strong> permission set; the Sojourn Admin permission set includes it. Without either, the tab says which permission set is needed and loads nothing. Health Monitor users can create the missing Interval, ignore, or resolve any error. Fixes that change configuration open Sojourn Settings, so for Health Monitor users without Sojourn Admin the page says "Ask a Sojourn admin" instead.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>The banner</strong> reads Healthy, Needs attention, or Not working, with one line that says what needs you. <strong>Check again</strong> reads everything afresh.</li>
+<li><strong>The banner</strong> reads Healthy, Needs attention, or Not working, with one line that says what needs you. <strong>Check again</strong> reads everything afresh. How many open errors make it Needs attention or Not working is set on the Health screen; see <a href="#health-thresholds">Health thresholds</a>.</li>
 <li><strong>Capture</strong> lists what stops Intervals being recorded: tracking off for the whole org, a Tracked object whose capture Flow is missing or cannot be read, a paused object or one waiting for Catch up, a failed backfill. On the Free plan, an object other than Case, Lead, and Opportunity shows "Plus plan needed" as information: it keeps its Intervals, and new changes are not recorded. If you cannot see Flows (you lack View Setup and Configuration and are not a Sojourn admin), an object captured by a Flow shows "Flow status hidden from you" as information: it does not change the overall status, and a Sojourn admin sees the real Flow status.</li>
-<li><strong>Jobs</strong> shows whether Live values, Reconcile, and Summaries are scheduled, their last run, and the next one. A job that is off shows as a warning until a Sojourn admin schedules it on the <strong>Jobs</strong> screen in Sojourn Settings; on a new install, that includes Summaries. A job scheduled by a user who is no longer active shows as a failure; turning it off and on again on the Jobs screen, as an active Sojourn admin, fixes it. Live values with an entry missing (for example after someone deleted one in Setup) shows as a warning with the minutes it still runs at; choosing the interval again on the Jobs screen restores it. A last run in which chunks failed shows as a failure that says how many, here and on the job's card on the Jobs screen; Salesforce's reason is in Setup, under <strong>Apex Jobs</strong>. For a Sojourn admin, each of these carries its fix, <strong>Schedule it in Settings</strong> for a job that is off and <strong>Check the job in Settings</strong> for the others, and both open the Jobs screen.</li>
+<li><strong>Jobs</strong> shows whether Live values, Reconcile, and Summaries are scheduled, their last run, and the next one. A job that is off shows as a warning until a Sojourn admin schedules it on the <strong>Jobs</strong> screen in Sojourn Settings; on a new install, that includes Summaries. A job scheduled by a user who is no longer active shows as a failure; turning it off and on again on the Jobs screen, as an active Sojourn admin, fixes it. Live values with an entry missing (for example after someone deleted one in Setup) shows as a warning with the minutes it still runs at; choosing the interval again on the Jobs screen restores it. A last run in which chunks failed shows as a failure that says how many, here and on the job's card on the Jobs screen; Salesforce's reason is in Setup, under <strong>Apex Jobs</strong>. A scheduled job that has not run for longer than its schedule allows, plus the late hours set on the Health screen (2 by default), shows as a warning that says when it last ran: Live values counts its minutes between runs, and Reconcile and Summaries a day. A job you have just turned on again counts from then, not from its last run before. For a Sojourn admin, each of these carries its fix, <strong>Schedule it in Settings</strong> for a job that is off and <strong>Check the job in Settings</strong> for the others, and both open the Jobs screen.</li>
 <li><strong>Errors</strong> counts the errors that need you, those in the last 24 hours, and those fixed in the last 24 hours, by type.</li>
 <li><strong>Recent errors</strong> lists the latest, each with its fix.</li>
 </ul>
+<h2 id="health-thresholds">Health thresholds<a class="headerlink" href="#health-thresholds" title="Permanent link">#</a></h2>
+<p>A Sojourn admin sets what the banner counts on the <strong>Health</strong> screen: open <strong>Sojourn Settings</strong>, then <strong>Health</strong> under <strong>Operations</strong>. The Health Monitor applies the thresholds for everyone who opens it. Saving them needs the Customize Application permission, as the other org-wide settings do.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Needs attention when open errors are more than</td>
+<td>The banner reads Needs attention when more errors than this need you.</td>
+<td>0</td>
+<td>0 to 10,000</td>
+</tr>
+<tr>
+<td>Something is wrong when open errors are more than</td>
+<td>The banner reads Not working when more errors than this need you, and says how many against the number you set.</td>
+<td>Blank, never</td>
+<td>1 to 10,000, or blank</td>
+</tr>
+<tr>
+<td>A job is late after, hours</td>
+<td>A scheduled job that has not run for this many hours past its schedule is a warning under <strong>Jobs</strong>.</td>
+<td>2</td>
+<td>1 to 72</td>
+</tr>
+</tbody>
+</table>
+<p>With the defaults the banner works as it always has: any open error needs attention, and open errors alone never make it Not working; only the failures under <strong>Capture</strong> and <strong>Jobs</strong> do. Errors within the first number still show in the <strong>Errors</strong> counts and the list; they only stop turning the banner amber.</p>
+<p>Each box shows the saved number, or the default while none is saved. Clear a box to go back to its default (for the second one, never), then choose <strong>Save thresholds</strong>. A notice says "Health thresholds are saved." A number outside its range is refused with the range, for example "A job is late after (hours): enter a whole number from 1 to 72, or leave it blank for the default, 2.", and nothing is saved. <strong>Reset to defaults</strong> on the Advanced screen clears all three; see <a href="../advanced-settings/#reset-to-defaults">Tune the advanced settings</a>. The Health screen is on the Free and the Plus plan.</p>
 <h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">#</a></h2>
-<p>The <strong>Errors</strong> tab lists Error Log rows by status, type, object, and age. Select rows to <strong>Create intervals</strong>, <strong>Mark resolved</strong>, or <strong>Ignore</strong> them together. The list shows the newest 200 errors that match the filters; when more match, it says "Showing the newest 200 errors" and <strong>Select all</strong> takes only those 200. Resolve or ignore them, or narrow the filters, to reach older ones. Open a row to see what happened, why, how to fix it, and the technical details for support. When a job such as Backfill or Purge fails for a reason Sojourn did not describe itself, the message says so in a fixed sentence, and Salesforce's own words are in the technical details, which only Sojourn admins see.</p>
+<p>The <strong>Errors</strong> tab lists Error Log rows by status, type, object, and age. Select rows to <strong>Create intervals</strong>, <strong>Mark resolved</strong>, or <strong>Ignore</strong> them together. The list shows the newest 200 errors that match the filters; when more match, it says "Showing the newest 200 errors" and <strong>Select all</strong> takes only those 200. Resolve or ignore them, or narrow the filters, to reach older ones. Open a row to see what happened, why, how to fix it, and the technical details for support. When a job such as Backfill or Purge fails for a reason Sojourn did not describe itself, the message says so in a fixed sentence, and Salesforce's own words are in the technical details, which only Sojourn admins see: Sojourn Health Monitor has no access to the Error Log's Stack field, on this tab, on the record page, or in reports.</p>
 <table>
 <thead>
 <tr>
@@ -1612,6 +1728,7 @@
 <p><strong>You are done when</strong></p>
 <ul>
 <li>The banner reads Healthy, or every item it lists has a fix under way.</li>
+<li>The Health screen shows the thresholds your team agreed, or the defaults.</li>
 <li>No error in the Errors tab reads Needs you without a reason you know.</li>
 </ul>
 </div>

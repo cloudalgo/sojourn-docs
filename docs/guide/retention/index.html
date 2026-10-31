@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -331,6 +331,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -797,6 +801,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#retention-per-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retention per object
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-a-purge-deletes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -979,6 +994,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../case-metrics/" class="md-nav__link">
         
   
@@ -1043,6 +1086,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1561,6 +1632,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#retention-per-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retention per object
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-a-purge-deletes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1657,18 +1739,28 @@
 <li><strong>Keep N days</strong>, from 30 to 3,650: each night after Summaries, closed Intervals older than this are saved to a CSV file and deleted; their summaries are kept.</li>
 </ul>
 <p>Choose <strong>Save retention</strong>; it is off until you pick one. Keeping a number of days asks you to type DELETE first, because a purge deletes records. Days start and end at midnight in the org time zone.</p>
+<h2 id="retention-per-object">Retention per object<a class="headerlink" href="#retention-per-object" title="Permanent link">#</a></h2>
+<p>Each Tracked object can keep its Intervals for its own number of days, or keep all of them. Set it on the object's <strong>Advanced</strong> tab, in the <strong>Retention</strong> card (see <a href="../track-an-object/#the-advanced-tab">The Advanced tab</a>), and save with the object's <strong>Save</strong>:</p>
+<ul>
+<li><strong>Use the org's</strong>, the default: the object follows the choice on this screen, named beside it, for example "Use the org's: Keep 365 days".</li>
+<li><strong>Keep this object's Intervals</strong> for a number of days, from 30 to 3,650: a purge deletes this object's closed Intervals older than that, and leaves the rest of the org on its own window. The box shows the saved number, or 365 while none is saved; clear it to go back to 365. A number outside 30 to 3,650 is refused, and the notice names the Advanced tab. If such a number reaches the object some other way, through the API or a data load, Sojourn keeps every Interval of that object until its retention is saved again, lists it as "Everything", and writes one Config row to the Error Log saying why.</li>
+<li><strong>Keep everything for this object</strong>: a purge deletes none of this object's Intervals.</li>
+</ul>
+<p>An object's own days apply only while the org keeps N days. With the org on <strong>Keep everything</strong>, nothing is purged, whatever an object is set to: deletion is turned on in one place, here, with DELETE typed. Intervals of an object Sojourn no longer tracks follow the org's window.</p>
+<p>The <strong>Per object</strong> card on this screen lists every Tracked object and what it keeps: "Org's: 365 days" for an object that uses the org's, its own days, such as "90 days", or "Everything". The list is read only; choose an object's name to open its Advanced tab. While the org keeps everything, the card says that a purge deletes nothing until the org keeps N days.</p>
+<p>Retention per object is on the Plus plan, with purge. On the Free plan the Retention card shows the object's choice with its controls off and the Plus notice, and the rest of the object still saves. It is not part of a settings file, so moving settings between orgs never changes what an org deletes.</p>
 <h2 id="what-a-purge-deletes">What a purge deletes<a class="headerlink" href="#what-a-purge-deletes" title="Permanent link">#</a></h2>
-<p>A purge deletes only Intervals that are closed, already summarised, and ended before the cutoff. Open Intervals are never deleted, however old.</p>
+<p>A purge deletes only Intervals that are closed, already summarised, and ended before their object's cutoff: midnight in the org time zone, that object's number of days ago. Open Intervals are never deleted, however old. A run deletes by one window for each distinct number of days, the org's first, and checks each object's window again at every part, so a change saved during a run applies from its next part.</p>
 <p>It works in parts of 2,000 Intervals unless you change the part size (see <a href="#the-purge-part-size">The purge part size</a>), so a purge of a million Intervals leaves 500 CSV files on its run. Each part is first written to a CSV file, attached to the run's <strong>Purge Run</strong> record, then deleted in the same step: a part is saved and deleted together, or not at all. The first part that fails stops the run, and the run says why. Choosing <strong>Keep everything</strong> while a purge runs stops it at its next part, and the run says the rest is kept. <strong>Purge now</strong> waits while summaries are being built or rebuilt, because a rebuild still reads the Intervals a purge would delete.</p>
 <p>Each CSV file has a header row, then one row per Interval, in these columns: Interval, Object, Record Id, Record, Tracked field, From, To, To Id, Entered at, Exited at, Business minutes, Calendar minutes, Owner Id, Owner, Owner type, Source, Goal minutes, Breached, Sequence, Warning, Warned at, Record Closed, Value Group. Times are in UTC; Breached, Warning, and Record Closed are true or false. Record Closed and Value Group are what the summary rows group by: whether the record was closed during the stay, and the value group its value belonged to (blank when the field has no value groups).</p>
 <div class="sj-callout">
 <p><strong>The CSV file is your copy.</strong> Download it from the Purge Run record before you delete the record or the file. Sojourn never deletes them.</p>
 </div>
 <h2 id="the-archive">The archive<a class="headerlink" href="#the-archive" title="Permanent link">#</a></h2>
-<p>Turn on <strong>Also copy to the archive</strong> to keep each purged Interval in Sojourn's archive object as well, where it stays queryable. An archived Interval keeps its values, owner, minutes, goal minutes, and Breach flag, its warning: <strong>Warning Flag</strong> (1 or 0), <strong>Warned At</strong>, and <strong>Warn Minutes</strong>, and what its summary rows group by: <strong>Record Closed Flag</strong> (1 or 0) and <strong>Value Group</strong>. Your org includes 1 million archive records; more is a paid add-on from Salesforce. The CSV file is kept on every run either way.</p>
+<p>Turn on <strong>Also copy to the archive</strong> to keep each purged Interval in Sojourn's archive object as well. The archive is a big object: the timeline shows its stays (see <a href="../timeline/">Show the timeline on a record</a>), and Apex and the API can read it with SOQL, but reports and list views cannot, so a report counts only the Intervals that remain and the summary rows. An archived Interval keeps its values, owner, minutes, goal minutes, and Breach flag, its warning: <strong>Warning Flag</strong> (1 or 0), <strong>Warned At</strong>, and <strong>Warn Minutes</strong>, and what its summary rows group by: <strong>Record Closed Flag</strong> (1 or 0) and <strong>Value Group</strong>. Your org includes 1 million archive records; more is a paid add-on from Salesforce. Sojourn does not count the archived records yet, so keep your own count from how many each purge run archived, under <a href="#purge-now-and-the-runs">Purge now and the runs</a>, or from the <strong>Archived Count</strong> field on the Purge Run records. The CSV file is kept on every run either way.</p>
 <h2 id="purge-now-and-the-runs">Purge now and the runs<a class="headerlink" href="#purge-now-and-the-runs" title="Permanent link">#</a></h2>
-<p><strong>Purge now</strong> starts a run straight away, without waiting for the night. The button is on only while the saved choice is Keep N days: on a new install, and under Keep everything, it is off. The confirmation names the window; type DELETE to confirm. One purge runs at a time; a second is refused with "A purge is already running. Try again when it finishes."</p>
-<p><strong>Purge runs</strong> lists each run: when it ran, its status (Queued, Running, Complete, or Failed), how many Intervals it deleted and archived, and how many files it holds; choose the files to open the run. A run counts its Intervals as each part finishes, so a run that stopped part-way shows what it deleted before it stopped. The run's record also keeps <strong>Interval Count</strong>: how many Intervals the run set out to delete when it started, so you can compare it with what it deleted.</p>
+<p><strong>Purge now</strong> starts a run straight away, without waiting for the night. The button is on only while the saved choice is Keep N days: on a new install, and under Keep everything, it is off. Its confirmation counts what the run would delete now, for example "4,250 closed, summarised Intervals past their window are saved to a CSV file on the run, then deleted.", and lists each window with its count, such as "The org's 365 days: 4,000 Intervals" and "Lead, 90 days: 250 Intervals", then each object kept whole, such as "Claim: Keep everything, none deleted." Type DELETE to confirm. One purge runs at a time; a second is refused with "A purge is already running. Try again when it finishes."</p>
+<p><strong>Purge runs</strong> lists each run: when it ran, its status (Queued, Running, Complete, or Failed), how many Intervals it deleted and archived, and how many files it holds; choose the files to open the run. A run counts its Intervals as each part finishes, so a run that stopped part-way shows what it deleted before it stopped. The run's record also keeps <strong>Interval Count</strong>: how many Intervals the run set out to delete when it started, so you can compare it with what it deleted. Its <strong>Message</strong> says how many Intervals the run deleted in all and under each window, for example "The org's 365 days: 4,210 deleted. Lead, 90 days: 250 deleted.", and names the objects kept whole. If the org moves to the Free plan while a purge runs, the run deletes nothing from its next part on, keeps the Day summary rows, and its message says so.</p>
 <h2 id="the-purge-part-size">The purge part size<a class="headerlink" href="#the-purge-part-size" title="Permanent link">#</a></h2>
 <p>Under the <strong>Purge</strong> card, open <strong>Advanced</strong> to set <strong>Intervals per purge part</strong>, from 50 to 2,000. Each part is saved to one CSV file and deleted in one step, so a smaller part means more, smaller files and less work in each step. The box shows the saved number, or 2,000 while none is saved; clear it to go back to 2,000. Choose <strong>Save part size</strong>; it saves on its own and asks for no DELETE, because it changes how a purge runs, not what it deletes. A number outside 50 to 2,000 is refused with what to enter. The part size is on the Plus plan, with purge: on the Free plan it shows with its box off and the Plus notice. <strong>Reset to defaults</strong> on the <a href="../advanced-settings/">Advanced screen</a> puts it back to 2,000.</p>
 <h2 id="summaries">Summaries<a class="headerlink" href="#summaries" title="Permanent link">#</a></h2>

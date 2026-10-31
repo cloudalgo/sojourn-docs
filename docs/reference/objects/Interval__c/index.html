@@ -124,9 +124,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -318,6 +318,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -841,6 +845,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../guide/breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../guide/case-metrics/" class="md-nav__link">
         
   
@@ -905,6 +937,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1433,79 +1493,79 @@
 <td>Breached At</td>
 <td><code>Breached_At__c</code></td>
 <td>DateTime</td>
-<td>When the breach was detected.</td>
+<td>When this Interval passed its Goal: Entered At plus Goal Minutes, counted in the Interval's business hours, so it is the moment the goal ran out, not the moment Sojourn noticed. Set together with Breached, by a Live values run on an open Interval or by the close on a closed one, and kept once set. Blank while the Interval is within its goal, or when it has no Goal. Reports read it to show when stays broke their goal.<br><em>Help text:</em> The moment this stay went past its goal, worked out from when the stay began and the goal's business minutes. Sojourn sets it; blank while the stay is within its goal.</td>
 </tr>
 <tr>
 <td>Business Days (8 h)</td>
 <td><code>Business_Days__c</code></td>
 <td>Formula (Number)</td>
-<td>Business minutes divided by 480: days of eight business hours, whatever the business hours behind the Interval. For other day lengths, divide Business Minutes in a report formula.<br><em>Help text:</em> Business minutes as days of eight hours. If your business day is longer or shorter, use Business Minutes instead.</td>
+<td>Business Minutes divided by 480: days of eight business hours, whatever the business hours behind the Interval. A formula to two decimals; 0 while the Interval is open, since Business Minutes is set at the close. For other day lengths, divide Business Minutes in a report formula.<br><em>Help text:</em> Business minutes as days of eight hours. If your business day is longer or shorter, use Business Minutes instead.</td>
 </tr>
 <tr>
 <td>Business Hours Display</td>
 <td><code>Business_Hours_Display__c</code></td>
 <td>Formula (Text)</td>
-<td>Business minutes shown as hours and minutes.<br><em>Help text:</em> Business minutes shown as hours and minutes, for example 34h 15m.</td>
+<td>Business Minutes as text in hours and minutes, for example 34h 15m: a formula of the whole hours and the minutes left over (part minutes show as decimals, such as 34h 15.5m). Blank while the Interval is open, since Business Minutes is set at the close. For reading on a record page or in a report; text cannot be summed, so total Business Minutes instead.<br><em>Help text:</em> How long this stay lasted in business hours, written as hours and minutes, for example 34h 15m. Blank while the stay is open.</td>
 </tr>
 <tr>
 <td>Business Hours Id</td>
 <td><code>Business_Hours_Id__c</code></td>
 <td>Text (18)</td>
-<td>Business hours record used for this interval, kept so minutes can be recomputed.<br><em>Help text:</em> Which business hours were used.</td>
+<td>The 18-character Id of the Business hours record this Interval's business minutes were counted in. Sojourn takes the first that applies: the Tracked field's business hours, the business hours on the record (the Tracked object's Business Hours Source Field), the queue that owned the record (Queue Business Hours), the Tracked object's business hours, the Sojourn default, then the org default. Set at the close and refreshed by each Live values run while the Interval is open; blank on an open Interval that Live values has not reached. Kept so the minutes can be checked or worked out again; the timeline and Sojourn Dashboards read it to name the hours.<br><em>Help text:</em> The business hours this stay was measured in. Sojourn picks them from the Tracked field, the record, its queue, the Tracked object, or the default, in that order.</td>
 </tr>
 <tr>
 <td>Business Minutes To Date</td>
 <td><code>Business_Minutes_To_Date__c</code></td>
 <td>Number (16, 2)</td>
-<td>Business minutes so far on an open interval, refreshed by Live values.<br><em>Help text:</em> Refreshed by Live values while open; equals Business Minutes once closed.</td>
+<td>Business minutes this Interval has lasted so far, in its business hours, to two decimals. On an open Interval each Live values run writes it, when the Live values job covers the object (Live values on, or Goals to flag) and the Interval began inside the Live values window; otherwise it stays blank or keeps its last value. At the close it is set equal to Business Minutes. Reports of open stays, such as Longest Open Intervals, sort on it.<br><em>Help text:</em> Business minutes so far for an open stay, refreshed each time the Live values job runs; the same as Business Minutes once the stay closes. Blank or out of date when the Live values job does not cover the object.</td>
 </tr>
 <tr>
 <td>Business Minutes</td>
 <td><code>Business_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Elapsed minutes within business hours between Entered At and Exited At.<br><em>Help text:</em> Set when the interval closes, using the business hours shown in Business Hours Id.</td>
+<td>Minutes between Entered At and Exited At that fall inside the Interval's business hours (Business Hours Id), to two decimals. Set when the Interval closes; blank while it is open. When those business hours cannot be used (deleted or inactive), calendar minutes are recorded instead. Breach, the Case figures, Interval Summaries, and reports all count this value.<br><em>Help text:</em> How long this stay lasted inside business hours. Sojourn sets it when the stay closes; blank while open. Use it for totals and averages.</td>
 </tr>
 <tr>
 <td>Calendar Days</td>
 <td><code>Calendar_Days__c</code></td>
 <td>Formula (Number)</td>
-<td>Calendar minutes as days.<br><em>Help text:</em> Calendar minutes as 24-hour days.</td>
+<td>Calendar Minutes divided by 1,440: the stay's time on the clock as 24-hour days, nights and weekends included. A formula to two decimals; 0 while the Interval is open, since Calendar Minutes is set at the close.<br><em>Help text:</em> How long this stay lasted on the clock, in 24-hour days. 0 while the stay is open.</td>
 </tr>
 <tr>
 <td>Calendar Minutes To Date</td>
 <td><code>Calendar_Minutes_To_Date__c</code></td>
 <td>Formula (Number)</td>
-<td>Minutes since Entered At while open; stored minutes once closed.<br><em>Help text:</em> Calendar minutes to now for an open interval, or the stored minutes when closed.</td>
+<td>Calendar minutes so far: on an open Interval, the minutes from Entered At to now, worked out each time the field is read; on a closed one, Calendar Minutes. A formula to two decimals, so it is always current and needs no job. Reports of open stays read it for their age on the clock.<br><em>Help text:</em> How long this stay has lasted on the clock: up to now while it is open, the final minutes once it closes.</td>
 </tr>
 <tr>
 <td>Calendar Minutes</td>
 <td><code>Calendar_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Elapsed minutes between Entered At and Exited At.<br><em>Help text:</em> Set when the interval closes.</td>
+<td>Minutes on the clock between Entered At and Exited At, nights and weekends included, to two decimals. Set when the Interval closes; blank while it is open. Calendar Days and Elapsed Calendar Hours are formulas on it, and Interval Summaries count it beside Business Minutes.<br><em>Help text:</em> How long this stay lasted on the clock. Sojourn sets it when the stay closes; blank while open.</td>
 </tr>
 <tr>
 <td>Case Origin</td>
 <td><code>Case_Origin__c</code></td>
 <td>Text (255)</td>
-<td>Case origin at capture time.</td>
+<td>The Case's Origin (its API value, as text) copied when the Interval opened, so time can be reported by channel as it was then. Filled only on Intervals of Cases; a later edit to the Case does not change it. Blank when the Case had no Origin.<br><em>Help text:</em> The Case's origin when this stay began, for example Email or Phone. Group a report by it to compare time by channel.</td>
 </tr>
 <tr>
 <td>Case Priority</td>
 <td><code>Case_Priority__c</code></td>
 <td>Text (255)</td>
-<td>Case priority at capture time, named so report headers read naturally.<br><em>Help text:</em> Case priority at capture time.</td>
+<td>The Case's Priority (its API value, as text) copied when the Interval opened, so time can be reported by priority as it was then. Filled only on Intervals of Cases; a later edit to the Case does not change it. Blank when the Case had no Priority.<br><em>Help text:</em> The Case's priority when this stay began, for example High. Group a report by it to compare time by priority.</td>
 </tr>
 <tr>
 <td>Case Type</td>
 <td><code>Case_Type__c</code></td>
 <td>Text (255)</td>
-<td>Case type at capture time.</td>
+<td>The Case's Type (its API value, as text) copied when the Interval opened, so time can be reported by case type as it was then. Filled only on Intervals of Cases; a later edit to the Case does not change it. Blank when the Case had no Type.<br><em>Help text:</em> The Case's type when this stay began. Group a report by it to compare time by case type.</td>
 </tr>
 <tr>
 <td>Case</td>
 <td><code>Case__c</code></td>
 <td>Lookup (Case)</td>
-<td>Filled when the tracked object is Case, so Cases with Intervals reports work natively.<br><em>Help text:</em> The Case this interval belongs to.</td>
+<td>Lookup to the Case when the Tracked object is Case, filled from Parent Id when the Interval is written, so the Cases with Intervals report type and the Intervals related list on the Case work. Blank for other objects, or when the Tracked object's Lookup Field Override names another lookup to Case. Cleared if the Case is deleted; Parent Id keeps the Id.<br><em>Help text:</em> The Case this stay belongs to. Sojourn fills it on Case Intervals; it drives the Intervals related list on the Case and the Cases with Intervals reports.</td>
 </tr>
 <tr>
 <td>Changed By</td>
@@ -1517,67 +1577,67 @@
 <td>Closed at Deletion</td>
 <td><code>Closed_At_Deletion__c</code></td>
 <td>Checkbox</td>
-<td>Checked by Reconcile on an Interval it closed because its record was deleted. When the record comes back from the Recycle Bin, only these Intervals open again, and the check is cleared; an Interval that ended before the deletion stays ended (D-665, R3-01).<br><em>Help text:</em> Checked when this Interval was ended only because its record was deleted. If the record is restored from the Recycle Bin, this Interval opens again.</td>
+<td>Checked by the nightly Reconcile on an Interval it closed because its record was deleted. When the record comes back from the Recycle Bin, only these Intervals open again and the check is cleared; an Interval that ended before the deletion stays ended. Unchecked on every other Interval. The Summaries job leaves a checked Interval out until the Recycle Bin's 15 days have passed, so a restored record's stay is counted once, at its real close.<br><em>Help text:</em> Checked when this Interval was ended only because its record was deleted. If the record is restored from the Recycle Bin, this Interval opens again.</td>
 </tr>
 <tr>
 <td>Elapsed Business Hours</td>
 <td><code>Elapsed_Business_Hours__c</code></td>
 <td>Formula (Number)</td>
-<td>Time the Interval took in business hours: Business Minutes divided by 60. A duration, not the Business hours schedule; Business Hours Id names the schedule used.<br><em>Help text:</em> Elapsed time in this value, counted in business hours, as hours with two decimals.</td>
+<td>Time the Interval took in business hours: Business Minutes divided by 60, a formula to two decimals; 0 while the Interval is open. A duration, not the Business hours schedule; Business Hours Id names the schedule used.<br><em>Help text:</em> Elapsed time in this value, counted in business hours, as hours with two decimals.</td>
 </tr>
 <tr>
 <td>Elapsed Calendar Hours</td>
 <td><code>Elapsed_Calendar_Hours__c</code></td>
 <td>Formula (Number)</td>
-<td>Time the Interval took on the clock: Calendar Minutes divided by 60, nights and weekends included.<br><em>Help text:</em> Elapsed time in this value on the clock, as hours with two decimals.</td>
+<td>Time the Interval took on the clock: Calendar Minutes divided by 60, nights and weekends included, a formula to two decimals; 0 while the Interval is open.<br><em>Help text:</em> Elapsed time in this value on the clock, as hours with two decimals.</td>
 </tr>
 <tr>
 <td>Entered At</td>
 <td><code>Entered_At__c</code></td>
 <td>DateTime</td>
-<td>When the record entered this value.</td>
+<td>When the record took this value and the Interval began. For a live save it is the time of the save, or the record's created time for a new record's first Intervals; a job sets it to when the change happened, from field history (Backfill-History), the record's last change (Backfill-Seed, Reconcile, Catch-Up), or the logged change (Manual-Repair, Omni-Channel). Never blank. Every minute count and the Breach and warning times are counted from it.<br><em>Help text:</em> When the record entered this value. Every minute count of the stay starts here.</td>
 </tr>
 <tr>
 <td>Exited At</td>
 <td><code>Exited_At__c</code></td>
 <td>DateTime</td>
-<td>When the record left this value; empty while the interval is open.<br><em>Help text:</em> Empty while the interval is open.</td>
+<td>When the record left this value and the Interval closed: the time of the change that opened the next Interval, the close of the record for an owner stay that ends there, or the deletion time when Reconcile closes it for a deleted record. Never before Entered At. Blank while the Interval is open; Open is a formula on it, and the minutes are set at the same moment.<br><em>Help text:</em> When the stay ended. Blank while the record is still in this value.</td>
 </tr>
 <tr>
 <td>From Value</td>
 <td><code>From_Value__c</code></td>
 <td>Text (255)</td>
-<td>Value before this interval began.<br><em>Help text:</em> Previous value. Empty on the first interval of a record.</td>
+<td>The value the record held before this Interval, in the same form as To Value (the API value for a picklist, the display name for an owner or lookup), up to 255 characters. Blank on a record's first Interval for the field, or when the field was blank before. Reports read it to count moves from one value to the next.<br><em>Help text:</em> The value the record had before this stay began. Blank on the first stay of a record.</td>
 </tr>
 <tr>
 <td>Goal Minutes</td>
 <td><code>Goal_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Target business minutes copied from the goal at capture time.<br><em>Help text:</em> Target business minutes copied from the goal.</td>
+<td>The Goal's Target Business Minutes, copied when the Interval opened from the active Goal that matched its value (a Goal for this exact value wins over one for any value, <em>). Blank when no Goal matched. Breach is judged against this copy, so a later change to the Goal, or turning it off, leaves this Interval's target as it was. The timeline and Sojourn Dashboards show it as the goal.<br></em>Help text:* The business minutes this stay was allowed before it counts as a Breach, copied from its Goal when the stay began.</td>
 </tr>
 <tr>
 <td>Goal</td>
 <td><code>Goal__c</code></td>
 <td>Lookup (Goal__c)</td>
-<td>Goal that applied to this value when the interval opened.</td>
+<td>Lookup to the active Goal that matched this Interval when it opened: a Goal for this Tracked field (or, when the Goal names no field, for the Tracked object's status field) and this value, or one for any value (<em>). Blank when none matched. Goal Minutes and Warn Minutes copy its numbers at the same moment. Cleared if the Goal is deleted; the copied minutes stay.<br></em>Help text:* The Goal this stay is measured against. Group a report by it to count breaches by Goal.</td>
 </tr>
 <tr>
 <td>Breached</td>
 <td><code>Is_Breached__c</code></td>
 <td>Checkbox</td>
-<td>Business minutes to date passed the goal.<br><em>Help text:</em> Set by Live values when business minutes to date pass the goal.</td>
+<td>Checked once the Interval's business minutes passed Goal Minutes: set by a Live values run on an open Interval, and by the close on a closed one. Stays checked once set; Breached At records when the goal ran out. Unchecked when the Interval has no Goal or stayed within it. Breach reports, the timeline, and the Breach alert Flow read it.<br><em>Help text:</em> Checked when this stay went past its goal. Sojourn sets it while the stay is open, on each Live values run, or when it closes.</td>
 </tr>
 <tr>
 <td>Open</td>
 <td><code>Is_Open__c</code></td>
 <td>Formula (Checkbox)</td>
-<td>True while the record is still in this value.</td>
+<td>A formula, checked while Exited At is blank: the record is still in this value. Unchecked once the Interval closes. Reports of open stays filter on it, with Record Closed unchecked.<br><em>Help text:</em> Checked while the record is still in this value; unchecked once the stay has ended.</td>
 </tr>
 <tr>
 <td>Orphaned</td>
 <td><code>Is_Orphaned__c</code></td>
 <td>Checkbox</td>
-<td>The tracked record no longer exists; the interval is kept as history.<br><em>Help text:</em> The tracked record was deleted or merged. The interval is kept as history.</td>
+<td>Checked by the nightly Reconcile when the tracked record no longer exists (deleted, or merged into another record). An open Interval is closed at the deletion and also marked Closed at Deletion; a closed one is only flagged. The Interval is kept as history. Cleared if the record is restored from the Recycle Bin. Unchecked on Intervals of records that exist.<br><em>Help text:</em> Checked when the record this stay belongs to was deleted or merged away. The stay is kept for reporting; restoring the record clears it.</td>
 </tr>
 <tr>
 <td>Warning</td>
@@ -1589,181 +1649,181 @@
 <td>Lead Rating</td>
 <td><code>Lead_Rating__c</code></td>
 <td>Text (255)</td>
-<td>Lead rating at capture time.</td>
+<td>The Lead's Rating (its API value, as text) copied when the Interval opened, so time can be reported by rating as it was then. Filled only on Intervals of Leads; a later edit to the Lead does not change it. Blank when the Lead had no Rating.<br><em>Help text:</em> The Lead's rating when this stay began, for example Hot. Group a report by it to compare time by rating.</td>
 </tr>
 <tr>
 <td>Lead Source</td>
 <td><code>Lead_Source__c</code></td>
 <td>Text (255)</td>
-<td>Lead source at capture time.</td>
+<td>The Lead's Lead Source (its API value, as text) copied when the Interval opened, so time can be reported by source as it was then. Filled only on Intervals of Leads; a later edit to the Lead does not change it. Blank when the Lead had no source.<br><em>Help text:</em> The Lead's source when this stay began, for example Web. Group a report by it to compare time by source.</td>
 </tr>
 <tr>
 <td>Lead</td>
 <td><code>Lead__c</code></td>
 <td>Lookup (Lead)</td>
-<td>Filled when the tracked object is Lead.<br><em>Help text:</em> The Lead this interval belongs to.</td>
+<td>Lookup to the Lead when the Tracked object is Lead, filled from Parent Id when the Interval is written, so the Leads with Intervals report type and the Intervals related list on the Lead work. Blank for other objects, or when the Tracked object's Lookup Field Override names another lookup to Lead. Cleared if the Lead is deleted; Parent Id keeps the Id.<br><em>Help text:</em> The Lead this stay belongs to. Sojourn fills it on Lead Intervals; it drives the Intervals related list on the Lead and the Leads with Intervals reports.</td>
 </tr>
 <tr>
 <td>Opportunity Amount</td>
 <td><code>Opportunity_Amount__c</code></td>
 <td>Number (18, 2)</td>
-<td>Opportunity amount at capture time, as a plain number in the Opportunity's own currency (D-606).<br><em>Help text:</em> Opportunity amount at capture time.</td>
+<td>The Opportunity's Amount copied when the Interval opened, as a plain number in the Opportunity's own currency with no conversion, so a total across currencies needs care. Filled only on Intervals of Opportunities; a later edit does not change it. Blank when the Opportunity had no Amount. Not readable with the Sojourn User or Site User permission set.<br><em>Help text:</em> The Opportunity's amount when this stay began, in the Opportunity's currency. Use it to weigh time in stage by deal size.</td>
 </tr>
 <tr>
 <td>Opportunity Stage</td>
 <td><code>Opportunity_Stage__c</code></td>
 <td>Text (255)</td>
-<td>Opportunity stage at capture time.</td>
+<td>The Opportunity's Stage (its API value, as text) copied when the Interval opened, so any tracked field's time can be reported by the stage the deal was in. Filled only on Intervals of Opportunities; a later edit does not change it.<br><em>Help text:</em> The Opportunity's stage when this stay began. Group a report by it to see, for example, time with each owner per stage.</td>
 </tr>
 <tr>
 <td>Opportunity</td>
 <td><code>Opportunity__c</code></td>
 <td>Lookup (Opportunity)</td>
-<td>Filled when the tracked object is Opportunity.<br><em>Help text:</em> The Opportunity this interval belongs to.</td>
+<td>Lookup to the Opportunity when the Tracked object is Opportunity, filled from Parent Id when the Interval is written, so the Opportunities with Intervals report type and the Intervals related list on the Opportunity work. Blank for other objects, or when the Tracked object's Lookup Field Override names another lookup to Opportunity. Cleared if the Opportunity is deleted; Parent Id keeps the Id.<br><em>Help text:</em> The Opportunity this stay belongs to. Sojourn fills it on Opportunity Intervals; it drives the Intervals related list on the Opportunity and the Opportunities with Intervals reports.</td>
 </tr>
 <tr>
 <td>Owner Id</td>
 <td><code>Owner_Id__c</code></td>
 <td>Text (18)</td>
-<td>Owner of the record during this interval, whatever field is tracked.<br><em>Help text:</em> Owner of the record during this interval.</td>
+<td>The 18-character Id of the user or queue that owned the record during this Interval, whichever field the Interval tracks, so time in a status can be reported by owner. Copied when the Interval opens, and corrected when an assignment rule changes the owner in the same save. Blank when the object has no owner. Sojourn reads it to find the queue's business hours (Queue Business Hours).<br><em>Help text:</em> The Id of the user or queue that owned the record during this stay.</td>
 </tr>
 <tr>
 <td>Owner Name</td>
 <td><code>Owner_Name__c</code></td>
 <td>Text (255)</td>
-<td>Owner display name during this interval.</td>
+<td>The display name of the user or queue in Owner Id, up to 255 characters, copied when the Interval opened so reports and the timeline show names without a join. A later rename of the user or queue does not change it. Blank when the object has no owner.<br><em>Help text:</em> The name of the user or queue that owned the record during this stay.</td>
 </tr>
 <tr>
 <td>Owner Type</td>
 <td><code>Owner_Type__c</code></td>
 <td>Picklist: User, Queue</td>
-<td>Whether the owner during this interval was a user or a queue.<br><em>Help text:</em> User or Queue.</td>
+<td>Whether Owner Id is a user or a queue: User or Queue, set with Owner Id. Blank when the object has no owner. Reports filter on it to split time with people from time waiting in queues.<br><em>Help text:</em> User or Queue: who owned the record during this stay. Filter on Queue to see waiting time.</td>
 </tr>
 <tr>
 <td>Owner User</td>
 <td><code>Owner_User__c</code></td>
 <td>Lookup (User)</td>
-<td>Owner as a user lookup, so reports can roll up by role and manager.<br><em>Help text:</em> Set when the owner during this interval is a user.</td>
+<td>Lookup to the User in Owner Id when the owner was a user; blank when a queue owned the record or the object has no owner. A lookup so reports can group by the owner's role, manager, or other user fields.<br><em>Help text:</em> The user who owned the record during this stay. Blank when a queue owned it.</td>
 </tr>
 <tr>
 <td>Parent Created At</td>
 <td><code>Parent_Created_At__c</code></td>
 <td>DateTime</td>
-<td>Created date of the tracked record, for period reporting.<br><em>Help text:</em> Created date of the tracked record.</td>
+<td>The tracked record's Created Date, copied when the Interval opened, so reports can group stays by when their records were created, for example Cases created this month. Never changes after the copy.<br><em>Help text:</em> When the record this stay belongs to was created. Group by it to compare records created in the same period.</td>
 </tr>
 <tr>
 <td>Parent Id</td>
 <td><code>Parent_Id__c</code></td>
 <td>Text (18)</td>
-<td>Id of the tracked record, stored as text so any object can be tracked.<br><em>Help text:</em> Id of the tracked record.</td>
+<td>The 18-character Id of the tracked record, stored as text so Intervals work for any object, standard or custom. Set when the Interval is written; never blank. Sojourn finds a record's Intervals by it (the timeline, Reconcile, the Case figures), and fills the Case, Lead, or Opportunity lookup from it.<br><em>Help text:</em> The Id of the record this stay belongs to.</td>
 </tr>
 <tr>
 <td>Parent Name</td>
 <td><code>Parent_Name__c</code></td>
 <td>Text (255)</td>
-<td>Record name or number at capture time, so reports can filter by a readable key.<br><em>Help text:</em> Record name or number at capture time, for example the Case Number.</td>
+<td>The record's name or number, up to 255 characters, copied when the Interval opened: the value of the Tracked object's Name Field, or of the object's own name field when that is blank. Lets reports and Sojourn Dashboards show and filter by a readable key, such as the Case Number. A later rename does not change it.<br><em>Help text:</em> The record's name or number when this stay began, for example the Case Number. The Tracked object's Name Field chooses which field.</td>
 </tr>
 <tr>
 <td>Parent Object</td>
 <td><code>Parent_Object__c</code></td>
 <td>Text (255)</td>
-<td>API name of the tracked object, the first grouping level in reports.<br><em>Help text:</em> API name of the tracked object, for example Case.</td>
+<td>The API name of the tracked object, for example Case or Work_Order__c, set when the Interval is written. One Interval object holds the stays of every Tracked object, so reports and Interval Summaries group by it first.<br><em>Help text:</em> The object the record belongs to, for example Case. Filter on it before grouping by value.</td>
 </tr>
 <tr>
 <td>Parent Record Type</td>
 <td><code>Parent_Record_Type__c</code></td>
 <td>Text (255)</td>
-<td>Record type developer name of the tracked record at capture time.<br><em>Help text:</em> Record type of the tracked record at capture time.</td>
+<td>The developer name of the record's record type when the Interval opened. Blank for objects without record types. Reports group by it to compare time across record types.<br><em>Help text:</em> The record type of the record when this stay began. Blank when the object has no record types.</td>
 </tr>
 <tr>
 <td>Record Closed</td>
 <td><code>Record_Closed__c</code></td>
 <td>Checkbox</td>
-<td>Checked while the record is closed by its Tracked object's Closed when setting (a closed value of the status field, or the chosen checkbox). A reopen clears it on Intervals still open; an Interval that ended while the record was closed, or at its reopen, keeps it (D-670).<br><em>Help text:</em> Checked on Intervals of a record that is closed. Reports of open stays leave these out, so a closed record never counts as open.</td>
+<td>Checked while the record is closed by its Tracked object's Closed when setting (a closed value of the status field, or the chosen checkbox). A reopen clears it on Intervals still open; an Interval that ended while the record was closed, or at its reopen, keeps it. Reports of open stays leave checked Intervals out, Interval Summaries carry it, and Live values skips closed records.<br><em>Help text:</em> Checked on Intervals of a record that is closed. Reports of open stays leave these out, so a closed record never counts as open.</td>
 </tr>
 <tr>
 <td>Sequence</td>
 <td><code>Sequence__c</code></td>
 <td>Number (9, 0)</td>
-<td>Order of this interval within its record and tracked field.<br><em>Help text:</em> Order of this interval within its record and tracked field, starting at 1.</td>
+<td>The place of this Interval in its record's chain for one Tracked field: 1 for the first, then one more for each Interval after it; a reopened record's owner stay continues the chain. A whole number. Sojourn reads it to keep the chain in order and find the last stay, and the timeline orders by it.<br><em>Help text:</em> The order of this stay among the record's stays for this field, starting at 1.</td>
 </tr>
 <tr>
 <td>Snapshot 1</td>
 <td><code>Snapshot_1__c</code></td>
 <td>Text (255)</td>
-<td>Value of the tracked object's first snapshot field at capture time.<br><em>Help text:</em> Value of the first configured snapshot field at capture time.</td>
+<td>The value of the first field named in the Tracked object's Snapshot Fields, as text up to 255 characters, copied when the Interval opened, so time can be reported by a field Sojourn does not track, such as Region. Blank when no field is named or its value was blank; a later edit to the record does not change it. Not readable with the Sojourn User or Site User permission set.<br><em>Help text:</em> The value of the first field listed in Snapshot Fields on the Tracked object, as it was when this stay began.</td>
 </tr>
 <tr>
 <td>Snapshot 2</td>
 <td><code>Snapshot_2__c</code></td>
 <td>Text (255)</td>
-<td>Value of the tracked object's second snapshot field at capture time.<br><em>Help text:</em> Value of the second configured snapshot field at capture time.</td>
+<td>The value of the second field named in the Tracked object's Snapshot Fields, as text up to 255 characters, copied when the Interval opened, so time can be reported by a field Sojourn does not track. Blank when fewer than two fields are named or its value was blank; a later edit to the record does not change it. Not readable with the Sojourn User or Site User permission set.<br><em>Help text:</em> The value of the second field listed in Snapshot Fields on the Tracked object, as it was when this stay began.</td>
 </tr>
 <tr>
 <td>Snapshot 3</td>
 <td><code>Snapshot_3__c</code></td>
 <td>Text (255)</td>
-<td>Value of the tracked object's third snapshot field at capture time.<br><em>Help text:</em> Value of the third configured snapshot field at capture time.</td>
+<td>The value of the third field named in the Tracked object's Snapshot Fields, as text up to 255 characters, copied when the Interval opened, so time can be reported by a field Sojourn does not track. Blank when fewer than three fields are named or its value was blank; a later edit to the record does not change it. Not readable with the Sojourn User or Site User permission set.<br><em>Help text:</em> The value of the third field listed in Snapshot Fields on the Tracked object, as it was when this stay began.</td>
 </tr>
 <tr>
 <td>Snapshot 4</td>
 <td><code>Snapshot_4__c</code></td>
 <td>Text (255)</td>
-<td>Value of the tracked object's fourth snapshot field at capture time.<br><em>Help text:</em> Value of the fourth configured snapshot field at capture time.</td>
+<td>The value of the fourth field named in the Tracked object's Snapshot Fields, as text up to 255 characters, copied when the Interval opened, so time can be reported by a field Sojourn does not track. Blank when fewer than four fields are named or its value was blank; a later edit to the record does not change it. Not readable with the Sojourn User or Site User permission set.<br><em>Help text:</em> The value of the fourth field listed in Snapshot Fields on the Tracked object, as it was when this stay began.</td>
 </tr>
 <tr>
 <td>Snapshot 5</td>
 <td><code>Snapshot_5__c</code></td>
 <td>Text (255)</td>
-<td>Value of the tracked object's fifth snapshot field at capture time.<br><em>Help text:</em> Value of the fifth configured snapshot field at capture time.</td>
+<td>The value of the fifth field named in the Tracked object's Snapshot Fields, as text up to 255 characters, copied when the Interval opened, so time can be reported by a field Sojourn does not track. Blank when fewer than five fields are named or its value was blank; a later edit to the record does not change it. Not readable with the Sojourn User or Site User permission set.<br><em>Help text:</em> The value of the fifth field listed in Snapshot Fields on the Tracked object, as it was when this stay began.</td>
 </tr>
 <tr>
 <td>Source</td>
 <td><code>Source__c</code></td>
 <td>Picklist: Trigger, Flow, Backfill-History, Backfill-Seed, Manual-Repair, Reconcile, Catch-Up, Omni-Channel</td>
-<td>How this interval was created.<br><em>Help text:</em> Trigger and Flow are live capture; Backfill and Reconcile are jobs; Manual-Repair comes from the error queue.</td>
+<td>How this Interval was written. One of: Trigger (a save caught by a trigger, such as Sojourn's on Case, Lead, and Opportunity), Flow (a save reported by an object's capture Flow), Backfill-History (a Backfill from field history), Backfill-Seed (a Backfill from current values), Reconcile (the nightly job, for a change capture missed), Catch-Up (changes replayed after a pause), Manual-Repair (created from an error in the Health Monitor), or Omni-Channel (agent work reported by the Sojourn Omni-Channel package). Set when the Interval opens; never blank. For every source but Trigger and Flow, Changed By is the user who ran or scheduled the job.<br><em>Help text:</em> How Sojourn recorded this stay: Trigger and Flow are live saves; Backfill-History and Backfill-Seed come from a Backfill; Reconcile and Catch-Up are jobs; Manual-Repair comes from the Health Monitor; Omni-Channel is agent work.</td>
 </tr>
 <tr>
 <td>Summarised At</td>
 <td><code>Summarised_At__c</code></td>
 <td>DateTime</td>
-<td>When this interval was counted into an Interval Summary row; purge deletes only summarised intervals.<br><em>Help text:</em> Set by the summary job. Purge never deletes an interval without it.</td>
+<td>When the Summaries job counted this closed Interval into its Interval Summary rows. Blank until then; an Interval that Reconcile closed for a deleted record waits until the Recycle Bin's 15 days have passed. Summaries counts only closed Intervals with it blank, so none is counted twice, and purge deletes only Intervals that have it.<br><em>Help text:</em> Set by the Summaries job when it counts this stay. Purge never deletes a stay that has not been summarised.</td>
 </tr>
 <tr>
 <td>To Value Id</td>
 <td><code>To_Value_Id__c</code></td>
 <td>Text (18)</td>
-<td>Id behind the value for lookup and owner fields.<br><em>Help text:</em> Id of the user, queue, or related record for lookup and owner values.</td>
+<td>For an owner or lookup field, the 18-character Id of the user, queue, or record the field pointed at during this Interval; To Value holds its name. Blank for other field types. Sojourn compares values by it, so renaming a user or record does not start a new Interval, and the Case figures read it to tell users from queues.<br><em>Help text:</em> The Id of the user, queue, or record behind To Value, for owner and lookup fields. Blank for other fields.</td>
 </tr>
 <tr>
 <td>To Value Label</td>
 <td><code>To_Value_Label__c</code></td>
 <td>Text (255)</td>
-<td>Picklist label at capture time, for readable grouping.<br><em>Help text:</em> Picklist label at capture time.</td>
+<td>For a picklist field, the label of To Value when the Interval opened, up to 255 characters, for readable report groups and the timeline. Blank for other field types. To Value keeps the API value, which does not change when a label is renamed or translated.<br><em>Help text:</em> The picklist label of the value during this stay. Blank for fields that are not picklists.</td>
 </tr>
 <tr>
 <td>To Value</td>
 <td><code>To_Value__c</code></td>
 <td>Text (255)</td>
-<td>Value held during this interval: picklist API value, or display name for lookups and owner.<br><em>Help text:</em> Value held during this interval.</td>
+<td>The value the record held during this Interval, up to 255 characters: the API value for a picklist, the display name of the user, queue, or record for an owner or lookup field (its Id is in To Value Id), and the value as text for any other type. Blank when the field was blank and the Tracked field's Start At First Value is off. Goals match on it, and reports group by it after filtering on Tracked Field.<br><em>Help text:</em> The value the record had during this stay, for example Working, or the owner's name.</td>
 </tr>
 <tr>
 <td>Tracked Field Label</td>
 <td><code>Tracked_Field_Label__c</code></td>
 <td>Text (255)</td>
-<td>Label of the tracked field for report headers.<br><em>Help text:</em> Label of the tracked field.</td>
+<td>The Tracked field's label (its Field Label) when the Interval opened, for example Status, up to 255 characters, so report headers and the timeline read naturally. A later label change applies to new Intervals only.<br><em>Help text:</em> The name of the tracked field this stay is for, as people see it.</td>
 </tr>
 <tr>
 <td>Tracked Field</td>
 <td><code>Tracked_Field__c</code></td>
 <td>Text (255)</td>
-<td>API name of the tracked field; always filter or group by it before grouping by value.<br><em>Help text:</em> API name of the tracked field, for example Status or OwnerId.</td>
+<td>The API name of the field this Interval tracks, for example Status, or OwnerId for the owner, up to 255 characters. One record has a chain of Intervals for each Tracked field, so always filter or group by it before grouping by value; Sojourn finds a record's chain by Parent Id and this name.<br><em>Help text:</em> API name of the tracked field, for example Status or OwnerId.</td>
 </tr>
 <tr>
 <td>Value Group</td>
 <td><code>Value_Group__c</code></td>
 <td>Text (255)</td>
-<td>The value group this Interval's value belongs to, for example Backlog for New and Reopened (D-675). Blank until value groups are set up.<br><em>Help text:</em> The named group of values this stay counts toward in reports and summaries. Blank when the field has no value groups.</td>
+<td>The name of the value group this Interval's value belongs to, for example Backlog for New and Reopened, up to 255 characters. Blank while the Tracked field has no value groups. Interval Summaries key on it, and it is copied to the purge CSV and the Interval Archive, so reports and Sojourn Dashboards can add up time by group.<br><em>Help text:</em> The named group of values this stay counts toward in reports and summaries. Blank when the field has no value groups.</td>
 </tr>
 <tr>
 <td>Warn Minutes</td>

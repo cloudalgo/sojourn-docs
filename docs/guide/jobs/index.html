@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -331,6 +331,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -707,6 +711,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#when-salesforce-already-holds-100-batch-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Salesforce already holds 100 batch jobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-a-sandbox-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After a sandbox refresh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#before-you-uninstall" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -957,6 +983,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../case-metrics/" class="md-nav__link">
         
   
@@ -1021,6 +1075,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1561,6 +1643,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#when-salesforce-already-holds-100-batch-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Salesforce already holds 100 batch jobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-a-sandbox-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After a sandbox refresh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#before-you-uninstall" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1634,6 +1738,7 @@
 </tr>
 </tbody>
 </table>
+<p>Reconcile flags the closed Intervals of a deleted or merged record too, not only the open ones it closes. It reads them 2,000 at a time, one batch after another, for as long as the run has room, so one run flags them all for almost any record. A record with more than one run has room for is finished at the end of that run, when Reconcile looks again at the records it flagged, or by the next days' runs while the record is in the Recycle Bin.</p>
 <p>When a record comes back from the Recycle Bin after Reconcile flagged it, its Intervals lose the flag and each Interval Reconcile closed at the deletion opens again, so the days in the Recycle Bin count in that value. Reconcile checks <strong>Closed at Deletion</strong> on the Intervals it closes, and only those open again: an Interval that had already ended stays ended, such as the owner stay of a record that was closed when it was deleted, or agent work that had finished. Summary rows only ever add, so for the 15 days a deleted record can be brought back, and one day more so the next Reconcile can open them again, Summaries and <strong>Rebuild summaries</strong> leave out the Intervals Reconcile closed at its deletion: once the 16 days have passed, each is counted as it closed, and if the record comes back, each is counted once, when it closes again. No stay is counted twice. Cases, Leads, and Opportunities are tracked again the moment they are undeleted; other objects at the next Reconcile, however many deleted records are still in the Recycle Bin, and a change made to such a record before then starts its Intervals again from that change.</p>
 <p>Reconcile corrects Intervals that are open: a value that changed without capture closes the open Interval and opens the new value's. It never starts a field's first Interval, so a field with none, for example after a Fresh start, waits for its next change, and a blank field timed from its first value gets nothing until it has one.</p>
 <h2 id="how-far-back-live-values-reaches">How far back Live values reaches<a class="headerlink" href="#how-far-back-live-values-reaches" title="Permanent link">#</a></h2>
@@ -1643,7 +1748,7 @@
 <p><strong>Run now</strong> on a job's card starts one run of Live values, Reconcile, or Summaries straight away, as you, whether the job is scheduled or not. Its schedule stays as it is, and the run follows the same plan rules as a scheduled one: on the Free plan, a Live values run flags breaches and writes no minute fields. A notice says the run started, for example "Reconcile started.", and the Health Monitor shows the run. Run now is refused, with the reason, when:</p>
 <ul>
 <li>that job is already running: "Live values is already running."</li>
-<li>Salesforce already holds 100 batch jobs waiting to run, the most it allows: the notice says so and points to <strong>Apex Flex Queue</strong> in Setup, which lists them. Try again once some have run.</li>
+<li>Salesforce already holds 100 batch jobs waiting to run, the most it allows: see <a href="#when-salesforce-already-holds-100-batch-jobs">When Salesforce already holds 100 batch jobs</a>.</li>
 </ul>
 <h2 id="jobs-you-start">Jobs you start<a class="headerlink" href="#jobs-you-start" title="Permanent link">#</a></h2>
 <table>
@@ -1677,7 +1782,23 @@
 </tr>
 </tbody>
 </table>
-<p>One catch up, one backfill, and one purge run at a time across the org.</p>
+<p>One catch up and one purge run at a time across the org, and one backfill per object. A catch up and a backfill never run together: each is refused while the other runs. Catch up, Purge now, and Rebuild summaries run as batch jobs; Backfill runs as a chain of short jobs, one after another (see <a href="../backfill/#how-a-run-works">How a run works</a>).</p>
+<h2 id="when-salesforce-already-holds-100-batch-jobs">When Salesforce already holds 100 batch jobs<a class="headerlink" href="#when-salesforce-already-holds-100-batch-jobs" title="Permanent link">#</a></h2>
+<p>Salesforce holds at most 100 batch jobs waiting to run, in the Apex flex queue, for the whole org: your own jobs and other apps' count too. Sojourn counts them before it starts any job, its scheduled runs and the jobs you start alike, and when 100 are waiting:</p>
+<ul>
+<li>A job you start from a screen (<strong>Run now</strong>, <strong>Catch up</strong>, <strong>Run backfill</strong>, <strong>Purge now</strong>, or <strong>Rebuild</strong>) is refused, and nothing starts or changes. The notice names the job, for example "Salesforce is already holding 100 batch jobs, the most it allows, so Reconcile cannot start now. Try again once some have run; Apex Flex Queue in Setup lists them."</li>
+<li>A scheduled run of Live values, Reconcile, or Summaries, and the purge that runs after Summaries, steps aside: it writes one row to the Error Log, for example "Reconcile did not start: Salesforce is already holding 100 batch jobs, the most it allows. The next run tries again.", and the next run tries again. The Health Monitor's <strong>Errors</strong> tab lists the row. While that row is open, later runs of the same job that step aside add no row, so a queue that stays full all day leaves one row per job, not one per run; once you resolve the row, the next run that steps aside writes a new one.</li>
+</ul>
+<p><strong>Apex Flex Queue</strong> in Setup lists the jobs that are waiting. Once some have run, Sojourn's jobs start again as usual.</p>
+<p>Sojourn counts the queue and then starts the job, so two admins who start jobs at the same moment while 99 are waiting can both see room. The second start then fails with Salesforce's own message about the flex queue instead of Sojourn's; nothing is half-written, and you can start it again once some jobs have run.</p>
+<h2 id="after-a-sandbox-refresh">After a sandbox refresh<a class="headerlink" href="#after-a-sandbox-refresh" title="Permanent link">#</a></h2>
+<p>Salesforce does not copy scheduled Apex jobs when it creates or refreshes a sandbox, so in the new sandbox Live values, Reconcile, and Summaries are Off on the Jobs screen, and the Health Monitor shows each as a warning. Turn on the ones you want there, as a Sojourn admin of the sandbox. A job you turn on works on the sandbox's records only: Live values writes the minute fields on the sandbox's records, and a purge deletes the sandbox's Intervals, never production's.</p>
+<p>A new or refreshed sandbox also sends only system email until you change its email deliverability in Setup, so the breach alert email does not go out from it until then.</p>
+<p>Still to check in your sandbox, because it depends on the sandbox and on what it copied:</p>
+<ul>
+<li><strong>The plan.</strong> On the Free plan, Sojourn Settings shows the Plus notices. If the sandbox shows them and production is on the Plus plan, <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=question&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=docs-jobs-sandbox" target="_blank" rel="noopener">tell us</a>.</li>
+<li><strong>The data.</strong> Which Intervals, summary rows, and purge files the sandbox holds follows its type and what it copies from production. The Usage card on the Overview counts what is there.</li>
+</ul>
 <h2 id="before-you-uninstall">Before you uninstall<a class="headerlink" href="#before-you-uninstall" title="Permanent link">#</a></h2>
 <p>Turn off every scheduled job first, on the Jobs screen. See <a href="../uninstall/">Uninstall Sojourn</a>.</p>
   

@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -331,6 +331,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -758,6 +762,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#split-goals-by-a-second-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Split goals by a second field
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#give-record-types-their-business-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Give record types their business hours
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#give-queues-their-business-hours" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -924,6 +950,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../case-metrics/" class="md-nav__link">
         
   
@@ -988,6 +1042,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1495,6 +1577,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#split-goals-by-a-second-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Split goals by a second field
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#give-record-types-their-business-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Give record types their business hours
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#give-queues-their-business-hours" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1542,16 +1646,37 @@
 <li><strong>Target, business minutes</strong>: how long an Interval in this value should last. Leave it blank for no goal.</li>
 <li><strong>Warn at, percent</strong>: the share of the goal, from 1 to 100, at which an Interval is flagged as a warning. Leave it blank for no warning. A Goal saved any other way, from a data load or the API, is refused outside 1 to 100 too.</li>
 </ul>
+<p>On the status field, a closed value is marked closed and takes no goal. The closed values are the ones capture uses: the object's <strong>Closed values</strong>, or, for Case with none listed and Status as its status field, the statuses Case marks closed.</p>
 <p>A value's own goal wins over Any value. Choose <strong>Save goals</strong>. New Intervals carry the goal; Intervals already open keep the one they started with. An Interval that runs past its goal is a Breach: the Live values job flags one that is still open, and a stay is flagged when it closes past its goal.</p>
 <p>A warning is flagged the same way, earlier. When an Interval's business minutes reach the warn percent of its goal, Sojourn ticks <strong>Warning</strong> on the Interval and sets <strong>Warned At</strong> to the moment it got there: the time it entered the value plus that share of the goal, in its business hours. The Live values job flags an open Interval; a stay is flagged when it closes. A breached Interval is always a warning too. Once set, a flag keeps its time. A new Interval carries its warn threshold as <strong>Warn Minutes</strong>, beside <strong>Goal Minutes</strong>: the warn percent of the goal when the Interval started. Changing the goal or turning it off later changes neither the warning nor the Breach of an Interval already started. Reports on Intervals can filter on <strong>Warning</strong>, and the <a href="../timeline/">timeline</a> names a warning in a stay's goal, as it names a breach.</p>
 <p>The <strong>Breach alerts</strong> card has its own screen, <strong>Alerts</strong>, under <strong>Time</strong>. It is for every Tracked object: its switch, <strong>Also email when a stay closes past its goal</strong>, decides whether the breach alert email also goes for stays that closed late, or only while an Interval is still open (the default). See <a href="../breach-alerts/">Email a breach alert</a>.</p>
 <p>Clearing a target turns the goal off. Goals are never deleted, so Intervals that point at one keep it.</p>
+<h2 id="split-goals-by-a-second-field">Split goals by a second field<a class="headerlink" href="#split-goals-by-a-second-field" title="Permanent link">#</a></h2>
+<p>A value can have a different goal for each value of one more field on the record: a Case in New might get 30 minutes at High priority and 4 hours at Low. The card <strong>Split goals by</strong>, below the goals, sets this for the Tracked field chosen above.</p>
+<p>Under <strong>A goal for each value of</strong>, choose the field to split by, or <strong>None</strong> for no split. The list holds the object's picklist and checkbox fields, other than the Tracked field itself; a checkbox splits into <strong>Checked</strong> and <strong>Not checked</strong>. Once the split is saved, the card shows a matrix:</p>
+<ul>
+<li>A row for each value of the Tracked field, with <strong>Any value</strong> first. Closed values have no row, since they have no goal. Values that do not count are not offered, and a Tracked field that keeps only the change takes no goals.</li>
+<li>A column for each value of the split field, then the <strong>Any</strong> column (for example <strong>Any priority</strong>). The Any column is the value's own goal, the same target as the <strong>Target, business minutes</strong> box above; changing one changes the other.</li>
+<li>Each cell is a target in business minutes. Leave a cell blank for no goal. A cell has no Warn at of its own: it takes the <strong>Warn at</strong> of its value's row.</li>
+</ul>
+<p>When an Interval starts, Sojourn reads the record's value of the split field and takes the most specific goal that is set, in this order:</p>
+<ol>
+<li>The value, with the record's split value (a cell).</li>
+<li>The value, with any split value (the Any column).</li>
+<li><strong>Any value</strong>, with the record's split value.</li>
+<li><strong>Any value</strong>, with any split value.</li>
+</ol>
+<p>So a blank cell uses the Any column, and a record whose split field is blank takes the value's own goal. Choose <strong>Save goals</strong> to save the goals and the matrix together. As with every goal, the Interval keeps the goal it started with.</p>
+<p>To split by a different field, choose it and then <strong>Save goals</strong>. The screen warns you first: the goals split by the old field turn off when you save. They are kept, not deleted, but no longer apply, and Intervals already started keep their goals. After the save, the matrix shows the new field's values, empty, ready for targets. Choosing <strong>None</strong> and saving turns the split off the same way, and the value goals above go on applying.</p>
+<h2 id="give-record-types-their-business-hours">Give record types their business hours<a class="headerlink" href="#give-record-types-their-business-hours" title="Permanent link">#</a></h2>
+<p>Open the object under <strong>Tracked objects</strong> and choose the <strong>Records</strong> tab. <strong>Business hours by record type</strong> lists each record type of the object; choose business hours for one, or leave it on <strong>Use the next rule</strong>, then choose <strong>Save</strong>. A record of that type uses those hours ahead of the queue's and the object's, so a Support record type can keep support hours whichever queue holds the record. An object with no record types shows no rows; set its hours under <strong>Business hours</strong> in <strong>Object settings</strong> on the same tab.</p>
 <h2 id="give-queues-their-business-hours">Give queues their business hours<a class="headerlink" href="#give-queues-their-business-hours" title="Permanent link">#</a></h2>
 <p>Open <strong>Business hours</strong>. The card at the top names the org default, the hours used when nothing more specific applies; change it on the Overview. The <strong>Queues</strong> table lists every queue with the objects it takes. Choose business hours for a queue, or leave it on <strong>Use the next rule</strong>, then choose <strong>Save</strong>.</p>
 <p>For each Interval, Sojourn uses the first of these that is set. The card <strong>Which business hours an Interval uses</strong>, below the Queues table, lists the same order:</p>
 <ol>
 <li>The Tracked field's own business hours.</li>
 <li>A business hours field on the record, when the Tracked object names one.</li>
+<li>The record type's business hours, set on the object's Records tab.</li>
 <li>The queue's business hours, while a queue owns the record.</li>
 <li>The Tracked object's business hours.</li>
 <li>The Sojourn default on the Overview, then the org's default business hours.</li>
@@ -1562,6 +1687,8 @@
 <p><strong>You are done when</strong></p>
 <ul>
 <li>An Interval created after you save shows the goal on its record.</li>
+<li>With split goals, an Interval for a record with a split value that has a cell carries that cell's target as its goal.</li>
+<li>An Interval for a record of a record type with its own hours counts business minutes in those hours.</li>
 <li>An Interval for a record owned by a mapped queue counts business minutes in that queue's hours.</li>
 </ul>
 </div>

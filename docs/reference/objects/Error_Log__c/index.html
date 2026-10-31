@@ -124,9 +124,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -318,6 +318,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -841,6 +845,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../guide/breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../guide/case-metrics/" class="md-nav__link">
         
   
@@ -905,6 +937,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1433,97 +1493,97 @@
 <td>Changed By</td>
 <td><code>Changed_By__c</code></td>
 <td>Lookup (User)</td>
-<td>Who made the change that failed to record.<br><em>Help text:</em> Who made the change.</td>
+<td>The user whose save or job produced the change Sojourn could not record: the running user when the error was logged; for a nightly job, the admin who scheduled it. Written once by Sojourn; the Health Monitor shows it on each error.<br><em>Help text:</em> Who made the change, or which user's job was running, when Sojourn could not record it.</td>
 </tr>
 <tr>
 <td>Error Type</td>
 <td><code>Error_Type__c</code></td>
 <td>Picklist: DML, Limit, Config, BusinessHours, Unknown</td>
-<td>Category of failure, which decides whether reconcile retries it automatically.<br><em>Help text:</em> DML and Limit errors are retried by reconcile. Config and BusinessHours errors need an admin.</td>
+<td>What kind of failure this row records, which decides how it is handled. Values: DML (an Interval write was refused), Limit (Sojourn stepped aside to keep the governor limit reserves), Config (a setup problem, such as a field or setting Sojourn cannot use), BusinessHours (business hours that could not be used, so calendar minutes were recorded), and Unknown (an unexpected error). The nightly reconcile retries New DML and Limit rows; a Health Monitor user can create the missing Interval for DML, Limit, and Unknown rows; Config and BusinessHours rows are fixed in Sojourn Settings. The Health Monitor filters by it.<br><em>Help text:</em> DML and Limit errors are retried each night. A DML, Limit, or Unknown error about one change can be recreated with Create Interval in the Health Monitor. Config and BusinessHours errors are fixed in Sojourn Settings, then marked Resolved.</td>
 </tr>
 <tr>
 <td>From Value</td>
 <td><code>From_Value__c</code></td>
 <td>Text (255)</td>
-<td>Value before the failed change.<br><em>Help text:</em> Value before the change.</td>
+<td>The Tracked field's value before the change that failed, as the Interval would have stored it, up to 255 characters. Blank for a record's first value, for errors not about one change, or when the value before was blank. Shown in the Health Monitor; a repair checks the change still follows the record's latest Interval.<br><em>Help text:</em> The value before the change Sojourn could not record.</td>
 </tr>
 <tr>
 <td>Message</td>
 <td><code>Message__c</code></td>
 <td>LongTextArea (32768)</td>
-<td>Error message as captured.</td>
+<td>What went wrong, in words a screen may show; a job failure names the job and what stopped. Each nightly retry that fails adds a line (Retry 1: and the reason), and a repair that finds nothing to create adds its reason. Up to 32,768 characters, truncated beyond that. The Health Monitor shows it on each error.<br><em>Help text:</em> What went wrong and, after a retry or repair, why it was not recorded yet. Read it before choosing Create Interval, Ignore, or Resolve.</td>
 </tr>
 <tr>
 <td>Occurred At</td>
 <td><code>Occurred_At__c</code></td>
 <td>DateTime</td>
-<td>When the change happened, used as the interval boundary on repair.<br><em>Help text:</em> When the change happened.</td>
+<td>When the change happened: the time of the save, or for a Backfill, Catch up, or other job, the record's own time of the change. A repair opens the missing Interval at this moment, and the nightly retry waits until a row is at least an hour old. The Health Monitor sorts and filters errors by it.<br><em>Help text:</em> When the change Sojourn could not record happened. Create Interval starts the stay at this time.</td>
 </tr>
 <tr>
 <td>Owner Id</td>
 <td><code>Owner_Id__c</code></td>
 <td>Text (18)</td>
-<td>Owner of the record when the change happened.</td>
+<td>The 18-character Id of the record's owner (user or queue) after the failed change; for a change to the owner, the new owner. Blank on errors not about one record. A repair gives the missing Interval this owner.<br><em>Help text:</em> The user or queue that owned the record when the change happened.</td>
 </tr>
 <tr>
 <td>Parent Id</td>
 <td><code>Parent_Id__c</code></td>
 <td>Text (18)</td>
-<td>Id of the tracked record the failed change belongs to.<br><em>Help text:</em> Id of the tracked record.</td>
+<td>The 18-character Id of the tracked record whose change failed. Blank on errors not about one record, such as Config, BusinessHours, and job failures; those cannot be repaired or retried. The Health Monitor shows the record's name from it, and a repair or retry reads the record by it.<br><em>Help text:</em> The record whose change Sojourn could not record. Blank for setup and job errors.</td>
 </tr>
 <tr>
 <td>Parent Object</td>
 <td><code>Parent_Object__c</code></td>
 <td>Text (255)</td>
-<td>API name of the tracked object.</td>
+<td>The API name of the Tracked object the failed change belongs to, for example Case. Blank on errors not about one record. The Health Monitor filters errors by it and links to the object's Sojourn Settings screen; a repair needs the object to be tracked still.<br><em>Help text:</em> The object of the record whose change failed, such as Case.</td>
 </tr>
 <tr>
 <td>Repaired Interval</td>
 <td><code>Repaired_Interval__c</code></td>
 <td>Lookup (Interval__c)</td>
-<td>Interval created when the error was repaired.</td>
+<td>The Interval created for this error, set when Create Interval in the Health Monitor or the nightly retry records the missing change and marks the error Resolved. Blank while the error is New, when it was ignored, or when it was resolved without a new Interval (the change was already recorded, or there was nothing to create).<br><em>Help text:</em> The stay Sojourn created to repair this error. Blank until a repair creates one.</td>
 </tr>
 <tr>
 <td>Retry Count</td>
 <td><code>Retry_Count__c</code></td>
 <td>Number (3, 0)</td>
-<td>Times reconcile retried this error; retries stop at the configured maximum.<br><em>Help text:</em> Times the nightly reconcile retried this error.</td>
+<td>How many times the nightly reconcile has retried this error and failed, a whole number from 0. Only New DML and Limit rows at least an hour old are retried, up to 200 a night, and retries stop after 3; the error then stays New for a Health Monitor user to repair, ignore, or resolve. Each failed retry adds its reason to Message.<br><em>Help text:</em> Failed nightly retries so far. After 3, Sojourn stops retrying and the error waits in the Health Monitor.</td>
 </tr>
 <tr>
 <td>Source</td>
 <td><code>Source__c</code></td>
 <td>Picklist: Trigger, Flow, Backfill-History, Backfill-Seed, Manual-Repair, Reconcile, Catch-Up, Omni-Channel</td>
-<td>Which capture path produced the error.</td>
+<td>Which capture path hit the error. Values: Trigger or Flow (live capture), Backfill-History or Backfill-Seed (Backfill), Catch-Up, Reconcile, Manual-Repair (a repair from the Health Monitor), or Omni-Channel. Blank on Config, BusinessHours, and job errors not raised by a capture path.<br><em>Help text:</em> Where the failed change came from, for example Trigger, Flow, or Backfill-History.</td>
 </tr>
 <tr>
 <td>Stack</td>
 <td><code>Stack__c</code></td>
 <td>LongTextArea (32768)</td>
-<td>Stack trace, truncated.<br><em>Help text:</em> Stack trace for support.</td>
+<td>The Apex stack trace of the exception behind the error, and for a job failure the platform's own message, up to 32,768 characters. Blank when no exception caused it. Only the Sojourn Admin permission set reads it, on the Health Monitor, the record page, and in reports; Sojourn Health Monitor has no access to it. Kept for support.<br><em>Help text:</em> Technical detail for support. Only Sojourn admins can read it.</td>
 </tr>
 <tr>
 <td>Status</td>
 <td><code>Status__c</code></td>
 <td>Picklist: New, Resolved, Ignored</td>
-<td>Workflow state of the error in the repair queue.<br><em>Help text:</em> New errors wait for repair or retry. Resolved and Ignored errors are kept for audit.</td>
+<td>Where the error stands. Values: New (the default: waiting for a retry or a decision), Resolved (the missing Interval was created, the change was already recorded, or someone marked it fixed), and Ignored (someone chose to leave it). Only New rows are retried or repaired; Resolved and Ignored rows are kept for audit. The Health Monitor filters by it and its Ignore and Resolve actions set it.<br><em>Help text:</em> New errors wait for a nightly retry or your decision. Set Ignored to leave one, or Resolved once it is fixed; both are kept for audit.</td>
 </tr>
 <tr>
 <td>To Value Id</td>
 <td><code>To_Value_Id__c</code></td>
 <td>Text (18)</td>
-<td>Id behind the new value for lookup and owner changes, needed to replay the change.<br><em>Help text:</em> Id of the user, queue, or related record for lookup and owner changes.</td>
+<td>For a change to an owner or lookup field, the 18-character Id behind the new value: the user, queue, or related record. Blank for other field types. A repair needs it to recreate the change and to tell whether the record's latest Interval already holds the value.<br><em>Help text:</em> For an owner or lookup change, the Id of the new user, queue, or record. Blank otherwise.</td>
 </tr>
 <tr>
 <td>To Value</td>
 <td><code>To_Value__c</code></td>
 <td>Text (255)</td>
-<td>Value after the failed change.<br><em>Help text:</em> Value after the change.</td>
+<td>The Tracked field's value after the change that failed, as the Interval would have stored it (a picklist's API value, the text, or an owner's or lookup's display name), up to 255 characters. A repair opens the missing Interval in this value.<br><em>Help text:</em> The value after the change Sojourn could not record.</td>
 </tr>
 <tr>
 <td>Tracked Field</td>
 <td><code>Tracked_Field__c</code></td>
 <td>Text (255)</td>
-<td>API name of the tracked field whose change failed.<br><em>Help text:</em> API name of the tracked field.</td>
+<td>The API name of the Tracked field whose change failed, for example Status or OwnerId. Blank on errors not about one change. A repair needs the field to be tracked still on the object.<br><em>Help text:</em> The field whose change Sojourn could not record, such as Status.</td>
 </tr>
 </tbody>
 </table>

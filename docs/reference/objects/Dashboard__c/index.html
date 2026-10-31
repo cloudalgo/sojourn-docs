@@ -124,9 +124,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -318,6 +318,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -841,6 +845,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../guide/breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../guide/case-metrics/" class="md-nav__link">
         
   
@@ -905,6 +937,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1433,19 +1493,19 @@
 <td>Filters</td>
 <td><code>Filters__c</code></td>
 <td>LongTextArea (4000)</td>
-<td>The filters every chart on the dashboard follows, as JSON: Tracked object, Tracked field, period, Business hours or calendar hours, and owner (D-748).<br><em>Help text:</em> The filters the dashboard opens with. Change them in Sojourn Dashboards, not here.</td>
+<td>The filters every chart on the dashboard follows, as JSON: {"objectApi": a Tracked object, "field": a Tracked field's API name, "period": 7, 30, or 90 days, "hours": "business" or "calendar", "ownerId": a user Id, left out for all owners}. Blank or unreadable: the page uses the first Tracked object and field, 30 days, business hours, and all owners. Written by Sojourn Dashboards each time the dashboard is saved, after checking the object and field exist; read when it opens, keeping only the choices the page still offers.<br><em>Help text:</em> The filters the dashboard opens with: object, field, period, hours, and owner. Change them in Sojourn Dashboards, not here.</td>
 </tr>
 <tr>
 <td>Layout Version</td>
 <td><code>Layout_Version__c</code></td>
 <td>Number (3, 0)</td>
-<td>The format version of the Layout JSON (1 today), so a later Sojourn version can still read layouts saved by an earlier one (D-748).<br><em>Help text:</em> Set by Sojourn when the dashboard is saved. Leave it as it is.</td>
+<td>The format version of the Layout JSON, a whole number; 1 today. Written as the current version each time Sojourn Dashboards saves the dashboard, so a later Sojourn release can tell which format a saved layout uses and still read it. Blank only on a dashboard never saved by Sojourn Dashboards.<br><em>Help text:</em> Set by Sojourn when the dashboard is saved. Leave it as it is.</td>
 </tr>
 <tr>
 <td>Layout</td>
 <td><code>Layout__c</code></td>
 <td>LongTextArea (131072)</td>
-<td>The dashboard's charts as JSON: each chart's type, options, and its place and size on the 12-column grid (D-748). Written and validated only by Sojourn (DashboardLayouts).<br><em>Help text:</em> The charts on this dashboard and where they sit. Edit the layout in Sojourn Dashboards, not here.</td>
+<td>The dashboard's charts as JSON: {"version": 1, "charts": [{"id", "type" (stat, bars, trend, share, heat, or table), "x", "y", "w", "h" on the 12-column grid, "title", "measure", "groupBy" (value or owner), "view" (chart or table)}]}, at most 20 charts. Written by Sojourn Dashboards when the dashboard is saved, refused if charts overlap or break a chart type's size limits. Read when it opens: unknown keys and chart types are dropped and sizes clamped, so a saved layout always loads. Blank: an empty dashboard.<br><em>Help text:</em> The charts on this dashboard and where they sit. Edit the layout in Sojourn Dashboards, not here.</td>
 </tr>
 </tbody>
 </table>

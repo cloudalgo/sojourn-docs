@@ -16,7 +16,7 @@
         <link rel="prev" href="../timeline/">
       
       
-        <link rel="next" href="../case-metrics/">
+        <link rel="next" href="../breaches-now/">
       
       
         
@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -331,6 +331,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -941,10 +945,49 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#set-what-dashboards-start-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set what dashboards start with
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1021,6 +1064,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1571,6 +1642,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#set-what-dashboards-start-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set what dashboards start with
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1618,7 +1700,7 @@
 <li>Choose the <strong>Period</strong> (7, 30, or 90 days), <strong>Business hours</strong> or <strong>Calendar hours</strong>, and an <strong>Owner</strong>, or <strong>Everyone</strong>.</li>
 </ol>
 <p>The line at the right of the filters says when the summaries were last built and when Open now was counted.</p>
-<p>To switch dashboards, select the dashboard's name. The list also has <strong>New dashboard</strong>. You can keep up to 20 dashboards with up to 20 charts each.</p>
+<p>To switch dashboards, select the dashboard's name. The list also has <strong>New dashboard</strong>. You can keep up to 20 dashboards with up to 20 charts each, or fewer when your admin sets lower limits (see <a href="#set-what-dashboards-start-with">Set what dashboards start with</a>). A new dashboard opens on the Tracked field, period, and hours your admin chose; a saved one keeps its own filters.</p>
 <h2 id="the-charts">The charts<a class="headerlink" href="#the-charts" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -1638,7 +1720,7 @@
 </tr>
 <tr>
 <td>Trend</td>
-<td>The three busiest values in each day, week, or month</td>
+<td>The busiest values in each day, week, or month: three unless your admin chose one or two</td>
 </tr>
 <tr>
 <td>Share</td>
@@ -1646,17 +1728,19 @@
 </tr>
 <tr>
 <td>Heatmap</td>
-<td>Breaches or Intervals for each value with each of the 12 busiest owners, and Others</td>
+<td>Breaches or Intervals for each value with each of the busiest owners (12 unless your admin chose), and Others</td>
 </tr>
 <tr>
 <td>Table</td>
-<td>The open Intervals furthest past their Goal, with each record's time against its Goal</td>
+<td>The open Intervals furthest past their Goal (50 unless your admin chose), with each record's time against its Goal</td>
 </tr>
 </tbody>
 </table>
+<p>The owner charts, Bars by owner and the Heatmap, show owners only: Intervals of records with no owner, such as a tracked child in a master-detail relationship, are left out of their bars, Others, and the team average, and the <strong>Owner</strong> list offers only owners. The charts for <strong>Everyone</strong> still count them.</p>
 <p><strong>Goal met</strong> is the share of Intervals that finished within their Goal. An Interval in a value with no Goal counts as within it, so compare it on fields where every value has a Goal.</p>
+<p>A day, week, or month with no Intervals has no average. A Trend of average hours leaves a gap in the line there, a Number's sparkline leaves the bar out, and the chart's table and its tooltip show a dash, which a screen reader reads as "No Intervals"; counts and Breaches show 0.</p>
 <p>Point at a bar, cell, or line to see its numbers. Select <strong>Expand</strong> on a chart to see it full screen; on a Trend, drag across the chart to zoom into a range. The chart's menu has <strong>Edit chart</strong>, <strong>Show as table</strong>, <strong>Duplicate</strong>, and <strong>Remove from dashboard</strong>.</p>
-<p>With a lot of Intervals, a chart over a long period adds up month totals instead of day totals, and its subtitle ends with "by month". The measures mean the same, but a 30-day period then starts at the beginning of its first month, so it counts a few more days, and a Number compares with the same number of whole months before, which its caption names.</p>
+<p>A chart adds up month totals instead of day totals, and its subtitle ends with "by month", in two cases. The first is when its period reaches back further than the roll-up days, since a complete purge run removes the day totals older than that (see <a href="../retention/#summaries">Summaries</a>); a Number counts the period before as well, so with the roll-up at 35 days a 30-day Number reads month totals, and with it at 400, the default, every chart reads day totals. The second is a lot of Intervals over a long period. The measures mean the same, but a 30-day period then starts at the beginning of its first month, so it counts a few more days, and a Number compares with the same number of whole months before, which its caption names. If even the month totals are more than one chart can add up, the chart says so in place of its numbers: choose a shorter period or one owner.</p>
 <h2 id="edit-the-layout">Edit the layout<a class="headerlink" href="#edit-the-layout" title="Permanent link">#</a></h2>
 <ol>
 <li>Select <strong>Edit layout</strong>.</li>
@@ -1667,20 +1751,135 @@
 <li>Select <strong>Save layout</strong>, or <strong>Cancel</strong> to keep the dashboard as it was. <strong>Undo</strong> and <strong>Redo</strong> go back and forward up to 50 steps.</li>
 </ol>
 <p>To rename or delete the dashboard, select an empty part of the grid while editing: the right panel shows the dashboard's name and <strong>Delete dashboard</strong>.</p>
+<p>Sojourn Dashboards writes each dashboard's layout and filters itself. If they are changed another way, for example by a data load or through the API, and gain a key Sojourn does not write or a value of the wrong type, the dashboard stays in the list, counted with no charts, but does not open: the page says why. It opens again once its layout and filters are saved again with only the keys Sojourn writes; or delete the dashboard's record.</p>
 <h2 id="print-or-save-as-pdf">Print or save as PDF<a class="headerlink" href="#print-or-save-as-pdf" title="Permanent link">#</a></h2>
 <ol>
 <li>Select <strong>Print or PDF</strong>.</li>
-<li>Choose <strong>Black and white</strong> or <strong>Colour</strong>, <strong>A4</strong> or <strong>Letter</strong>, and whether to add the data tables at the end.</li>
+<li>Choose <strong>Black and white</strong> or <strong>Colour</strong>, <strong>A4</strong> or <strong>Letter</strong>, and whether to add the data tables at the end. The preview starts with what your admin chose, Black and white, A4, and the data tables unless they changed it.</li>
 <li>Select <strong>Print</strong>. For a PDF, choose <strong>Save as PDF</strong> in the print dialog, with landscape pages.</li>
 </ol>
-<p>In black and white, each series has its own pattern, dash, and marker, so the charts read without colour.</p>
+<p>In black and white, each series has its own pattern, dash, and marker, so the charts read without colour. If a chart's numbers cannot be read when you print, its data table at the end says why in place of the table.</p>
+<h2 id="set-what-dashboards-start-with">Set what dashboards start with<a class="headerlink" href="#set-what-dashboards-start-with" title="Permanent link">#</a></h2>
+<p>A Sojourn Admin sets, for everyone who builds a dashboard, what a new dashboard opens on, what the charts show, what the print preview starts with, and the limits. Open <strong>Sojourn Settings</strong>, then <strong>Dashboards</strong> under <strong>Data</strong>. The settings are on the Plus plan: on the Free plan the screen shows them with their controls off and the Plus notice. Each setting names its default, and a blank box always means the default. Changing a setting needs the Customize Application permission, as the other Sojourn settings do.</p>
+<table>
+<thead>
+<tr>
+<th>Card</th>
+<th>Setting</th>
+<th>What it sets</th>
+<th>Default</th>
+<th>Range or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New dashboards</td>
+<td>Tracked field</td>
+<td>The Tracked field a new dashboard opens on</td>
+<td>The first Tracked field</td>
+<td>Your Tracked fields</td>
+</tr>
+<tr>
+<td>New dashboards</td>
+<td>Period</td>
+<td>The days a new dashboard covers</td>
+<td>30 days</td>
+<td>7, 30, or 90 days</td>
+</tr>
+<tr>
+<td>New dashboards</td>
+<td>Hours</td>
+<td>Business or calendar hours for a new dashboard</td>
+<td>Business hours</td>
+<td>Business or Calendar hours</td>
+</tr>
+<tr>
+<td>Charts</td>
+<td>Owners in an owner chart</td>
+<td>The busiest owners Bars by owner and the Heatmap show; the rest add up as Others</td>
+<td>12</td>
+<td>5 to 20</td>
+</tr>
+<tr>
+<td>Charts</td>
+<td>Owners in the Owner filter</td>
+<td>The busiest owners of the period the Owner filter lists</td>
+<td>50</td>
+<td>10 to 100</td>
+</tr>
+<tr>
+<td>Charts</td>
+<td>Values in a Trend</td>
+<td>The busiest values a Trend draws, a line each</td>
+<td>3</td>
+<td>1 to 3</td>
+</tr>
+<tr>
+<td>Charts</td>
+<td>Rows in Longest open</td>
+<td>The open Intervals furthest past their Goal the table lists</td>
+<td>50</td>
+<td>10 to 100</td>
+</tr>
+<tr>
+<td>Printing</td>
+<td>Colours</td>
+<td>What the print preview starts in</td>
+<td>Black and white</td>
+<td>Black and white or Colour</td>
+</tr>
+<tr>
+<td>Printing</td>
+<td>Paper</td>
+<td>The paper the print preview starts with</td>
+<td>A4</td>
+<td>A4 or Letter</td>
+</tr>
+<tr>
+<td>Printing</td>
+<td>Data tables</td>
+<td>Whether the preview adds each chart's numbers at the end</td>
+<td>Added</td>
+<td>On or off</td>
+</tr>
+<tr>
+<td>Advanced</td>
+<td>Dashboards for each person</td>
+<td>The most dashboards one person can have</td>
+<td>20</td>
+<td>1 to 20</td>
+</tr>
+<tr>
+<td>Advanced</td>
+<td>Charts on a dashboard</td>
+<td>The most charts one dashboard can hold</td>
+<td>20</td>
+<td>4 to 20</td>
+</tr>
+<tr>
+<td>Advanced</td>
+<td>Summary rows one chart adds up</td>
+<td>Past this, a chart reads month totals; still past it, the chart asks for a shorter period or one owner</td>
+<td>20,000</td>
+<td>5,000 to 40,000</td>
+</tr>
+</tbody>
+</table>
+<p>Each card has its own save. A number outside its range is refused, for example "Owners in an owner chart: enter a whole number from 5 to 20, or leave it blank for the default, 12.", and nothing on that card is saved.</p>
+<ul>
+<li>A saved dashboard keeps its own filters; only new dashboards open on the Tracked field, period, and hours here. If the Tracked field you chose is no longer tracked, new dashboards open on the first Tracked field again.</li>
+<li>Anyone printing can still change the colours, paper, and data tables in the preview.</li>
+<li>A lower limit never removes a dashboard or a chart. Someone over a lower limit keeps every dashboard and cannot add one; a dashboard over a lower chart limit keeps its charts, can still be saved, and cannot gain one.</li>
+<li>A larger summary row limit lets a long period stay on day totals for longer, and each chart takes longer to load; a smaller one moves to month totals sooner.</li>
+</ul>
+<p>These settings travel in the <a href="../move-settings/">settings file</a>, and <a href="../advanced-settings/#reset-to-defaults">Reset to defaults</a> puts them back.</p>
 <div class="sj-verify">
 <p><strong>You are done when</strong> your dashboard shows its charts for the Tracked field you chose, and opens the same way the next time you open the tab.</p>
 </div>
   
     <nav class="sj-pn" aria-label="Previous and next">
       <a href="../timeline/"><small>Previous</small><span>Show the timeline on a record</span></a>
-      <a class="sj-pn__next" href="../case-metrics/"><small>Next</small><span>Read the Case metrics</span></a>
+      <a class="sj-pn__next" href="../breaches-now/"><small>Next</small><span>Add Breaches now to a dashboard</span></a>
     </nav>
   
   

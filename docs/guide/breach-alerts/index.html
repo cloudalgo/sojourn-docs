@@ -16,7 +16,7 @@
         <link rel="prev" href="../omni-channel/">
       
       
-        <link rel="next" href="../troubleshooting/">
+        <link rel="next" href="../scope-and-limits/">
       
       
         
@@ -133,9 +133,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -331,6 +331,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -857,6 +861,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../case-metrics/" class="md-nav__link">
         
   
@@ -996,6 +1028,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1547,6 +1607,7 @@
 <li>For an open Interval, the alert fires inside the Live values job, which sets the breach. Schedule the Live values job on the <strong>Jobs</strong> screen of Sojourn Settings, under <strong>Operations</strong>; without it, open Intervals are not marked breached and no alert is sent for them. <strong>Run now</strong> on its card flags them at once. See <a href="../jobs/">Run the jobs</a>.</li>
 <li>By default the template emails only while an Interval is still open, when someone can still act. To email for a stay that closed past its goal too, open <strong>Sojourn Settings</strong>, then <strong>Alerts</strong> under <strong>Time</strong>, turn on <strong>Also email when a stay closes past its goal</strong> on the <strong>Breach alerts</strong> card, and choose <strong>Save</strong>. <strong>When to turn it on</strong>, on the card, explains the choice. The setting applies to every Tracked object; the breach flag and reports are the same either way.</li>
 <li>Only Intervals owned by a user are alerted. Queue-owned Intervals have no user to email.</li>
+<li>Only active users get the email. A record owned by an inactive user sends no alert, and when the owner's manager is inactive, the owner alone gets it. A copy you saved from an earlier version of the template keeps its own steps: save a new copy, or add <strong>Active Equals True</strong> to the <strong>Get Owner</strong> and <strong>Get Manager</strong> conditions of yours.</li>
 <li>Each email counts toward the org's daily email limit. If an email cannot be sent, the Flow ends without it and the save that marked the breach carries on.</li>
 <li>The email names the record and the value it is in, and the manager receives it whether or not they can open the record. If your record names are private, take the name out of the subject and body in your copy.</li>
 <li>Your copy is yours to change: add a condition on the Tracked field, or send to a team address instead.</li>
@@ -1560,7 +1621,7 @@
   
     <nav class="sj-pn" aria-label="Previous and next">
       <a href="../omni-channel/"><small>Previous</small><span>Track agent work in Omni-Channel</span></a>
-      <a class="sj-pn__next" href="../troubleshooting/"><small>Next</small><span>Troubleshooting</span></a>
+      <a class="sj-pn__next" href="../scope-and-limits/"><small>Next</small><span>Scope and limits</span></a>
     </nav>
   
   

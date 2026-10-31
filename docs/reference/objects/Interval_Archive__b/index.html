@@ -124,9 +124,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -318,6 +318,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -841,6 +845,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../guide/breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../guide/case-metrics/" class="md-nav__link">
         
   
@@ -905,6 +937,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1433,151 +1493,151 @@
 <td>Breach Flag</td>
 <td><code>Breach_Flag__c</code></td>
 <td>Number (1, 0)</td>
-<td>1 when the interval breached its goal, else 0. Big objects have no checkbox type.</td>
+<td>Archived copy of the Interval's Is Breached: 1 when its business minutes passed its Goal's target, else 0 (also 0 when no Goal applied). Big objects have no checkbox type, so a number stands in. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. Not in the index, so an archive query cannot filter on it.<br><em>Help text:</em> 1 when this archived stay went past its Goal's target, 0 when it did not.</td>
 </tr>
 <tr>
 <td>Business Minutes</td>
 <td><code>Business_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Elapsed business minutes between Entered At and Exited At.</td>
+<td>Archived copy of the Interval's Business Minutes: the time from Entered At to Exited At that fell inside its Business hours, in minutes. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The record page timeline shows it for archived stays.<br><em>Help text:</em> How long this archived stay lasted inside Business hours, in minutes.</td>
 </tr>
 <tr>
 <td>Calendar Minutes</td>
 <td><code>Calendar_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Elapsed minutes between Entered At and Exited At.</td>
+<td>Archived copy of the Interval's Calendar Minutes: the elapsed clock time from Entered At to Exited At, in minutes, nights and weekends included. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The record page timeline shows it for archived stays.<br><em>Help text:</em> How long this archived stay lasted in elapsed time, in minutes.</td>
 </tr>
 <tr>
 <td>Entered At</td>
 <td><code>Entered_At__c</code></td>
 <td>DateTime</td>
-<td>When the record entered this value.</td>
+<td>Archived copy of the Interval's Entered At: when the record took this value. The third field of the archive's index, newest first, after Parent Id and Tracked Field, so a read for one record and field returns its newest stays first. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The record page timeline places archived stays by it.<br><em>Help text:</em> When this archived stay began. The timeline places archived stays by it.</td>
 </tr>
 <tr>
 <td>Exited At</td>
 <td><code>Exited_At__c</code></td>
 <td>DateTime</td>
-<td>When the record left this value.</td>
+<td>Archived copy of the Interval's Exited At: when the record left this value. Never blank, since a purge removes only closed Intervals. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The record page timeline reads it.<br><em>Help text:</em> When this archived stay ended. Only closed stays are archived, so it is always set.</td>
 </tr>
 <tr>
 <td>From Value</td>
 <td><code>From_Value__c</code></td>
 <td>Text (255)</td>
-<td>Value before this interval.</td>
+<td>Archived copy of the Interval's From Value: the Tracked field's value just before this stay began, as the Interval stored it. Blank for the first stay of a record's field or when the value before was blank. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The timeline does not read it; it is kept for audits.<br><em>Help text:</em> The value the record held just before this archived stay.</td>
 </tr>
 <tr>
 <td>Goal Minutes</td>
 <td><code>Goal_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Target business minutes that applied to the interval.</td>
+<td>Archived copy of the Interval's Goal Minutes: the target, in business minutes, of the Goal that applied when the stay began. Blank when no Goal applied. Breach Flag records whether Business Minutes passed it. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed.<br><em>Help text:</em> The Goal's target for this archived stay, in business minutes. Blank when no Goal applied.</td>
 </tr>
 <tr>
 <td>Original Interval Name</td>
 <td><code>Original_Interval_Name__c</code></td>
 <td>Text (30)</td>
-<td>Auto-number of the interval before it was archived.</td>
+<td>The Interval's auto-number Name before the purge deleted it, in the form INT-000001234, up to 30 characters, so an archived row can be matched to the purge run's CSV files and to reports run while the Interval existed. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The record page timeline uses it to tell archived stays apart and to drop an archived row whose Interval still exists after a failed purge chunk.<br><em>Help text:</em> The Interval's number before it was archived, for example INT-000001234. Use it to find the stay in the purge run's CSV files.</td>
 </tr>
 <tr>
 <td>Owner Id</td>
 <td><code>Owner_Id__c</code></td>
 <td>Text (18)</td>
-<td>Owner of the record during this interval.</td>
+<td>Archived copy of the Interval's Owner Id: the 18-character Id of the user or queue that owned the record during this stay, whatever field is tracked. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed.<br><em>Help text:</em> The Id of the user or queue that owned the record during this archived stay.</td>
 </tr>
 <tr>
 <td>Owner Name</td>
 <td><code>Owner_Name__c</code></td>
 <td>Text (255)</td>
-<td>Owner display name during this interval.</td>
+<td>Archived copy of the Interval's Owner Name: the display name of the user or queue that owned the record during this stay, as it was when the stay was recorded. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The record page timeline shows it on archived owner stays.<br><em>Help text:</em> The name of the user or queue that owned the record during this archived stay.</td>
 </tr>
 <tr>
 <td>Owner Type</td>
 <td><code>Owner_Type__c</code></td>
 <td>Text (10)</td>
-<td>User or Queue.</td>
+<td>Archived copy of the Interval's Owner Type: User or Queue, as text up to 10 characters, since big objects have no picklist type. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The record page timeline reads it.<br><em>Help text:</em> User or Queue: who owned the record during this archived stay.</td>
 </tr>
 <tr>
 <td>Parent Id</td>
 <td><code>Parent_Id__c</code></td>
 <td>Text (18)</td>
-<td>Id of the tracked record.</td>
+<td>Archived copy of the Interval's Parent Id: the 18-character Id of the tracked record. The first field of the archive's index, so every archive read names one record. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The record page timeline reads a record's archived stays by it.<br><em>Help text:</em> The Id of the record this archived stay belongs to.</td>
 </tr>
 <tr>
 <td>Parent Name</td>
 <td><code>Parent_Name__c</code></td>
 <td>Text (255)</td>
-<td>Record name or number at capture time.</td>
+<td>Archived copy of the Interval's Parent Name: the record's name or number, such as a Case Number, as it was when the stay was recorded, up to 255 characters. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed.<br><em>Help text:</em> The record's name or number when this stay was recorded, for example a Case Number.</td>
 </tr>
 <tr>
 <td>Parent Object</td>
 <td><code>Parent_Object__c</code></td>
 <td>Text (255)</td>
-<td>API name of the tracked object, in full.</td>
+<td>Archived copy of the Interval's Parent Object: the full API name of the Tracked object, for example Case or Work_Order__c. Stored but not in the index, so an archive query cannot filter on it. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed.<br><em>Help text:</em> The object this archived stay belongs to, such as Case.</td>
 </tr>
 <tr>
 <td>Record Closed Flag</td>
 <td><code>Record_Closed_Flag__c</code></td>
 <td>Number (1, 0)</td>
-<td>1 when the interval was time spent while its record was closed (the Interval's Record Closed), else 0 (D-729). Summary rows key on it. Big objects have no checkbox type.<br><em>Help text:</em> 1 when the record was closed during this stay, else 0. Big objects have no checkbox type.</td>
+<td>Archived copy of the Interval's Record Closed: 1 when the stay was time spent while its record was closed, else 0. Big objects have no checkbox type, so a number stands in. Kept so the archive holds every part of the summary key the Interval was counted under. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. Not in the index.<br><em>Help text:</em> 1 when the record was already closed during this archived stay, else 0.</td>
 </tr>
 <tr>
 <td>Sequence</td>
 <td><code>Sequence__c</code></td>
 <td>Number (9, 0)</td>
-<td>Order of the interval within its record and field; keeps two intervals entered in the same second distinct.</td>
+<td>Archived copy of the Interval's Sequence: its place in the chain of stays for one record and field, 1 for the first and counting up; 0 when the Interval had none, since an index field cannot be blank. The fourth field of the archive's index, so two stays entered in the same second stay distinct. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed.<br><em>Help text:</em> The order of this archived stay among the record's stays in the same field.</td>
 </tr>
 <tr>
 <td>Source</td>
 <td><code>Source__c</code></td>
 <td>Text (40)</td>
-<td>How the interval was created.</td>
+<td>Archived copy of the Interval's Source, as text up to 40 characters: how the stay was recorded. Values: Trigger or Flow (live capture), Backfill-History or Backfill-Seed (Backfill), Catch-Up, Reconcile, Manual-Repair (created from the Error Log), or Omni-Channel. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed.<br><em>Help text:</em> How this archived stay was recorded, for example Trigger, Flow, or Backfill-History.</td>
 </tr>
 <tr>
 <td>To Value Id</td>
 <td><code>To_Value_Id__c</code></td>
 <td>Text (18)</td>
-<td>Id behind the value for lookup and owner fields.</td>
+<td>Archived copy of the Interval's To Value Id: the 18-character Id behind the value of an owner or lookup field, such as the user or queue Id. Blank for picklist, text, and other fields. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed.<br><em>Help text:</em> For an owner or lookup field, the Id of the user, queue, or record this stay was in. Blank otherwise.</td>
 </tr>
 <tr>
 <td>To Value Label</td>
 <td><code>To_Value_Label__c</code></td>
 <td>Text (255)</td>
-<td>Picklist label at capture time.</td>
+<td>Archived copy of the Interval's To Value Label: a picklist value's label as it was when the stay was recorded; blank for other field types. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The record page timeline shows it in place of the API value when set.<br><em>Help text:</em> The picklist label of the value this archived stay was in, as it read then.</td>
 </tr>
 <tr>
 <td>To Value</td>
 <td><code>To_Value__c</code></td>
 <td>Text (255)</td>
-<td>Value held during this interval.</td>
+<td>Archived copy of the Interval's To Value: the value the record held during this stay, as the Interval stored it (a picklist's API value, the text, or an owner's or lookup's display name). Blank when the value was blank. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The record page timeline shows it.<br><em>Help text:</em> The value the record held during this archived stay.</td>
 </tr>
 <tr>
 <td>Tracked Field</td>
 <td><code>Tracked_Field__c</code></td>
 <td>Text (60)</td>
-<td>API name of the tracked field in full; 60 characters fits any namespaced field name.</td>
+<td>Archived copy of the Interval's Tracked Field: the API name of the field in full, up to 60 characters, which fits any namespaced field name. The second field of the archive's index, after Parent Id. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. The record page timeline reads one field's archived stays by it.<br><em>Help text:</em> The field this archived stay measures, such as Status or OwnerId.</td>
 </tr>
 <tr>
 <td>Value Group</td>
 <td><code>Value_Group__c</code></td>
 <td>Text (255)</td>
-<td>The value group the interval's value belonged to, for example Backlog (D-675, D-729). Summary rows key on it. Blank when the field had no value groups.<br><em>Help text:</em> The named group of values this stay counted toward. Blank when the field had no value groups.</td>
+<td>Archived copy of the Interval's Value Group: the named group its value belonged to, such as Backlog. Blank when the field had no value groups. Kept so the archive holds every part of the summary key the Interval was counted under. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. Not in the index.<br><em>Help text:</em> The named group of values this archived stay counted toward. Blank when the field had no value groups.</td>
 </tr>
 <tr>
 <td>Warn Minutes</td>
 <td><code>Warn_Minutes__c</code></td>
 <td>Number (16, 2)</td>
-<td>Business minutes at which the interval became a warning: its goal's warn percent of the target, copied when it began.<br><em>Help text:</em> Business minutes at which the interval became a warning.</td>
+<td>Archived copy of the Interval's Warn Minutes: the business minutes at which the stay became a warning, its Goal's Warn At Percent of the target, copied when the stay began. Blank when its Goal set no warn percent or no Goal applied. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed.<br><em>Help text:</em> Business minutes at which this archived stay would become a warning. Blank when its Goal had no warning.</td>
 </tr>
 <tr>
 <td>Warned At</td>
 <td><code>Warned_At__c</code></td>
 <td>DateTime</td>
-<td>When the interval's business minutes reached its warn minutes, in its business hours. Blank when it was never a warning.<br><em>Help text:</em> When the interval became a warning. Blank when it never was.</td>
+<td>Archived copy of the Interval's Warned At: when its business minutes reached its Warn Minutes, counted in its Business hours. Blank when it never became a warning. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed.<br><em>Help text:</em> When this archived stay became a warning. Blank when it never did.</td>
 </tr>
 <tr>
 <td>Warning Flag</td>
 <td><code>Warning_Flag__c</code></td>
 <td>Number (1, 0)</td>
-<td>1 when the interval was a warning (its business minutes reached its warn minutes), else 0. Big objects have no checkbox type.<br><em>Help text:</em> 1 when the interval was a warning, else 0. Big objects have no checkbox type.</td>
+<td>Archived copy of the Interval's Is Warning: 1 when its business minutes reached its Warn Minutes, else 0. Big objects have no checkbox type, so a number stands in. Written once by a purge run with Archive Enabled on, from the Interval it deletes; archive rows are never changed. Not in the index.<br><em>Help text:</em> 1 when this archived stay reached its Goal's warn percent, 0 when it did not.</td>
 </tr>
 </tbody>
 </table>

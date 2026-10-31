@@ -131,9 +131,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -327,6 +327,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -850,6 +854,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/case-metrics/" class="md-nav__link">
         
   
@@ -914,6 +946,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1425,6 +1485,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sprint-13-the-settings-levers-30-october-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 13: the settings levers (30 October 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sprint-14-sojourn-dashboards-23-october-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1638,6 +1709,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sprint-13-the-settings-levers-30-october-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 13: the settings levers (30 October 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sprint-14-sojourn-dashboards-23-october-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1822,6 +1904,30 @@
   
   <p>Follow each sprint with the <a href="feed.xml" type="application/atom+xml">Atom feed</a>.</p>
 <h2 id="release-1-in-development">Release 1, in development<a class="headerlink" href="#release-1-in-development" title="Permanent link">#</a></h2>
+<h3 id="sprint-13-the-settings-levers-30-october-2026">Sprint 13: the settings levers (30 October 2026)<a class="headerlink" href="#sprint-13-the-settings-levers-30-october-2026" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Values that do not count.</strong> On an object's <strong>Values</strong> tab, choose values of a Tracked field that open no Interval: the clock stops while a record is in one and starts again at the next counted value. Goals, reports, and the timeline leave them out. See <a href="../guide/track-an-object/#the-values-tab">The Values tab</a>.</li>
+<li><strong>Value groups.</strong> Name groups of values, such as Backlog or Active; each Interval carries its value's group in <strong>Value Group</strong>, so reports and summaries can count a group as one. A group applies to Intervals that open after it is saved.</li>
+<li><strong>Timeline colours.</strong> Choose Tide, Harbor, Slate, or Mist for each value's segments on the timeline, or leave it on Automatic. Coral stays for a Breach and Lantern for the current Interval.</li>
+<li><strong>Only that the value changed.</strong> For a field whose values are private, Intervals can keep only the time in each value and leave the values blank. It cannot be chosen on the status field or the field Closed when reads.</li>
+<li><strong>Owner tracking.</strong> Track owners who are users and queues, users only, or queues only, and choose to keep one owner stay when a record moves between members of the same queue.</li>
+<li><strong>Records to track.</strong> Conditions on the <strong>Records</strong> tab choose which records get Intervals, such as Origin equals Web; a record that stops matching keeps its Intervals.</li>
+<li><strong>Business hours by record type.</strong> Each record type can use its own business hours, which win over the object's and lose to the record's own hours field.</li>
+<li><strong>Goals split by a second field.</strong> A goal for each value of a field such as Priority, beside the value's own goal; the most specific goal wins. See <a href="../guide/goals-and-business-hours/#set-goals">Set goals</a>.</li>
+<li><strong>Retention per object.</strong> Each Tracked object can keep its Intervals for its own number of days, or everything, while the org keeps N days. See <a href="../guide/retention/">Retention and purge</a>.</li>
+<li><strong>Health thresholds.</strong> The Health screen under Operations sets when the Health Monitor needs attention, when something is wrong, and when a job counts as late. See <a href="../guide/health-monitor/">The Health Monitor</a>.</li>
+<li><strong>Breaches now.</strong> A Sojourn widget for Lightning dashboards that lists the open Breaches as each viewer sees them. See <a href="../guide/breaches-now/">Breaches now</a>.</li>
+<li><strong>The timeline in App Builder.</strong> <strong>Show goal ticks and breach stripes</strong> turns the goal ticks and breach stripes on or off, and <strong>Show archived history</strong> chooses when the archive is offered. See <a href="../guide/timeline/">The timeline</a>.</li>
+<li><strong>The settings file carries every setting of this sprint</strong>, except retention per object, and each setting is checked and skipped on its own with its screen's words. See <a href="../guide/move-settings/">Move settings between orgs</a>.</li>
+<li><strong>Capture Change in Flow Builder.</strong> The action's inputs sit in one <strong>Record change</strong> section, Record first and Prior record second.</li>
+<li><strong>Encrypted fields.</strong> The field picker marks a Tracked field your org encrypts with Shield Platform Encryption, since Intervals copy its values in plain text. See <a href="../guide/track-an-object/#encrypted-fields">Encrypted fields</a>.</li>
+<li><strong>Breach alerts.</strong> The breach alert template emails only an active owner or manager.</li>
+<li><strong>Backfill on large objects.</strong> History and Seed backfill run as a chain of steps over one set of records, so a large object backfills without the batch limits.</li>
+<li><strong>Reconcile.</strong> Every closed Interval of a deleted record is flagged in the same run, not only the first 2,000.</li>
+<li><strong>Sojourn Dashboards.</strong> A stored layout with a key Sojourn does not write stays in the list and does not open until it is saved again. See <a href="../guide/dashboards/">Build a dashboard</a>.</li>
+<li><strong>Dashboards settings.</strong> A Sojourn Admin sets what a new dashboard opens on, how many owners, Trend values, and Longest open rows the charts show, what the print preview starts with, and the dashboard, chart, and summary row limits, on the Dashboards screen under Data. A lower limit stops adding and never removes. On the Plus plan; in the settings file and Reset to defaults. See <a href="../guide/dashboards/#set-what-dashboards-start-with">Set what dashboards start with</a>.</li>
+<li><strong>New guide pages.</strong> <a href="../guide/scope-and-limits/">Scope and limits</a>, and sections on merged records, encrypted fields, after a sandbox refresh, and the first steps after install.</li>
+</ul>
 <h3 id="sprint-14-sojourn-dashboards-23-october-2026">Sprint 14: Sojourn Dashboards (23 October 2026)<a class="headerlink" href="#sprint-14-sojourn-dashboards-23-october-2026" title="Permanent link">#</a></h3>
 <ul>
 <li><strong>Sojourn Dashboards.</strong> A new tab where each manager builds their own dashboards of where the time went: time in each value against its Goal, owners, Breaches, and the longest open stays. A dashboard is its owner's alone. On the Plus plan; on the Free plan the tab shows what it offers. See <a href="../guide/dashboards/">Build a dashboard</a>.</li>

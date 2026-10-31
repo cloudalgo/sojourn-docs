@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Org-wide Sojourn settings. Read through the Settings Apex class, which supplies defaults when no record exists.">
+        <meta name="description" content="The org-wide Sojourn settings, as one hierarchy custom setting row for the org: the tracking switch, the default business hours, the limit reserves, the Live values window, the Omni-Channel open statuses, breach alerts, and retention, purge, archive, and summary settings. Sojourn reads it through the Settings Apex class, which supplies each setting&#x27;s default when the row or a field is blank, and writes it only from the Sojourn Settings screens and a settings file import. Edit it in Sojourn Settings rather than in Setup, so each value is checked against its range.">
       
       
       
@@ -58,7 +58,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Sojourn">
   <meta property="og:title" content="Sojourn Settings · Sojourn documentation">
-  <meta property="og:description" content="Org-wide Sojourn settings. Read through the Settings Apex class, which supplies defaults when no record exists.">
+  <meta property="og:description" content="The org-wide Sojourn settings, as one hierarchy custom setting row for the org: the tracking switch, the default business hours, the limit reserves, the Live values window, the Omni-Channel open statuses, breach alerts, and retention, purge, archive, and summary settings. Sojourn reads it through the Settings Apex class, which supplies each setting&#39;s default when the row or a field is blank, and writes it only from the Sojourn Settings screens and a settings file import. Edit it in Sojourn Settings rather than in Setup, so each value is checked against its range.">
   <meta property="og:url" content="https://sojourn.cloudalgo.com/docs/reference/objects/Settings__c/">
   <meta property="og:image" content="https://sojourn.cloudalgo.com/assets/theme/images/card-docs.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -124,9 +124,9 @@
       
       <div class="status" role="status">
         <div class="wrap">
-          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i></i></span>
-          <span class="st-long">Release 1 in development, 13 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">13 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -318,6 +318,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -841,6 +845,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../guide/breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../guide/case-metrics/" class="md-nav__link">
         
   
@@ -905,6 +937,34 @@
     
   
     Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
   
 
     
@@ -1414,7 +1474,7 @@
   
   
   <h1>Sojourn Settings</h1>
-  <p class="sj-summary">Org-wide Sojourn settings. Read through the Settings Apex class, which supplies defaults when no record exists.</p>
+  <p class="sj-summary">The org-wide Sojourn settings, as one hierarchy custom setting row for the org: the tracking switch, the default business hours, the limit reserves, the Live values window, the Omni-Channel open statuses, breach alerts, and retention, purge, archive, and summary settings. Sojourn reads it through the Settings Apex class, which supplies each setting's default when the row or a field is blank, and writes it only from the Sojourn Settings screens and a settings file import. Edit it in Sojourn Settings rather than in Setup, so each value is checked against its range.</p>
   
   <!-- Generated by docs-site/scripts/generate_reference.py from package metadata. Do not edit. -->
 
@@ -1433,85 +1493,181 @@
 <td>Alert Closed Breaches</td>
 <td><code>Alert_Closed_Breaches__c</code></td>
 <td>Checkbox</td>
-<td>When true, the Sojourn Breach Alert Flow also emails the owner of an Interval that is flagged as breached when it closes past its goal; off by default, so alerts go only for Intervals still open (D-614). Set on the Goals screen of Sojourn Settings.<br><em>Help text:</em> On: owners also get a breach email for a stay that closed past its goal before the Live values job flagged it. Off: breach emails only for Intervals still open.</td>
+<td>Whether breach emails also go for Intervals that close past their Goal. A checkbox, off by default. Read in the start condition of a Flow cloned from the Sojourn Breach Alert Template: off, the Flow emails only when an open Interval is flagged as breached, which a Live values run does; on, it also emails when the close flags an Interval that ran past its Goal before a Live values run reached it. Has no effect until such a Flow is active. Set under Breach alerts on the Alerts screen of Sojourn Settings.<br><em>Help text:</em> On: owners also get a breach email for a stay that closed past its Goal before the Live values job flagged it. Off: breach emails only for stays still open. Needs an active Flow cloned from the Sojourn Breach Alert Template.</td>
 </tr>
 <tr>
 <td>Archive Enabled</td>
 <td><code>Archive_Enabled__c</code></td>
 <td>Checkbox</td>
-<td>When true, purge copies each Interval to the Interval Archive big object before deleting it; off by default (D-371).<br><em>Help text:</em> Orgs include 1 million archive records; more is a paid add-on from Salesforce.</td>
+<td>Whether a purge copies each Interval to the Interval Archive big object before deleting it. A checkbox, off by default. Each purge chunk reads it: on, the chunk writes its Intervals to the archive first and deletes nothing when the archive refuses them; off, the Intervals are saved only as CSV files on the Purge Run and then deleted. While it or purge is on, the record timeline also reads the archive for older stays. Set by Also copy to the archive on the Retention and purge screen of Sojourn Settings.<br><em>Help text:</em> On: each purged stay is also copied to the Interval Archive, so the record timeline can still show it. Your org includes 1 million archive records; more is a paid add-on from Salesforce. Set it on the Retention and purge screen.</td>
+</tr>
+<tr>
+<td>Dashboard Default Field</td>
+<td><code>Dashboard_Default_Field__c</code></td>
+<td>Text (255)</td>
+<td>The Tracked field a new Sojourn dashboard opens on, as the object API name and the field API name joined by a full stop, for example Case.Status. Blank, the default, is the first Tracked field: the first active Tracked object's status field, else its first Tracked field. A stored pair that is no longer an active Tracked object and one of its Tracked fields reads as blank. Saving checks the pair against the Tracked objects and fields the dashboard filters offer. Sojourn Dashboards reads it through getConfig each time the page loads, for every Dashboards user. A saved dashboard keeps its own filters. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> The Tracked field a new dashboard opens on. Blank for the first Tracked field. A saved dashboard keeps its own.</td>
+</tr>
+<tr>
+<td>Dashboard Default Hours</td>
+<td><code>Dashboard_Default_Hours__c</code></td>
+<td>Text (20)</td>
+<td>Whether a new Sojourn dashboard opens on business or calendar hours: the text business or calendar, exactly. Blank, the default, is business; any other stored text reads as business. Sojourn Dashboards reads it through getConfig each time the page loads, for every Dashboards user. A saved dashboard keeps its own hours. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> Business or calendar hours for a new dashboard. Blank for Business hours. A saved dashboard keeps its own.</td>
+</tr>
+<tr>
+<td>Dashboard Default Period</td>
+<td><code>Dashboard_Default_Period__c</code></td>
+<td>Number (3, 0)</td>
+<td>The days a new Sojourn dashboard covers when it opens: 7, 30, or 90, a whole number. Blank, the default, is 30 days; any other stored number reads as 30. Sojourn Dashboards reads it through getConfig each time the page loads, for every Dashboards user. A saved dashboard keeps its own period. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> Days a new dashboard covers: 7, 30, or 90. Blank for 30. A saved dashboard keeps its own.</td>
+</tr>
+<tr>
+<td>Dashboard Longest Open</td>
+<td><code>Dashboard_Longest_Open__c</code></td>
+<td>Number (3, 0)</td>
+<td>The rows the Longest open table lists: the open Intervals furthest past their Goal, a whole number from 10 to 100. Blank, the default, is 50; a stored value outside the range reads as its nearer bound. Read on every Longest open data call in Sojourn Dashboards. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> How many open Intervals the Longest open table lists, from 10 to 100. Blank for 50.</td>
+</tr>
+<tr>
+<td>Dashboard Max Charts</td>
+<td><code>Dashboard_Max_Charts__c</code></td>
+<td>Number (3, 0)</td>
+<td>The most charts one Sojourn dashboard can hold, a whole number from 4 to 20. Blank, the default, is 20; a stored value outside the range reads as its nearer bound. Checked when a dashboard is saved, and sent to the page by getConfig: a dashboard over a lower limit keeps every chart and cannot add one; none is ever removed. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> The most charts on one dashboard, from 4 to 20. Blank for 20. A dashboard over a lower limit keeps its charts and cannot add one.</td>
+</tr>
+<tr>
+<td>Dashboard Max Dashboards</td>
+<td><code>Dashboard_Max_Dashboards__c</code></td>
+<td>Number (3, 0)</td>
+<td>The most Sojourn dashboards one person can have, a whole number from 1 to 20. Blank, the default, is 20; a stored value outside the range reads as its nearer bound. Checked when a dashboard is added, and sent to the page by getConfig: someone over a lower limit keeps every dashboard and cannot add one; none is ever removed. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> The most dashboards each person can have, from 1 to 20. Blank for 20. Someone over a lower limit keeps their dashboards and cannot add one.</td>
+</tr>
+<tr>
+<td>Dashboard Owner List</td>
+<td><code>Dashboard_Owner_List__c</code></td>
+<td>Number (3, 0)</td>
+<td>The busiest owners of the period the Owner filter of Sojourn Dashboards lists, a whole number from 10 to 100, most Intervals first. Blank, the default, is 50; a stored value outside the range reads as its nearer bound. Read each time the Owner filter loads its list. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> How many owners the dashboard Owner filter lists, busiest first, from 10 to 100. Blank for 50.</td>
+</tr>
+<tr>
+<td>Dashboard Print Colour</td>
+<td><code>Dashboard_Print_Colour__c</code></td>
+<td>Checkbox</td>
+<td>Whether the Sojourn Dashboards print preview starts in colour. A checkbox, off by default: off starts in black and white. Sojourn Dashboards reads it through getConfig each time the page loads, for every Dashboards user. Anyone printing can still change it in the preview. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> On: the dashboard print preview starts in colour. Off: black and white. Anyone printing can still change it.</td>
+</tr>
+<tr>
+<td>Dashboard Print No Tables</td>
+<td><code>Dashboard_Print_No_Tables__c</code></td>
+<td>Checkbox</td>
+<td>Whether the Sojourn Dashboards print preview starts without each chart's data table. A checkbox, off by default: off adds each chart's numbers at the end of the printout. Sojourn Dashboards reads it through getConfig each time the page loads, for every Dashboards user. Anyone printing can still change it in the preview. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> On: the dashboard print preview starts without the data tables. Off: each chart's numbers are added at the end.</td>
+</tr>
+<tr>
+<td>Dashboard Print Paper</td>
+<td><code>Dashboard_Print_Paper__c</code></td>
+<td>Text (20)</td>
+<td>The paper the Sojourn Dashboards print preview starts with: the text a4 or letter, exactly. Blank, the default, is a4; any other stored text reads as a4. Sojourn Dashboards reads it through getConfig each time the page loads, for every Dashboards user. Anyone printing can still change it in the preview. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> A4 or Letter paper for the dashboard print preview. Blank for A4. Anyone printing can still change it.</td>
+</tr>
+<tr>
+<td>Dashboard Row Budget</td>
+<td><code>Dashboard_Row_Budget__c</code></td>
+<td>Number (6, 0)</td>
+<td>The most summary rows one Sojourn Dashboards chart adds up, a whole number from 5,000 to 40,000, counting each read the chart makes. Past it, the chart reads Month summary rows instead of Day rows; still past it, the chart asks for a shorter period or one owner. The Owner filter's list uses it the same way. Blank, the default, is 20,000; a stored value outside the range reads as its nearer bound. Read on every chart and Owner filter data call. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> Summary rows one dashboard chart adds up before it reads Month rows, from 5,000 to 40,000. Blank for 20,000.</td>
+</tr>
+<tr>
+<td>Dashboard Top Owners</td>
+<td><code>Dashboard_Top_Owners__c</code></td>
+<td>Number (3, 0)</td>
+<td>The busiest owners an owner chart shows, a whole number from 5 to 20: Bars by owner and the Heatmap draw this many owners, most Intervals first, and add up the rest as Others. Blank, the default, is 12; a stored value outside the range reads as its nearer bound. Read on every owner chart's data call in Sojourn Dashboards. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> How many owners Bars by owner and the Heatmap show before the rest add up as Others, from 5 to 20. Blank for 12.</td>
+</tr>
+<tr>
+<td>Dashboard Trend Values</td>
+<td><code>Dashboard_Trend_Values__c</code></td>
+<td>Number (1, 0)</td>
+<td>The busiest values a Trend chart draws, a line each, a whole number from 1 to 3. Blank, the default, is 3; a stored value outside the range reads as its nearer bound. Read on every Trend chart's data call in Sojourn Dashboards. Set on the Dashboards screen of Sojourn Settings by a Sojourn Admin on the Plus plan, or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> How many values a Trend chart draws, a line each, from 1 to 3. Blank for 3.</td>
 </tr>
 <tr>
 <td>Default Business Hours Id</td>
 <td><code>Default_Business_Hours_Id__c</code></td>
 <td>Text (18)</td>
-<td>BusinessHours Id used when no object, field, or queue override applies. Empty means the org default.<br><em>Help text:</em> The business hours Sojourn uses when no field, record, queue, or object setting applies. Set it on the Sojourn Settings overview; leave blank for the org default.</td>
+<td>The business hours Sojourn uses when nothing more specific applies, as an 18-character BusinessHours Id. Blank: the org's default business hours. Read whenever business minutes are worked out, after the Tracked field's business hours, the record's business hours field, the owning queue's mapping, and the Tracked object's business hours, in that order. Business hours that are deleted or inactive count calendar minutes instead. Saved from the Overview screen of Sojourn Settings, or by a settings file import, which matches business hours by name.<br><em>Help text:</em> The business hours Sojourn uses when no field, record, queue, or object setting applies. Leave blank for the org's default business hours. A change applies to stays measured from then on; closed stays keep their minutes.</td>
+</tr>
+<tr>
+<td>Health Bad Errors</td>
+<td><code>Health_Bad_Errors__c</code></td>
+<td>Number (5, 0)</td>
+<td>Open errors above which the Health Monitor says field tracking is not working (red), a whole number from 0. Blank, the default, means never: open errors alone never turn the Health Monitor red, as before this setting, and only the failures it already names do. The Health Monitor reads it each time it loads, for every Health Monitor user. Reset to defaults clears it. Set on the Health screen of Sojourn Settings by a Sojourn Admin.<br><em>Help text:</em> Open errors above which the Health Monitor shows that field tracking is not working. Blank means errors alone never do.</td>
+</tr>
+<tr>
+<td>Health Job Late Hours</td>
+<td><code>Health_Job_Late_Hours__c</code></td>
+<td>Number (3, 0)</td>
+<td>Hours past its schedule after which a scheduled Sojourn job that has not run is late, a whole number. A job is late when its last run ended more than its period ago (its minutes for Live values, 24 hours for the daily jobs) plus these hours; the Health Monitor then shows a warning, fixed on the Jobs screen. Blank, the default, applies 2 hours. The Health Monitor reads it each time it loads, for every Health Monitor user. Reset to defaults clears it. Set on the Health screen of Sojourn Settings by a Sojourn Admin.<br><em>Help text:</em> Hours a scheduled job may run late before the Health Monitor warns. Blank means 2 hours.</td>
+</tr>
+<tr>
+<td>Health Warn Errors</td>
+<td><code>Health_Warn_Errors__c</code></td>
+<td>Number (5, 0)</td>
+<td>Open errors above which the Health Monitor says field tracking needs attention (amber), a whole number from 0. Blank, the default, applies 0, so any open error needs attention, as before this setting. The Health Monitor reads it each time it loads, for every Health Monitor user. Reset to defaults clears it. Set on the Health screen of Sojourn Settings by a Sojourn Admin.<br><em>Help text:</em> Open errors above which the Health Monitor shows that field tracking needs attention. Blank means above 0.</td>
 </tr>
 <tr>
 <td>Limit Reserve CPU Ms</td>
 <td><code>Limit_Reserve_CPU_Ms__c</code></td>
 <td>Number (6, 0)</td>
-<td>CPU milliseconds Sojourn leaves unused. Default 2000.<br><em>Help text:</em> How many milliseconds of CPU time Sojourn leaves for your own automation in each save.</td>
+<td>CPU time, in milliseconds, that Sojourn leaves free in each save for the org's own automation. A whole number from 500 to 9000; blank means 2000. Read by the capture engine before it writes Intervals in a save: when less CPU time than this is left, it writes nothing for that save and logs a Limit error, which the nightly reconcile retries. Set on the Advanced screen of Sojourn Settings or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> Milliseconds of CPU time Sojourn leaves for your own automation in each save, 500 to 9000; blank for 2000. Raise it if your Flows or triggers run out of CPU time after Sojourn: Sojourn then steps aside sooner and the nightly reconcile records the change.</td>
 </tr>
 <tr>
 <td>Limit Reserve DML Rows</td>
 <td><code>Limit_Reserve_DML_Rows__c</code></td>
 <td>Number (6, 0)</td>
-<td>DML rows Sojourn leaves unused. Default 2000.<br><em>Help text:</em> How many DML rows Sojourn leaves for your own automation in each save. Raise it if your Flows or triggers run out of rows after Sojourn.</td>
+<td>DML rows Sojourn leaves free in each save for the org's own automation. A whole number from 100 to 5000; blank means 2000. At most 5000 because a Summaries chunk of 1,000 Intervals writes up to 5,000 rows, so a larger reserve is headroom no job reads; a value stored above it in Setup is read as 5000. Read by the capture engine before it writes Intervals in a save: when fewer rows than this are left, it writes nothing for that save and logs a Limit error, which the nightly reconcile retries. Set on the Advanced screen of Sojourn Settings or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> DML rows Sojourn leaves for your own automation in each save, 100 to 5000 (the most one Summaries chunk writes); blank for 2000. Raise it if your Flows or triggers run out of rows after Sojourn: Sojourn then steps aside sooner and the nightly reconcile records the change.</td>
 </tr>
 <tr>
 <td>Limit Reserve Queries</td>
 <td><code>Limit_Reserve_Queries__c</code></td>
 <td>Number (4, 0)</td>
-<td>SOQL queries Sojourn leaves unused in the host transaction. Default 10.<br><em>Help text:</em> How many SOQL queries Sojourn leaves for your own automation in each save.</td>
+<td>SOQL queries Sojourn leaves free in each save for the org's own automation. A whole number from 1 to 50; blank means 10. Read by the capture engine before it loads its configuration, before it looks for changes, and before it writes: when the queries it needs would leave fewer than this, it writes nothing for that save and logs a Limit error, which the nightly reconcile retries. Set on the Advanced screen of Sojourn Settings or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> SOQL queries Sojourn leaves for your own automation in each save, 1 to 50; blank for 10. Raise it if your Flows or triggers run out of queries after Sojourn: Sojourn then steps aside sooner and the nightly reconcile records the change.</td>
 </tr>
 <tr>
 <td>Live Values Window Days</td>
 <td><code>Live_Values_Window_Days__c</code></td>
 <td>Number (4, 0)</td>
-<td>Open intervals older than this are not refreshed by the live job. Default 90.<br><em>Help text:</em> How far back, in days, the Live values job keeps refreshing open Intervals. Older open Intervals keep their last values.</td>
+<td>How far back, in days, the Live values job reaches. A whole number from 1 to 365; blank means 90. Read at the start of every Live values run: only open Intervals that began within this many days get their business minutes to date, their Breach and warning flags, and the record's live minute fields refreshed. Older open Intervals keep their last values until they close, when their minutes are worked out in full. Set on the Jobs screen of Sojourn Settings or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> Open stays that began within this many days are refreshed by each Live values run, 1 to 365; blank for 90. Older open stays keep their last values until they close. A longer window refreshes more stays in each run.</td>
 </tr>
 <tr>
 <td>Omni Open Statuses</td>
 <td><code>Omni_Open_Statuses__c</code></td>
 <td>Text (255)</td>
-<td>Comma-separated AgentWork statuses that open an agent interval. Default Assigned,Opened.<br><em>Help text:</em> Omni-Channel work statuses that open an Agent work Interval, separated by commas. For example Assigned,Opened.</td>
+<td>The Omni-Channel work statuses that open an Agent work Interval: AgentWork Status values separated by commas, each once, in the order chosen, for example Assigned,Opened. Blank means Assigned,Opened. Read by the Sojourn Omni-Channel package on every AgentWork save: a status in the list opens an Interval for the agent on the work item, and Closed, Declined, DeclinedOnPushTimeout, Canceled, Unavailable, or Transferred ends it. Saving needs the Plus plan and Omni-Channel, and every value must be an AgentWork Status. Set on the Advanced screen of Sojourn Settings or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> Omni-Channel work statuses that start timing an agent's work, for example Assigned and Opened. Blank for Assigned and Opened. Needs the Plus plan and the Sojourn Omni-Channel package.</td>
 </tr>
 <tr>
 <td>Purge Batch Size</td>
 <td><code>Purge_Batch_Size__c</code></td>
 <td>Number (4, 0)</td>
-<td>Intervals per purge chunk, 50 to 2000; blank means 2000 (D-388, R-64). Each chunk writes one CSV file to the purge run, so a larger chunk leaves fewer files.<br><em>Help text:</em> Leave blank for 2000. Lower it only if purge chunks hit limits; each chunk adds one CSV file to the purge run.</td>
+<td>How many Intervals each purge chunk handles. A whole number from 50 to 2000; blank means 2000. Read when a purge run starts, as the batch size of its job: each chunk archives (when the archive is on), saves one CSV file to the Purge Run, and deletes its Intervals, all or none. A smaller chunk uses fewer limits and leaves more files. Set on the Retention and purge screen of Sojourn Settings on the Plus plan; Reset to defaults clears it.<br><em>Help text:</em> Leave blank for 2000. Lower it only if purge chunks fail on limits; each chunk adds one CSV file to the purge run, so a smaller chunk leaves more files.</td>
 </tr>
 <tr>
 <td>Purge Enabled</td>
 <td><code>Purge_Enabled__c</code></td>
 <td>Checkbox</td>
-<td>When true, a purge runs after each nightly Summaries run and deletes closed, summarised Intervals older than the retention window (D-389, D-390).<br><em>Help text:</em> Set by Keep N days on the Retention and purge screen; deletion is opt-in.</td>
+<td>Whether deletion is on: true when the admin chose Keep N days, false for Keep everything. A checkbox, off by default; deletion is opt-in. On the Plus plan, the nightly Summaries job reads it when it finishes and, when it is on, starts a purge that deletes closed, summarised Intervals that ended before the retention window (Purge Retention Days). Each chunk reads it again, so turning it off during a run keeps the Intervals the run has not reached. Purge now refuses to start while it is off. Set only by the retention choice on the Retention and purge screen, which asks for the word DELETE; a settings file import leaves it as it is.<br><em>Help text:</em> Set by Keep N days on the Retention and purge screen; deletion is opt-in. On: each night, after the Summaries job, Sojourn deletes closed stays older than the window. Off: nothing is deleted.</td>
 </tr>
 <tr>
 <td>Purge Retention Days</td>
 <td><code>Purge_Retention_Days__c</code></td>
 <td>Number (5, 0)</td>
-<td>How many days of closed Intervals to keep when purge is on, 30 to 3650 (D-388).<br><em>Help text:</em> Set on the Retention and purge screen.</td>
+<td>How many days of closed Intervals to keep when purge is on. A whole number from 30 to 3650. Blank: no window chosen yet, so no purge can run; the screen offers 365. A purge run reads it when it starts and sets its cutoff to midnight, in the org's time zone, that many days before today; Intervals that ended before the cutoff are purged. Keep everything leaves the last window here, but Purge Enabled decides whether anything is deleted. Set on the Retention and purge screen of Sojourn Settings.<br><em>Help text:</em> Closed stays older than this many days are deleted when purge is on, 30 to 3650. Set it with Keep N days on the Retention and purge screen.</td>
 </tr>
 <tr>
 <td>Retention Chosen</td>
 <td><code>Retention_Chosen__c</code></td>
 <td>Checkbox</td>
-<td>Records that the admin chose Keep everything or Keep N days; until then the Overview asks for a choice (D-374, D-389).<br><em>Help text:</em> Set when retention is saved on the Retention and purge screen.</td>
+<td>Whether the admin has made the retention choice, Keep everything or Keep N days. A checkbox, off by default. On the Plus plan the Overview screen of Sojourn Settings asks for the choice until it is true; on the Free plan nothing is deleted and the Overview does not ask. Set to true by any save on the Retention and purge screen. Nothing is deleted because of this field alone; Purge Enabled decides that.<br><em>Help text:</em> Set when retention is saved on the Retention and purge screen. Until then the Overview asks you to choose Keep everything or Keep N days.</td>
 </tr>
 <tr>
 <td>Summary Rollup Days</td>
 <td><code>Summary_Rollup_Days__c</code></td>
 <td>Number (4, 0)</td>
-<td>Day summary rows older than this are deleted inside a purge run; Month rows are kept. Blank means 400 (D-392).<br><em>Help text:</em> Only a purge run removes Day rows.</td>
+<td>How many days of Day summary rows to keep. A whole number from 35 to 3650; blank means 400. Read only at the end of a complete purge run, which deletes up to 9,000 Day rows of Interval Summary older than this many days, the rest in the next run; Month rows are always kept, so charts and reports over longer periods still work. Without purge on, no Day rows are deleted. Set on the Summaries screen of Sojourn Settings or by a settings file import; Reset to defaults clears it.<br><em>Help text:</em> Day summary rows older than this many days are removed at the end of each purge run, 35 to 3650; blank for 400. Month rows are kept. Without purge, Day rows are never removed.</td>
 </tr>
 <tr>
 <td>Tracking Enabled</td>
 <td><code>Tracking_Enabled__c</code></td>
 <td>Checkbox</td>
-<td>Master switch. When false, no intervals are written.<br><em>Help text:</em> Turns all Sojourn capture on or off for the whole org. Change it on the Sojourn Settings overview.</td>
+<td>The org-wide switch for all Sojourn capture. A checkbox; when no Settings row exists yet, Sojourn treats it as on. Read on every save of a tracked record, by Catch up, by the nightly reconcile, and by the jobs: off, saves of tracked records write no Intervals, Catch up refuses to start, and the Health Monitor reports tracking as off. Turning it back on does not replay what changed meanwhile; the nightly reconcile records values that drifted, at the record's last change. Set on the Overview screen of Sojourn Settings, or by a settings file import.<br><em>Help text:</em> Turns all Sojourn capture on or off for the whole org. Off: no stays are recorded until you turn it back on. Change it on the Overview screen of Sojourn Settings.</td>
 </tr>
 </tbody>
 </table>
