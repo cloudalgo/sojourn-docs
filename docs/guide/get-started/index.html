@@ -1,0 +1,2164 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Twelve steps in four phases, each showing what Sojourn found in your org just now, on the first screen of Sojourn Settings after install.">
+      
+      
+      
+        <link rel="canonical" href="https://sojourn.cloudalgo.com/docs/guide/get-started/">
+      
+      
+        <link rel="prev" href="../install/">
+      
+      
+        <link rel="next" href="../permission-sets/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+  
+    <title>Use the Get started guide · Sojourn documentation</title>
+  
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <link rel="icon" href="/assets/theme/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/theme/fonts/figtree-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/theme/tokens.css">
+  <link rel="stylesheet" href="/assets/theme/base.css">
+  <link rel="stylesheet" href="/assets/theme/docs.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Sojourn">
+  <meta property="og:title" content="Use the Get started guide · Sojourn documentation">
+  <meta property="og:description" content="Twelve steps in four phases, each showing what Sojourn found in your org just now, on the first screen of Sojourn Settings after install.">
+  <meta property="og:url" content="https://sojourn.cloudalgo.com/docs/guide/get-started/">
+  <meta property="og:image" content="https://sojourn.cloudalgo.com/assets/theme/images/card-docs.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#when-the-guide-opens" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    <div class="sj-docs">
+    <header class="top">
+  <div class="wrap">
+    <label class="sj-tool" for="__drawer" tabindex="0" role="button" aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></label>
+    <a class="brand" href="/" aria-label="Sojourn home">
+      <img src="/assets/theme/images/mark.svg" width="34" height="34" alt="" />
+      <span
+        ><span class="word">Sojourn</span
+        ><span class="by">by CloudAlgo</span></span
+      >
+    </a>
+    <label class="sj-tool sj-tool--search" for="__search" tabindex="0" role="button" aria-label="Search" aria-expanded="false"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9.5 3a6.5 6.5 0 0 1 5.16 10.45l5.7 5.69-1.42 1.42-5.69-5.7A6.5 6.5 0 1 1 9.5 3m0 2a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9"/></svg></label>
+    <a
+      class="btn primary sm cta cta-m"
+      href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=header-mobile"
+      target="_blank"
+      rel="noopener"
+      ><span class="cta-long">Request early access</span
+      ><span class="cta-short">Early access</span></a
+    >
+    <nav class="nav" aria-label="Main">
+      <a href="/" data-nav="home">Product</a>
+      <a href="/compare/" data-nav="compare">Compare</a>
+      <a href="/security/" data-nav="security">Security</a>
+      <a href="/pricing/" data-nav="pricing">Pricing</a>
+      <a href="/docs/" data-nav="docs">Docs</a>
+    </nav>
+    <a
+      class="btn primary sm cta cta-d"
+      href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=header-desktop"
+      target="_blank"
+      rel="noopener"
+      >Request early access</a
+    >
+  </div>
+</header>
+    
+      
+      <div class="status" role="status">
+        <div class="wrap">
+          <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
+          <span class="st-long">Release 1 in development, 15 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">15 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+        </div>
+      </div>
+    
+  </div>
+  <header class="md-header sj-dtabs" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="Header">
+      <label class="md-header__button md-icon" for="__drawer">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      </label>
+      <div class="md-header__title" data-md-component="header-title" hidden>
+        <div class="md-header__ellipsis">
+          <div class="md-header__topic"><span class="md-ellipsis">Sojourn documentation</span></div>
+          <div class="md-header__topic" data-md-component="header-topic"><span class="md-ellipsis">Use the Get started guide</span></div>
+        </div>
+      </div>
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cookbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Report cookbook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    </nav>
+  </header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sojourn documentation" class="md-nav__button md-logo" aria-label="Sojourn documentation" data-md-component="logo">
+      
+  <img src="/assets/theme/images/mark.svg" alt="logo">
+
+    </a>
+    Sojourn documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check the prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Sojourn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use the Get started guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use the Get started guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-guide-opens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the guide opens
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-each-status-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What each status means
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#could-not-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Could not check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-again" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check again
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-four-phases-and-twelve-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The four phases and twelve steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The four phases and twelve steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-intervals-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keep Intervals current
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-the-time-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Make the time useful
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-two-steps-you-mark-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The two steps you mark done
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-overview-banner-and-the-menu-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Overview banner and the menu count
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permission-sets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assign permission sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../track-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Track Cases and open your first report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Free and Plus plans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../track-an-object/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Track an object
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run the jobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backfill/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backfill past Intervals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../health-monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Watch Sojourn in the Health Monitor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goals-and-business-hours/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set goals and business hours
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keep or purge Intervals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tune the advanced settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../move-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Move settings between orgs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Show the timeline on a record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../breaches-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Breaches now to a dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Read the Case metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../omni-channel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Track agent work in Omni-Channel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../breach-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Email a breach alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scope-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope and limits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uninstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uninstall Sojourn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cookbook/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report cookbook
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Report cookbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cookbook/worked-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worked examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cookbook/hours-per-case/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hours per Case
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cookbook/status-groups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status groups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cookbook/large-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports at large volume
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/permission-sets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permission sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports and dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/code-analyzer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Analyzer results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+<div class="sj-drawer-site">
+              <div class="lbl" id="sj-drawer-site">Sojourn</div>
+              <ul aria-labelledby="sj-drawer-site">
+                <li><a href="/">Product</a></li>
+                <li><a href="/compare/">Compare</a></li>
+                <li><a href="/security/">Security</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+              </ul>
+            </div></nav>
+        </div>
+      </div>
+    </div>
+  
+  
+    
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-guide-opens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the guide opens
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-each-status-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What each status means
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#could-not-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Could not check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-again" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check again
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-four-phases-and-twelve-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The four phases and twelve steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The four phases and twelve steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-intervals-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keep Intervals current
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-the-time-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Make the time useful
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-two-steps-you-mark-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The two steps you mark done
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-overview-banner-and-the-menu-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Overview banner and the menu count
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+          <aside class="sj-ea" aria-label="Early access">
+            <div class="lbl">Evaluating Sojourn?</div>
+            <p>Early access is open for Salesforce teams.</p>
+            <a class="btn primary sm" href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=docs-card" target="_blank" rel="noopener">Request early access</a>
+            <p class="sj-reply">A written reply within one working day.</p>
+          </aside>
+        </div>
+      </div>
+    </div>
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  <div class="sj-crumb">Guide</div>
+  <h1>Use the Get started guide</h1>
+  <p class="sj-summary">Twelve steps in four phases, each showing what Sojourn found in your org just now, on the first screen of Sojourn Settings after install.</p>
+  
+    <div class="sj-meta">
+      <span class="pill closed">Salesforce admin</span>
+      <span class="pill closed">About 5 minutes</span>
+      <span class="pill open">Since release 1</span>
+    </div>
+  
+  <p><strong>Get started</strong> is the first line of the Sojourn Settings menu, under <strong>Capture</strong>. It lists the twelve steps that take a new install to a first report, in four phases. Each step shows its status as Sojourn found it in your org just now, why the step matters, what it changes, what to do, and a <strong>How it works behind the scenes</strong> note that stays folded until you open it. A button opens the screen or the Setup page where you do the step. Where a step needs reading before you do it, a link such as <strong>Which set for whom</strong> or <strong>Run the jobs on the guide</strong> opens the page on this site that covers it; it shows while the step is not done, and on step 1 always. While the guide is not complete, step 4 done offers <strong>Add another object</strong>, which opens Tracked objects with the Add object dialog open. Only people with the Sojourn Admin permission set see the guide; see <a href="../permission-sets/">Assign permission sets</a>.</p>
+<p>Sojourn checks your org and never does a step for you: it changes nothing in Setup, and assigning a permission set or making a Flow stays your work.</p>
+<h2 id="when-the-guide-opens">When the guide opens<a class="headerlink" href="#when-the-guide-opens" title="Permanent link">#</a></h2>
+<p>Sojourn Settings opens on Get started while <strong>Open this guide first when Sojourn Settings opens</strong> is on and a required step is left. The switch is on after install. You can turn it off or on at any time from the progress card at the top of the guide.</p>
+<p>Sojourn turns the switch off by itself the first time it finds every required step done and no step needing attention. Sojourn Settings then opens on the Overview, and Get started stays in the menu. Turning the switch off is a settings change, so it needs the Customize Application permission, which system administrators have. Without it, the guide says that Open this guide first could not be turned off, and Sojourn tries again the next time an admin who holds that permission opens Sojourn Settings.</p>
+<p>A link that names its own screen, such as the addresses in <a href="../install/">Install Sojourn</a>, opens that screen and not the guide.</p>
+<h2 id="what-each-status-means">What each status means<a class="headerlink" href="#what-each-status-means" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Done</td>
+<td>Sojourn found the step true. The step folds to a line, with the date where a record holds its own date.</td>
+</tr>
+<tr>
+<td>To do</td>
+<td>A step that counts is not true yet.</td>
+</tr>
+<tr>
+<td>Not started</td>
+<td>An optional step with nothing done yet. It carries the <strong>Optional</strong> tag and never holds the guide open.</td>
+</tr>
+<tr>
+<td>Needs attention</td>
+<td>Step 5 only: a Tracked object needs a capture Flow and has none. The step names the object, and the guide is not complete while it stands.</td>
+</tr>
+<tr>
+<td>Could not check</td>
+<td>Sojourn could not read what the step needs. The step says what it could not read and does not block the others. A required step at Could not check is not done.</td>
+</tr>
+</tbody>
+</table>
+<p>Every step that is not done opens by itself, and every done step folds to its line and its buttons. Choose a step's title to open or fold it.</p>
+<p>A step stays true only while the org does. Sojourn reads every step again each time Sojourn Settings opens, so a job turned off, a Flow deactivated, or a sandbox refresh puts the step back to To do or Needs attention.</p>
+<h2 id="could-not-check">Could not check<a class="headerlink" href="#could-not-check" title="Permanent link">#</a></h2>
+<p>Most reads run as you, in user mode, so a step shows Could not check when your user is refused the data. The permissions that matter:</p>
+<ul>
+<li><strong>View Setup and Configuration</strong> is needed to read the capture Flows (steps 4 and 5) and the edition (step 1). Without it, step 1 is still decided on your business hours, and the edition is left out.</li>
+<li><strong>View Setup and Configuration, Assign Permission Sets, or Manage Users</strong>: any one of them lets Sojourn count who holds the permission sets (step 2).</li>
+<li>Steps 3, 7, 11, and 12 run no read that can fail. Step 6 reads the scheduled jobs the way the Jobs screen does, so no user permission applies to it. Steps 8, 9, and 10 read Sojourn's own objects, which Sojourn Admin grants, so Could not check there means the read failed: choose <strong>Check again</strong>, and if it happens again, ask a Sojourn admin to look at the <a href="../health-monitor/">Health Monitor</a>.</li>
+</ul>
+<p>The exact reads, and what each needs, are in the security notes that ship with the package.</p>
+<h2 id="check-again">Check again<a class="headerlink" href="#check-again" title="Permanent link">#</a></h2>
+<p><strong>Check again</strong> in the progress card reads all twelve steps again and shows when it last did ("Checked just now", "Checked 5 minutes ago"). Steps 2, 5 (<strong>Re-check Flows</strong>), and 10 carry a button of their own beside their other buttons, since you fix those elsewhere and then come back. Each of them is the same single re-read of every step.</p>
+<h2 id="the-four-phases-and-twelve-steps">The four phases and twelve steps<a class="headerlink" href="#the-four-phases-and-twelve-steps" title="Permanent link">#</a></h2>
+<p>The tables say what makes each step Done and link to the page that covers the step; this page does not repeat them. Steps marked Optional never hold the guide open.</p>
+<h3 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Done when</th>
+<th>Read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Check the prerequisites</td>
+<td>Setup has at least one active business hours. The edition is shown and never blocks the step.</td>
+<td><a href="../prerequisites/">Check the prerequisites</a></td>
+</tr>
+<tr>
+<td>2. Assign permission sets</td>
+<td>At least one person holds Sojourn Admin, and at least one holds Sojourn Manager or Sojourn User, directly or through a permission set group.</td>
+<td><a href="../permission-sets/">Assign permission sets</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="capture">Capture<a class="headerlink" href="#capture" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Done when</th>
+<th>Read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3. Turn on capture for the org</td>
+<td><strong>Tracking enabled</strong> is on. A new org starts with it on, so this step begins Done.</td>
+<td><a href="../track-an-object/#the-overview">Track an object</a></td>
+</tr>
+<tr>
+<td>4. Track your first object</td>
+<td>An active Tracked object has an active Tracked field, and its capture pill reads Tracked by package or Flow active.</td>
+<td><a href="../track-cases/">Track Cases and open your first report</a></td>
+</tr>
+<tr>
+<td>5. Set up a capture Flow for other objects</td>
+<td>Every active Tracked object other than Case, Lead, and Opportunity has an active capture Flow. Required only when such an object exists, which is the Plus plan; an object whose pill reads Flow missing makes the step Needs attention.</td>
+<td><a href="../track-an-object/#check-that-capture-is-live">Track an object</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="keep-intervals-current">Keep Intervals current<a class="headerlink" href="#keep-intervals-current" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Done when</th>
+<th>Read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6. Turn on the jobs</td>
+<td>Live values, Reconcile, and Summaries are all scheduled.</td>
+<td><a href="../jobs/">Run the jobs</a></td>
+</tr>
+<tr>
+<td>7. Choose how long to keep Intervals</td>
+<td>On the Plus plan, a retention choice is saved; <strong>Keep everything</strong> counts as a choice. On the Free plan the step is Done by itself, because Sojourn keeps everything.</td>
+<td><a href="../retention/">Keep or purge Intervals</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="make-the-time-useful">Make the time useful<a class="headerlink" href="#make-the-time-useful" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Done when</th>
+<th>Read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8. Set goals and queue business hours (Optional)</td>
+<td>At least one active Goal that you can see exists; a Goal you deactivated is not counted. The step also counts the queues with their own business hours.</td>
+<td><a href="../goals-and-business-hours/">Set goals and business hours</a></td>
+</tr>
+<tr>
+<td>9. Backfill past Intervals (Optional)</td>
+<td>A History Backfill has completed, or a Catch up has run, on any Tracked object.</td>
+<td><a href="../backfill/">Backfill past Intervals</a></td>
+</tr>
+<tr>
+<td>10. Check capture is live and open your first report</td>
+<td>You can see at least one Interval. Once it is Done, the step also says how many Intervals there are and which Sources wrote them.</td>
+<td><a href="../track-cases/#open-your-first-report">Track Cases and open your first report</a></td>
+</tr>
+<tr>
+<td>11. Put the timeline on record pages (Optional)</td>
+<td>You mark it done; Sojourn cannot read your record pages.</td>
+<td><a href="../timeline/">Show the timeline on a record</a></td>
+</tr>
+<tr>
+<td>12. Decide who sees the packaged dashboards (Optional)</td>
+<td>You mark it done; Sojourn cannot read who the dashboards run as or who their folder is shared with.</td>
+<td><a href="../install/#install">Install Sojourn</a></td>
+</tr>
+</tbody>
+</table>
+<p>On the Free plan, the steps that belong to the Plus plan carry a <strong>Plus plan</strong> tag that links to Upgrade to Plus; see <a href="../plans/">Free and Plus plans</a>.</p>
+<h2 id="the-two-steps-you-mark-done">The two steps you mark done<a class="headerlink" href="#the-two-steps-you-mark-done" title="Permanent link">#</a></h2>
+<p>Steps 11 and 12 are changes in Setup and in Lightning App Builder, which Sojourn cannot read. Each shows a <strong>Mark as done</strong> box. Tick it once the work is finished, and the step shows who marked it and when ("Marked done by Alex Dawson on 22 Oct 2026"), and counts as Done from then on. To take a mark back, untick the box: the step returns to Not started, and the other step keeps its own mark. Saving or taking back a mark needs the Customize Application permission, like the other Settings saves. Sojourn keeps the marks as org settings.</p>
+<p>The marks and the switch travel in the settings file: a set-up made in a sandbox and imported in production brings <strong>Open this guide first</strong> and both marks with it. A mark whose person is not in the other org shows the date without a name. See <a href="../move-settings/">Move settings between orgs</a>.</p>
+<h2 id="the-overview-banner-and-the-menu-count">The Overview banner and the menu count<a class="headerlink" href="#the-overview-banner-and-the-menu-count" title="Permanent link">#</a></h2>
+<p>While the guide is not complete, whether or not it opens first, the Overview opens with a banner above its header card: how many steps are done, the required steps still to go by name, and any object that needs attention, with <strong>Continue</strong> to open Get started. The banner takes the place of the Overview's retention line, since the guide covers retention, and leaves once every required step is done and none needs attention.</p>
+<p>The Get started line in the menu shows a count such as <code>3 of 12</code> while any of the twelve steps is not done. It shows no count when all twelve are done, and no count and no banner when Sojourn could not load the guide.</p>
+<div class="sj-verify">
+<p><strong>You are done when</strong></p>
+<ul>
+<li>Every required step reads Done, or Done by itself on the Free plan, and no step needs attention.</li>
+<li>The guide shows <strong>Set up complete</strong>, and <strong>Open this guide first</strong> is off.</li>
+<li>Sojourn Settings opens on the Overview with no banner.</li>
+</ul>
+</div>
+  
+    <nav class="sj-pn" aria-label="Previous and next">
+      <a href="../install/"><small>Previous</small><span>Install Sojourn</span></a>
+      <a class="sj-pn__next" href="../permission-sets/"><small>Next</small><span>Assign permission sets</span></a>
+    </nav>
+  
+  
+    <p class="sj-upd"><span class="pill closed">Updated in release 1</span> This page changes in the same pull request as the feature it describes.</p>
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      <footer class="site">
+  <div class="wrap">
+    <div class="help help-mkt">
+      <div>
+        <h3>Need a hand with setup?</h3>
+        <p>
+          CloudAlgo can install and configure Sojourn and build the reports your
+          leadership asks for.
+        </p>
+      </div>
+      <a
+        class="btn primary"
+        href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=services&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=footer"
+        target="_blank"
+        rel="noopener"
+        >Contact us
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4z"
+          /></svg
+      ></a>
+    </div>
+    <div class="help help-docs">
+      <div>
+        <h3>Stuck on a step?</h3>
+        <p>Ask the people building Sojourn. We read every message.</p>
+      </div>
+      <a
+        class="btn primary"
+        href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=question&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=footer-docs"
+        target="_blank"
+        rel="noopener"
+        >Ask a question
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4z"
+          /></svg
+      ></a>
+    </div>
+    <div class="fcols">
+      <div>
+        <span class="wm">Sojourn</span>
+        <div class="fby">A product by CloudAlgo</div>
+        <p>Where the time went.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <a href="/">Overview</a><a href="/compare/">Compare</a
+        ><a href="/security/">Security</a><a href="/pricing/">Pricing</a
+        ><a href="/guides/time-in-status/">Time in status guide</a
+        ><a href="/guides/fit/">Fit checklist</a>
+      </div>
+      <div>
+        <h5>Docs</h5>
+        <a href="/docs/">Guide</a><a href="/docs/cookbook/">Report cookbook</a
+        ><a href="/docs/reference/">Reference</a
+        ><a href="/docs/changelog/">Changelog</a>
+      </div>
+      <div>
+        <h5>CloudAlgo</h5>
+        <a href="https://cloudalgo.com/" target="_blank" rel="noopener"
+          >cloudalgo.com</a
+        ><a
+          href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=services&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=footer-links"
+          target="_blank"
+          rel="noopener"
+          >Contact</a
+        >
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 CloudAlgo</span
+      ><span
+        >Salesforce, AppExchange, and Experience Cloud are trademarks of
+        Salesforce, Inc.</span
+      >
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+  
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  <script>
+    (function () {
+      var tools = document.querySelectorAll(".sj-tool");
+      tools.forEach(function (tool) {
+        var toggle = document.getElementById(tool.htmlFor);
+        if (!toggle) return;
+        var sync = function () { tool.setAttribute("aria-expanded", toggle.checked ? "true" : "false"); };
+        toggle.addEventListener("change", sync);
+        sync();
+        tool.addEventListener("keydown", function (event) {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          tool.click();
+          if (toggle.id === "__drawer" && toggle.checked) {
+            var first = document.querySelector(".md-sidebar--primary a[href], .md-sidebar--primary [tabindex='0']");
+            if (first) first.focus();
+          }
+        });
+      });
+      document.addEventListener("keydown", function (event) {
+        var drawer = document.getElementById("__drawer");
+        if (event.key !== "Escape" || !drawer || !drawer.checked) return;
+        drawer.checked = false;
+        drawer.dispatchEvent(new Event("change"));
+        var menu = document.querySelector('.sj-tool[for="__drawer"]');
+        if (menu && menu.offsetParent !== null) menu.focus();
+      });
+    })();
+  </script>
+
+  </body>
+</html>

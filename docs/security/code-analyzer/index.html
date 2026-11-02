@@ -134,8 +134,8 @@
       <div class="status" role="status">
         <div class="wrap">
           <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="st-long">Release 1 in development, 15 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">15 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -375,6 +375,8 @@
       
         
       
+        
+      
     
     
     
@@ -472,6 +474,34 @@
     
   
     Install Sojourn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/get-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use the Get started guide
   
 
     
@@ -1826,8 +1856,18 @@
 </tr>
 <tr>
 <td>PMD.AvoidBooleanMethodParameters</td>
+<td><code>SummaryRows</code></td>
+<td>A row's count, one more when the Interval is one it counts; a count a stored row lacks starts from 0. counted is the Interval's own flag, read by the caller, not a mode of this method.</td>
+</tr>
+<tr>
+<td>PMD.AvoidBooleanMethodParameters</td>
 <td><code>SetupServiceImpl</code></td>
 <td>One method per Settings page use case of ISetupService (highest complexity 8), each handing the work to support classes, so the totals grow with the screens; setActive, setPaused, and saveSettings take a switch's new state.</td>
+</tr>
+<tr>
+<td>PMD.AvoidBooleanMethodParameters</td>
+<td><code>GetStartedServiceImpl</code></td>
+<td>One method per step is the design (sprint 15 ruling), so the class holds twelve small checks and their totals; setOpensFirst takes the switch's new state.</td>
 </tr>
 <tr>
 <td>PMD.AvoidBooleanMethodParameters</td>
@@ -1906,6 +1946,11 @@
 </tr>
 <tr>
 <td>PMD.AvoidBooleanMethodParameters</td>
+<td><code>GetStartedController</code>, <code>GetStartedService</code>, <code>IGetStartedService</code></td>
+<td>setOpensFirst takes the new state of the Open this guide first switch.</td>
+</tr>
+<tr>
+<td>PMD.AvoidBooleanMethodParameters</td>
 <td><code>TimelineController</code>, <code>TimelineService</code>, <code>TimelineServiceImpl</code></td>
 <td>showAtRisk is the widget's Show at risk property, a Boolean on the dashboard (D-839).</td>
 </tr>
@@ -1966,13 +2011,18 @@
 </tr>
 <tr>
 <td>PMD.CognitiveComplexity</td>
+<td><code>GetStartedServiceImpl</code></td>
+<td>One method per step is the design (sprint 15 ruling), so the class holds twelve small checks and their totals; setOpensFirst takes the switch's new state.</td>
+</tr>
+<tr>
+<td>PMD.CognitiveComplexity</td>
 <td><code>DashboardSettings</code></td>
 <td>One rule per kind of the thirteen settings (number, choice, Tracked field, checkbox), each method small (highest 8): the class totals are their sum, kept in one class so the screen and the import never check a setting apart.</td>
 </tr>
 <tr>
 <td>PMD.CognitiveComplexity</td>
 <td><code>IntervalWriter</code></td>
-<td>The class totals are the sum of small steps, none above 7: a change's step, open, close, heal a double open (D-626), the Record Closed flag (D-670), a value that does not count and the chain after it (D-691), a field that keeps only the change (D-694), and matching results to failures; the decisions are in OwnerStays, CreatedFirsts, and the field's rules (R3-10). The fields are one write call's state, reset by startCall, beside the transaction's memory of hidden values.</td>
+<td>The class totals are the sum of small steps, none above 7: a change's step, open, close, heal a double open (D-626), the Record Closed flag (D-670), a value that does not count and the chain after it (D-691), a field that keeps only the change (D-694), and matching results to failures; the decisions are in OwnerStays, CreatedFirsts, and the field's rules (R3-10). One write call's state is a Call, made fresh by startCall (R4-39), beside the transaction's memory of hidden values.</td>
 </tr>
 <tr>
 <td>PMD.CognitiveComplexity</td>
@@ -2151,6 +2201,16 @@
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
+<td><code>ConfigImportSettings</code></td>
+<td>One method per kind of org setting the file carries, none above 8; the class total is their sum.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>GetStartedServiceImpl</code></td>
+<td>One method per step is the design (sprint 15 ruling), so the class holds twelve small checks and their totals; setOpensFirst takes the switch's new state.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
 <td><code>DashboardSettings</code></td>
 <td>One rule per kind of the thirteen settings (number, choice, Tracked field, checkbox), each method small (highest 8): the class totals are their sum, kept in one class so the screen and the import never check a setting apart.</td>
 </tr>
@@ -2158,6 +2218,21 @@
 <td>PMD.CyclomaticComplexity</td>
 <td><code>DashboardSettingsTest</code>, <code>HealthThresholdsTest</code></td>
 <td>One scenario per method; the total is their sum.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>ConfigTransferAdvancedTest</code></td>
+<td>One test per carried setting and case, each a few lines, Get started's two among them; the total is their sum.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>GetStartedWordsLaterTest</code>, <code>GetStartedWordsTest</code></td>
+<td>One test per sentence form the boards draw, each a few lines; the total is their sum.</td>
+</tr>
+<tr>
+<td>PMD.CyclomaticComplexity</td>
+<td><code>GetStartedServiceTest</code></td>
+<td>One test per step state, board, and switch case (sprint 15 Task 6), each a few lines; the total is their sum.</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
@@ -2182,7 +2257,7 @@
 <tr>
 <td>PMD.CyclomaticComplexity</td>
 <td><code>IntervalWriter</code></td>
-<td>The class totals are the sum of small steps, none above 7: a change's step, open, close, heal a double open (D-626), the Record Closed flag (D-670), a value that does not count and the chain after it (D-691), a field that keeps only the change (D-694), and matching results to failures; the decisions are in OwnerStays, CreatedFirsts, and the field's rules (R3-10). The fields are one write call's state, reset by startCall, beside the transaction's memory of hidden values.</td>
+<td>The class totals are the sum of small steps, none above 7: a change's step, open, close, heal a double open (D-626), the Record Closed flag (D-670), a value that does not count and the chain after it (D-691), a field that keeps only the change (D-694), and matching results to failures; the decisions are in OwnerStays, CreatedFirsts, and the field's rules (R3-10). One write call's state is a Call, made fresh by startCall (R4-39), beside the transaction's memory of hidden values.</td>
 </tr>
 <tr>
 <td>PMD.CyclomaticComplexity</td>
@@ -2426,8 +2501,13 @@
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
-<td><code>ConfigImport</code>, <code>TransferModels</code></td>
-<td>One result is the four columns of the screen's table.</td>
+<td><code>TransferModels</code></td>
+<td>One result is the four columns of the screen's table, and the key its Result column is coloured by.</td>
+</tr>
+<tr>
+<td>PMD.ExcessiveParameterList</td>
+<td><code>ConfigImport</code></td>
+<td>One result is the four columns of the screen's table; outcome is one of the keys above, shown in its label's words.</td>
 </tr>
 <tr>
 <td>PMD.ExcessiveParameterList</td>
@@ -2581,6 +2661,16 @@
 </tr>
 <tr>
 <td>PMD.ExcessivePublicCount</td>
+<td><code>GetStartedModels</code></td>
+<td>A data transfer object for the UI: one public field per fact the progress card, the menu, and the banner show.</td>
+</tr>
+<tr>
+<td>PMD.ExcessivePublicCount</td>
+<td><code>GetStartedModels</code></td>
+<td>A data transfer object for the UI: one public field per part of a step on board 23.</td>
+</tr>
+<tr>
+<td>PMD.ExcessivePublicCount</td>
 <td><code>SetupModels</code></td>
 <td>A data transfer object for the UI: one public property per setting the object screen saves, so the count grows with the screen's settings, not with behaviour.</td>
 </tr>
@@ -2588,6 +2678,11 @@
 <td>PMD.ExcessivePublicCount</td>
 <td><code>SetupService</code></td>
 <td>A facade of one-line methods (highest complexity 1), one per Settings page use case; setActive, setPaused, and saveSettings take a switch's new state.</td>
+</tr>
+<tr>
+<td>PMD.ExcessivePublicCount</td>
+<td><code>ChangeDetector</code></td>
+<td>One change's data, read and set across the engine: one public field per part of a change, and a few methods that each read or set those fields together, so the count grows with what a change carries, not with behaviour.</td>
 </tr>
 <tr>
 <td>PMD.ExcessivePublicCount</td>
@@ -2711,13 +2806,23 @@
 </tr>
 <tr>
 <td>PMD.TooManyFields</td>
+<td><code>GetStartedModels</code></td>
+<td>A data transfer object for the UI: one public field per fact the progress card, the menu, and the banner show.</td>
+</tr>
+<tr>
+<td>PMD.TooManyFields</td>
+<td><code>GetStartedModels</code></td>
+<td>A data transfer object for the UI: one public field per part of a step on board 23.</td>
+</tr>
+<tr>
+<td>PMD.TooManyFields</td>
 <td><code>DashboardModels</code></td>
 <td>One field per thing a chart type draws, and the gaps the page needs because it loses a list's nulls (D-934); each type sets its own and leaves the rest empty (D-746).</td>
 </tr>
 <tr>
 <td>PMD.TooManyFields</td>
-<td><code>IntervalWriter</code></td>
-<td>The class totals are the sum of small steps, none above 7: a change's step, open, close, heal a double open (D-626), the Record Closed flag (D-670), a value that does not count and the chain after it (D-691), a field that keeps only the change (D-694), and matching results to failures; the decisions are in OwnerStays, CreatedFirsts, and the field's rules (R3-10). The fields are one write call's state, reset by startCall, beside the transaction's memory of hidden values.</td>
+<td><code>ConfigFile</code></td>
+<td>The file's shape: one public field per setting the file carries, so the count grows with the file's settings, not with behaviour.</td>
 </tr>
 </tbody>
 </table>

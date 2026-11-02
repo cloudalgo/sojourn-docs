@@ -132,8 +132,8 @@
       <div class="status" role="status">
         <div class="wrap">
           <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="st-long">Release 1 in development, 15 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">15 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -373,6 +373,8 @@
       
         
       
+        
+      
     
     
     
@@ -470,6 +472,34 @@
     
   
     Install Sojourn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/get-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use the Get started guide
   
 
     
@@ -1485,6 +1515,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sprint-15-get-started-1-november-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 15: Get started (1 November 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sprint-13-the-settings-levers-30-october-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1709,6 +1750,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sprint-15-get-started-1-november-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 15: Get started (1 November 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sprint-13-the-settings-levers-30-october-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1904,6 +1956,20 @@
   
   <p>Follow each sprint with the <a href="feed.xml" type="application/atom+xml">Atom feed</a>.</p>
 <h2 id="release-1-in-development">Release 1, in development<a class="headerlink" href="#release-1-in-development" title="Permanent link">#</a></h2>
+<h3 id="sprint-15-get-started-1-november-2026">Sprint 15: Get started (1 November 2026)<a class="headerlink" href="#sprint-15-get-started-1-november-2026" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Get started.</strong> The first time an admin opens Sojourn Settings after install, it opens on a guide of twelve steps in four phases. Each step shows what Sojourn found in your org just now, why the step matters, and a button to the screen where you do it. <strong>Check again</strong> reads every step again. Steps 11 and 12 are changes in Setup and Lightning App Builder that Sojourn cannot read, so you mark them done by hand. Step 4 done offers <strong>Add another object</strong>, which opens Tracked objects with the Add object dialog open, through a new link, <code>c__screen=objects&amp;c__section=add</code> (see <a href="../guide/install/#links-into-sojourn">Links into Sojourn</a>). See <a href="../guide/get-started/">Use the Get started guide</a>.</li>
+<li><strong>The switch and the banner.</strong> <strong>Open this guide first when Sojourn Settings opens</strong> is on after install and turns itself off once every required step is done. While steps remain, the Overview opens with a banner that names the steps still to go, and the Get started line in the menu shows a count such as <code>3 of 12</code>.</li>
+<li><strong>In the settings file.</strong> The switch and the two steps marked done by hand travel in the settings file, and <strong>Reset to defaults</strong> turns the switch on again and clears the marks. See <a href="../guide/move-settings/">Move settings between orgs</a>.</li>
+<li><strong>Archived so far.</strong> Under <strong>Purge runs</strong>, a line adds up the Intervals archived across the purge runs you can see, such as "8,090 Intervals archived so far, across 3 purge runs." It is read only on the Free plan. See <a href="../guide/retention/">Retention and purge</a>.</li>
+<li><strong>Goal met counts only Intervals that had a Goal.</strong> An Interval in a value with no Goal is left out, so a value, owner, or period where none had a Goal shows a dash and is spoken as "No Interval had a Goal", not 100 percent. Each summary row now records how many of its Intervals had a Goal in <strong>Goal Count</strong>. After upgrading, run Rebuild summaries once over the months the charts read, because rows built before this version have no count and show a dash until then. See <a href="../guide/dashboards/">Build a dashboard</a>.</li>
+<li><strong>Part weeks and part months on the Trend.</strong> A week or month the period covers only part of is marked "part week" or "part month" in its axis label, its tooltip, and its row in the table.</li>
+<li><strong>From and To in the zoom dialog.</strong> The full-screen view of a Trend has <strong>From</strong> and <strong>To</strong> selects, so a range can be set from the keyboard as well as by dragging.</li>
+<li><strong>Dashboards settings.</strong> The Tracked field select opens on a blank first choice, "The first Tracked field", and names the stored field only while it is still tracked.</li>
+<li><strong>Goals split by a second field.</strong> The list of fields offers only the fields you can read.</li>
+<li><strong>Settings import.</strong> The Tracked field in a Dashboards file is compared ignoring case, so a file that carries <code>case.ownerid</code> into an org that applies <code>Case.OwnerId</code> changes nothing. The words of each import row now come from custom labels.</li>
+<li><strong>The Case guide.</strong> <a href="../guide/track-cases/">Track Cases and open your first report</a> now leaves <strong>Closed values</strong> empty, so Sojourn counts every case status marked Closed in Setup as closed.</li>
+</ul>
 <h3 id="sprint-13-the-settings-levers-30-october-2026">Sprint 13: the settings levers (30 October 2026)<a class="headerlink" href="#sprint-13-the-settings-levers-30-october-2026" title="Permanent link">#</a></h3>
 <ul>
 <li><strong>Values that do not count.</strong> On an object's <strong>Values</strong> tab, choose values of a Tracked field that open no Interval: the clock stops while a record is in one and starts again at the next counted value. Goals, reports, and the timeline leave them out. See <a href="../guide/track-an-object/#the-values-tab">The Values tab</a>.</li>

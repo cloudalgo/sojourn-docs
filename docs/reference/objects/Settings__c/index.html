@@ -125,8 +125,8 @@
       <div class="status" role="status">
         <div class="wrap">
           <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="st-long">Release 1 in development, 15 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">15 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -364,6 +364,8 @@
       
         
       
+        
+      
     
     
     
@@ -461,6 +463,34 @@
     
   
     Install Sojourn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/get-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use the Get started guide
   
 
     
@@ -1584,6 +1614,18 @@
 <td><code>Default_Business_Hours_Id__c</code></td>
 <td>Text (18)</td>
 <td>The business hours Sojourn uses when nothing more specific applies, as an 18-character BusinessHours Id. Blank: the org's default business hours. Read whenever business minutes are worked out, after the Tracked field's business hours, the record's business hours field, the owning queue's mapping, and the Tracked object's business hours, in that order. Business hours that are deleted or inactive count calendar minutes instead. Saved from the Overview screen of Sojourn Settings, or by a settings file import, which matches business hours by name.<br><em>Help text:</em> The business hours Sojourn uses when no field, record, queue, or object setting applies. Leave blank for the org's default business hours. A change applies to stays measured from then on; closed stays keep their minutes.</td>
+</tr>
+<tr>
+<td>Guide Marked Done</td>
+<td><code>Guide_Marked_Done__c</code></td>
+<td>Text (255)</td>
+<td>The Get started steps an admin marked done by hand: the two Sojourn cannot read in the org, timeline (the timeline on record pages) and dashboards (who sees the packaged dashboards). JSON, a list of at most two entries, each key once, in the form [{"key":"timeline","userId":"005...","at":"2026-10-22T09:14:00.000Z"}]: key is timeline or dashboards, userId the Id of the user who marked the step, at the time in ISO 8601 UTC. Blank means no step is marked. Read by the Get started screen of Sojourn Settings, which shows a marked step as done with who marked it and when; the first mark of a step is kept. A value Sojourn cannot read (not JSON, another key, a key twice, an Id that is not a user, a time that does not parse) is read as no marks and cleared by the next Mark as done or import of marks, even none. Set by Mark as done; Reset to defaults clears it; carried by the settings file, whose import checks it the same way, step by step (order is no change).<br><em>Help text:</em> Who marked the Get started steps for the record page timeline and dashboard sharing as done, and when. Set by Mark as done on the Get started screen; a value Sojourn cannot read is cleared, so do not edit it by hand.</td>
+</tr>
+<tr>
+<td>Guide Opens First</td>
+<td><code>Guide_Opens_First__c</code></td>
+<td>Checkbox</td>
+<td>Whether Sojourn Settings opens on the Get started guide. A checkbox, true by default; when the org has no Settings row yet, Sojourn reads it as true. Read by Sojourn Settings each time an admin holding Sojourn Admin opens it: true while a required step of the guide is not done, the page opens on Get started; false, or once every required step is done, it opens on the Overview. A link that names its own screen always opens that screen. Sojourn sets it false itself the first time Get started finds every required step done; the admin turns it on or off with Open this guide first on the Get started screen. Reset to defaults writes true; carried by the settings file export and import.<br><em>Help text:</em> Opens Sojourn Settings on the Get started guide while required setup steps remain. Sojourn turns it off once every required step is done; turn it on again on the Get started screen to open the guide first.</td>
 </tr>
 <tr>
 <td>Health Bad Errors</td>

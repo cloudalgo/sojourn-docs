@@ -125,8 +125,8 @@
       <div class="status" role="status">
         <div class="wrap">
           <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="st-long">Release 1 in development, 15 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">15 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -364,6 +364,8 @@
       
         
       
+        
+      
     
     
     
@@ -461,6 +463,34 @@
     
   
     Install Sojourn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/get-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use the Get started guide
   
 
     
@@ -1511,7 +1541,13 @@
 <td>Breach Count</td>
 <td><code>Breach_Count__c</code></td>
 <td>Number (9, 0)</td>
-<td>How many of the Intervals this row counts were breached: their business minutes passed their Goal's target (the Interval's Is Breached). A whole number, 0 when none breached. Added to by the nightly Summaries job. Sojourn Dashboards add it up for breach charts and divide it by Interval Count for the breach rate.<br><em>Help text:</em> Stays in this row that went past their Goal's target. Divide by Interval Count for the breach rate.</td>
+<td>How many of the Intervals this row counts were breached: their business minutes passed their Goal's target (the Interval's Is Breached). A whole number, 0 when none breached. Added to by the nightly Summaries job. Sojourn Dashboards add it up for breach charts, and take it from Goal Count for Goal met: the share of the Intervals with a Goal that stayed within it.<br><em>Help text:</em> Stays in this row that went past their Goal's target. Divide by Interval Count for the breach rate.</td>
+</tr>
+<tr>
+<td>Goal Count</td>
+<td><code>Goal_Count__c</code></td>
+<td>Number (18, 0)</td>
+<td>How many of the closed Intervals this row counts had a Goal: a Goal target (Goal Minutes) stamped when the stay started. A whole number, 0 when none of them had one. A row first built before this field existed holds it blank, and keeps it blank when a late Interval adds to it, until Rebuild summaries counts its months again. Added to by the nightly Summaries job and set again by Rebuild summaries, beside Interval Count. Breach Count over Goal Count is the share of stays with a Goal that went past it, so a value with no Goal is left out rather than counted as met. Sojourn Dashboards' Goal met is the summed Goal Count less the summed Breach Count, over the summed Goal Count, so a value with no Goal shows a dash rather than 100 percent; while any row a chart adds up holds it blank, Goal met shows a dash there until Rebuild summaries counts the row again. Also read by reports on the Sojourn Interval Summaries report type.<br><em>Help text:</em> Stays in this row that had a Goal when they started. Set by Sojourn. Compare Breach Count with this, not with Interval Count, to leave out values that have no Goal.</td>
 </tr>
 <tr>
 <td>Granularity</td>

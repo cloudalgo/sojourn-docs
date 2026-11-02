@@ -5,11 +5,30 @@
   <id>tag:sojourn.cloudalgo.com,2026:changelog</id>
   <link rel="self" type="application/atom+xml" href="https://sojourn.cloudalgo.com/docs/changelog/feed.xml" />
   <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/" />
-  <updated>2026-10-30T00:00:00Z</updated>
+  <updated>2026-11-01T00:00:00Z</updated>
   <author>
     <name>CloudAlgo</name>
     <uri>https://sojourn.cloudalgo.com/</uri>
   </author>
+  <entry>
+    <title>Sprint 15: Get started (1 November 2026)</title>
+    <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-15</id>
+    <link rel="alternate" type="text/html" href="https://sojourn.cloudalgo.com/docs/changelog/#sprint-15-get-started-1-november-2026" />
+    <updated>2026-11-01T00:00:00Z</updated>
+    <content type="html" xml:base="https://sojourn.cloudalgo.com/docs/changelog/">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Get started.&lt;/strong&gt; The first time an admin opens Sojourn Settings after install, it opens on a guide of twelve steps in four phases. Each step shows what Sojourn found in your org just now, why the step matters, and a button to the screen where you do it. &lt;strong&gt;Check again&lt;/strong&gt; reads every step again. Steps 11 and 12 are changes in Setup and Lightning App Builder that Sojourn cannot read, so you mark them done by hand. Step 4 done offers &lt;strong&gt;Add another object&lt;/strong&gt;, which opens Tracked objects with the Add object dialog open, through a new link, &lt;code&gt;c__screen=objects&amp;amp;c__section=add&lt;/code&gt; (see &lt;a href="../guide/install/#links-into-sojourn"&gt;Links into Sojourn&lt;/a&gt;). See &lt;a href="../guide/get-started/"&gt;Use the Get started guide&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The switch and the banner.&lt;/strong&gt; &lt;strong&gt;Open this guide first when Sojourn Settings opens&lt;/strong&gt; is on after install and turns itself off once every required step is done. While steps remain, the Overview opens with a banner that names the steps still to go, and the Get started line in the menu shows a count such as &lt;code&gt;3 of 12&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;In the settings file.&lt;/strong&gt; The switch and the two steps marked done by hand travel in the settings file, and &lt;strong&gt;Reset to defaults&lt;/strong&gt; turns the switch on again and clears the marks. See &lt;a href="../guide/move-settings/"&gt;Move settings between orgs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Archived so far.&lt;/strong&gt; Under &lt;strong&gt;Purge runs&lt;/strong&gt;, a line adds up the Intervals archived across the purge runs you can see, such as "8,090 Intervals archived so far, across 3 purge runs." It is read only on the Free plan. See &lt;a href="../guide/retention/"&gt;Retention and purge&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Goal met counts only Intervals that had a Goal.&lt;/strong&gt; An Interval in a value with no Goal is left out, so a value, owner, or period where none had a Goal shows a dash and is spoken as "No Interval had a Goal", not 100 percent. Each summary row now records how many of its Intervals had a Goal in &lt;strong&gt;Goal Count&lt;/strong&gt;. After upgrading, run Rebuild summaries once over the months the charts read, because rows built before this version have no count and show a dash until then. See &lt;a href="../guide/dashboards/"&gt;Build a dashboard&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Part weeks and part months on the Trend.&lt;/strong&gt; A week or month the period covers only part of is marked "part week" or "part month" in its axis label, its tooltip, and its row in the table.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;From and To in the zoom dialog.&lt;/strong&gt; The full-screen view of a Trend has &lt;strong&gt;From&lt;/strong&gt; and &lt;strong&gt;To&lt;/strong&gt; selects, so a range can be set from the keyboard as well as by dragging.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dashboards settings.&lt;/strong&gt; The Tracked field select opens on a blank first choice, "The first Tracked field", and names the stored field only while it is still tracked.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Goals split by a second field.&lt;/strong&gt; The list of fields offers only the fields you can read.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Settings import.&lt;/strong&gt; The Tracked field in a Dashboards file is compared ignoring case, so a file that carries &lt;code&gt;case.ownerid&lt;/code&gt; into an org that applies &lt;code&gt;Case.OwnerId&lt;/code&gt; changes nothing. The words of each import row now come from custom labels.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Case guide.&lt;/strong&gt; &lt;a href="../guide/track-cases/"&gt;Track Cases and open your first report&lt;/a&gt; now leaves &lt;strong&gt;Closed values&lt;/strong&gt; empty, so Sojourn counts every case status marked Closed in Setup as closed.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Sprint 13: the settings levers (30 October 2026)</title>
     <id>tag:sojourn.cloudalgo.com,2026:changelog/sprint-13</id>

@@ -134,8 +134,8 @@
       <div class="status" role="status">
         <div class="wrap">
           <span class="lane3" aria-hidden="true" style="--sprints:15"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="n"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></span>
-          <span class="st-long">Release 1 in development, 14 of 15 sprints done. Early access is open.</span>
-          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">14 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
+          <span class="st-long">Release 1 in development, 15 of 15 sprints done. Early access is open.</span>
+          <a href="https://cloudalgo.com/contact/?product=sojourn&amp;intent=early-access&amp;utm_source=sojourn-site&amp;utm_medium=cta&amp;utm_content=band-docs" target="_blank" rel="noopener"><span class="st-short">15 of 15 sprints done · Join early access</span><span class="st-join">Join early access</span></a>
         </div>
       </div>
     
@@ -377,6 +377,8 @@
       
         
       
+        
+      
     
     
     
@@ -477,6 +479,34 @@
     
   
     Install Sojourn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use the Get started guide
   
 
     
@@ -1737,9 +1767,14 @@
 </tbody>
 </table>
 <p>The owner charts, Bars by owner and the Heatmap, show owners only: Intervals of records with no owner, such as a tracked child in a master-detail relationship, are left out of their bars, Others, and the team average, and the <strong>Owner</strong> list offers only owners. The charts for <strong>Everyone</strong> still count them.</p>
-<p><strong>Goal met</strong> is the share of Intervals that finished within their Goal. An Interval in a value with no Goal counts as within it, so compare it on fields where every value has a Goal.</p>
+<p><strong>Goal met</strong> is the share of the Intervals that had a Goal when the stay began that finished within it. Intervals in a value with no Goal are left out, so a value, owner, or period where none had a Goal shows a dash, not 100 percent. A Number of Goal met shows the dash alone then, with no On track or Down state.</p>
+<div class="sj-callout">
+<p><strong>After upgrading to this version.</strong> Summary rows built before it do not count which Intervals had a Goal, so Goal met shows a dash wherever a chart adds one up, even after the nightly Summaries job adds a late Interval to the row. Run <a href="../retention/#summaries">Rebuild summaries</a> once after the upgrade, over the months the charts reach back to. A month a purge has cut into cannot be rebuilt, so Goal met shows a dash for it.</p>
+</div>
 <p>A day, week, or month with no Intervals has no average. A Trend of average hours leaves a gap in the line there, a Number's sparkline leaves the bar out, and the chart's table and its tooltip show a dash, which a screen reader reads as "No Intervals"; counts and Breaches show 0.</p>
 <p>Point at a bar, cell, or line to see its numbers. Select <strong>Expand</strong> on a chart to see it full screen; on a Trend, drag across the chart to zoom into a range. The chart's menu has <strong>Edit chart</strong>, <strong>Show as table</strong>, <strong>Duplicate</strong>, and <strong>Remove from dashboard</strong>.</p>
+<p>A Trend draws a week or a month the dashboard's period covers only part of, such as the first and last week of a 30-day period, and says so: its axis label, its tooltip, and its row in the table read "part week" (or "part month"), and the legend adds a note when there is room. Those periods hold fewer days than the others, so read them as part of the trend, not as a drop or a rise.</p>
+<p>You can set the zoom range without the mouse. In the full-screen view of a Trend, <strong>From</strong> and <strong>To</strong> list each period's start; choose one in each to zoom into that range. A range always holds at least two periods: if you choose a start at or after the other end, the other end moves with it. Choosing the whole range again means no zoom. <strong>Reset zoom</strong> returns the chart to the whole range and puts focus on <strong>From</strong>.</p>
 <p>A chart adds up month totals instead of day totals, and its subtitle ends with "by month", in two cases. The first is when its period reaches back further than the roll-up days, since a complete purge run removes the day totals older than that (see <a href="../retention/#summaries">Summaries</a>); a Number counts the period before as well, so with the roll-up at 35 days a 30-day Number reads month totals, and with it at 400, the default, every chart reads day totals. The second is a lot of Intervals over a long period. The measures mean the same, but a 30-day period then starts at the beginning of its first month, so it counts a few more days, and a Number compares with the same number of whole months before, which its caption names. If even the month totals are more than one chart can add up, the chart says so in place of its numbers: choose a shorter period or one owner.</p>
 <h2 id="edit-the-layout">Edit the layout<a class="headerlink" href="#edit-the-layout" title="Permanent link">#</a></h2>
 <ol>
